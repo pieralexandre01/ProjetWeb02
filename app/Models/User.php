@@ -13,6 +13,33 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * Relation plusieurs à un avec privilege
+     *
+     * @return object \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function privilege() {
+        return $this->belongsTo(Privilege::class);
+    }
+
+    /**
+     * Relation un à plusieurs avec article
+     *
+     * @return object \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function articles() {
+        return $this->hasMany(Article::class);
+    }
+
+    /**
+     * Relation plusieurs à plusieurs avec reservation
+     *
+     * @return object \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function reservations() {
+        return $this->belongsToMany(Reservation::class);
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
