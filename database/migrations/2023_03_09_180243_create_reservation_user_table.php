@@ -2,9 +2,10 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReserveationUserTable extends Migration
+class CreateReservationUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +14,13 @@ class CreateReserveationUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('reserveation_user', function (Blueprint $table) {
+        Schema::create('reservation_user', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('reservation_id')->constrained();
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +31,6 @@ class CreateReserveationUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reserveation_user');
+        Schema::dropIfExists('reservation_user');
     }
 }

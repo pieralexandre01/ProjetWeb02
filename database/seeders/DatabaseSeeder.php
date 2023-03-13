@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ReservationSeeder::class,
             CategorySeeder::class,
+            ReservationUserSeeder::class,
             ArticleSeeder::class,
             ActivitySeeder::class,
-
         ]);
     }
 }
