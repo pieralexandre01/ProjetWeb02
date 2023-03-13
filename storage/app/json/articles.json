@@ -1,0 +1,20 @@
+[
+    {
+        "title": "titre de l'article",
+        "text": "description de l'activité bla bla bli",
+        "user_id": 1,
+        "category_id": 1
+    },
+    {
+        "title": "titre de l'article",
+        "text": "description de l'activité bla bla bli",
+        "user_id": 2,
+        "category_id": 2
+    },
+    {
+        "title": "titre de l'article",
+        "text": "description de l'activité bla bla bli",
+        "user_id": 3,
+        "category_id": 3
+    }
+]
