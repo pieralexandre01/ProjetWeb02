@@ -18,5 +18,12 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Relation avec le modèle Category (plusieurs-à-un)
+     */
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
     // accesseur de 150 caractères pour la vue
 }
