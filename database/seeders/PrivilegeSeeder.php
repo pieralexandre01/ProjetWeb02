@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PrivilegeSeeder extends Seeder
 {
@@ -13,6 +14,12 @@ class PrivilegeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('privileges')->insert([
+            "type" => "admin",
+        ]);
+
+        DB::table('privileges')->insert([
+            "type" => "public",
+        ]);
     }
 }
