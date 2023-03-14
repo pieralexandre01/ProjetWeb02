@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,73 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Routes pour la page d'accueil
+// ------------------------------------------------------------------------------------ Section public
+
 Route::get('/', [SiteController::class, 'index'])
     ->name('homepage');
+
+Route::get('/activities', [ActivityController::class, 'show'])
+    ->name('activities');
+
+Route::get('/reservations', [ReservationController::class, 'show'])
+    ->name('reservations');
+
+Route::get('/about', [SiteController::class, 'showAbout'])
+    ->name('about');
+
+Route::get('/articles', [ArticleController::class, 'show'])
+    ->name('articles');
+
+Route::get('/articles/{id}', [ArticleController::class, 'showById'])
+    ->name('article');
+
+Route::get('/contact', [SiteController::class, 'showContact'])
+    ->name('contact');
+
+
+// ------------------------------------------------------------------------------------ Auth
+
+// Public
+Route::get('/connexion', [AuthController::class, 'showConnexionPublic'])
+    ->name('login-public');
+
+// Route::get('/users/create', [AuthController::class, 'createPublic'])
+//     ->name('create-public');
+//     ->name('create-public-user'); ???????????????????????????????
+
+// todo : store (post)
+
+// Admin
+// Route::get('/admin', [AuthController::class, 'showConnexionAdmin'])
+//     ->name('login-admin');
+
+// Route::get('/users/create', [AuthController::class, 'createAdmin'])
+//     ->name('create-admin');
+//     ->name('create-admin-user'); ???????????????????????????????
+
+// todo : store (post)
+
+// Déconnexion
+
+
+// ------------------------------------------------------------------------------------ Section dashboard public
+// *********************************************** MIDDLEWARE ***********************************************
+
+
+// ------------------------------------------------------------------------------------ Section admin
+// *********************************************** MIDDLEWARE ***********************************************
+// Activities
+// Articles
+// Users
+// Etc.
+
+// route : /whatever/create/{id}
+// create - get
+// store - post
+
+// route : /whatever/edit/{id}
+// edit - get
+// update - post
+
+// destroy - get
+// Softdelete ??
