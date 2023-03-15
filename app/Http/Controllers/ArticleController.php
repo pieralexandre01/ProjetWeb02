@@ -2,13 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    // Afficher la page des articles en lui transmettant les données
+    /**
+     * Affiche la page d'articles
+     *
+     * @return void
+     */
+    public function show() {
+        return view('articles', [
+            'articles' => Article::all(),
+        ]);
+    }
 
-    // Afficher un article par id
+    /**
+     * Affiche un article selon l'id
+     *
+     * @param int $id
+     * @return void
+     */
+    public function showById($id) {
+        return view('article', [
+            "article" => Article::findOrFail($id),
+        ]);
+    }
 
     // Afficher le formulaire de création d'un article
 
