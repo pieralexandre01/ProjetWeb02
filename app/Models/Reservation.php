@@ -9,5 +9,21 @@ class Reservation extends Model
 {
     use HasFactory;
 
+    /**
+     * Relation plusieurs à un avec user
+     *
+     * @return object \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 
+    /**
+     * Relation plusieurs à un avec package
+     *
+     * @return object \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function package() {
+        return $this->belongsTo(Package::class);
+    }
 }

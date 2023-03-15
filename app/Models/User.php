@@ -31,12 +31,12 @@ class User extends Authenticatable
     }
 
     /**
-     * Relation plusieurs à plusieurs avec package
+     * Relation un à plusieurs avec reservations
      *
-     * @return object \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return object \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function packages() {
-        return $this->belongsToMany(Package::class);
+    public function reservations() {
+        return $this->hasMany(Reservation::class);
     }
 
     /**

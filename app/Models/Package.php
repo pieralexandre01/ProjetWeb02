@@ -9,12 +9,12 @@ class Package extends Model
 {
     use HasFactory;
 
-    /**     
-    * Relation plusieurs à plusieurs avec users     
-    *     
-    * @return object \Illuminate\Database\Eloquent\Relations\BelongsToMany     
-    */
-    public function users() {
-        return $this->belongsToMany(User::class);
+    /**
+     * Relation un à plusieurs avec reservations
+     *
+     * @return object \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function reservations() {
+        return $this->hasMany(Reservation::class);
     }
 }
