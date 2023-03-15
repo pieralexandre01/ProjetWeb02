@@ -1,4 +1,4 @@
-<x-layout>
+<x-public.layout>
     {{-- <x-slot name="titre"></x-slot> --}}
     <form action="{{ route('login') }}" method="post">
         @csrf
@@ -7,4 +7,4 @@
         <input type="submit">
     </form>
 
-</x-layout>
+</x-public.layout>
