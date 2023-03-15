@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule as ValidationRule;
 
 class AuthController extends Controller
 {
@@ -33,6 +35,36 @@ class AuthController extends Controller
     //
     // Si le User provient de la page de connexion Admin, bloquer si c'est un public ou rediriger vers le dashboard Admin si c'est un admin
     // S'il y a un timestamp dans la colonne deleted_at, refuser l'accès
+    /**
+     * Traite la connexion de l'utilisateur et valide le type d'utilisateur et redirige en fonction de celui-ci
+     *
+     * @param Request $request Contient les données de connexion
+     */
+    public function authenticated(Request $request) {
+        // Valider
+        $valid_infos = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            // 'deleted_at' => [
+            //     'nullable',
+            //     ValidationRule::exists('table_name', 'deleted_at')->whereNotNull('deleted_at')
+            // ]
+        ], [
+            'email.required' => "The e-mail is required",
+            'email.email' => "Please enter a valid e-mail",
+            'password.required' => "The password is required"
+        ]);
+
+        // Tentative de connexion
+        if(auth()->attempt($valid_infos)){
+            return redirect()
+                    ->route('dashboard');
+        }
+
+        // En cas d'échec de la connexion
+        return back()
+                ->with('login-failed', 'The informations submitted could not be verified');
+    }
 
 
     /**

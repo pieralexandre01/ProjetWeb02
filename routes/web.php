@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,8 +49,14 @@ Route::get('/contact', [SiteController::class, 'showContact'])
 Route::get('/login', [AuthController::class, 'showLogin'])
     ->name('login');
 
+Route::post('/login', [AuthController::class, 'authenticated'])
+    ->name('login');
+
 Route::get('/account/create', [AuthController::class, 'createAccount'])
     ->name('account-create');
+
+Route::get('/dashboard', [UserController::class, 'showDashboard'])
+    ->name('dashboard');
 
 // todo : store (post)
 

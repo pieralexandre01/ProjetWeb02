@@ -7,6 +7,14 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    /**
+     * Affiche le dashboard de l'utilisateur public
+     *
+     */
+    public function showDashboard() {
+        return view('user.dashboard');
+    }
+
     // Afficher la page modification de compte Public
     //
     // Aller récupérer les anciennes informations sauf password
