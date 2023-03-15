@@ -16,7 +16,9 @@ class AuthController extends Controller
      * @return void
      */
     public function showLogin() {
-        return view('auth.public.login');
+        return view('auth.public.login', [
+            "title" => "Mirror World | Login"
+        ]);
     }
 
 
@@ -26,7 +28,9 @@ class AuthController extends Controller
      * @return void
      */
     public function showLoginAdmin() {
-        return view('auth.admin.login');
+        return view('auth.admin.login', [
+            "title" => "MW | Admin | Login"
+        ]);
     }
 
 
@@ -90,7 +94,9 @@ class AuthController extends Controller
      * @return void
      */
     public function createAccount() {
-        return view('auth.public.account-creation');
+        return view('auth.public.account-creation', [
+            "title" => "Mirror World | Account"
+        ]);
     }
 
 
@@ -100,7 +106,9 @@ class AuthController extends Controller
      * @return void
      */
     public function createAdmin() {
-        return view('auth.admin.account-creation');
+        return view('auth.admin.account-creation', [
+            "title" => "MW | Admin | Account"
+        ]);
     }
 
 

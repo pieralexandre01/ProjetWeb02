@@ -1,3 +1,4 @@
 <x-layout>
-    {{-- <x-slot name="titre"></x-slot> --}}
+    {{-- <x-slot name="title"></x-slot> --}}
+
 </x-layout>
