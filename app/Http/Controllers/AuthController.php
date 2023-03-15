@@ -58,18 +58,25 @@ class AuthController extends Controller
         // Tentative de connexion
         if(auth()->attempt($valid_infos)){
 
+            // Création d'un objet avec les informations de l'utlisateur
             $user = User::where(['email' => $request->email]);
 
+            // Vérifier si le user est bloqué
             if($user->deleted_at !== null){
                 return back()
                     ->with('login-blocked', "Access denied");
             }
 
+            // Vérifier le type d'admin
+            if($user->privileges->type == "admin") {
+                return redirect()
+                    ->route('');
+            }
+
+            // Connexion public réussi
             return redirect()
                     ->route('dashboard');
         }
-
-
 
         // En cas d'échec de la connexion
         return back()
@@ -109,6 +116,13 @@ class AuthController extends Controller
 
 
     // Déconnexion de l'utilisateur
+    public function logout() {
+        auth()->logout();
+
+        // return redirect()
+        //     ->route('login')
+        //     ->with('succes-deconnexion', "Déconnexion réussie");
+    }
 
 
     // Fonctions utiles
