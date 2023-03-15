@@ -3,7 +3,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\PackageController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,8 +26,8 @@ Route::get('/', [SiteController::class, 'index'])
 Route::get('/activities', [ActivityController::class, 'show'])
     ->name('activities');
 
-Route::get('/reservations', [ReservationController::class, 'show'])
-    ->name('reservations');
+Route::get('/packages', [PackageController ::class, 'show'])
+    ->name('packages');
 
 Route::get('/about', [SiteController::class, 'showAbout'])
     ->name('about');
