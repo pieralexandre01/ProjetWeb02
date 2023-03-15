@@ -45,22 +45,20 @@ Route::get('/contact', [SiteController::class, 'showContact'])
 // ------------------------------------------------------------------------------------ Auth
 
 // Public
-Route::get('/connexion', [AuthController::class, 'showConnexionPublic'])
-    ->name('login-public');
+Route::get('/login', [AuthController::class, 'showLogin'])
+    ->name('login');
 
-// Route::get('/users/create', [AuthController::class, 'createPublic'])
-//     ->name('create-public');
-//     ->name('create-public-user'); ???????????????????????????????
+Route::get('/account/create', [AuthController::class, 'createAccount'])
+    ->name('account-create');
 
 // todo : store (post)
 
 // Admin
-// Route::get('/admin', [AuthController::class, 'showConnexionAdmin'])
-//     ->name('login-admin');
+Route::get('/admin', [AuthController::class, 'showLoginAdmin'])
+    ->name('admin-login');
 
-// Route::get('/users/create', [AuthController::class, 'createAdmin'])
-//     ->name('create-admin');
-//     ->name('create-admin-user'); ???????????????????????????????
+Route::get('/admin/create', [AuthController::class, 'createAdmin'])
+    ->name('admin-create');
 
 // todo : store (post)
 
@@ -87,4 +85,4 @@ Route::get('/connexion', [AuthController::class, 'showConnexionPublic'])
 // update - post
 
 // destroy - get
-// Softdelete ??
+// Softdelete = block
