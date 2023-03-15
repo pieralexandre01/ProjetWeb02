@@ -1,8 +1,4 @@
-<x-layout>
-<<<<<<< HEAD
+<x-public.layout>
     {{-- <x-slot name="title"></x-slot> --}}
 
-=======
-    {{-- <x-slot name="titre"></x-slot> --}}
->>>>>>> main
-</x-layout>
+</x-public.layout>
