@@ -2,14 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule as ValidationRule;
 
 class AuthController extends Controller
 {
-    // Afficher la page de connexion Public
+
+    /**
+     * Affiche la page de connexion public
+     *
+     * @return void
+     */
+    public function showLogin() {
+        return view('auth.public.login');
+    }
 
 
-    // Afficher la page de connexion Admin
+    /**
+     * Affiche la page de connexion admin
+     *
+     * @return void
+     */
+    public function showLoginAdmin() {
+        return view('auth.admin.login');
+    }
 
 
     // Connexion du user
@@ -18,12 +36,65 @@ class AuthController extends Controller
     //
     // Si le User provient de la page de connexion Admin, bloquer si c'est un public ou rediriger vers le dashboard Admin si c'est un admin
     // S'il y a un timestamp dans la colonne deleted_at, refuser l'accès
+    /**
+     * Traite la connexion de l'utilisateur et valide le type d'utilisateur et redirige en fonction de celui-ci
+     *
+     * @param Request $request Contient les données de connexion
+     */
+    public function authenticated(Request $request) {
+
+        // $previousUrl = $request->header('referer');
+
+        // Valider
+        $valid_infos = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ], [
+            'email.required' => "The e-mail is required",
+            'email.email' => "Please enter a valid e-mail",
+            'password.required' => "The password is required"
+        ]);
+
+        // Tentative de connexion
+        if(auth()->attempt($valid_infos)){
+
+            $user = User::where(['email' => $request->email]);
+
+            if($user->deleted_at !== null){
+                return back()
+                    ->with('login-blocked', "Access denied");
+            }
+
+            return redirect()
+                    ->route('dashboard');
+        }
 
 
-    // Afficher le formulaire création de compte Public
+
+        // En cas d'échec de la connexion
+        return back()
+                ->with('login-failed', 'The informations submitted could not be verified');
+    }
 
 
-    // Afficher le formulaire création de compte Admin
+    /**
+     * Affiche la page de création de compte public
+     *
+     * @return void
+     */
+    public function createAccount() {
+        return view('auth.public.account-creation');
+    }
+
+
+     /**
+     * Affiche la page de création de compte admin
+     *
+     * @return void
+     */
+    public function createAdmin() {
+        return view('auth.admin.account-creation');
+    }
 
 
     // Création de compte du User

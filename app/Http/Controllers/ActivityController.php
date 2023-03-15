@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
-    // Afficher la page des activités en lui transmettant les données
+    /**
+     * Affiche la page d'activités (activities)
+     *
+     */
+    public function show() {
+        return view('activities', [
+            "activities" => Activity::all()
+        ]);
+    }
 
     // Afficher le formulaire de création d'une activité
 

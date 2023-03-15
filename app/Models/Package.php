@@ -9,11 +9,11 @@ class Package extends Model
 {
     use HasFactory;
 
-    /**
-     * Relation plusieurs à plusieurs avec users
-     *
-     * @return object \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
+    /**     
+    * Relation plusieurs à plusieurs avec users     
+    *     
+    * @return object \Illuminate\Database\Eloquent\Relations\BelongsToMany     
+    */
     public function users() {
         return $this->belongsToMany(User::class);
     }

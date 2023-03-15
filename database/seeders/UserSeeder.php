@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             "last_name" => "Duranleau",
             "email" => "julien@prof.com",
             "email_verified_at" => now(),
-            "password" => "1234",
+            "password" => "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi", // password
             "privilege_id" => 1,
             "deleted_at" => null,
             "remember_token" => "ablablanimportquequoi",
