@@ -55,10 +55,11 @@ Route::post('/login', [AuthController::class, 'authenticated'])
 Route::get('/account/create', [AuthController::class, 'createAccount'])
     ->name('account-create');
 
-Route::get('/dashboard', [UserController::class, 'showDashboard'])
-    ->name('dashboard');
-
 // todo : store (post)
+
+Route::get('/dashboard', [UserController::class, 'showDashboard'])
+    ->name('dashboard')
+    ->middleware('auth');
 
 // Admin
 Route::get('/admin', [AuthController::class, 'showLoginAdmin'])
@@ -68,6 +69,9 @@ Route::get('/admin/create', [AuthController::class, 'createAdmin'])
     ->name('admin-create');
 
 // todo : store (post)
+
+Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
+        ->name('admin-dashboard');
 
 // Déconnexion
 
