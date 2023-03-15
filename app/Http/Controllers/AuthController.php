@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule as ValidationRule;
@@ -41,14 +42,13 @@ class AuthController extends Controller
      * @param Request $request Contient les données de connexion
      */
     public function authenticated(Request $request) {
+
+        // $previousUrl = $request->header('referer');
+
         // Valider
         $valid_infos = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            // 'deleted_at' => [
-            //     'nullable',
-            //     ValidationRule::exists('table_name', 'deleted_at')->whereNotNull('deleted_at')
-            // ]
         ], [
             'email.required' => "The e-mail is required",
             'email.email' => "Please enter a valid e-mail",
@@ -57,9 +57,19 @@ class AuthController extends Controller
 
         // Tentative de connexion
         if(auth()->attempt($valid_infos)){
+
+            $user = User::where(['email' => $request->email]);
+
+            if($user->deleted_at !== null){
+                return back()
+                    ->with('login-blocked', "Access denied");
+            }
+
             return redirect()
                     ->route('dashboard');
         }
+
+
 
         // En cas d'échec de la connexion
         return back()
