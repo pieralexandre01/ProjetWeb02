@@ -6,10 +6,25 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    // Afficher la page de connexion Public
+
+    /**
+     * Affiche la page de connexion public
+     *
+     * @return void
+     */
+    public function showLogin() {
+        return view('auth.public.login');
+    }
 
 
-    // Afficher la page de connexion Admin
+    /**
+     * Affiche la page de connexion admin
+     *
+     * @return void
+     */
+    public function showLoginAdmin() {
+        return view('auth.admin.login');
+    }
 
 
     // Connexion du user
@@ -20,10 +35,24 @@ class AuthController extends Controller
     // S'il y a un timestamp dans la colonne deleted_at, refuser l'accès
 
 
-    // Afficher le formulaire création de compte Public
+    /**
+     * Affiche la page de création de compte public
+     *
+     * @return void
+     */
+    public function createAccount() {
+        return view('auth.public.account-creation');
+    }
 
 
-    // Afficher le formulaire création de compte Admin
+     /**
+     * Affiche la page de création de compte admin
+     *
+     * @return void
+     */
+    public function createAdmin() {
+        return view('auth.admin.account-creation');
+    }
 
 
     // Création de compte du User
