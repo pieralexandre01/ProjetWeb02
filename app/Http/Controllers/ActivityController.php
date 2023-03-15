@@ -13,7 +13,8 @@ class ActivityController extends Controller
      */
     public function show() {
         return view('activities', [
-            "activities" => Activity::all()
+            "activities" => Activity::all(),
+            "title" => "Mirror World | Activities"
         ]);
     }
 

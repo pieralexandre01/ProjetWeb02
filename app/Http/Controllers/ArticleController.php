@@ -15,6 +15,7 @@ class ArticleController extends Controller
     public function show() {
         return view('articles', [
             'articles' => Article::all(),
+            "title" => "Mirror World | Articles"
         ]);
     }
 
@@ -27,6 +28,7 @@ class ArticleController extends Controller
     public function showById($id) {
         return view('article', [
             "article" => Article::findOrFail($id),
+            "title" => Article::findOrFail($id)->title,
         ]);
     }
 
