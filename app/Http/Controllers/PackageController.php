@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ReservationController extends Controller
+class PackageController extends Controller
 {
     // Afficher la page des forfaits
 }
