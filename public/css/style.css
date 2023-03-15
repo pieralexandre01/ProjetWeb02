@@ -10,58 +10,71 @@
     --vivid-pink: #f500ed;
 }
 
- h1,
- .h1 {
+body {
+    background-color: var(--bg-color);
+    color: var(--white);
+}
+
+h1,
+.h1 {
     font-family: "ethnocentric", sans-serif;
     font-size: 3.125rem;
     letter-spacing: 1.5rem;
- }
+}
 
- h2,
- .h2 {
+h2,
+.h2 {
     font-family: "ocr-b-std", monospace;
     font-size: 2.75rem;
     letter-spacing: 1.5rem;
- }
+}
 
- h3,
- .h3 {
+h3,
+.h3 {
     font-family: "ethnocentric", sans-serif;
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 1.5rem;
- }
+}
 
 label {
     font-family: "ethnocentric", sans-serif;
     font-size: 1.375rem;
     font-weight: 200;
     letter-spacing: 1.5rem;
- }
+}
 
- a {
+a,
+.link {
     font-family: "termina", sans-serif;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 2rem;
- }
+}
 
- button {
+button {
     font-family: "ethnocentric", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 1.5rem;
- }
+}
 
- p {
+p {
     font-family: "termina", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 2rem;
     line-height: 1.875rem;
- }
+}
 
- /* .logo {
+.title_reflection {
+    transform: scale(-1, 1);
+    opacity: 0.1;
+    /* background: linear-gradient(to top,
+    rgba(255,255,255, 1) 20%,
+    rgba(255,255,255, 0) 80%); */
+}
+/* .logo {
 
     .festival {
     font-family: "termina", sans-serif;
@@ -69,4 +82,4 @@ label {
     font-weight: 600;
     letter-spacing: 1.5rem;
     }
- } */
+} */

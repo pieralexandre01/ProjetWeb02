@@ -1,4 +1,6 @@
-<x-layout>
-    {{-- <x-slot name="title"></x-slot> --}}
+<x-public.layout>
+    <x-slot name="title"></x-slot>
 
-</x-layout>
+    <x-public.header/>
+
+</x-public.layout>
