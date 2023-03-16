@@ -1,96 +1,137 @@
 :root {
-    --bg-color: #020402;
-    --grey: #9d9d9d;
-    --white: #ffffff;
-    --dark-blue: #0058b9;
-    --vivid-blue: #017aff;
-    --dark-turquoise: #00afc2;
-    --vivid-turquoise: #00e6ff;
-    --dark-pink: #8e0089;
-    --vivid-pink: #f500ed;
+  --bg-color: #020402;
+  --grey: #9d9d9d;
+  --white: #ffffff;
+  --dark-blue: #0058b9;
+  --vivid-blue: #017aff;
+  --dark-turquoise: #00afc2;
+  --vivid-turquoise: #00e6ff;
+  --dark-pink: #8e0089;
+  --vivid-pink: #f500ed;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--white);
+  background-color: var(--bg-color);
+  color: var(--white);
 }
 
 h1,
 .h1 {
-    font-family: "ethnocentric", sans-serif;
-    font-size: 3.125rem;
-    letter-spacing: 1.2rem;
+  font-family: "ethnocentric", sans-serif;
+  font-size: 3.125rem;
+  letter-spacing: 1.2rem;
 }
 
 h2,
 .h2 {
-    font-family: "ocr-b-std", monospace;
-    font-size: 2.75rem;
+  font-family: "ocr-b-std", monospace;
+  font-size: 2.75rem;
 }
 
 h3,
 .h3 {
-    font-family: "ethnocentric", sans-serif;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.048rem;
+  font-family: "ethnocentric", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.048rem;
 }
 
 a,
 .link {
-    color: var(--white);
-    font-family: "termina", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.03rem;
-    text-decoration: none;
+  color: var(--white);
+  font-family: "termina", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  text-decoration: none;
 }
 
 button {
-    font-family: "ethnocentric", sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 1.5rem;
+  font-family: "ethnocentric", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1.5rem;
 }
 
 label {
-    font-family: "ethnocentric", sans-serif;
-    font-size: 1.375rem;
-    font-weight: 200;
-    letter-spacing: 0.034rem;
+  font-family: "ethnocentric", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 200;
+  letter-spacing: 0.034rem;
 }
 
 p {
-    font-family: "termina", sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.025rem;
-    line-height: 1.875rem;
+  font-family: "termina", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.025rem;
+  line-height: 1.875rem;
 }
 
 nav {
-    margin-inline: 8.75rem;
-    margin-top: 1.625rem;
+  padding-inline: min(2vw, 8.75rem);
+  padding-top: 1.625rem;
 }
-
-ul {
-    list-style: none;
-
+nav ul {
+  list-style: none;
 }
-.title_reflection {
-    transform: scale(1, -1);
-    opacity: 0.1;
+nav .logo {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
 }
-
-.logo {
-    font-family: "ethnocentric", sans-serif;
-    font-size: 3.125rem;
-    font-weight: 300;
+nav .title,
+nav .title_reflection {
+  font-family: "ethnocentric", sans-serif;
+  font-size: clamp(1.563rem, 3.75vw, 3.125rem);
+  font-weight: 200;
+  letter-spacing: 0.75rem;
+  line-height: 45%;
+  white-space: nowrap;
 }
-
-.festival {
-    font-family: "termina", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 1.5rem;
+nav .title {
+  position: relative;
+  top: 5px;
 }
+nav .title_reflection {
+  opacity: 0.1;
+  transform: scale(1, -1);
+}
+nav .festival {
+  font-family: "termina", sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.036rem;
+  position: relative;
+  top: 1em;
+}
+nav button {
+  background: none;
+  background-image: url("../media/user_icon.svg");
+  border: none;
+  padding: 0;
+}
+nav button:hover {
+  background-image: url("../media/user_icon_pink.svg");
+}
+nav button img {
+  opacity: 0;
+}
+nav .dropdown-menu {
+  background-color: var(--bg-color);
+  border: 1px solid var(--white);
+  border-radius: 10px 0px 10px 10px;
+}
+nav .dropdown-menu .dropdown-item {
+  color: var(--white);
+  text-align: right;
+}
+nav .dropdown-menu .dropdown-item:hover {
+  color: var(--dark-pink);
+  background-color: var(--bg-color);
+}
+nav .dropdown-menu hr {
+  border-color: var(--white);
+  border-width: 2px;
+  color: var(--white);
+}/*# sourceMappingURL=style.css.map */

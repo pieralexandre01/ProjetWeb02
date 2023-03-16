@@ -1,0 +1,15 @@
+@import "style.css";
+
+.homepage_nav {
+    .active {
+        color: var(--dark-pink);
+    }
+
+    a:hover {
+        color: var(--dark-pink);
+    }
+
+    .logo:hover {
+        color: var(--vivid-pink);
+    }
+}

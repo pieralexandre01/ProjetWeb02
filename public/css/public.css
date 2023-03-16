@@ -1,5 +1,10 @@
 @import "style.css";
-
-.homepage_link {
-    color: var(--dark-pink);
+.homepage_nav .active {
+  color: var(--dark-pink);
 }
+.homepage_nav a:hover {
+  color: var(--dark-pink);
+}
+.homepage_nav .logo:hover {
+  color: var(--vivid-pink);
+}/*# sourceMappingURL=public.css.map */

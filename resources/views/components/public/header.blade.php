@@ -1,25 +1,30 @@
 <header>
-    <nav>
-        <ul class="d-flex justify-content-between">
-            <li><a href="{{ route('homepage') }}" class="homepage_link">homepage</a></li>
-            <li><a href="{{ route('homepage') }}">activities</a></li>
-            <li><a href="{{ route('homepage') }}">packages</a></li>
+    <nav class="homepage_nav text-center">
+        <ul class="d-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
+            <li class="me-3"><a href="{{ route('homepage') }}" class="active">homepage</a></li>
+            <li class="me-3"><a href="{{ route('homepage') }}">activities</a></li>
+            <li class="me-3"><a href="{{ route('homepage') }}">packages</a></li>
             <li>
-                <a href="{{ route('homepage') }}" class="d-flex flex-column text-center">
-                    <span class="logo">MIRROR WORLD</span>
-                    <span class="title_reflection">MIRROR WORLD</span>
-                    <span class="festival">festival</span>
+                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap">
+                    <div class="title d-flex flex-column">
+                        MIRROR WORLD
+                        <div class="festival">festival</div>
+                    </div>
+
+                    <div class="title_reflection">MIRROR WORLD</div>
                 </a>
             </li>
-            <li><a href="{{ route('homepage') }}">about</a></li>
-            <li><a href="{{ route('homepage') }}">articles</a></li>
-            <li><a href="{{ route('homepage') }}">contact</a></li>
+            <li class="ms-2 me-3"><a href="{{ route('homepage') }}">about</a></li>
+            <li class="me-3"><a href="{{ route('homepage') }}">articles</a></li>
+            <li class="me-3"><a href="{{ route('homepage') }}">contact</a></li>
             <li>
-                <button href="{{ route('homepage') }}" class="link btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="#" alt="User icon">
+                <button href="{{ route('homepage') }}" class="link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ asset('media/user_icon.svg') }}" alt="User icon">
                 </button>
+
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">dashboard</a></li>
+                    <hr class="m-0">
                     <li><a class="dropdown-item" href="#">logout</a></li>
                 </ul>
             </li>
