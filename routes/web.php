@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,16 +63,17 @@ Route::get('/dashboard', [UserController::class, 'showDashboard'])
     ->middleware('auth');
 
 // Admin
-Route::get('/admin', [AuthController::class, 'showLoginAdmin'])
-    ->name('admin-login');
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
+        ->name('admin-login')
+        ->withoutMiddleware(AdminMiddleware::class); // Assurez-vous que le middleware ne s'applique pas à cette route
 
-Route::get('/admin/create', [AuthController::class, 'createAdmin'])
-    ->name('admin-create');
+    Route::get('/admin/create', [AuthController::class, 'createAdmin'])
+        ->name('admin-create');
 
-// todo : store (post)
-
-Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
+    Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
         ->name('admin-dashboard');
+});
 
 // Déconnexion
 

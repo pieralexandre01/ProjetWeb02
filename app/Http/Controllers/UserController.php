@@ -15,6 +15,14 @@ class UserController extends Controller
         return view('user.dashboard');
     }
 
+    /**
+     * Affiche le dashboard de l'administrateur
+     *
+     */
+    public function showDashboardAdmin() {
+        return view('admin.dashboard');
+    }
+
     // Afficher la page modification de compte Public
     //
     // Aller récupérer les anciennes informations sauf password

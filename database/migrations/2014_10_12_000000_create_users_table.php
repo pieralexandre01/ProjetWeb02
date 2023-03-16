@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('privilege_id')->constrained()->onDelete('cascade');
-            $table->softDeletes($column = 'deleted_at');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

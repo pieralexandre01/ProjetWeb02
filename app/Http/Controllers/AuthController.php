@@ -63,18 +63,13 @@ class AuthController extends Controller
         if(auth()->attempt($valid_infos)){
 
             // Création d'un objet avec les informations de l'utlisateur
-            $user = User::where(['email' => $request->email]);
+            $user = User::where(['email' => $request->email])->first();
 
             // Vérifier si le user est bloqué
-            if($user->deleted_at !== null){
+            if($user->deleted_at != null){
+            // if($user->deleted_at != null){
                 return back()
                     ->with('login-blocked', "Access denied");
-            }
-
-            // Vérifier le type d'admin
-            if($user->privileges->type == "admin") {
-                return redirect()
-                    ->route('');
             }
 
             // Connexion public réussi
