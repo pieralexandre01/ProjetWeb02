@@ -71,16 +71,9 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
         ->name('admin-create');
 
-<<<<<<< HEAD
-// todo : store (post)
-
-Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
-    ->name('admin-dashboard');
-=======
     Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
         ->name('admin-dashboard');
 });
->>>>>>> PaDev
 
 // Déconnexion
 
