@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Article;
+use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,7 +16,13 @@ class AdminController extends Controller
      *
      */
     public function showDashboardAdmin() {
-        return view('admin.dashboard');
+        return view('admin.dashboard', [
+            'user_admin' => User::where('privilege_id', 1)->get(),
+            'articles' => Article::all(),
+            'activities' => Activity::all(),
+            'reservations' => Reservation::all(),
+            'user_public' => User::where('privilege_id', 2)->get()
+        ]);
     }
 
     // Afficher la page modification de compte Public
