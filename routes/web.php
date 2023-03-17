@@ -72,7 +72,7 @@ Route::get('/dashboard', [UserController::class, 'showDashboard'])
 
 // ------------------------------------------------------------------------------------ Public et admin
 // Déconnexion
-Route::post('/logout',[AuthController::class, 'logout'])
+Route::get('/logout',[AuthController::class, 'logout'])
     ->name('logout');
 
 // Supprimer une réservation (public et admin)
@@ -116,10 +116,13 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::post('/user/update{id}', [AdminController::class, 'updateUser'])
         ->name('user-update');
 
-    // supprimer - admin et public
-    Route::post('/user/delete{id}', [AdminController::class, 'destroy'])
-        ->name('user-delete');
+    // bloquer - admin et public
+    Route::post('/user/block{id}', [AdminController::class, 'block'])
+        ->name('user-block');
 
+    // débloquer - admin et public
+    Route::post('/user/unblock{id}', [AdminController::class, 'unblock'])
+        ->name('user-unblock');
 
     // Articles --------------------------------------------------------------
     // création
