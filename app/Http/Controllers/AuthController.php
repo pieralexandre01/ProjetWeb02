@@ -135,9 +135,8 @@ class AuthController extends Controller
     public function logout() {
         auth()->logout();
 
-        // return redirect()
-        //     ->route('login')
-        //     ->with('succes-deconnexion', "Déconnexion réussie");
+        return redirect()
+            ->route('homepage');
     }
 
 
