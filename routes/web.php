@@ -45,29 +45,36 @@ Route::get('/contact', [SiteController::class, 'showContact'])
     ->name('contact');
 
 
-// ------------------------------------------------------------------------------------ Auth
+// ------------------------------------------------------------------------------------ Auth public
 
-// Public
 Route::middleware([RedirectUserIfAuthenticated::class])->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])
-        ->name('login');
+    ->name('login');
 
     Route::post('/login', [AuthController::class, 'authenticate'])
-        ->name('login');
+    ->name('login');
 
     Route::get('/account/create', [AuthController::class, 'createAccount'])
-        ->name('account-create');
+    ->name('account-create');
 
-// todo : store (post)
+    // todo : store (post)
+
 });
 
-// Dashboard public
+// ------------------------------------------------------------------------------------ Dashboard public
 Route::get('/dashboard', [UserController::class, 'showDashboard'])
     ->name('dashboard')
     ->middleware('auth');
 
-// Admin
+// ------------------------------------------------------------------------------------ Déconnexion
+
+// todo : deconnexion
+
+
+// ------------------------------------------------------------------------------------ Section admin
+
 Route::middleware([AuthenticateAdmin::class])->group(function () {
+
     Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
         ->name('admin-login')
         ->middleware('redirect.admin')
@@ -76,27 +83,28 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
         ->name('admin-create');
 
+    // todo : store (post)
+
     Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
         ->name('admin-dashboard');
+
+        // Activities
+        // Articles
+        // Users
+        // Etc.
+
+        // route : /whatever/create/{id}
+        // create - get
+        // store - post
+
+        // route : /whatever/edit/{id}
+        // edit - get
+        // update - post
+
+        // destroy - get
+        // Softdelete = block
+
 });
 
-// Déconnexion
 
 
-// ------------------------------------------------------------------------------------ Section admin
-// *********************************************** MIDDLEWARE ***********************************************
-// Activities
-// Articles
-// Users
-// Etc.
-
-// route : /whatever/create/{id}
-// create - get
-// store - post
-
-// route : /whatever/edit/{id}
-// edit - get
-// update - post
-
-// destroy - get
-// Softdelete = block

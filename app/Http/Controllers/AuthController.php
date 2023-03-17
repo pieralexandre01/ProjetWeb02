@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rule as ValidationRule;
 
 class AuthController extends Controller
@@ -34,12 +35,6 @@ class AuthController extends Controller
     }
 
 
-    // Connexion du user
-    // Si le User provient de la page connexion public, rediriger vers le dashboard public
-    // S'il y a un timestamp dans la colonne deleted_at, refuser l'accès
-    //
-    // Si le User provient de la page de connexion Admin, bloquer si c'est un public ou rediriger vers le dashboard Admin si c'est un admin
-    // S'il y a un timestamp dans la colonne deleted_at, refuser l'accès
     /**
      * Traite la connexion de l'utilisateur et valide le type d'utilisateur et redirige en fonction de celui-ci
      *
@@ -47,9 +42,9 @@ class AuthController extends Controller
      */
     public function authenticate(Request $request) {
 
-        $previousUrl = $request->header('referer');
+        $previous_url = $request->header('referer');
 
-        // Valider
+        // Valider les informations reçues
         $valid_infos = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -67,25 +62,30 @@ class AuthController extends Controller
 
             // Vérifier si le user est bloqué
             if($user->deleted_at != null){
-            // if($user->deleted_at != null){
                 return back()
                     ->with('login-blocked', "Access denied");
             }
 
-            if($previousUrl === 'http://127.0.0.1:8000/admin/login'){
+            // Si le user arrive de la page de connexion admin
+            $admin_url = URL::to('/') . '/admin/login';
+
+            if($previous_url === $admin_url){
+
+                // Vérifier si le user est admin et rediriger au dashboard admin
                 if($user->privilege->type === 'admin') {
                     return redirect()
                         ->route('admin-dashboard');
+
+                // Vérifier si le user est public et rediriger au formulaire de connexion avec msg d'erreur
                 } elseif($user->privilege->type === 'public') {
-
                     auth()->logout();
-
                     return redirect()
                         ->route('admin-login')
                         ->with('login-blocked', "Access denied");
                 }
             }
 
+            // Connexion public réussi
             return redirect()
                 ->route('homepage');
         }
