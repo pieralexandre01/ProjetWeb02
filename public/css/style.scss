@@ -140,7 +140,8 @@ nav {
             border: none;
             padding: 0;
 
-            &:hover {
+            &:hover,
+            &:focus {
                  background-image: url("../media/user_icon_pink.svg");
             }
 
