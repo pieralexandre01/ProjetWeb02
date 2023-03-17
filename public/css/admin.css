@@ -1,0 +1,18 @@
+.return_icon img,
+.logout_icon img {
+  opacity: 0;
+}
+
+.return_icon {
+  background-image: url("../media/return_icon.svg");
+}
+.return_icon:hover {
+  background-image: url("../media/return_icon_hover.svg");
+}
+
+.logout_icon {
+  background-image: url("../media/logout_icon.svg");
+}
+.logout_icon:hover {
+  background-image: url("../media/logout_icon_hover.svg");
+}/*# sourceMappingURL=admin.css.map */
