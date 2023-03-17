@@ -3,7 +3,7 @@
         <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
 
             <li class="me-3">
-                <a href="{{ route('homepage') }}" class="active" aria-current="page">
+                <a href="{{ route('homepage') }}" class="d-flex flex-nowrap" aria-current="page">
                     <img src="{{ asset('media/return.svg') }}" alt="Return-arrow icon">
                     public homepage
                 </a>
@@ -22,7 +22,7 @@
 
             @auth
                 <li>
-                    <a href="{{ url('/logout') }}" class="">
+                    <a href="{{ url('/logout') }}" class="d-flex flex-nowrap">
                         logout
                         <img src="{{ asset('media/logout.svg') }}" class="logout_icon d-block" alt="Logout icon">
                     </a>
