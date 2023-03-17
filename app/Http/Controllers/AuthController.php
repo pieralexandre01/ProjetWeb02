@@ -45,7 +45,7 @@ class AuthController extends Controller
      *
      * @param Request $request Contient les données de connexion
      */
-    public function authenticated(Request $request) {
+    public function authenticate(Request $request) {
 
         // $previousUrl = $request->header('referer');
 
@@ -74,7 +74,7 @@ class AuthController extends Controller
 
             // Connexion public réussi
             return redirect()
-                    ->route('dashboard');
+                    ->route('homepage');
         }
 
         // En cas d'échec de la connexion

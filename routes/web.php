@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\AuthenticateAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,7 +50,7 @@ Route::get('/contact', [SiteController::class, 'showContact'])
 Route::get('/login', [AuthController::class, 'showLogin'])
     ->name('login');
 
-Route::post('/login', [AuthController::class, 'authenticated'])
+Route::post('/login', [AuthController::class, 'authenticate'])
     ->name('login');
 
 Route::get('/account/create', [AuthController::class, 'createAccount'])
@@ -63,10 +63,10 @@ Route::get('/dashboard', [UserController::class, 'showDashboard'])
     ->middleware('auth');
 
 // Admin
-Route::middleware([AdminMiddleware::class])->group(function () {
+Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
         ->name('admin-login')
-        ->withoutMiddleware(AdminMiddleware::class); // Assurez-vous que le middleware ne s'applique pas à cette route
+        ->withoutMiddleware(AuthenticateAdmin::class); // Assurez-vous que le middleware ne s'applique pas à cette route
 
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
         ->name('admin-create');

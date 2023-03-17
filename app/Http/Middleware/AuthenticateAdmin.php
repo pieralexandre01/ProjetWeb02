@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class AuthenticateAdmin
 {
     /**
      * Handle an incoming request.
@@ -18,12 +18,12 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
 
-        if (!Auth::check()) {
+        if ( ! Auth::check()) {
             // Redirection si pas connecté
             return redirect(route('admin-login'));
         } elseif (Auth::user()->privilege->type !== 'admin') {
             // Redirection si connecté, mais n'est pas un admin
-            return redirect(route('dashboard'));
+            return redirect(route('homepage'));
         }
 
         return $next($request);
