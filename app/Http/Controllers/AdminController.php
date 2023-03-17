@@ -17,11 +17,11 @@ class AdminController extends Controller
      */
     public function showDashboardAdmin() {
         return view('admin.dashboard', [
-            'user_admin' => User::where('privilege_id', 1)->get(),
+            'user_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get(),
             'articles' => Article::all(),
             'activities' => Activity::all(),
             'reservations' => Reservation::all(),
-            'user_public' => User::where('privilege_id', 2)->get()
+            'user_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get()
         ]);
     }
 
@@ -42,9 +42,19 @@ class AdminController extends Controller
     // Si oui, récupérer l'ancien password pour remettre cette valeur dans la BDD
     // Si non, faire les vérifications habituelles
 
-
-    // Bloquer un compte, soft deleting (mettre un timestamp dans la colonne deleted_at)
-
+    /**
+     * Soft delete (bloque) un utilisateur
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function block($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('admin')
+            ->with('user-blocked-success', 'User has been blocked successfully');
+    }
 
     // Débloquer un compte
 
