@@ -2,10 +2,12 @@
     <nav class="admin_nav px-5">
         <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
 
-            <li class="test1 me-3">
+            <li class="li_space me-3">
                 <a href="{{ route('homepage') }}" class="d-flex flex-nowrap align-items-center" aria-current="page">
-                    <img src="{{ asset('media/return.svg') }}" class="pe-3" alt="Return-arrow icon">
-                    public homepage
+                    <div class="return_icon">
+                        <img src="{{ asset('media/return.svg') }}"  alt="Return-arrow icon">
+                    </div>
+                    <div class="admin_link ps-3">public homepage</div>
                 </a>
             </li>
 
@@ -21,9 +23,12 @@
             </li>
 
             @auth
-                <a href="{{ url('/logout') }}" class="test1 d-flex flex-nowrap  justify-content-end align-items-center">
-                        logout
-                        <img src="{{ asset('media/logout.svg') }}" class="logout_icon ps-3" alt="Logout icon">
+                <li class="li_space">
+                    <a href="{{ route('logout') }}" class="d-flex flex-nowrap justify-content-end align-items-center">
+                        <div class="admin_link pe-3">logout</div>
+                        <div class="logout_icon">
+                            <img src="{{ asset('media/logout.svg') }}" alt="Logout icon">
+                        </div>
                     </a>
                 </li>
             @endauth

@@ -50,14 +50,24 @@
             </li>
 
             <li class="user_btn align-self-start">
-                <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ asset('media/user_icon.svg') }}" alt="User icon">
+                @auth
+                <button class="user_icon_connected" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ asset('media/user_icon_pink_connected.svg') }}" alt="User icon">
                 </button>
+                @endauth
+
+                @guest
+                    <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('media/user_icon.svg') }}" alt="User icon">
+                    </button>
+                @endguest
+
 
                 <ul class="dropdown-menu dropdown-right text-end">
-                    <li><a class="dropdown-item" href="#">dashboard</a></li>
+
+                    <li><a class="dropdown-item" href="{{ route('dashboard') }}">dashboard</a></li>
                     <hr class="m-0">
-                    <li><a class="dropdown-item" href="#">logout</a></li>
+                    <li><a class="dropdown-item" href="{{ route('logout') }}">logout</a></li>
                 </ul>
             </li>
 

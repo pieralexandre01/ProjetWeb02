@@ -1,32 +1,43 @@
 nav {
 
-    .test1 {
+    .li_space {
         flex-basis: 20%;
     }
-
-
 
     .return_icon,
     .logout_icon {
         img {
-            opacity: 0;
+            opacity: 0 !important;
         }
     }
 
     .return_icon {
+        background: none;
         background-image: url("../media/return.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-        &:hover {
+    a:hover {
+        color: var(--dark-blue) !important;
+        .return_icon {
             background-image: url("../media/return_hover.svg");
+        }
+
+        .logout_icon {
+            background-image: url("../media/logout_hover.svg")
         }
     }
 
-    .logout_icon {
-        background-image: url("../media/logout.svg");
+    .logo:hover {
+        color: var(--vivid-blue) !important;
+    }
 
-        &:hover {
-            background-image: url("../media/logout_hover.svg");
-        }
+    .logout_icon {
+        background: none;
+        background-image: url("../media/logout.svg");
+        background-repeat: no-repeat;
+
     }
 }
 
