@@ -48,6 +48,10 @@ class Kernel extends HttpKernel
         'admin' => [
             \App\Http\Middleware\AuthenticateAdmin::class,
         ],
+
+        'redirect.user' => [
+            \App\Http\Middleware\RedirectUserIfAuthenticated::class,
+        ],
     ];
 
     /**
@@ -68,6 +72,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth.admin' => \App\Http\Middleware\AuthenticateAdmin::class,
-        'redirect.admin' => \App\Http\Middleware\RedirectAdminIfAuthenticated::class
+        'redirect.admin' => \App\Http\Middleware\RedirectAdminIfAuthenticated::class,
+        'redirect.user' => \App\Http\Middleware\RedirectUserIfAuthenticated::class,
     ];
 }

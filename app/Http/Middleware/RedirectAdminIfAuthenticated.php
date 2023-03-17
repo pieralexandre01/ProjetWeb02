@@ -21,6 +21,9 @@ class RedirectAdminIfAuthenticated
         if (Auth::check() && Auth::user()->privilege->type === 'admin') {
             // Redirection si pas connecté
             return redirect(route('admin-dashboard'));
+        } elseif (Auth::check() && Auth::user()->privilege->type !== 'admin') {
+            // Redirection si connecté, mais n'est pas un admin
+            return redirect(route('homepage'));
         }
 
         return $next($request);

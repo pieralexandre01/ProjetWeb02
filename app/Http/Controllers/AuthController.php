@@ -47,7 +47,7 @@ class AuthController extends Controller
      */
     public function authenticate(Request $request) {
 
-        // $previousUrl = $request->header('referer');
+        $previousUrl = $request->header('referer');
 
         // Valider
         $valid_infos = $request->validate([
@@ -72,9 +72,22 @@ class AuthController extends Controller
                     ->with('login-blocked', "Access denied");
             }
 
-            // Connexion public réussi
+            if($previousUrl === 'http://127.0.0.1:8000/admin/login'){
+                if($user->privilege->type === 'admin') {
+                    return redirect()
+                        ->route('admin-dashboard');
+                } elseif($user->privilege->type === 'public') {
+
+                    auth()->logout();
+
+                    return redirect()
+                        ->route('admin-login')
+                        ->with('login-blocked', "Access denied");
+                }
+            }
+
             return redirect()
-                    ->route('homepage');
+                ->route('homepage');
         }
 
         // En cas d'échec de la connexion

@@ -7,6 +7,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AuthenticateAdmin;
+use App\Http\Middleware\RedirectUserIfAuthenticated;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,17 +48,20 @@ Route::get('/contact', [SiteController::class, 'showContact'])
 // ------------------------------------------------------------------------------------ Auth
 
 // Public
-Route::get('/login', [AuthController::class, 'showLogin'])
-    ->name('login');
+Route::middleware([RedirectUserIfAuthenticated::class])->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])
+        ->name('login');
 
-Route::post('/login', [AuthController::class, 'authenticate'])
-    ->name('login');
+    Route::post('/login', [AuthController::class, 'authenticate'])
+        ->name('login');
 
-Route::get('/account/create', [AuthController::class, 'createAccount'])
-    ->name('account-create');
+    Route::get('/account/create', [AuthController::class, 'createAccount'])
+        ->name('account-create');
 
 // todo : store (post)
+});
 
+// Dashboard public
 Route::get('/dashboard', [UserController::class, 'showDashboard'])
     ->name('dashboard')
     ->middleware('auth');
@@ -66,7 +70,8 @@ Route::get('/dashboard', [UserController::class, 'showDashboard'])
 Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
         ->name('admin-login')
-        ->withoutMiddleware(AuthenticateAdmin::class); // Assurez-vous que le middleware ne s'applique pas à cette route
+        ->middleware('redirect.admin')
+        ->withoutMiddleware(AuthenticateAdmin::class);
 
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
         ->name('admin-create');
@@ -76,10 +81,6 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
 });
 
 // Déconnexion
-
-
-// ------------------------------------------------------------------------------------ Section dashboard public
-// *********************************************** MIDDLEWARE ***********************************************
 
 
 // ------------------------------------------------------------------------------------ Section admin
