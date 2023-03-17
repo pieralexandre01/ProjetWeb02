@@ -1,18 +1,19 @@
-.return_icon img,
-.logout_icon img {
+nav .test1 {
+  flex-basis: 20%;
+}
+nav .return_icon img,
+nav .logout_icon img {
   opacity: 0;
 }
-
-.return_icon {
-  background-image: url("../media/return_icon.svg");
+nav .return_icon {
+  background-image: url("../media/return.svg");
 }
-.return_icon:hover {
-  background-image: url("../media/return_icon_hover.svg");
+nav .return_icon:hover {
+  background-image: url("../media/return_hover.svg");
 }
-
-.logout_icon {
-  background-image: url("../media/logout_icon.svg");
+nav .logout_icon {
+  background-image: url("../media/logout.svg");
 }
-.logout_icon:hover {
-  background-image: url("../media/logout_icon_hover.svg");
+nav .logout_icon:hover {
+  background-image: url("../media/logout_hover.svg");
 }/*# sourceMappingURL=admin.css.map */

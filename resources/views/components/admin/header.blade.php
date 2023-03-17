@@ -1,16 +1,16 @@
 <header>
-    <nav class="admin_nav">
+    <nav class="admin_nav px-5">
         <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
 
-            <li class="me-3">
-                <a href="{{ route('homepage') }}" class="d-flex flex-nowrap" aria-current="page">
-                    <img src="{{ asset('media/return.svg') }}" alt="Return-arrow icon">
+            <li class="test1 me-3">
+                <a href="{{ route('homepage') }}" class="d-flex flex-nowrap align-items-center" aria-current="page">
+                    <img src="{{ asset('media/return.svg') }}" class="pe-3" alt="Return-arrow icon">
                     public homepage
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
+                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap">
                     <div class="title d-flex flex-column">
                         MIRROR WORLD
                         <div class="festival">festival</div>
@@ -21,10 +21,9 @@
             </li>
 
             @auth
-                <li>
-                    <a href="{{ url('/logout') }}" class="d-flex flex-nowrap">
+                <a href="{{ url('/logout') }}" class="test1 d-flex flex-nowrap  justify-content-end align-items-center">
                         logout
-                        <img src="{{ asset('media/logout.svg') }}" class="logout_icon d-block" alt="Logout icon">
+                        <img src="{{ asset('media/logout.svg') }}" class="logout_icon ps-3" alt="Logout icon">
                     </a>
                 </li>
             @endauth

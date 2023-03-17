@@ -72,6 +72,15 @@ p {
 }
 
 nav {
+    background: linear-gradient(var(--bg-color) 60%, transparent);
+    padding-inline: clamp(20px, 2vw, 8.75rem);
+    padding-top: 1.625rem;
+    height: clamp(5rem, 7rem, 8rem);
+
+    ul {
+        list-style: none;
+    }
+
     .logo{
         -webkit-user-select: none;
         -ms-user-select: none;

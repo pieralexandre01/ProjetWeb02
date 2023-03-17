@@ -9,15 +9,6 @@
   color: var(--vivid-pink);
 }
 
-nav {
-  background: linear-gradient(var(--bg-color) 60%, transparent);
-  padding-inline: clamp(20px, 2vw, 8.75rem);
-  padding-top: 1.625rem;
-  height: 7rem;
-}
-nav ul {
-  list-style: none;
-}
 nav ul .user_btn {
   position: relative;
   top: 4px;
