@@ -17,6 +17,20 @@ html {
   color: var(--white);
   width: calc(100vw - (100vw - 100%));
 }
+body ::-moz-selection,
+html ::-moz-selection {
+  color: var(--bg-color);
+  background: var(--white);
+}
+body ::-moz-selection, html ::-moz-selection {
+  color: var(--bg-color);
+  background: var(--white);
+}
+body ::selection,
+html ::selection {
+  color: var(--bg-color);
+  background: var(--white);
+}
 
 h1,
 .h1 {

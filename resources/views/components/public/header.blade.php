@@ -30,7 +30,6 @@
                     <div class="title_reflection">MIRROR WORLD</div>
                 </a>
             </li>
-
             <li class="me-3"><a href="{{ route('about') }}" class="nav_xxl">about</a></li>
             <li class="me-3"><a href="{{ route('articles') }}" class="nav_xxl">articles</a></li>
             <li class="me-3"><a href="{{ route('contact') }}" class="nav_xxl">contact</a></li>
@@ -54,21 +53,27 @@
                 <button class="user_icon_connected" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('media/user_icon_pink_connected.svg') }}" alt="User icon">
                 </button>
+                <ul class="dropdown-menu dropdown-right text-end">
+                    <li class="link user_name dropdown-item">{{ Auth::user()->first_name }}</li>
+                    <hr class="m-0">
+                    <li><a class="dropdown-item" href="{{ route('dashboard') }}">dashboard</a></li>
+                    <hr class="m-0">
+                    <li><a class="dropdown-item" href="{{ route('logout') }}">logout</a></li>
+                </ul>
                 @endauth
 
                 @guest
                     <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{ asset('media/user_icon.svg') }}" alt="User icon">
                     </button>
+                    <ul class="dropdown-menu dropdown-right text-end">
+                        <li><a class="dropdown-item" href="{{ route('login') }}">login</a></li>
+                        <hr class="m-0">
+                        <li><a class="dropdown-item" href="{{ route('account-create') }}">create account</a></li>
+                    </ul>
                 @endguest
 
 
-                <ul class="dropdown-menu dropdown-right text-end">
-
-                    <li><a class="dropdown-item" href="{{ route('dashboard') }}">dashboard</a></li>
-                    <hr class="m-0">
-                    <li><a class="dropdown-item" href="{{ route('logout') }}">logout</a></li>
-                </ul>
             </li>
 
         </ul>

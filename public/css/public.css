@@ -8,64 +8,72 @@
 .homepage_nav .logo:hover {
   color: var(--vivid-pink);
 }
-
-nav ul .user_btn {
+.homepage_nav .user_btn {
   position: relative;
   top: 4px;
 }
-nav ul button,
-nav ul .user_icon,
-nav ul .user_icon_connected {
+.homepage_nav .user_btn .user_name {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  color: var(--dark-pink) !important;
+}
+.homepage_nav button,
+.homepage_nav .user_icon,
+.homepage_nav .user_icon_connected {
   background: none;
   border: none;
   padding: 0;
 }
-nav ul button:hover, nav ul button:focus,
-nav ul .user_icon:hover,
-nav ul .user_icon:focus,
-nav ul .user_icon_connected:hover,
-nav ul .user_icon_connected:focus {
+.homepage_nav button:hover, .homepage_nav button:focus,
+.homepage_nav .user_icon:hover,
+.homepage_nav .user_icon:focus,
+.homepage_nav .user_icon_connected:hover,
+.homepage_nav .user_icon_connected:focus {
   color: var(--dark-pink);
 }
-nav ul .user_icon {
+.homepage_nav .user_icon {
   background: none;
   background-image: url("../media/user_icon.svg");
   border: none;
   padding: 0;
 }
-nav ul .user_icon:hover, nav ul .user_icon:focus {
+.homepage_nav .user_icon:hover, .homepage_nav .user_icon:focus {
   background-image: url("../media/user_icon_pink.svg");
 }
-nav ul .user_icon img {
+.homepage_nav .user_icon img {
   opacity: 0;
 }
-nav ul .user_icon_connected {
+.homepage_nav .user_icon_connected {
   background: none;
   background-image: url("../media/user_icon_pink_connected.svg");
   border: none;
   padding: 0;
 }
-nav ul .user_icon_connected img {
-  opacity: 0.25;
+.homepage_nav .user_icon_connected img {
+  opacity: 0;
 }
-nav .dropdown-menu {
+.homepage_nav .user_icon_connected:hover, .homepage_nav .user_icon_connected:focus {
+  background-image: url("../media/user_icon_pink_connected_hover.svg");
+}
+.homepage_nav .dropdown-menu {
   background-color: var(--bg-color);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0px 0px 10px 10px;
 }
-nav .dropdown-menu .dropdown-item {
+.homepage_nav .dropdown-menu .dropdown-item {
   color: var(--white);
 }
-nav .dropdown-menu .dropdown-item:hover {
+.homepage_nav .dropdown-menu .dropdown-item:hover {
   background-color: var(--bg-color);
   color: var(--dark-pink);
 }
-nav .dropdown-menu hr {
+.homepage_nav .dropdown-menu hr {
   background-color: var(--white) !important;
   height: 2px;
   opacity: 0.5;
 }
-nav .dropdown-right {
+.homepage_nav .dropdown-right {
   border-radius: 10px 0px 10px 10px !important;
 }
 

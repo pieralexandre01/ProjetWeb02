@@ -16,6 +16,16 @@ html {
     background-color: var(--grey);
     color: var(--white);
     width: calc(100vw - (100vw - 100%));
+
+    ::-moz-selection {
+        color: var(--bg-color);
+        background: var(--white);
+    }
+
+    ::selection {
+        color: var(--bg-color);
+        background: var(--white);
+    }
 }
 
 h1,

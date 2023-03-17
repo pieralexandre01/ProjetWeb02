@@ -20,9 +20,6 @@ nav a:hover .return_icon {
 nav a:hover .logout_icon {
   background-image: url("../media/logout_hover.svg");
 }
-nav .logo:hover {
-  color: var(--vivid-blue) !important;
-}
 nav .logout_icon {
   background: none;
   background-image: url("../media/logout.svg");
