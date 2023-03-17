@@ -1,19 +1,30 @@
-nav .test1 {
+nav .li_space {
   flex-basis: 20%;
 }
 nav .return_icon img,
 nav .logout_icon img {
-  opacity: 0;
+  opacity: 0 !important;
 }
 nav .return_icon {
+  background: none;
   background-image: url("../media/return.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
-nav .return_icon:hover {
+nav a:hover {
+  color: var(--dark-blue) !important;
+}
+nav a:hover .return_icon {
   background-image: url("../media/return_hover.svg");
 }
-nav .logout_icon {
-  background-image: url("../media/logout.svg");
-}
-nav .logout_icon:hover {
+nav a:hover .logout_icon {
   background-image: url("../media/logout_hover.svg");
+}
+nav .logo:hover {
+  color: var(--vivid-blue) !important;
+}
+nav .logout_icon {
+  background: none;
+  background-image: url("../media/logout.svg");
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=admin.css.map */

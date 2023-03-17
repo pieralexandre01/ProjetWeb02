@@ -22,7 +22,8 @@ nav {
         }
 
         button,
-        .user_icon {
+        .user_icon,
+        .user_icon_connected {
             background: none;
             border: none;
             padding: 0;
@@ -46,6 +47,17 @@ nav {
 
             img {
                 opacity: 0;
+            }
+        }
+
+        .user_icon_connected {
+            background: none;
+            background-image: url("../media/user_icon_pink_connected.svg");
+            border: none;
+            padding: 0;
+
+            img {
+                opacity: 0.25;
             }
         }
     }

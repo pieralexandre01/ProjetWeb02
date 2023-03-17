@@ -14,14 +14,17 @@ nav ul .user_btn {
   top: 4px;
 }
 nav ul button,
-nav ul .user_icon {
+nav ul .user_icon,
+nav ul .user_icon_connected {
   background: none;
   border: none;
   padding: 0;
 }
 nav ul button:hover, nav ul button:focus,
 nav ul .user_icon:hover,
-nav ul .user_icon:focus {
+nav ul .user_icon:focus,
+nav ul .user_icon_connected:hover,
+nav ul .user_icon_connected:focus {
   color: var(--dark-pink);
 }
 nav ul .user_icon {
@@ -35,6 +38,15 @@ nav ul .user_icon:hover, nav ul .user_icon:focus {
 }
 nav ul .user_icon img {
   opacity: 0;
+}
+nav ul .user_icon_connected {
+  background: none;
+  background-image: url("../media/user_icon_pink_connected.svg");
+  border: none;
+  padding: 0;
+}
+nav ul .user_icon_connected img {
+  opacity: 0.25;
 }
 nav .dropdown-menu {
   background-color: var(--bg-color);
