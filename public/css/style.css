@@ -133,7 +133,7 @@ nav ul .user_icon {
   border: none;
   padding: 0;
 }
-nav ul .user_icon:hover {
+nav ul .user_icon:hover, nav ul .user_icon:focus {
   background-image: url("../media/user_icon_pink.svg");
 }
 nav ul .user_icon img {
