@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PackageController;
@@ -49,17 +50,19 @@ Route::get('/contact', [SiteController::class, 'showContact'])
 
 Route::middleware([RedirectUserIfAuthenticated::class])->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])
-    ->name('login');
+        ->name('login');
 
     Route::post('/login', [AuthController::class, 'authenticate'])
-    ->name('login');
+        ->name('login');
 
     Route::get('/account/create', [AuthController::class, 'createAccount'])
+        ->name('account-create');
+
+    });
+
+// Enregistrement d'un user
+Route::post('/account/create',[AuthController::class, 'storeAccount'])
     ->name('account-create');
-
-    // todo : store (post)
-
-});
 
 // ------------------------------------------------------------------------------------ Dashboard public
 Route::get('/dashboard', [UserController::class, 'showDashboard'])
@@ -68,8 +71,8 @@ Route::get('/dashboard', [UserController::class, 'showDashboard'])
 
 // ------------------------------------------------------------------------------------ Déconnexion
 
-// todo : deconnexion
-
+Route::post('/logout',[AuthController::class, 'logout'])
+    ->name('logout');
 
 // ------------------------------------------------------------------------------------ Section admin
 
@@ -77,32 +80,44 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
 
     Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
         ->name('admin-login')
+        // Ajout d'un middleware qui redirige au dashboard si déjà connecté
         ->middleware('redirect.admin')
+        // Enlever le group middleware qui redirige si pas connecté
         ->withoutMiddleware(AuthenticateAdmin::class);
 
-    Route::get('/admin/create', [AuthController::class, 'createAdmin'])
-        ->name('admin-create');
-
-    // todo : store (post)
-
-    Route::get('/admin', [UserController::class, 'showDashboardAdmin'])
+    Route::get('/admin', [AdminController::class, 'showDashboardAdmin'])
         ->name('admin-dashboard');
 
-        // Activities
-        // Articles
-        // Users
-        // Etc.
+    // Activities
 
-        // route : /whatever/create/{id}
-        // create - get
-        // store - post
+    // Articles
 
-        // route : /whatever/edit/{id}
-        // edit - get
-        // update - post
+    // Users
+    // créer - admin
+    Route::get('/admin/create{id}', [AuthController::class, 'createAdmin'])
+        ->name('admin-create');
 
-        // destroy - get
-        // Softdelete = block
+    // modif - admin et public
+    Route::get('/admin/edit', [AuthController::class, 'editAdmin'])
+        ->name('admin-edit');
+
+    Route::get('/user/edit', [AuthController::class, 'editUser'])
+        ->name('user-edit');
+    // supprimer - admin et public
+
+
+
+
+    // route : /whatever/create
+    // create - get
+    // store - post
+
+    // route : /whatever/edit/{id}
+    // edit - get
+    // update - post
+
+    // destroy - get
+    // Softdelete = block
 
 });
 
