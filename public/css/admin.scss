@@ -1,0 +1,22 @@
+.return_icon,
+.logout_icon {
+    img {
+        opacity: 0;
+    }
+}
+
+.return_icon {
+    background-image: url("../media/return_icon.svg");
+
+    &:hover {
+        background-image: url("../media/return_icon_hover.svg");
+    }
+}
+
+.logout_icon {
+    background-image: url("../media/logout_icon.svg");
+
+    &:hover {
+        background-image: url("../media/logout_icon_hover.svg");
+    }
+}
