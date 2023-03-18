@@ -1,4 +1,4 @@
-<x-layout>
+<x-admin.layout>
     {{-- <x-slot name="titre"></x-slot> --}}
 
     <x-admin.header />
@@ -7,4 +7,4 @@
 
     <x-admin.footer />
 
-</x-layout>
+</x-admin.layout>
