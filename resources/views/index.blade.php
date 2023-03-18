@@ -3,4 +3,7 @@
 
     <x-public.header/>
 
+
+    <x-public.footer/>
+
 </x-public.layout>

@@ -3,4 +3,7 @@
 
     <x-admin.header/>
 
+
+    <x-admin.footer/>
+
 </x-admin.layout>

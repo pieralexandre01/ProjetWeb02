@@ -1,89 +1,141 @@
 @import "style.css";
-.homepage_nav .active {
+header a:hover,
+footer a:hover {
   color: var(--dark-pink);
 }
-.homepage_nav a:hover {
+
+header {
+  overflow: hidden;
+}
+header .active {
   color: var(--dark-pink);
 }
-.homepage_nav .logo:hover {
+header .logo:hover {
   color: var(--vivid-pink);
 }
-.homepage_nav .user_btn {
+header .user_btn {
   position: relative;
   top: 4px;
 }
-.homepage_nav .user_btn .user_name {
+header .user_btn .user_name {
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
   color: var(--dark-pink) !important;
 }
-.homepage_nav button,
-.homepage_nav .user_icon,
-.homepage_nav .user_icon_connected {
+header button,
+header .user_icon,
+header .user_icon_connected {
   background: none;
   border: none;
   padding: 0;
 }
-.homepage_nav button:hover, .homepage_nav button:focus,
-.homepage_nav .user_icon:hover,
-.homepage_nav .user_icon:focus,
-.homepage_nav .user_icon_connected:hover,
-.homepage_nav .user_icon_connected:focus {
+header button:hover, header button:focus,
+header .user_icon:hover,
+header .user_icon:focus,
+header .user_icon_connected:hover,
+header .user_icon_connected:focus {
   color: var(--dark-pink);
 }
-.homepage_nav .user_icon {
+header .user_icon {
   background: none;
   background-image: url("../media/user_icon.svg");
   border: none;
   padding: 0;
 }
-.homepage_nav .user_icon:hover, .homepage_nav .user_icon:focus {
+header .user_icon:hover, header .user_icon:focus {
   background-image: url("../media/user_icon_pink.svg");
 }
-.homepage_nav .user_icon img {
+header .user_icon img {
   opacity: 0;
 }
-.homepage_nav .user_icon_connected {
+header .user_icon_connected {
   background: none;
   background-image: url("../media/user_icon_pink_connected.svg");
   border: none;
   padding: 0;
 }
-.homepage_nav .user_icon_connected img {
+header .user_icon_connected img {
   opacity: 0;
 }
-.homepage_nav .user_icon_connected:hover, .homepage_nav .user_icon_connected:focus {
+header .user_icon_connected:hover, header .user_icon_connected:focus {
   background-image: url("../media/user_icon_pink_connected_hover.svg");
 }
-.homepage_nav .dropdown-menu {
+header .dropdown-menu {
   background-color: var(--bg-color);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0px 0px 10px 10px;
 }
-.homepage_nav .dropdown-menu .dropdown-item {
+header .dropdown-menu .dropdown-item {
   color: var(--white);
 }
-.homepage_nav .dropdown-menu .dropdown-item:hover {
+header .dropdown-menu .dropdown-item:hover {
   background-color: var(--bg-color);
   color: var(--dark-pink);
 }
-.homepage_nav .dropdown-menu hr {
+header .dropdown-menu hr {
   background-color: var(--white) !important;
   height: 2px;
   opacity: 0.5;
 }
-.homepage_nav .dropdown-right {
+header .dropdown-right {
   border-radius: 10px 0px 10px 10px !important;
 }
 
+footer .wrapper {
+  margin-top: 112px;
+  margin-bottom: 242px;
+  max-width: 100%;
+  overflow: hidden;
+}
+footer .marquee {
+  animation: marquee 20s linear infinite;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@keyframes marquee {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+footer .marquee span {
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+}
+footer .marquee span .dark_pink {
+  color: var(--dark-pink);
+  font-weight: 500;
+}
+footer .marquee span .dark_blue {
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+footer .social_media_icons {
+  margin-bottom: 150px;
+}
+footer .social_media_icons img {
+  max-height: 35px;
+}
+
+@media only screen and (min-width: 1700px) {
+  nav {
+    padding-inline: 5vw;
+  }
+  nav .nav_center-logo {
+    padding-inline: 2vw;
+  }
+}
 @media only screen and (min-width: 1400px) {
   .nav_burger,
   .nav_lg {
     display: none;
   }
 }
-@media only screen and (max-width: 1399px) {
+@media only screen and (max-width: 1400px) {
   .nav_burger,
   .nav_xxl {
     display: none;
@@ -95,7 +147,12 @@
     margin-left: 1rem;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) {
+  .social_media_icons {
+    margin-bottom: 250px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
   .nav_lg,
   .user_btn {
     display: none;
@@ -132,5 +189,8 @@
     font-weight: 100;
     position: relative;
     top: 0.75em;
+  }
+  footer .social_media_icons {
+    margin-bottom: 150px;
   }
 }/*# sourceMappingURL=public.css.map */
