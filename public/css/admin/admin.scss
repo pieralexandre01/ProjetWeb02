@@ -12,7 +12,7 @@
 
     .return_icon {
         background: none;
-        background-image: url("../media/return.svg");
+        background-image: url("../../media/return.svg");
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -20,19 +20,35 @@
     a:hover {
         color: var(--dark-blue) !important;
         .return_icon {
-            background-image: url("../media/return_hover.svg");
+            background-image: url("../../media/return_hover.svg");
         }
 
         .logout_icon {
-            background-image: url("../media/logout_hover.svg")
+            background-image: url("../../media/logout_hover.svg")
         }
     }
 
     .logout_icon {
         background: none;
-        background-image: url("../media/logout.svg");
+        background-image: url("../../media/logout.svg");
         background-repeat: no-repeat;
 
+    }
+}
+
+main {
+    .form-container {
+        border: 3px solild var(--dark-blue);
+        box-shadow: 0px 0px 10px var(--vivid-blue);
+
+        form {
+            input[type=text],
+            input[type=password],
+            input[type=submit] {
+                border-color: var(--dark-blue);
+                box-shadow: 0px 0px 6px var(--vivid-blue);
+            }
+        }
     }
 }
 

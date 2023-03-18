@@ -22,16 +22,16 @@
                 </span>
             </li>
 
-            @auth
-                <li class="li_space">
+            <li class="li_space">
+                @auth
                     <a href="{{ route('logout') }}" class="d-flex flex-nowrap justify-content-end align-items-center">
                         <div class="admin_link pe-3">logout</div>
                         <div class="logout_icon">
                             <img src="{{ asset('media/logout.svg') }}" alt="Logout icon">
                         </div>
                     </a>
-                </li>
-            @endauth
+                @endauth
+            </li>
 
         </ul>
     </nav>

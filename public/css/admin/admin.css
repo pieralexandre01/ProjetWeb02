@@ -7,7 +7,7 @@
 }
 .admin_nav .return_icon {
   background: none;
-  background-image: url("../media/return.svg");
+  background-image: url("../../media/return.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -15,13 +15,24 @@
   color: var(--dark-blue) !important;
 }
 .admin_nav a:hover .return_icon {
-  background-image: url("../media/return_hover.svg");
+  background-image: url("../../media/return_hover.svg");
 }
 .admin_nav a:hover .logout_icon {
-  background-image: url("../media/logout_hover.svg");
+  background-image: url("../../media/logout_hover.svg");
 }
 .admin_nav .logout_icon {
   background: none;
-  background-image: url("../media/logout.svg");
+  background-image: url("../../media/logout.svg");
   background-repeat: no-repeat;
+}
+
+main .form-container {
+  border: 3px solild var(--dark-blue);
+  box-shadow: 0px 0px 10px var(--vivid-blue);
+}
+main .form-container form input[type=text],
+main .form-container form input[type=password],
+main .form-container form input[type=submit] {
+  border-color: var(--dark-blue);
+  box-shadow: 0px 0px 6px var(--vivid-blue);
 }/*# sourceMappingURL=admin.css.map */

@@ -153,3 +153,23 @@ footer {
     width: 100%;
     text-align: center;
 }
+
+
+// FORMS
+.form-container {
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 3rem;
+
+    form {
+        input[type=text],
+        input[type=password],
+        input[type=submit] {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            border-width: 1px;
+            color: white;
+            height: 40px;
+        }
+    }
+}
