@@ -40,19 +40,19 @@ header .user_icon_connected:focus {
 }
 header .user_icon {
   background: none;
-  background-image: url("../media/user_icon.svg");
+  background-image: url("../../media/user_icon.svg");
   border: none;
   padding: 0;
 }
 header .user_icon:hover, header .user_icon:focus {
-  background-image: url("../media/user_icon_pink.svg");
+  background-image: url("../../media/user_icon_pink.svg");
 }
 header .user_icon img {
   opacity: 0;
 }
 header .user_icon_connected {
   background: none;
-  background-image: url("../media/user_icon_pink_connected.svg");
+  background-image: url("../../media/user_icon_pink_connected.svg");
   border: none;
   padding: 0;
 }
@@ -60,7 +60,7 @@ header .user_icon_connected img {
   opacity: 0;
 }
 header .user_icon_connected:hover, header .user_icon_connected:focus {
-  background-image: url("../media/user_icon_pink_connected_hover.svg");
+  background-image: url("../../media/user_icon_pink_connected_hover.svg");
 }
 header .dropdown-menu {
   background-color: var(--bg-color);
@@ -86,6 +86,16 @@ header .dropdown-right {
 main {
   padding-top: 112px;
   padding-bottom: 100vh;
+}
+main .form-container {
+  border: 3px solild var(--dark-turquoise);
+  box-shadow: 0px 0px 10px var(--vivid-turquoise);
+}
+main .form-container form input[type=text],
+main .form-container form input[type=password],
+main .form-container form input[type=submit] {
+  border-color: var(--dark-turquoise);
+  box-shadow: 0px 0px 6px var(--vivid-turquoise);
 }
 
 footer {

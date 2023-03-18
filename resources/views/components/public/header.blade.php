@@ -68,7 +68,7 @@
 
                 @guest
                     <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('media/user_icon.svg') }}" alt="User icon">
+                        <img src="{{ asset('/../media/user_icon.svg') }}" alt="User icon">
                     </button>
 
                     <ul class="dropdown-menu dropdown-right text-end">

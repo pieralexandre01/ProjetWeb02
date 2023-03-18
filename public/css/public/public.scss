@@ -52,13 +52,13 @@ header {
 
     .user_icon {
         background: none;
-        background-image: url("../media/user_icon.svg");
+        background-image: url("../../media/user_icon.svg");
         border: none;
         padding: 0;
 
         &:hover,
         &:focus {
-                background-image: url("../media/user_icon_pink.svg");
+                background-image: url("../../media/user_icon_pink.svg");
         }
 
         img {
@@ -68,7 +68,7 @@ header {
 
     .user_icon_connected {
         background: none;
-        background-image: url("../media/user_icon_pink_connected.svg");
+        background-image: url("../../media/user_icon_pink_connected.svg");
         border: none;
         padding: 0;
 
@@ -78,7 +78,7 @@ header {
 
         &:hover,
         &:focus {
-            background-image: url("../media/user_icon_pink_connected_hover.svg");
+            background-image: url("../../media/user_icon_pink_connected_hover.svg");
         }
     }
 
@@ -114,6 +114,20 @@ header {
 main {
     padding-top: 112px;
     padding-bottom: 100vh;
+
+    .form-container {
+        border: 3px solild var(--dark-turquoise);
+        box-shadow: 0px 0px 10px var(--vivid-turquoise);
+
+        form {
+            input[type=text],
+            input[type=password],
+            input[type=submit] {
+                border-color: var(--dark-turquoise);
+                box-shadow: 0px 0px 6px var(--vivid-turquoise);
+            }
+        }
+    }
 }
 
 

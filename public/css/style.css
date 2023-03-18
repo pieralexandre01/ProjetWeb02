@@ -146,4 +146,19 @@ footer {
   bottom: 0px;
   width: 100%;
   text-align: center;
+}
+
+.form-container {
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 3rem;
+}
+.form-container form input[type=text],
+.form-container form input[type=password],
+.form-container form input[type=submit] {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border-width: 1px;
+  color: white;
+  height: 40px;
 }/*# sourceMappingURL=style.css.map */
