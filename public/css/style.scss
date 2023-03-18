@@ -13,7 +13,6 @@
 body,
 html {
     background-color: var(--bg-color);
-    // background-color: var(--grey);
     color: var(--white);
     min-height: 100vh;
     position: relative;
@@ -72,11 +71,16 @@ a,
     }
 }
 
-button {
+button,
+input[type=submit] {
     font-family: "ethnocentric", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 1.5rem;
+}
+
+input[type=submit] {
+    letter-spacing: 0.1rem;
 }
 
 label {
