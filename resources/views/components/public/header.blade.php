@@ -1,5 +1,5 @@
 <header>
-    <nav class="homepage_nav">
+    <nav class="fixed-top">
         <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
 
             <li class="nav_lg ms-2 dropdown-center">

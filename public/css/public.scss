@@ -1,11 +1,17 @@
 @import "style.css";
 
-.homepage_nav {
-    .active {
-        color: var(--dark-pink);
-    }
+// HEADER ----------
+header,
+footer {
 
     a:hover {
+        color: var(--dark-pink);
+    }
+}
+
+header {
+    overflow:hidden;
+    .active {
         color: var(--dark-pink);
     }
 
@@ -97,17 +103,83 @@
     }
 }
 
-    @media only screen and (min-width: 1400px) {
-        .nav_burger,
-        .nav_lg {
-            display: none;
+
+// FOOTER ----------
+footer {
+
+    .wrapper {
+        margin-top: 112px;
+        margin-bottom: 242px;
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .marquee {
+        animation: marquee 20s linear infinite;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+
+        @keyframes marquee {
+            0% {
+                transform: translate3d(-50%, 0, 0);
+            }
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        span {
+            // display: inline-block;
+            letter-spacing: 0.2rem;
+            font-weight: 300;
+
+            .dark_pink {
+                color: var(--dark-pink);
+                font-weight: 500;
+            }
+
+            .dark_blue {
+                color: var(--dark-blue);
+                font-weight: 500;
+            }
         }
     }
 
-    @media only screen and (max-width: 1399px) {
-        .nav_burger,
-        .nav_xxl {
-            display: none;
+    .social_media_icons {
+            margin-bottom: 150px;
+
+        img {
+            max-height: 35px;
+        }
+    }
+}
+
+
+// MEDIA QUERIES ----------
+
+@media only screen and (min-width: 1700px) {
+    nav {
+        padding-inline: 5vw;
+
+        .nav_center-logo{
+            padding-inline: 2vw;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .nav_burger,
+    .nav_lg {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .nav_burger,
+    .nav_xxl {
+        display: none;
     }
 
     .nav_center-logo {
@@ -117,35 +189,44 @@
     .nav_lg {
         margin-left: 1rem;
     }
+}
+
+// Magie noire: POUR JULIEN :D    <-------------------------------
+// @media only screen and (max-width: 991px) {
+//  nav {
+
+//     ul {
+//         gap: clamp(0.5rem, 2vw, 1rem) !important;
+//         li,
+//         li.ms-2 {
+//             margin: 0 !important;
+//             display: inline-block;
+//         }
+
+//         .nav_center-logo {
+//             margin-inline: clamp(1rem, 2rem, 4rem) !important;
+//         }
+//     }
+
+// }
+
+// }
+
+@media only screen and (min-width: 768px) {
+    .social_media_icons {
+        margin-bottom: 250px !important;
     }
+}
 
-    @media only screen and (max-width: 991px) {
-    //  nav {
-
-    //     ul {
-    //         gap: clamp(0.5rem, 2vw, 1rem) !important;
-    //         li,
-    //         li.ms-2 {
-    //             margin: 0 !important;
-    //             display: inline-block;
-    //         }
-
-    //         .nav_center-logo {
-    //             margin-inline: clamp(1rem, 2rem, 4rem) !important;
-    //         }
-    //     }
-
-    // }
-    }
-
-    @media only screen and (max-width: 767px) {
-        .nav_lg,
-        .user_btn {
-            display: none;
+@media only screen and (max-width: 768px) {
+    .nav_lg,
+    .user_btn {
+        display: none;
     }
 
     nav {
         padding-inline: 0;
+
         ul:first-child {
             display: flex;
             justify-content:flex-start !important;
@@ -153,6 +234,7 @@
 
         .nav_center-logo {
             margin-left: 0;
+
             a {
                 padding: 0 !important;
 
@@ -182,10 +264,11 @@
             }
         }
     }
+
+    footer {
+        .social_media_icons {
+
+            margin-bottom: 150px;
+        }
+    }
 }
-
-
-
-
-
-
