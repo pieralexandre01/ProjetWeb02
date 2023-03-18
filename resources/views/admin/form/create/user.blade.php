@@ -3,7 +3,7 @@
 
     <x-admin.header />
 
-    <main></main>
+        <main></main>
 
     <x-admin.footer />
 
