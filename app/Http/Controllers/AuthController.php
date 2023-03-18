@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Rules\UniqueEmailNotSoftDeleted;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rule as ValidationRule;
 
@@ -119,17 +121,58 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Traite les données d'une création de compte
+     *
+     * @param Request $request Données reçues
+     */
+    public function storeAccount(Request $request) {
+        // Valider
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => ['required', 'email', new UniqueEmailNotSoftDeleted],
+            'password' => 'required',
+            'password_confirm' => 'required|same:password'
+        ], [
+            'first_name.required' => 'Your first name is required',
+            'last_name.required' => 'Your last name is required',
+            'email.required' => 'Your e-mail is required',
+            'email.email' => 'Your e-mail must be valid',
+            'password.required' => 'The password is required',
+            'password_confirm.required' => 'The password confirmation is required',
+            'password_confirm.same' => 'The password confirmation does not match the password entered'
+        ]);
 
-    // Création de compte du User
-    //
-    // Si le User provient de la page création de compte Public, attribuer le type = public
-    // S'il y a un timestamp dans la colonne deleted_at, aviser l'utilisateur qu'il est bloqué
-    // Rediriger vers le Dashboard Public
-    //
-    // Si le User provient de la page de création de compte Admin, attribuer le type = Admin
-    // S'il y a un timestamp dans la colonne deleted_at, aviser l'utilisateur qu'il est bloqué
-    // Rediriger vers le dashboard Admin
+        // Création d'un nouvel utilisateur
+        $user = new User();
 
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        // Encryption du mot de passe
+        $user->password = Hash::make($request->password);
+
+        // Gère le type de user qui est en train de se créer un compte
+        if($request->privilege_type == 'admin') {
+            $user->privilege_id = 1;
+
+            $user->save();
+
+            return redirect()
+                ->route('admin')
+                ->with('account-created', 'The account has been created succesfuly');
+
+        } elseif ($request->privilege_type == 'public') {
+            $user->privilege_id = 2;
+
+            $user->save();
+            auth()->login($user);
+
+            return redirect()
+                ->route('homepage');
+        }
+    }
 
     // Déconnexion de l'utilisateur
     public function logout() {
@@ -138,23 +181,4 @@ class AuthController extends Controller
         return redirect()
             ->route('homepage');
     }
-
-
-    // Fonctions utiles
-    //
-    // Pour valider s'il y a un timestamp dans la colonne deleted_at :
-    // $request->validate([
-    //     'deleted_at' => [
-    //         'nullable',
-    //         Rule::exists('table_name', 'deleted_at')->whereNotNull('deleted_at')
-    //     ]
-    // ]);
-    //
-    //
-    // Pour vérifier d'où l'utilisateur vient :
-    // public function login(Request $request)
-    // {
-    //     $previousUrl = $request->header('referer');
-    //     // Utilisez $previousUrl pour rediriger l'utilisateur après la connexion.
-    // }
 }
