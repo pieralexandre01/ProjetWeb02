@@ -1,0 +1,27 @@
+.admin_nav .li_space {
+  flex-basis: 20%;
+}
+.admin_nav .return_icon img,
+.admin_nav .logout_icon img {
+  opacity: 0 !important;
+}
+.admin_nav .return_icon {
+  background: none;
+  background-image: url("../media/return.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.admin_nav a:hover {
+  color: var(--dark-blue) !important;
+}
+.admin_nav a:hover .return_icon {
+  background-image: url("../media/return_hover.svg");
+}
+.admin_nav a:hover .logout_icon {
+  background-image: url("../media/logout_hover.svg");
+}
+.admin_nav .logout_icon {
+  background: none;
+  background-image: url("../media/logout.svg");
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=admin.css.map */
