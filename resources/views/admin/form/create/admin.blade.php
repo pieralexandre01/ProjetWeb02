@@ -11,7 +11,6 @@
         <input type="submit">
     </form>
 
-<<<<<<< HEAD
     @error('email')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -19,12 +18,3 @@
     @enderror
 
 </x-admin.layout>
-=======
-    <x-admin.header />
-
-    <main></main>
-
-    <x-admin.footer />
-
-</x-layout>
->>>>>>> JacDev
