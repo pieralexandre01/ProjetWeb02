@@ -129,6 +129,12 @@ footer .social_media_icons img {
   max-height: 35px;
 }
 
+@media only screen and (min-width: 2738px) {
+  nav .user_btn .dropdown-right {
+    border-radius: 0px 10px 10px 10px !important;
+    text-align: start !important;
+  }
+}
 @media only screen and (min-width: 1700px) {
   nav {
     padding-inline: 5vw;
