@@ -113,7 +113,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     ->name('user-edit');
 
     // envoie du formulaire de modif d'un user
-    Route::post('/admin/user/update{id}', [AdminController::class, 'updateUser'])
+    Route::post('/admin/user/update/{id}', [AdminController::class, 'updateUser'])
         ->name('user-update');
 
     // bloquer - admin et public
