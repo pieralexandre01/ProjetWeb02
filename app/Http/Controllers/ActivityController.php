@@ -26,14 +26,65 @@ class ActivityController extends Controller
     // Ne pas oublier qu'il y a une image à traiter
 
 
-    // PAT - MODIFICATION -----------------------------------------------------------------------------
-    // Afficher le formulaire de modification d'une activité
+    /**
+     * Affiche le formulaire de modification d'une activité
+     *
+     * @param int $id
+     * @return void
+     */
+    public function edit($id) {
+        return view('admin.form.modify.activity', [
+            "activity" => Activity::findOrFail($id),
+        ]);
+    }
 
-    // PAT - MODIFICATION -----------------------------------------------------------------------------
-    // Modification d'une activité
-    // Ne pas oublier qu'il y a une image à traiter
-    // S'il n'y a pas d'image qui est submited, conserver l'ancienne
-    // Si non, écraser la valeur de l'ancienne par la nouvelle
+
+    /**
+     * Modifie une activité
+     *
+     * @param Request $request
+     * @param int $id
+     * @return void
+     */
+    public function update(Request $request, $id) {
+        // Valider les champs
+        $request->validate([
+            "title" => "required|max:25",
+            "description" => "required",
+            "activity_id" => "required|numeric",
+        ], [
+            "title.required" => "Title is required",
+            "title.max" => "Title must be 25 characters or less",
+            "description.required" => "Description is required",
+            "activity_id.required" => "Activity is required",
+            "activity_id.numeric" => "Activity id is required",
+        ]);
+
+        $activity = Activity::findOrFail($id);
+
+        // Gestion de l'image
+        if ($request->hasFile('image')) {
+            // Téléverser la nouvelle image
+            $path = $request->file('image')->store('public/images');
+            $image = basename($path);
+        } else {
+            // Utiliser l'ancienne valeur de l'image
+            $image = $activity->image;
+        }
+
+        // Modifier
+        $activity->title = $request->title;
+        $activity->description = $request->description;
+        $activity->image = $image;
+
+        // Enregistrement
+        $activity->save();
+
+        return redirect()
+            ->route('admin-dashboard')
+            ->with('activity-edit', 'The activity has been successfully modified');
+    }
+
 
     // JACKIE - SUPPRIMER -----------------------------------------------------------------------------
     // Supprimer une activité
