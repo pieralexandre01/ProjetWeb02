@@ -127,7 +127,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     // Articles ---------edit-----------------------------------------------------
     // création
     // à renommer ************************************************************************************************************************************
-    Route::get('/a', [ArticleController::class, 'create'])
+    Route::get('/admin/articles/create', [ArticleController::class, 'create'])
         ->name('article-create');
 
     Route::post('/articles/store', [ArticleController::class, 'store'])
