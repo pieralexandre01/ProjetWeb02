@@ -14,6 +14,8 @@ body,
 html {
   background-color: var(--bg-color);
   color: var(--white);
+  min-height: 100vh;
+  position: relative;
   width: calc(100vw - (100vw - 100%));
 }
 body ul,
@@ -135,11 +137,8 @@ nav .festival {
 }
 
 footer {
-  text-align: center;
-}
-footer #copyright {
   position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

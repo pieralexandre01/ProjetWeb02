@@ -26,10 +26,15 @@
             <li class="me-md-4 me-lg-3 mb-4 mb-md-0"><a href="{{ route('articles') }}">articles</a></li>
             <li><a href="{{ route('contact') }}">contact</a></li>
         </ul>
+        <div class="d-none copyright">
+            <img src="{{ asset('media/copyright.svg') }}" alt="Copyright Trio">
+            <span>trio</span>
+        </div>
     </section>
 
     <div id="copyright">
         <img src="{{ asset('media/copyright.svg') }}" alt="Copyright Trio">
         <span>trio</span>
     </div>
+
 </footer>
