@@ -74,11 +74,16 @@ a:hover,
   font-weight: 500 !important;
 }
 
-button {
+button,
+input[type=submit] {
   font-family: "ethnocentric", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 1.5rem;
+}
+
+input[type=submit] {
+  letter-spacing: 0.1rem;
 }
 
 label {

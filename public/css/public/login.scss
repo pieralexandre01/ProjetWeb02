@@ -1,0 +1,25 @@
+main {
+
+    .form-container {
+        border: 3px solild var(--dark-turquoise);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px var(--vivid-turquoise);
+        box-sizing: border-box;
+        padding: 3rem;
+
+        form {
+            input[type=text],
+            input[type=password],
+            input[type=submit] {
+                background-color: var(--bg-color);
+                border-color: var(--dark-turquoise);
+                border-radius: 10px;
+                border-width: 1px;
+                box-shadow: 0px 0px 6px var(--vivid-turquoise);
+
+                color: white;
+                height: 40px;
+            }
+        }
+    }
+}
