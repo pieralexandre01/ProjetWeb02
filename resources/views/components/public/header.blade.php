@@ -1,8 +1,9 @@
 <header>
-    <nav class="fixed-top">
+    <nav class="fixed-top d-flex flex-row justify-content-between">
+
         <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
 
-            <li class="nav_lg ms-2 dropdown-center">
+            <li class="nav_lg nav_lg_side ms-2 dropdown-center align-self-center">
                 <button class="link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     experience
                 </button>
@@ -14,28 +15,30 @@
                 </ul>
             </li>
 
-{{-- aria-current="page" and class="active" need to be dynamic --}}
+            <li class="nav_xxl"><a href="{{ route('homepage') }}" class="active" aria-current="page">homepage</a></li>
+            <li class="nav_xxl"><a href="{{ route('activities') }}">activities</a></li>
+            <li class="nav_xxl"><a href="{{ route('packages') }}">packages</a></li>
+        </ul>
 
-            <li class="me-3"><a href="{{ route('homepage') }}" class="active nav_xxl" aria-current="page">homepage</a></li>
-            <li class="me-3"><a href="{{ route('activities') }}" class="nav_xxl">activities</a></li>
-            <li class="me-1"><a href="{{ route('packages') }}" class="nav_xxl">packages</a></li>
 
-            <li class="nav_center-logo">
-                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
-                    <div class="title d-flex flex-column">
-                        MIRROR WORLD
-                        <div class="festival">festival</div>
-                    </div>
+        <div class="nav_center-logo">
+            <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
+                <div class="title d-flex flex-column">
+                    MIRROR WORLD
+                    <div class="festival">festival</div>
+                </div>
 
-                    <div class="title_reflection">MIRROR WORLD</div>
-                </a>
-            </li>
-            <li class="me-3"><a href="{{ route('about') }}" class="nav_xxl">about</a></li>
-            <li class="me-3"><a href="{{ route('articles') }}" class="nav_xxl">articles</a></li>
-            <li class="me-3"><a href="{{ route('contact') }}" class="nav_xxl">contact</a></li>
+                <div class="title_reflection">MIRROR WORLD</div>
+            </a>
+        </div>
 
-            <li class="nav_lg me-3 dropdown-center">
-                <button class="link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="d-md-flex flex-nowrap justify-content-end justify-content-xxl-between align-items-center p-0 m-0">
+            <li class="nav_xxl"><a href="{{ route('about') }}">about</a></li>
+            <li class="nav_xxl"><a href="{{ route('articles') }}">articles</a></li>
+            <li class="nav_xxl"><a href="{{ route('contact') }}">contact</a></li>
+
+            <li class="nav_lg dropdown-center">
+                <button class="link dropdown-toggle me-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     discover
                 </button>
 
@@ -53,6 +56,7 @@
                 <button class="user_icon_connected" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('media/user_icon_pink_connected.svg') }}" alt="User icon">
                 </button>
+
                 <ul class="dropdown-menu dropdown-right text-end">
                     <li class="link user_name dropdown-item">{{ Auth::user()->first_name }}</li>
                     <hr class="m-0">
@@ -66,16 +70,16 @@
                     <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{ asset('media/user_icon.svg') }}" alt="User icon">
                     </button>
+
                     <ul class="dropdown-menu dropdown-right text-end">
                         <li><a class="dropdown-item" href="{{ route('login') }}">login</a></li>
                         <hr class="m-0">
                         <li><a class="dropdown-item" href="{{ route('account-create') }}">create account</a></li>
                     </ul>
                 @endguest
-
-
             </li>
 
         </ul>
+
     </nav>
 </header>
