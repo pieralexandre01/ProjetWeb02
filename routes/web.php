@@ -76,7 +76,7 @@ Route::get('/logout',[AuthController::class, 'logout'])
     ->name('logout');
 
 // Supprimer une réservation (public et admin)
-Route::post('/reservations/delete{id}', [ReservationController::class, 'destroy'])
+Route::post('/reservations/delete/{id}', [ReservationController::class, 'destroy'])
     ->name('reservation-delete')
     ->middleware('auth');
 
@@ -105,11 +105,11 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
 
     // modif
     // affichage formulaire modif user admin
-    Route::get('/admin/edit{id}', [AdminController::class, 'editAdmin'])
+    Route::get('/admin/edit/{id}', [AdminController::class, 'editAdmin'])
     ->name('admin-edit');
 
     // affichage formulaire modif user public
-    Route::get('/user/edit{id}', [AdminController::class, 'editUser'])
+    Route::get('/user/edit/{id}', [AdminController::class, 'editUser'])
     ->name('user-edit');
 
     // envoie du formulaire de modif d'un user
@@ -117,30 +117,31 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('user-update');
 
     // bloquer - admin et public
-    Route::post('/user/block{id}', [AdminController::class, 'block'])
+    Route::post('/user/block/{id}', [AdminController::class, 'block'])
         ->name('user-block');
 
     // débloquer - admin et public
-    Route::post('/user/unblock{id}', [AdminController::class, 'unblock'])
+    Route::post('/user/unblock/{id}', [AdminController::class, 'unblock'])
         ->name('user-unblock');
 
-    // Articles --------------------------------------------------------------
+    // Articles ---------edit-----------------------------------------------------
     // création
-    Route::get('/articles/create', [ArticleController::class, 'create'])
+    // à renommer ************************************************************************************************************************************
+    Route::get('/a', [ArticleController::class, 'create'])
         ->name('article-create');
 
-    Route::post('/articles/create', [ArticleController::class, 'store'])
+    Route::post('/articles/store', [ArticleController::class, 'store'])
         ->name('article-store');
 
     // modif
-    Route::get('/articles/edit{id}', [ArticleController::class, 'edit'])
+    Route::get('/articles/edit/{id}', [ArticleController::class, 'edit'])
         ->name('article-edit');
 
-    Route::post('/articles/edit{id}', [ArticleController::class, 'update'])
+    Route::post('/articles/edit/{id}', [ArticleController::class, 'update'])
         ->name('article-update');
 
     // supprimer
-    Route::post('/articles/delete{id}', [AdminController::class, 'destroy'])
+    Route::post('/articles/delete/{id}', [AdminController::class, 'destroy'])
         ->name('article-delete');
 
 
@@ -153,14 +154,14 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('activity-store');
 
     // modif
-    Route::get('/activities/edit{id}', [ActivityController::class, 'edit'])
+    Route::get('/activities/edit/{id}', [ActivityController::class, 'edit'])
         ->name('activity-edit');
 
-    Route::post('/activities/edit{id}', [ActivityController::class, 'update'])
+    Route::post('/activities/edit/{id}', [ActivityController::class, 'update'])
         ->name('activity-update');
 
     // supprimer
-    Route::post('/activities/delete{id}', [ActivityController::class, 'destroy'])
+    Route::post('/activities/delete/{id}', [ActivityController::class, 'destroy'])
         ->name('activity-delete');
 
 });
