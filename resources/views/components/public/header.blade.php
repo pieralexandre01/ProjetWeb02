@@ -1,9 +1,9 @@
 <header>
     <nav class="fixed-top d-flex flex-row justify-content-between">
 
-        <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
+        <ul class="d-md-flex flex-nowrap justify-content-start justify-content-xxl-between align-items-center p-0 m-0">
 
-            <li class="nav_lg nav_lg_side ms-2 dropdown-center align-self-center">
+            <li class="d-none d-md-block d-xxl-none  ms-2 dropdown-center align-self-center">
                 <button class="link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     experience
                 </button>
@@ -15,9 +15,9 @@
                 </ul>
             </li>
 
-            <li class="nav_xxl"><a href="{{ route('homepage') }}" class="active" aria-current="page">homepage</a></li>
-            <li class="nav_xxl"><a href="{{ route('activities') }}">activities</a></li>
-            <li class="nav_xxl"><a href="{{ route('packages') }}">packages</a></li>
+            <li class="d-none d-xxl-block"><a href="{{ route('homepage') }}" class="active" aria-current="page">homepage</a></li>
+            <li class="d-none d-xxl-block"><a href="{{ route('activities') }}">activities</a></li>
+            <li class="d-none d-xxl-block"><a href="{{ route('packages') }}">packages</a></li>
         </ul>
 
 
@@ -33,11 +33,11 @@
         </div>
 
         <ul class="d-md-flex flex-nowrap justify-content-end justify-content-xxl-between align-items-center p-0 m-0">
-            <li class="nav_xxl"><a href="{{ route('about') }}">about</a></li>
-            <li class="nav_xxl"><a href="{{ route('articles') }}">articles</a></li>
-            <li class="nav_xxl"><a href="{{ route('contact') }}">contact</a></li>
+            <li class="d-none d-xxl-block"><a href="{{ route('about') }}">about</a></li>
+            <li class="d-none d-xxl-block"><a href="{{ route('articles') }}">articles</a></li>
+            <li class="d-none d-xxl-block"><a href="{{ route('contact') }}">contact</a></li>
 
-            <li class="nav_lg dropdown-center">
+            <li class="d-none d-md-block d-xxl-none dropdown-center">
                 <button class="link dropdown-toggle me-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     discover
                 </button>
@@ -51,7 +51,7 @@
                 </ul>
             </li>
 
-            <li class="user_btn align-self-start">
+            <li class="user_btn d-none d-md-block align-self-start">
                 @auth
                 <button class="user_icon_connected" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('media/user_icon_pink_connected.svg') }}" alt="User icon">
