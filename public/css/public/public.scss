@@ -10,7 +10,16 @@ footer {
     }
 }
 
-header {
+nav {
+    padding-inline: 1rem;
+    padding-top: 1rem;
+    height: 70px;
+
+    ul,
+    div {
+        flex-basis: 25%;
+    }
+
     .active {
         color: var(--dark-pink);
     }
@@ -19,9 +28,34 @@ header {
         color: var(--vivid-pink);
     }
 
-    nav > ul,
-    nav > div {
-        flex-basis: 25%;
+    .nav_center-logo {
+        .logo {
+            padding-inline: 0;
+
+            .title,
+            .title_reflection {
+                font-size: clamp(1.25rem, 3vw, 3rem);
+                letter-spacing: clamp(0.15rem, 0.25rem,0.375rem);
+            }
+
+            .title {
+                line-height: 55%;
+                position: relative;
+                    top: 10px;
+            }
+
+            .title_reflection {
+                transform: scale(1, -1);
+                line-height: 75% !important;
+            }
+
+            .festival {
+                font-size: clamp(1rem, 1.6vw, 1.5rem);
+                font-weight: 100;
+                position: relative;
+                    top: clamp(0.25em, 0.75em, 1em);
+            }
+        }
     }
 
     .user_btn {
@@ -112,8 +146,8 @@ header {
 // MAIN ----------
 
 main {
-    padding-top: 112px;
     padding-bottom: 100vh;
+    padding-top: 70px;
 
     .form-container {
         border: 3px solild var(--dark-turquoise);
@@ -137,12 +171,12 @@ footer {
     height: 100vh;
 
     .wrapper {
-        margin-top: 112px;
+        margin-top: 70px;
         max-width: 100%;
         overflow: hidden;
-      }
+    }
 
-      .marquee {
+    .marquee {
         animation: marquee 20s linear infinite;
         display: inline-block;
         overflow: hidden;
@@ -150,16 +184,16 @@ footer {
 
         @keyframes marquee {
             0% {
-                transform: translate3d(-50%, 0, 0);
+                transform: translateX(-50%);
             }
             100% {
-                transform: translate3d(0, 0, 0);
+                transform: translateX(0);
             }
         }
 
         span {
-            letter-spacing: 0.2rem;
             font-weight: 300;
+            letter-spacing: 0.2rem;
 
             .dark_pink {
                 color: var(--dark-pink);
@@ -174,12 +208,15 @@ footer {
     }
 
     .social_media_icons {
-
-        margin-block: 20vh;
+        margin-block: 15vh;
 
         img {
             max-height: 35px;
         }
+    }
+
+    #footer_nav {
+        padding-bottom: 9vh;
     }
 }
 
@@ -187,12 +224,10 @@ footer {
 // MEDIA QUERIES ----------
 
 @media only screen and (min-width: 2738px) {
-    nav {
-        .user_btn {
-            .dropdown-right {
-                border-radius: 0px 10px 10px 10px !important;
-                text-align: start !important;
-            }
+    .user_btn {
+        .dropdown-right {
+            border-radius: 0px 10px 10px 10px !important;
+            text-align: start !important;
         }
     }
 }
@@ -207,31 +242,21 @@ footer {
     }
 }
 
-@media only screen and (min-width: 1400px) {
-    .nav_burger,
-    .nav_lg {
-        display: none;
-    }
-
-    .nav_lg_side {
-        display: none;
+@media only screen and (min-width: 991px) {
+    .nav_center-logo {
+        .title_reflection {
+            line-height: 40%;
+        }
     }
 }
 
-@media only screen and (max-width: 1399px) {
-    .nav_burger,
-    .nav_xxl {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) {
     nav {
         height: 100px;
 
         .user_btn {
             position: relative;
-                top: 4px;
+                top: 8px;
         }
     }
 
@@ -243,129 +268,21 @@ footer {
         .wrapper {
             margin-top: 100px;
         }
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    .nav_center-logo {
-
-        .title_reflection {
-
-            line-height: 75%;
-        }
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .nav_lg_side {
-        flex-basis: 20%;
-    }
-
-    #footer_nav {
-        margin-bottom: 25vh;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .nav_lg,
-    .user_btn {
-        display: none;
-    }
-
-    nav {
-        padding-inline: 1rem;
-        padding-top: 1rem;
-        height: 70px;
-
-        ul:first-child {
-            display: flex;
-            justify-content:flex-start !important;
-        }
-
-        .nav_center-logo {
-            position: absolute;
-                top: 35px;
-            transform: translateY(-50%);
-
-            .logo {
-                padding-inline: 0;
-
-                .title,
-                .title_reflection {
-                    font-size: clamp(1.25rem, 3vw, 3rem);
-                    letter-spacing: clamp(0.15rem, 0.25rem,0.375rem);
-                }
-
-                .title {
-                    line-height: 55%;
-                    position: relative;
-                        top: 10px;
-                }
-
-                .title_reflection {
-                    transform: scale(1, -1);
-                    line-height: 75%;
-                }
-
-                .festival {
-                    font-size: clamp(1rem, 1.6vw, 1.5rem);
-                    font-weight: 100;
-                    position: relative;
-                        top: clamp(0.25em, 0.75em, 1em);
-                }
-            }
-        }
-    }
-
-    main {
-        padding-top: 70px;
-    }
-
-    footer {
-        .wrapper {
-            margin-top: 70px;
-        }
 
         .social_media_icons {
-            margin-block: 15vh;
+            margin-block: 17vh;
+        }
+
+        #footer_nav {
+            margin-bottom: 25vh;
         }
     }
 }
 
-@media only screen and (min-height: 768px) {
-    #footer_nav {
-        padding-bottom: 15vh;
-    }
-
-    #copyright {
+@media only screen and (max-width: 767px) {
+    .nav_center-logo {
         position: absolute;
-            bottom: 25px;
-            left: 50%;
-        transform: translate(-50%,-50%);
+            top: 35px;
+        transform: translateY(-50%);
     }
 }
-
-@media only screen and (max-height: 767px) {
-    #footer_nav {
-        padding-bottom: 5vh;
-    }
-
-    #copyright {
-        display: none;
-    }
-
-    .copyright {
-        display: block !important;
-        padding-top: 1.5rem;
-    }
-}
-
-// Height: 767px (with width: 767px or less than)
-// -  Copyright trio glitch
-//
-// Width: 767px
-// -  Header nav should be no longer be in menu burger format
-// -  Footer nav should be lower in height
-//
-// Width: 1399px
-// -  Header nav should be in the same format as 1398px and less (the change should happen at 1400px)
