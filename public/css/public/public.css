@@ -68,19 +68,19 @@ nav .user_icon_connected:focus {
 }
 nav .user_icon {
   background: none;
-  background-image: url("../../media/user_icon.svg");
+  background-image: url("../../media/icons/user_icon.svg");
   border: none;
   padding: 0;
 }
 nav .user_icon:hover, nav .user_icon:focus {
-  background-image: url("../../media/user_icon_pink.svg");
+  background-image: url("../../media/icons/user_icon_pink.svg");
 }
 nav .user_icon img {
   opacity: 0;
 }
 nav .user_icon_connected {
   background: none;
-  background-image: url("../../media/user_icon_pink_connected.svg");
+  background-image: url("../../media/icons/user_icon_pink_connected.svg");
   border: none;
   padding: 0;
 }
@@ -88,7 +88,7 @@ nav .user_icon_connected img {
   opacity: 0;
 }
 nav .user_icon_connected:hover, nav .user_icon_connected:focus {
-  background-image: url("../../media/user_icon_pink_connected_hover.svg");
+  background-image: url("../../media/icons/user_icon_pink_connected_hover.svg");
 }
 nav .dropdown-menu {
   background-color: var(--bg-color);

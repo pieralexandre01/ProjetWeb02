@@ -3,7 +3,7 @@
 
         <ul class="d-md-flex flex-nowrap justify-content-start justify-content-xxl-between align-items-center p-0 m-0">
 
-            <li class="d-none d-md-block d-xxl-none  ms-2 dropdown-center align-self-center">
+            <li class="d-none d-md-block d-xxl-none ms-2 dropdown-center align-self-center">
                 <button class="link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     experience
                 </button>
@@ -54,7 +54,7 @@
             <li class="user_btn d-none d-md-block align-self-start">
                 @auth
                 <button class="user_icon_connected" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ asset('media/user_icon_pink_connected.svg') }}" alt="User icon">
+                    <img src="{{ asset('media/icons/user_icon_pink_connected.svg') }}" alt="User icon">
                 </button>
 
                 <ul class="dropdown-menu dropdown-right text-end">
@@ -68,7 +68,7 @@
 
                 @guest
                     <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('/../media/user_icon.svg') }}" alt="User icon">
+                        <img src="{{ asset('/../media/icons/user_icon.svg') }}" alt="User icon">
                     </button>
 
                     <ul class="dropdown-menu dropdown-right text-end">

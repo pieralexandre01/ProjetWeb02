@@ -86,13 +86,13 @@ nav {
 
     .user_icon {
         background: none;
-        background-image: url("../../media/user_icon.svg");
+        background-image: url("../../media/icons/user_icon.svg");
         border: none;
         padding: 0;
 
         &:hover,
         &:focus {
-                background-image: url("../../media/user_icon_pink.svg");
+                background-image: url("../../media/icons/user_icon_pink.svg");
         }
 
         img {
@@ -102,7 +102,7 @@ nav {
 
     .user_icon_connected {
         background: none;
-        background-image: url("../../media/user_icon_pink_connected.svg");
+        background-image: url("../../media/icons/user_icon_pink_connected.svg");
         border: none;
         padding: 0;
 
@@ -112,7 +112,7 @@ nav {
 
         &:hover,
         &:focus {
-            background-image: url("../../media/user_icon_pink_connected_hover.svg");
+            background-image: url("../../media/icons/user_icon_pink_connected_hover.svg");
         }
     }
 

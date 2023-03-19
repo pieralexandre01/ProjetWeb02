@@ -12,9 +12,9 @@
     </div>
 
     <div class="social_media_icons">
-        <span class="icon"><img src="{{ asset('media/instagram.svg') }}" alt="Instagram icon"></span>
-        <span class="icon mx-5"><img src="{{ asset('media/facebook.svg') }}" alt="Facebook icon"></span>
-        <span class="icon"><img src="{{ asset('media/discord.svg') }}" alt="Discord icon"></span>
+        <span class="icon"><img src="{{ asset('media/icons/instagram.svg') }}" alt="Instagram icon"></span>
+        <span class="icon mx-5"><img src="{{ asset('media/icons/facebook.svg') }}" alt="Facebook icon"></span>
+        <span class="icon"><img src="{{ asset('media/icons/discord.svg') }}" alt="Discord icon"></span>
     </div>
 
     <section id="footer_nav" class="container">
@@ -29,7 +29,7 @@
     </section>
 
     <div id="copyright">
-        <img src="{{ asset('media/copyright.svg') }}" alt="Copyright Trio">
+        <img src="{{ asset('media/icons/copyright.svg') }}" alt="Copyright Trio">
         <span>trio</span>
     </div>
 

@@ -12,7 +12,7 @@
 
     .return_icon {
         background: none;
-        background-image: url("../../media/return.svg");
+        background-image: url("../../media/icons/return.svg");
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -20,17 +20,17 @@
     a:hover {
         color: var(--dark-blue) !important;
         .return_icon {
-            background-image: url("../../media/return_hover.svg");
+            background-image: url("../../media/icons/return_hover.svg");
         }
 
         .logout_icon {
-            background-image: url("../../media/logout_hover.svg")
+            background-image: url("../../media/icons/logout_hover.svg")
         }
     }
 
     .logout_icon {
         background: none;
-        background-image: url("../../media/logout.svg");
+        background-image: url("../../media/icons/logout.svg");
         background-repeat: no-repeat;
 
     }
