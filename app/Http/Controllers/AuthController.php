@@ -160,8 +160,8 @@ class AuthController extends Controller
             $user->save();
 
             return redirect()
-                ->route('admin')
-                ->with('account-created', 'The account has been created succesfuly');
+                ->route('admin-dashboard')
+                ->with('account-created', 'The account has been created succesfully');
 
         } elseif ($request->privilege_type == 'public') {
             $user->privilege_id = 2;

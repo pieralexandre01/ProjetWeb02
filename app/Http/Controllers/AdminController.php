@@ -6,9 +6,10 @@ use App\Models\Activity;
 use App\Models\Article;
 use App\Models\Reservation;
 use App\Models\User;
+use App\Rules\UniqueEmailNotSoftDeleted;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AdminController extends Controller
 {
@@ -27,10 +28,6 @@ class AdminController extends Controller
         ]);
     }
 
-    // Afficher la page modification de compte Public
-    //
-    // Aller récupérer les anciennes informations sauf password
-    // Mettre un input type Hidden de type = public
     /**
      * Affiche le formulaire de modification de compte Public
      *
@@ -38,16 +35,12 @@ class AdminController extends Controller
      *
      * @param int $id Id de la nouvelle à modifier
      */
-    public function editUser($id){
+    public function editUser($id) {
         return view('admin.form.modify.user', [
             "user" => User::findOrFail($id),
         ]);
     }
 
-
-    // Afficher la page modification de compte Admin
-    //
-    // Aller récupérer les anciennes informations sauf password
     /**
      * Affiche le formulaire de modification de compte Public
      *
@@ -55,87 +48,83 @@ class AdminController extends Controller
      *
      * @param int $id Id de la nouvelle à modifier
      */
-    public function editAdmin($id){
+    public function editAdmin($id) {
         return view('admin.form.modify.admin', [
             "user" => User::findOrFail($id),
         ]);
     }
 
-
-    // Modification de compte
-    //
-    // Vérifier si les inputs password et confirm password sont vides
-    // Si oui, récupérer l'ancien password pour remettre cette valeur dans la BDD
-    // Si non, faire les vérifications habituelles
     /**
-     * Affiche le dashboard de l'administrateur
-     *
-     */
-    /**
-     * Traite la modification d'une nouvelle
+     * Traite la modification d'un user
      *
      * @param Request $request Données pour la modification
      * @param int $id Id de la nouvelle à modifier
      */
-    public function updateUser(Request $request, $id){
+    public function updateUser(Request $request, $id) {
         // Valider
         $request->validate([
-            "titre" => "required|max:255",
-            "texte" => "required",
-            // La règle 'nullable' est ajouté pour que Laravel sache que les autres règles n'auront peut-être pas à être appliquées si l'image n'a pas été reçue
-            "image" => "mimes:png,jpg,jpeg,webp|nullable",
-            "auteur_id" => "required|numeric",
-            "categorie_id" => "required|numeric"
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => ['required', 'email', new UniqueEmailNotSoftDeleted],
+            'password' => 'required',
+            'password_confirm' => 'required|same:password'
         ], [
-            "titre.required" => "Le titre est requis",
-            "titre.max" => "Le titre doit avoir 255 caractères ou moins",
-            "texte.required" => "Le texte est requis",
-            "auteur_id.required" => "L'auteur est requis",
-            "auteur_id.numeric" => "L'id de l'auteur doit être soumis",
-            "categorie_id.required" => "La catégorie est requise",
-            "categorie_id.numeric" => "L'id de la catégorie doit être soumise"
+            'first_name.required' => 'Your first name is required',
+            'last_name.required' => 'Your last name is required',
+            'email.required' => 'Your e-mail is required',
+            'email.email' => 'Your e-mail must be valid',
+            'password.required' => 'The password is required',
+            'password_confirm.required' => 'The password confirmation is required',
+            'password_confirm.same' => 'The password confirmation does not match the password entered'
         ]);
 
-        // Récupération de la nouvelle ciblée
-        $nouvelle = User::findOrFail($id);
+        // Création d'un nouvel utilisateur
+        $user = User::findOrFail($id);
 
-        // Les "anciennes" valeurs sont écrasées par les nouvelles
-        $nouvelle->titre = $request->titre;
-        $nouvelle->texte = $request->texte;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        // Encryption du mot de passe
+        $user->password = Hash::make($request->password);
 
-        // Traitement de l'image: elle pourrait ne pas exister dans la requête actuelle
-        if($request->image){
-            Storage::putFile('public/img', $request->image);
-            $nouvelle->image = '/storage/img/' . $request->image->hashName();
+        // Gère le type de user qui est en train de se créer un compte
+        if($request->privilege_type == 'admin') {
+            $user->privilege_id = 1;
+        } elseif ($request->privilege_type == 'public') {
+            $user->privilege_id = 2;
         }
 
-        $nouvelle->longueur = Str::length($request->texte);
-        $nouvelle->auteur_id = $request->auteur_id;
-        $nouvelle->categorie_id = $request->categorie_id;
+        $user->save();
 
-        // Sauvegarde dans la BDD
-        $nouvelle->save();
-
-        // Redirection avec confirmation
         return redirect()
-                ->route('accueil')
-                ->with('modification-nouvelle', 'La nouvelle a été modifiée!');
+            ->route('admin-dashboard')
+            ->with('account-created', "The user's account has been modified succesfully");
     }
 
     /**
      * Soft delete (bloque) un utilisateur
      *
-     * @param [type] $id
+     * @param int $id
      * @return void
      */
-    public function block($id)
-    {
+    public function block($id) {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('admin')
-            ->with('user-blocked-success', 'User has been blocked successfully');
+        return redirect()->route('admin-dashboard')
+            ->with('user-blocked-success', 'The user has been blocked successfully');
     }
 
-    // Débloquer un compte
-
+    /**
+     * Débloque un utilisateur
+     *
+     * @param int $id
+     * @return void
+     */
+    public function unblock($id) {
+        $user = User::onlyTrashed()->findOrFail($id);
+        $user->restore();
+        return redirect()
+            ->route('admin-dashboard')
+            ->with('user-unblocked-success', 'The user has been unblocked successfully.');
+    }
 }

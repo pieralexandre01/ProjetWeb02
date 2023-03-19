@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -12,7 +14,14 @@ class UserController extends Controller
      *
      */
     public function showDashboard() {
-        return view('user.dashboard');
+        $user = auth()->user();
+
+        $reservations = Reservation::where('user_id', $user->id)->get();
+
+        return view('user.dashboard', [
+            'reservations' => $reservations,
+            'title' => 'Mirror World | Reservations'
+        ]);
     }
 
     // Réserver un forfait *************************
