@@ -20,6 +20,7 @@ class AdminController extends Controller
      */
     public function showDashboardAdmin() {
         return view('admin.dashboard', [
+            "title" => "MW | Admin | Dashboard",
             'user_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get(),
             'articles' => Article::all(),
             'activities' => Activity::all(),
@@ -33,10 +34,11 @@ class AdminController extends Controller
      *
      * Le formulaire a besoin des informations sur le user à modifier
      *
-     * @param int $id Id de la nouvelle à modifier
+     * @param int $id Id du user à modifier
      */
     public function editUser($id) {
         return view('admin.form.modify.user', [
+            "title" => "MW | User | Modify",
             "user" => User::findOrFail($id),
         ]);
     }
@@ -46,10 +48,11 @@ class AdminController extends Controller
      *
      * Le formulaire a besoin des informations sur le user à modifier
      *
-     * @param int $id Id de la nouvelle à modifier
+     * @param int $id Id du user à modifier
      */
     public function editAdmin($id) {
         return view('admin.form.modify.admin', [
+            "title" => "MW | Admin | Modify",
             "user" => User::findOrFail($id),
         ]);
     }
@@ -58,7 +61,7 @@ class AdminController extends Controller
      * Traite la modification d'un user
      *
      * @param Request $request Données pour la modification
-     * @param int $id Id de la nouvelle à modifier
+     * @param int $id Id du user à modifier
      */
     public function updateUser(Request $request, $id) {
         // Valider

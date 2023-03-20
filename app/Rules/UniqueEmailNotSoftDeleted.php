@@ -8,14 +8,14 @@ use Illuminate\Contracts\Validation\Rule;
 class UniqueEmailNotSoftDeleted implements Rule
 {
     /**
-     * Flag to determine if a soft-deleted user is found.
+     * Création d'une variable pour déterminer si un user est soft deleted.
      *
      * @var bool
      */
     protected $softDeletedUserFound;
 
     /**
-     * Create a new rule instance.
+     * Crée une nouvelle règle d'instance.
      *
      * @return void
      */
@@ -25,14 +25,13 @@ class UniqueEmailNotSoftDeleted implements Rule
     }
 
     /**
-     * Determine if the validation rule passes.
+     * Détermine si la validation est true ou false.
      *
      * @param  string  $attribute
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
-    {
+    public function passes($attribute, $value) {
         $softDeletedUser = User::withTrashed()
             ->where('email', $value)
             ->whereNotNull('deleted_at')
@@ -49,12 +48,11 @@ class UniqueEmailNotSoftDeleted implements Rule
     }
 
     /**
-     * Get the validation error message.
+     * Retourne le message d'erreur personnalisé si le passes retourne false.
      *
      * @return string
      */
-    public function message()
-    {
+    public function message() {
         if ($this->softDeletedUserFound) {
             return 'Access denied: This account has been blocked.';
         }

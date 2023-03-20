@@ -71,15 +71,15 @@ class AuthController extends Controller
             // Si le user arrive de la page de connexion admin
             $admin_url = URL::to('/') . '/admin/login';
 
-            if($previous_url === $admin_url){
+            if($previous_url == $admin_url){
 
                 // Vérifier si le user est admin et rediriger au dashboard admin
-                if($user->privilege->type === 'admin') {
+                if($user->privilege->type == 'admin') {
                     return redirect()
                         ->route('admin-dashboard');
 
                 // Vérifier si le user est public et rediriger au formulaire de connexion avec msg d'erreur
-                } elseif($user->privilege->type === 'public') {
+                } elseif($user->privilege->type == 'public') {
                     auth()->logout();
                     return redirect()
                         ->route('admin-login')
