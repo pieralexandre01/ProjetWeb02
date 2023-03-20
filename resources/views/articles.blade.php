@@ -1,6 +1,6 @@
 <x-public.layout>
-    {{-- <x-slot name="title"></x-slot> --}}
-
+    <x-slot name="title">{{ $title }}</x-slot>
+    <x-slot name="css_file">public/articles</x-slot>
     <style>
         :root {
             --color: var(--dark-blue);

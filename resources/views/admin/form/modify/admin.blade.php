@@ -1,5 +1,6 @@
 <x-admin.layout>
-    {{-- <x-slot name="titre"></x-slot> --}}
+    <x-slot name="title">{{ $title }}</x-slot>
+    <x-slot name="css_file">admin/forms</x-slot>
 
     <x-admin.header />
 
