@@ -16,7 +16,8 @@ class PackageController extends Controller
     public function show() {
         return view('packages', [
             "packages" => Package::all(),
-            "title" => "Mirror World | Packages"
+            "title" => "Mirror World | Packages",
+            "page" => "packages",
         ]);
     }
 

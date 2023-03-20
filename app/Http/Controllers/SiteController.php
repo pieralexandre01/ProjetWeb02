@@ -12,7 +12,8 @@ class SiteController extends Controller
      */
     public function index() {
         return view('index', [
-            "title" => "Mirror World | Homepage"
+            "title" => "Mirror World | Homepage",
+            "page" => "homepage",
         ]);
     }
 
@@ -22,7 +23,8 @@ class SiteController extends Controller
      */
     public function showAbout() {
         return view('about', [
-            "title" => "Mirror World | About"
+            "title" => "Mirror World | About",
+            "page" => "about",
         ]);
     }
 
@@ -32,7 +34,8 @@ class SiteController extends Controller
      */
     public function showContact() {
         return view('contact', [
-            "title" => "Mirror World | Contact"
+            "title" => "Mirror World | Contact",
+            "page" => "contact",
         ]);
     }
 }

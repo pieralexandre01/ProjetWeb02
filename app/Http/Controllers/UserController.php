@@ -20,7 +20,8 @@ class UserController extends Controller
 
         return view('user.dashboard', [
             'reservations' => $reservations,
-            'title' => 'Mirror World | Reservations'
+            'title' => 'Mirror World | Reservations',
+            "page" => "dashboard",
         ]);
     }
 
