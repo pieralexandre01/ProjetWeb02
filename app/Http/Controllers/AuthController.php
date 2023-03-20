@@ -68,6 +68,12 @@ class AuthController extends Controller
                     ->with('login-blocked', "Access denied");
             }
 
+            // vérifier la session - redirection au cart
+            if( ! session()->isEmpty) {
+                // boucle?
+                // $package_url = ;
+            }
+
             // Si le user arrive de la page de connexion admin
             $admin_url = URL::to('/') . '/admin/login';
 
