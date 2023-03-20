@@ -189,10 +189,10 @@ footer {
 
         @keyframes marquee {
             0% {
-                transform: translateX(-50%);
+                transform: translateX(calc(-100% + 100vw));
             }
             100% {
-                transform: translateX(0);
+                transform: translateX(-17.5%);
             }
         }
 
@@ -228,9 +228,9 @@ footer {
 
 // MEDIA QUERIES ----------
 
-@media only screen and (min-width: 2738px) {
+@media only screen and (min-width: 2200px) {
     .user_btn {
-        .dropdown-right {
+        .dropdown_right {
             border-radius: 0px 10px 10px 10px !important;
             text-align: start !important;
         }
