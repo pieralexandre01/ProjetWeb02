@@ -14,12 +14,18 @@
                         <li><a class="dropdown-item" href="{{ route('packages') }}">packages</a></li>
                     </ul>
                 </li>
+
+
+
                 <li class="d-none d-xxl-block"><a href="{{ route('homepage') }}" class="@if($) active_link @endif" aria-current="{{ $page }}">homepage</a></li>
+
+
+
                 <li class="d-none d-xxl-block"><a href="{{ route('activities') }}">activities</a></li>
                 <li class="d-none d-xxl-block"><a href="{{ route('packages') }}">packages</a></li>
             </ul>
             <div class="nav_center-logo">
-                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1" :class="{ vivid_pink : homepage == active }">
+                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
                     <div class="title d-flex flex-column">
                         MIRROR WORLD
                         <div class="festival">festival</div>
