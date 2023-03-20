@@ -27,9 +27,12 @@
   background-repeat: no-repeat;
 }
 
+main {
+  height: 100vh !important;
+}
 main .form-container {
-  max-height: 458px;
-  max-width: 525px;
+  height: 458px;
+  width: 525px;
   border: 3px solid var(--dark-blue);
   box-shadow: 0px 0px 10px var(--vivid-blue);
 }
@@ -37,14 +40,14 @@ main .form-container form input[type=text],
 main .form-container form input[type=password],
 main .form-container form input[type=submit],
 main .form-container form textarea {
-  border-color: var(--dark-blue) !important;
-  box-shadow: 0px 0px 5px var(--vivid-blue) !important;
+  border-color: var(--dark-blue);
+  box-shadow: 0px 0px 5px var(--vivid-blue);
 }
 main .form-container form input[type=text]:focus,
 main .form-container form input[type=password]:focus,
 main .form-container form input[type=submit]:focus,
 main .form-container form textarea:focus {
-  box-shadow: 0px 0px 5px 2px var(--vivid-blue) !important;
+  box-shadow: 0px 0px 5px 2px var(--vivid-blue);
   outline: none;
 }
 main .form-container form input[type=text],
