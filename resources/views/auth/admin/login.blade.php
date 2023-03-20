@@ -27,7 +27,7 @@
 
                 </div>
 
-                <img src="{{ asset('/../media/images/login_img.png') }}" class="d-none d-lg-block" alt="Digital imaging of a human body">
+                <img src="{{ asset('/../media/images/login_img.png') }}" class="d-none d-lg-block ps-lg-5 ms-lg-5" alt="Digital imaging of a human body">
 
             </div>
 

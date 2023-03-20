@@ -25,7 +25,7 @@
         <div class="container d-flex flex-nowrap justify-content-center align-items-center">
             <div class="form-container d-inline-block">
 
-                <h3 class="text-center mb-4">LOGIN</h3>
+                <h3 class="text-center mb-5">LOGIN</h3>
 
                 <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start">
                     @csrf
@@ -43,7 +43,7 @@
                 <p class="mt-4">don't have an account? <a href="{{ route('account-create') }}" class="text_link">create one!</a></p>
             </div>
 
-            <img src="{{ asset('/../media/images/login_img.png') }}" class="d-none d-lg-block" alt="Digital imaging of a human body">
+            <img src="{{ asset('/../media/images/login_img.png') }}" class="d-none d-lg-block ps-lg-5 ms-lg-5" alt="Digital imaging of a human body">
         </div>
 
     </main>

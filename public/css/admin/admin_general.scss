@@ -39,9 +39,11 @@
 }
 
 main {
+    height: 100vh !important;
+
     .form-container {
-        max-height: 458px;
-        max-width:525px;
+        height: 458px;
+        width:525px;
         border: 3px solid var(--dark-blue);
         box-shadow: 0px 0px 10px var(--vivid-blue);
 
@@ -50,11 +52,11 @@ main {
             input[type=password],
             input[type=submit],
             textarea {
-                border-color: var(--dark-blue) !important;
-                box-shadow: 0px 0px 5px var(--vivid-blue) !important;
+                border-color: var(--dark-blue);
+                box-shadow: 0px 0px 5px var(--vivid-blue);
 
                 &:focus {
-                    box-shadow: 0px 0px 5px 2px var(--vivid-blue) !important;
+                    box-shadow: 0px 0px 5px 2px var(--vivid-blue);
                     outline: none;
                 }
             }
