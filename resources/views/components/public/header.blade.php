@@ -71,7 +71,7 @@
             </ul>
 
             <div class="menu_container d-block d-md-none" @click="toggleMenu()">
-                <button id="menu_burger" class="d-block d-md-none me-4" type="button" data-bs-toggle="dropdown" aria-expanded="false" :class="{ open_menu : is_open }">
+                <button id="menu_burger" class="d-block d-md-none me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" :class="{ open_menu : is_open }">
                     <div class="menu_bar bar_1"></div>
                     <div class="menu_bar bar_2"></div>
                 </button>
@@ -102,15 +102,6 @@
                     @endguest
                 </ul>
             </div>
-
-                {{-- <div class="menu_container">
-                    <div id="menu_burger" class="d-block d-md-none" @click="toggleMenu()" :class="{ open_menu : is_open }">
-                        <div class="menu_bar bar_1"></div>
-                        <div class="menu_bar bar_2"></div>
-                    </div>
-                </div> --}}
-
-
 
         </nav>
 
