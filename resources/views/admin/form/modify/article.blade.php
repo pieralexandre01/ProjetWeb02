@@ -8,8 +8,9 @@
 
         <form action="{{ route('article-update', $article->id) }}" method="post">
             @csrf
-            {{-- garder le input hidden pour le user id --}}
-            <input name="user_id" type="hidden" value="{{ Auth::user()->id }}">
+            {{-- garder le input hidden pour le user id QUI A ÉCRIT L'ARTICLE ET NON CONNCETÉ --}}
+            <input name="user_id" type="hidden" value="{{ $article->user_id }}">
+
             <input name="title" type="text" value="{{ $article->title }}">
             <textarea name="text" cols="30" rows="10">{{ $article->text }}</textarea>
             <select name="category">

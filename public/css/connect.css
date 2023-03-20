@@ -40,17 +40,10 @@ footer #copyright {
   padding-bottom: 15px;
 }
 
-@media only screen and (min-width: 1700px) {
-  nav {
-    padding-inline: 5vw;
-  }
-  nav .nav_center-logo {
-    padding-inline: 2vw;
-  }
-}
-@media only screen and (min-width: 991px) {
-  .nav_center-logo .title_reflection {
-    line-height: 40%;
+@media only screen and (min-width: 1400px) {
+  input[type=text],
+  input[type=password] {
+    width: max(18.75rem, 100%);
   }
 }
 @media only screen and (min-width: 768px) {

@@ -97,7 +97,8 @@ class ArticleController extends Controller
     public function edit($id) {
         return view('admin.form.modify.article', [
             "article" => Article::findOrFail($id),
-            "categories" => Category::all()
+            "categories" => Category::all(),
+            "title" => "MW | Modify | Article"
         ]);
     }
 
