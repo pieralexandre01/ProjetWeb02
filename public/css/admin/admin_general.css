@@ -1,3 +1,4 @@
+@import "../styles.css";
 .admin_nav .li_space {
   flex-basis: 20%;
 }
@@ -62,4 +63,4 @@ main .form-container form input[type=submit]:hover, main .form-container form in
 
 footer #copyright {
   padding-bottom: 15px;
-}/*# sourceMappingURL=admin.css.map */
+}/*# sourceMappingURL=admin_general.css.map */

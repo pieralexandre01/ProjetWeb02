@@ -1,4 +1,4 @@
-@import "style.css";
+@import "../styles.css";
 nav {
   padding-inline: 1rem;
   padding-top: 1rem;
@@ -226,4 +226,4 @@ footer #footer_nav {
     top: 35px;
     transform: translateY(-50%);
   }
-}/*# sourceMappingURL=public.css.map */
+}/*# sourceMappingURL=public_general.css.map */
