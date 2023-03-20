@@ -5,6 +5,6 @@
 
     <main></main>
 
-    <x-admin.footer />
+    <x-footer />
 
 </x-admin.layout>
