@@ -15,7 +15,8 @@ class ArticleController extends Controller
      */
     public function show() {
         return view('articles', [
-            'articles' => Article::all(),
+            // 'articles' => Article::all(),
+            "categorie" => Category::with('articles')->get(),
             "title" => "Mirror World | Articles"
         ]);
     }
