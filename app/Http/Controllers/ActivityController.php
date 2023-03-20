@@ -35,6 +35,7 @@ class ActivityController extends Controller
     public function edit($id) {
         return view('admin.form.modify.activity', [
             "activity" => Activity::findOrFail($id),
+            "page" => "activities",
         ]);
     }
 
