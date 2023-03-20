@@ -36,6 +36,7 @@ class ActivityController extends Controller
     public function edit($id) {
         return view('admin.form.modify.activity', [
             "activity" => Activity::findOrFail($id),
+            "title" => "MW | Modify | Article",
         ]);
     }
 
@@ -52,13 +53,10 @@ class ActivityController extends Controller
         $request->validate([
             "title" => "required|max:25",
             "description" => "required",
-            "activity_id" => "required|numeric",
         ], [
             "title.required" => "Title is required",
             "title.max" => "Title must be 25 characters or less",
             "description.required" => "Description is required",
-            "activity_id.required" => "Activity is required",
-            "activity_id.numeric" => "Activity id is required",
         ]);
 
         $activity = Activity::findOrFail($id);
