@@ -75,6 +75,11 @@ Route::get('/dashboard', [UserController::class, 'showDashboard'])
 Route::post('/packages/addtocart/{id}', [PackageController::class, 'addToCart'])
     ->name('package-addtocart');
 
+// Afficher le panier
+Route::get('/cart', [UserController::class, 'showCart'])
+    ->name('cart')
+    ->middleware('auth');
+
 // Réserver
 Route::get('/reservations/create/{id}', [Reservation::class, 'create'])
     ->name('reservation-create')

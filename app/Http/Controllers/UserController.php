@@ -19,12 +19,43 @@ class UserController extends Controller
         $reservations = Reservation::where('user_id', $user->id)->get();
 
         return view('user.dashboard', [
-            'reservations' => $reservations,
             'title' => 'Mirror World | Reservations',
             "page" => "dashboard",
+            'reservations' => $reservations,
         ]);
     }
 
+    /**
+     * Affiche le cart de l'utilisateur public
+     *
+     */
+    public function showCart() {
+
+        $packages = session()->get('packages');
+        $cart = [];
+
+        foreach($packages as $package) {
+
+            $package_infos = Package::where(['id' => $package["package_id"]])->first();
+
+            $cart[] = [
+                "id" => $package_infos->id,
+                "title" => $package_infos->title,
+                "description" => $package_infos->description,
+                "price" => $package_infos->price,
+                "start_date" => $package_infos->start_date,
+                "end_date" => $package_infos->end_date,
+                "quantity" => $package["package_quantity"],
+            ];
+
+        }
+
+        return view('user.cart', [
+            'title' => 'Mirror World | Cart',
+            "page" => "cart",
+            'packages' => $cart,
+        ]);
+    }
     // Réserver un forfait *************************
     // Poser question à Julien : Comment entrer une valeur dans la table pivot dans Laravel ?
 }

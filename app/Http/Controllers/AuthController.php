@@ -70,9 +70,9 @@ class AuthController extends Controller
             }
 
             // vérifier la session - redirection au cart
-            if( ! session()->isEmpty) {
-                // boucle?
-                // $package_url = ;
+            if(session()->get('packages') !== null) {
+                return redirect()
+                    ->route('cart');
             }
 
             // Si le user arrive de la page de connexion admin
