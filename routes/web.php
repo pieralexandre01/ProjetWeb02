@@ -10,6 +10,8 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AuthenticateAdmin;
 use App\Http\Middleware\RedirectUserIfAuthenticated;
+use App\Models\Package;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,13 +63,25 @@ Route::middleware([RedirectUserIfAuthenticated::class])->group(function () {
     });
 
 // Enregistrement d'un user
-// ******************************************************************************************************************************************** todo!
 Route::post('/account/create',[AuthController::class, 'storeAccount'])
     ->name('account-create');
 
 // ------------------------------------------------------------------------------------ Dashboard public
 Route::get('/dashboard', [UserController::class, 'showDashboard'])
     ->name('dashboard')
+    ->middleware('auth');
+
+// Ajout au panier
+Route::post('/packages/addtocart/{id}', [PackageController::class, 'addToCart'])
+    ->name('package-addtocart');
+
+// Réserver
+Route::get('/reservations/create/{id}', [Reservation::class, 'create'])
+    ->name('reservation-create')
+    ->middleware('auth');
+
+Route::post('/reservations/create/{id}', [Reservation::class, 'store'])
+    ->name('reservation-store')
     ->middleware('auth');
 
 // ------------------------------------------------------------------------------------ Public et admin
@@ -95,9 +109,6 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'showDashboardAdmin'])
         ->name('admin-dashboard');
 
-
-    // ******************************************************************************************************************************************** todo!
-
     // Users -----------------------------------------------------------------
     // affichge formulaire création admin
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
@@ -124,9 +135,8 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::post('/admin/user/unblock/{id}', [AdminController::class, 'unblock'])
         ->name('user-unblock');
 
-    // Articles ---------edit-----------------------------------------------------
+    // Articles -----------------------------------------------------------------
     // création
-    // à renommer ************************************************************************************************************************************
     Route::get('/admin/articles/create', [ArticleController::class, 'create'])
         ->name('article-create');
 
