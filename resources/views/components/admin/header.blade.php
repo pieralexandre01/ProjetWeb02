@@ -5,7 +5,7 @@
             <li class="li_space me-3">
                 <a href="{{ route('homepage') }}" class="d-flex flex-nowrap align-items-center" aria-current="page">
                     <div class="return_icon">
-                        <img src="{{ asset('media/return.svg') }}"  alt="Return-arrow icon">
+                        <img src="{{ asset('media/icons/return.svg') }}"  alt="Return-arrow icon">
                     </div>
                     <div class="admin_link ps-3">public homepage</div>
                 </a>
@@ -27,7 +27,7 @@
                     <a href="{{ route('logout') }}" class="d-flex flex-nowrap justify-content-end align-items-center">
                         <div class="admin_link pe-3">logout</div>
                         <div class="logout_icon">
-                            <img src="{{ asset('media/logout.svg') }}" alt="Logout icon">
+                            <img src="{{ asset('media/icons/logout.svg') }}" alt="Logout icon">
                         </div>
                     </a>
                 @endauth

@@ -1,11 +1,35 @@
 <x-public.layout>
     {{-- <x-slot name="titre"></x-slot> --}}
 
+    <style>
+        a:hover,
+        button:focus,
+        .link:hover,
+        .dropdown-item:hover {
+            color: var(--dark-turquoise) !important;
+        }
+
+        .logo:hover {
+            color: var(--vivid-turquoise) !important;
+        }
+
+        .user_icon:hover,
+        .user_icon:focus {
+            background-image: url("../../media/icons/user_icon_turquoise.svg");
+        }
+
+        .menu_bar:hover,
+        .menu_bar:focus,
+        .menu_bar:active {
+            background-color: var(--dark-turquoise) !important;
+        }
+    </style>
+
     <x-public.header />
 
-    <main>
+    <main class="d-flex align-items-center">
 
-        <div class="container mt-5">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center">
             <div class="form-container d-inline-block">
 
                 <h3 class="text-center mb-4">LOGIN</h3>
@@ -23,12 +47,14 @@
                     <input type="submit" class="align-self-center">
                 </form>
 
-                <p class="mt-4">don't have an account? <a href="{{ route('account-create') }}" class="text-decoration-underline">create one</a></p>
+                <p class="mt-4">don't have an account? <a href="{{ route('account-create') }}" class="text_link">create one!</a></p>
             </div>
+
+            <img src="{{ asset('/../media/images/login_img.png') }}" class="d-none d-lg-block" alt="Digital imaging of a human body">
         </div>
 
     </main>
 
-    <x-public.footer />
+    <x-footer />
 
 </x-public.layout>

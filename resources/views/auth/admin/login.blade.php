@@ -23,8 +23,8 @@
                     <input type="submit" class="align-self-center">
                 </form>
 
-                <p class="mt-4">don't have an account? <a href="{{ route('account-create') }}" class="text-decoration-underline">create one</a></p>
             </div
+        </div>
 
     </main>
 

@@ -1,9 +1,4 @@
 @import "style.css";
-header a:hover,
-footer a:hover {
-  color: var(--dark-pink);
-}
-
 nav {
   padding-inline: 1rem;
   padding-top: 1rem;
@@ -12,12 +7,6 @@ nav {
 nav ul,
 nav div {
   flex-basis: 25%;
-}
-nav .active {
-  color: var(--dark-pink);
-}
-nav .logo:hover {
-  color: var(--vivid-pink);
 }
 nav .nav_center-logo .logo {
   padding-inline: 0;
@@ -50,7 +39,6 @@ nav .user_btn .user_name {
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
-  color: var(--dark-pink) !important;
 }
 nav button,
 nav .user_icon,
@@ -59,36 +47,22 @@ nav .user_icon_connected {
   border: none;
   padding: 0;
 }
-nav button:hover, nav button:focus,
-nav .user_icon:hover,
-nav .user_icon:focus,
-nav .user_icon_connected:hover,
-nav .user_icon_connected:focus {
-  color: var(--dark-pink);
-}
 nav .user_icon {
   background: none;
   background-image: url("../../media/icons/user_icon.svg");
   border: none;
   padding: 0;
 }
-nav .user_icon:hover, nav .user_icon:focus {
-  background-image: url("../../media/icons/user_icon_pink.svg");
-}
 nav .user_icon img {
   opacity: 0;
 }
 nav .user_icon_connected {
   background: none;
-  background-image: url("../../media/icons/user_icon_pink_connected.svg");
   border: none;
   padding: 0;
 }
 nav .user_icon_connected img {
   opacity: 0;
-}
-nav .user_icon_connected:hover, nav .user_icon_connected:focus {
-  background-image: url("../../media/icons/user_icon_pink_connected_hover.svg");
 }
 nav .dropdown-menu {
   background-color: var(--bg-color);
@@ -97,33 +71,63 @@ nav .dropdown-menu {
 }
 nav .dropdown-menu .dropdown-item {
   color: var(--white);
+  font-weight: 400 !important;
 }
 nav .dropdown-menu .dropdown-item:hover {
   background-color: var(--bg-color);
-  color: var(--dark-pink);
+  border-radius: 0px 0px 10px 10px;
+  font-weight: 400 !important;
 }
 nav .dropdown-menu hr {
   background-color: var(--white) !important;
   height: 2px;
   opacity: 0.5;
 }
-nav .dropdown-right {
+nav .dropdown_right {
   border-radius: 10px 0px 10px 10px !important;
 }
-
-main {
-  padding-bottom: 100vh;
-  padding-top: 70px;
+nav .dropdown_right .right_item:hover {
+  border-radius: 10px 0px 10px 10px !important;
 }
-main .form-container {
-  border: 3px solild var(--dark-turquoise);
-  box-shadow: 0px 0px 10px var(--vivid-turquoise);
+nav .menu_container {
+  cursor: pointer;
+  padding-top: 16px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 40px;
 }
-main .form-container form input[type=text],
-main .form-container form input[type=password],
-main .form-container form input[type=submit] {
-  border-color: var(--dark-turquoise);
-  box-shadow: 0px 0px 6px var(--vivid-turquoise);
+nav .menu_container #menu_burger {
+  width: 100%;
+}
+nav .menu_container .menu_bar {
+  background-color: var(--white);
+  height: 4px;
+}
+nav .menu_container .bar_1 {
+  animation-delay: 0.1s;
+  margin-bottom: 4px;
+  top: 0px;
+  transition: all 0.3s;
+}
+nav .menu_container .bar_2 {
+  animation-delay: 0.1s;
+  top: 8px;
+  transition: all 0.3s;
+}
+nav .menu_container .open_menu .bar_1 {
+  margin-bottom: -4px;
+  left: 0%;
+  top: 50%;
+  transform: rotate(45deg);
+}
+nav .menu_container .open_menu .bar_2 {
+  left: 0%;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+nav .menu_container .dropdown_right {
+  margin-top: 10px !important;
 }
 
 footer {
@@ -196,6 +200,12 @@ footer #footer_nav {
   nav .user_btn {
     position: relative;
     top: 8px;
+  }
+  nav .menu_container {
+    position: absolute;
+    top: -101px;
+    width: 0px;
+    height: 0px;
   }
   main {
     padding-top: 100px;

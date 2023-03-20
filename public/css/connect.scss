@@ -1,0 +1,68 @@
+main {
+    height: 100vh;
+    padding-top: 70px;
+
+    .form-container {
+        form {
+            input[type=text],
+            input[type=password],
+            input[type=submit] {
+                border-color: var(--dark-turquoise);
+                box-shadow: 0px 0px 5px var(--vivid-turquoise);
+
+                &:focus {
+                    box-shadow: 0px 0px 5px 2px var(--vivid-turquoise);
+                    outline: none;
+                }
+            }
+
+            input[type=text],
+            input[type=password] {
+                padding-block: 0.5em;
+                padding-inline: 1em;
+            }
+
+            input[type=submit] {
+                padding-block: 0.25em;
+                padding-inline: 1.5em;
+
+                &:hover,
+                &:focus {
+                    background-color: var(--dark-turquoise);
+                    box-shadow: 0px 0px 5px var(--vivid-turquoise);
+                }
+            }
+        }
+
+        .text_link {
+            color: var(--vivid-turquoise);
+
+            &:hover {
+                color: var(--vivid-turquoise) !important;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+footer {
+    height: 45px;
+
+    #copyright {
+        padding-bottom: 15px !important;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .form-container {
+        border: 3px solid var(--dark-turquoise);
+        box-shadow: inset 0px 0px 5px var(--vivid-turquoise), 0px 0px 5px var(--vivid-turquoise);
+
+        form {
+            input[type=text],
+            input[type=password] {
+                padding-inline: 1.5em;
+            }
+        }
+    }
+}

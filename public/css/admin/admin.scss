@@ -38,17 +38,47 @@
 
 main {
     .form-container {
-        border: 3px solild var(--dark-blue);
+        max-height: 458px;
+        max-width:525px;
+        border: 3px solid var(--dark-blue);
         box-shadow: 0px 0px 10px var(--vivid-blue);
 
         form {
             input[type=text],
             input[type=password],
+            input[type=submit],
+            textarea {
+                border-color: var(--dark-blue) !important;
+                box-shadow: 0px 0px 5px var(--vivid-blue) !important;
+
+                &:focus {
+                    box-shadow: 0px 0px 5px 2px var(--vivid-blue) !important;
+                    outline: none;
+                }
+            }
+
+            input[type=text],
+            input[type=password] {
+                padding-block: 0.5em;
+                padding-inline: 1em;
+            }
+
             input[type=submit] {
-                border-color: var(--dark-blue);
-                box-shadow: 0px 0px 6px var(--vivid-blue);
+                padding-block: 0.25em;
+                padding-inline: 1.5em;
+
+                &:hover,
+                &:focus {
+                    background-color: var(--dark-blue) !important;
+                    box-shadow: 0px 0px 5px var(--vivid-blue !important);
+                }
             }
         }
     }
 }
 
+footer {
+    #copyright {
+        padding-bottom: 15px;
+    }
+}

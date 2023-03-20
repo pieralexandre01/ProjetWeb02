@@ -24,6 +24,18 @@ html ul {
   padding: 0;
   margin: 0;
 }
+body .active_pink,
+html .active_pink {
+  color: var(--dark-pink);
+}
+body .active_turquoise,
+html .active_turquoise {
+  color: var(--dark-turquoise);
+}
+body .active_blue,
+html .active_blue {
+  color: var(--dark-blue);
+}
 body ::-moz-selection,
 html ::-moz-selection {
   color: var(--bg-color);
@@ -61,15 +73,17 @@ h3,
 }
 
 a,
+li,
 .link {
   color: var(--white);
   font-family: "termina", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 500 !important;
   letter-spacing: 0.03rem;
   text-decoration: none;
 }
 a:hover,
+li:hover,
 .link:hover {
   font-weight: 500 !important;
 }
@@ -94,7 +108,9 @@ label {
 }
 
 p,
-span {
+span,
+input[type=text],
+textarea {
   font-family: "termina", sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -149,16 +165,17 @@ footer {
 }
 
 .form-container {
+  background-color: none;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 3rem;
 }
 .form-container form input[type=text],
 .form-container form input[type=password],
-.form-container form input[type=submit] {
+.form-container form input[type=submit],
+.form-container form textarea {
   background-color: var(--bg-color);
   border-radius: 10px;
   border-width: 1px;
   color: white;
-  height: 40px;
 }/*# sourceMappingURL=style.css.map */

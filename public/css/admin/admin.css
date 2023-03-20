@@ -27,12 +27,39 @@
 }
 
 main .form-container {
-  border: 3px solild var(--dark-blue);
+  max-height: 458px;
+  max-width: 525px;
+  border: 3px solid var(--dark-blue);
   box-shadow: 0px 0px 10px var(--vivid-blue);
 }
 main .form-container form input[type=text],
 main .form-container form input[type=password],
+main .form-container form input[type=submit],
+main .form-container form textarea {
+  border-color: var(--dark-blue) !important;
+  box-shadow: 0px 0px 5px var(--vivid-blue) !important;
+}
+main .form-container form input[type=text]:focus,
+main .form-container form input[type=password]:focus,
+main .form-container form input[type=submit]:focus,
+main .form-container form textarea:focus {
+  box-shadow: 0px 0px 5px 2px var(--vivid-blue) !important;
+  outline: none;
+}
+main .form-container form input[type=text],
+main .form-container form input[type=password] {
+  padding-block: 0.5em;
+  padding-inline: 1em;
+}
 main .form-container form input[type=submit] {
-  border-color: var(--dark-blue);
-  box-shadow: 0px 0px 6px var(--vivid-blue);
+  padding-block: 0.25em;
+  padding-inline: 1.5em;
+}
+main .form-container form input[type=submit]:hover, main .form-container form input[type=submit]:focus {
+  background-color: var(--dark-blue) !important;
+  box-shadow: 0px 0px 5px var(--vivid-blue !important);
+}
+
+footer #copyright {
+  padding-bottom: 15px;
 }/*# sourceMappingURL=admin.css.map */
