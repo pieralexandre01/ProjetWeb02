@@ -14,7 +14,7 @@
                         <li><a class="dropdown-item" href="{{ route('packages') }}">packages</a></li>
                     </ul>
                 </li>
-                <li class="d-none d-xxl-block"><a href="{{ route('homepage') }}" class="active" :class="{ active_pink : homepage == active }" aria-current="{ page : homepage == active }">homepage</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('homepage') }}" class="@if($) active_link @endif" aria-current="{{ $page }}">homepage</a></li>
                 <li class="d-none d-xxl-block"><a href="{{ route('activities') }}">activities</a></li>
                 <li class="d-none d-xxl-block"><a href="{{ route('packages') }}">packages</a></li>
             </ul>
@@ -46,7 +46,7 @@
                 <li class="user_btn d-none d-md-block align-self-start">
                     @auth
                         <button class="user_icon_connected" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{ asset('../media/icons/user_icon_pink_connected.svg') }}" alt="User icon">
+                            <img src="{{ asset('media/icons/user_icon_pink_connected.svg') }}" alt="User icon">
                         </button>
                         <ul class="dropdown-menu dropdown_right text-end p-0">
                             <li class="user_name dropdown-item dropdown_right">{{ Auth::user()->first_name }}</li>
@@ -58,7 +58,7 @@
                     @endauth
                     @guest
                         <button class="user_icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{ asset('../media/icons/user_icon.svg') }}" alt="User icon">
+                            <img src="{{ asset('media/icons/user_icon.svg') }}" alt="User icon">
                         </button>
                         <ul class="dropdown-menu dropdown_right text-end p-0">
                             <li><a class="right_item dropdown-item" href="{{ route('login') }}">login</a></li>
@@ -70,12 +70,13 @@
 
             </ul>
 
-            <div class="menu_container d-block d-md-none" @click="toggleMenu()">
-                <button id="menu_burger" class="d-block d-md-none me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" :class="{ open_menu : is_open }">
+            <div class="menu_container d-block d-md-none dropdown">
+                <button id="menu_burger" class="d-block d-md-none me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" :class="{ open_menu : is_open }" @click="toggleMenu()">
                     <div class="menu_bar bar_1"></div>
                     <div class="menu_bar bar_2"></div>
                 </button>
-                <ul class="dropdown-menu dropdown_right text-end p-0">
+
+                <ul class="dropdown-menu dropdown_right text-end p-0 mt-3">
                     <li><a class="dropdown-item right_item" href="{{ route('homepage') }}">homepage</a></li>
                     <hr class="m-0">
                     <li><a class="dropdown-item" href="{{ route('activities') }}">activities</a></li>

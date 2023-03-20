@@ -30,7 +30,7 @@ nav {
 
             .title_reflection {
                 transform: scale(1, -1);
-                line-height: 75% !important;
+                line-height: 75%;
             }
 
             .festival {
@@ -157,6 +157,7 @@ nav {
         }
     }
 }
+
 // MAIN ----------
 
 main {
@@ -238,14 +239,6 @@ footer {
 
         .nav_center-logo{
             padding-inline: 2vw;
-        }
-    }
-}
-
-@media only screen and (min-width: 991px) {
-    .nav_center-logo {
-        .title_reflection {
-            line-height: 40%;
         }
     }
 }

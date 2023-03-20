@@ -8,6 +8,8 @@
   --vivid-turquoise: #00e6ff;
   --dark-pink: #8e0089;
   --vivid-pink: #f500ed;
+  --active: #8e0089;
+  --active-hover:#f500ed;
 }
 
 body,
@@ -118,6 +120,34 @@ textarea {
   line-height: 1.875rem;
 }
 
+.active_link,
+a:hover,
+button:focus,
+.link:hover,
+.dropdown-item:hover,
+.dropdown_connected {
+  color: var(--active) !important;
+}
+
+.user_name,
+.user_name:hover,
+.dropdown_connected:hover,
+.logo:hover {
+  color: var(--active-hover) !important;
+}
+
+li.user_name,
+li.user_name:hover {
+  cursor: default !important;
+}
+
+#menu_burger:hover .menu_bar,
+#menu_burger:focus .menu_bar,
+#menu_burger:active .menu_bar,
+.open_menu .menu_bar {
+  background-color: var(--active) !important;
+}
+
 nav {
   background: linear-gradient(var(--bg-color) 60%, transparent);
   padding-inline: clamp(20px, 2vw, 8.75rem);
@@ -146,7 +176,7 @@ nav .title {
 nav .title_reflection {
   opacity: 0.1;
   transform: scale(1, -1);
-  line-height: 40%;
+  line-height: 75%;
 }
 nav .festival {
   font-family: "termina", sans-serif;
@@ -178,4 +208,10 @@ footer {
   border-radius: 10px;
   border-width: 1px;
   color: white;
+}
+
+@media only screen and (min-width: 991px) {
+  .nav_center-logo .title_reflection {
+    line-height: 45% !important;
+  }
 }/*# sourceMappingURL=style.css.map */

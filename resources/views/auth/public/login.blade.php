@@ -2,32 +2,19 @@
     {{-- <x-slot name="titre"></x-slot> --}}
 
     <style>
-        a:hover,
-        button:focus,
-        .link:hover,
-        .dropdown-item:hover {
-            color: var(--dark-turquoise) !important;
-        }
-
-        .logo:hover {
-            color: var(--vivid-turquoise) !important;
+        :root {
+            --active: var(--dark-turquoise);
+            --active-hover: var(--vivid-turquoise);
         }
 
         .user_icon:hover,
         .user_icon:focus {
-            background-image: url("../../media/icons/user_icon_turquoise.svg");
-        }
-
-        .menu_bar:hover,
-        .menu_bar:focus,
-        .menu_bar:active {
-            background-color: var(--dark-turquoise) !important;
+            background-image: url("../../media/icons/user_icon_turquoise.svg") !important;
         }
 
         footer {
             height: 45px !important;
         }
-
     </style>
 
     <x-public.header />
