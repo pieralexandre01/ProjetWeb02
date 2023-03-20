@@ -24,7 +24,7 @@
         }
     </style>
 
-    <x-public.header />
+    <x-public.header :page="$page" />
 
     <main>
         <p>Dashboard</p>

@@ -22,7 +22,7 @@
         }
     </style>
 
-    <x-public.header />
+    <x-public.header :page="$page" />
 
     <main>
 

@@ -1,3 +1,5 @@
+@props(["page"])
+
 <header>
 
     <div id="app">
@@ -9,6 +11,7 @@
                         experience
                     </button>
                     <ul class="dropdown-menu drop-center text-center p-0">
+                        {{-- <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li> --}}
                         <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li>
                         <hr class="m-0">
                         <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'activities') active_link @endif" aria-current="{{ $page }}">activities</a></li>
@@ -63,9 +66,9 @@
                             <img src="{{ asset('media/icons/user_icon.svg') }}" alt="User icon">
                         </button>
                         <ul class="dropdown-menu dropdown_right text-end p-0">
-                            <li><a class="right_item dropdown-item" href="{{ route('login') }}">login</a></li>
+                            <li><a class="right_item dropdown-item" href="{{ route('login') }}" class="@if($page == 'login') active_link @endif" aria-current="{{ $page }}">login</a></li>
                             <hr class="m-0">
-                            <li><a class="dropdown-item" href="{{ route('account-create') }}">create account</a></li>
+                            <li><a class="dropdown-item" href="{{ route('account-create') }}" class="@if($page == 'account-create') active_link @endif" aria-current="{{ $page }}">create account</a></li>
                         </ul>
                     @endguest
                 </li>
@@ -99,9 +102,9 @@
                         <li><a class="dropdown_connected dropdown-item" href="{{ route('logout') }}">logout</a></li>
                     @endauth
                     @guest
-                        <li><a class="right_item dropdown-item" href="{{ route('login') }}">login</a></li>
+                        <li><a class="right_item dropdown-item" href="{{ route('login') }}" class="@if($page == 'login') active_link @endif" aria-current="{{ $page }}">login</a></li>
                         <hr class="m-0">
-                        <li><a class="dropdown-item" href="{{ route('account-create') }}">create account</a></li>
+                        <li><a class="dropdown-item" href="{{ route('account-create') }}" class="@if($page == 'account-create') active_link @endif" aria-current="{{ $page }}">create account</a></li>
                     @endguest
                 </ul>
             </div>
