@@ -3,8 +3,8 @@
 
     <style>
         :root {
-            --active: var(--dark-pink);
-            --active-hover: var(--vivid-pink);
+            --color: var(--dark-pink);
+            --color-hover: var(--vivid-pink);
         }
 
         .user_icon:hover,
