@@ -14,7 +14,8 @@ class ActivityController extends Controller
     public function show() {
         return view('activities', [
             "activities" => Activity::all(),
-            "title" => "Mirror World | Activities"
+            "title" => "Mirror World | Activities",
+            "page" => "activities",
         ]);
     }
 
@@ -35,7 +36,6 @@ class ActivityController extends Controller
     public function edit($id) {
         return view('admin.form.modify.activity', [
             "activity" => Activity::findOrFail($id),
-            "page" => "activities",
         ]);
     }
 
