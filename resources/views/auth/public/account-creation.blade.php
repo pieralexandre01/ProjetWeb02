@@ -3,8 +3,8 @@
 
     <style>
         :root {
-            --active: var(--dark-turquoise);
-            --active-hover: var(--vivid-turquoise);
+            --color: var(--dark-turquoise);
+            --color-hover: var(--vivid-turquoise);
         }
 
         .user_icon:hover,

@@ -9,20 +9,16 @@
                         experience
                     </button>
                     <ul class="dropdown-menu drop-center text-center p-0">
-                        <li><a class="dropdown-item" href="{{ route('activities') }}">activities</a></li>
+                        <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li>
                         <hr class="m-0">
-                        <li><a class="dropdown-item" href="{{ route('packages') }}">packages</a></li>
+                        <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'activities') active_link @endif" aria-current="{{ $page }}">activities</a></li>
+                        <hr class="m-0">
+                        <li><a class="dropdown-item" href="{{ route('packages') }}" class="@if($page == 'packages') active_link @endif" aria-current="{{ $page }}">packages</a></li>
                     </ul>
                 </li>
-
-
-
-                <li class="d-none d-xxl-block"><a href="{{ route('homepage') }}" class="@if($) active_link @endif" aria-current="{{ $page }}">homepage</a></li>
-
-
-
-                <li class="d-none d-xxl-block"><a href="{{ route('activities') }}">activities</a></li>
-                <li class="d-none d-xxl-block"><a href="{{ route('packages') }}">packages</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('homepage') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('activities') }}" class="@if($page == 'activities') active_link @endif" aria-current="{{ $page }}">activities</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('packages') }}" class="@if($page == 'packages') active_link @endif" aria-current="{{ $page }}">packages</a></li>
             </ul>
             <div class="nav_center-logo">
                 <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
@@ -34,19 +30,19 @@
                 </a>
             </div>
             <ul class="d-md-flex flex-nowrap justify-content-end justify-content-xxl-between align-items-center p-0 m-0">
-                <li class="d-none d-xxl-block"><a href="{{ route('about') }}">about</a></li>
-                <li class="d-none d-xxl-block"><a href="{{ route('articles') }}">articles</a></li>
-                <li class="d-none d-xxl-block"><a href="{{ route('contact') }}">contact</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('about') }}" class="@if($page == 'about') active_link @endif" aria-current="{{ $page }}">about</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('articles') }}" class="@if($page == 'articles') active_link @endif" aria-current="{{ $page }}">articles</a></li>
+                <li class="d-none d-xxl-block"><a href="{{ route('contact') }}" class="@if($page == 'contact') active_link @endif" aria-current="{{ $page }}">contact</a></li>
                 <li class="d-none d-md-block d-xxl-none dropdown-center">
                     <button class="link dropdown-toggle me-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         discover
                     </button>
                     <ul class="dropdown-menu text-center p-0">
-                        <li><a class="dropdown-item" href="{{ route('about') }}">about</a></li>
+                        <li><a class="dropdown-item" href="{{ route('about') }}" class="@if($page == 'about') active_link @endif" aria-current="{{ $page }}">about</a></li>
                         <hr class="m-0">
-                        <li><a class="dropdown-item" href="{{ route('articles') }}">articles</a></li>
+                        <li><a class="dropdown-item" href="{{ route('articles') }}" class="@if($page == 'articles') active_link @endif" aria-current="{{ $page }}">articles</a></li>
                         <hr class="m-0">
-                        <li><a class="dropdown-item" href="{{ route('contact') }}">contact</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact') }}" class="@if($page == 'contact') active_link @endif" aria-current="{{ $page }}">contact</a></li>
                     </ul>
                 </li>
                 <li class="user_btn d-none d-md-block align-self-start">
@@ -57,7 +53,7 @@
                         <ul class="dropdown-menu dropdown_right text-end p-0">
                             <li class="user_name dropdown-item dropdown_right">{{ Auth::user()->first_name }}</li>
                             <hr class="m-0">
-                            <li><a class="dropdown-item" href="{{ route('dashboard') }}">dashboard</a></li>
+                            <li><a class="dropdown-item" href="{{ route('dashboard') }}" class="@if($page == 'dashboard') active_link @endif" aria-current="{{ $page }}">dashboard</a></li>
                             <hr class="m-0">
                             <li><a class="dropdown-item" href="{{ route('logout') }}">logout</a></li>
                         </ul>
@@ -83,22 +79,22 @@
                 </button>
 
                 <ul class="dropdown-menu dropdown_right text-end p-0 mt-3">
-                    <li><a class="dropdown-item right_item" href="{{ route('homepage') }}">homepage</a></li>
+                    <li><a class="dropdown-item right_item" href="{{ route('homepage') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li>
                     <hr class="m-0">
-                    <li><a class="dropdown-item" href="{{ route('activities') }}">activities</a></li>
+                    <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'activities') active_link @endif" aria-current="{{ $page }}">activities</a></li>
                     <hr class="m-0">
-                    <li><a class="dropdown-item" href="{{ route('packages') }}">packages</a></li>
+                    <li><a class="dropdown-item" href="{{ route('packages') }}" class="@if($page == 'packages') active_link @endif" aria-current="{{ $page }}">packages</a></li>
                     <hr class="m-0">
-                    <li><a class="dropdown-item" href="{{ route('about') }}">about</a></li>
+                    <li><a class="dropdown-item" href="{{ route('about') }}" class="@if($page == 'about') active_link @endif" aria-current="{{ $page }}">about</a></li>
                     <hr class="m-0">
-                    <li><a class="dropdown-item" href="{{ route('articles') }}">articles</a></li>
+                    <li><a class="dropdown-item" href="{{ route('articles') }}" class="@if($page == 'articles') active_link @endif" aria-current="{{ $page }}">articles</a></li>
                     <hr class="m-0">
-                    <li><a class="dropdown-item" href="{{ route('contact') }}">contact</a></li>
+                    <li><a class="dropdown-item" href="{{ route('contact') }}" class="@if($page == 'contact') active_link @endif" aria-current="{{ $page }}">contact</a></li>
                     <hr class="m-0">
                     @auth
                         <li class="user_name dropdown-item dropdown_right">{{ Auth::user()->first_name }}</li>
                         <hr class="m-0">
-                        <li><a class="dropdown_connected dropdown-item" href="{{ route('dashboard') }}">dashboard</a></li>
+                        <li><a class="dropdown_connected dropdown-item" href="{{ route('dashboard') }}" class="@if($page == 'dashboard') active_link @endif" aria-current="{{ $page }}">dashboard</a></li>
                         <hr class="m-0">
                         <li><a class="dropdown_connected dropdown-item" href="{{ route('logout') }}">logout</a></li>
                     @endauth

@@ -19,6 +19,7 @@
 
     a:hover {
         color: var(--dark-blue) !important;
+
         .return_icon {
             background-image: url("../../media/icons/return_hover.svg");
         }
@@ -32,7 +33,6 @@
         background: none;
         background-image: url("../../media/icons/logout.svg");
         background-repeat: no-repeat;
-
     }
 }
 

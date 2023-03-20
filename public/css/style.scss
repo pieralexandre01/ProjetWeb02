@@ -9,8 +9,8 @@
     --dark-pink: #8e0089;
     --vivid-pink: #f500ed;
 
-    --active: #8e0089;
-    --active-hover:#f500ed;
+    --color: #8e0089;
+    --color-hover:#f500ed;
 }
 
 body,
@@ -124,14 +124,14 @@ button:focus,
 .link:hover,
 .dropdown-item:hover,
 .dropdown_connected {
-    color: var(--active) !important;
+    color: var(--color) !important;
 }
 
 .user_name,
 .user_name:hover,
 .dropdown_connected:hover,
 .logo:hover {
-    color: var(--active-hover) !important;
+    color: var(--color-hover) !important;
 }
 
 li.user_name,
@@ -143,7 +143,7 @@ li.user_name:hover {
 #menu_burger:focus .menu_bar,
 #menu_burger:active .menu_bar,
 .open_menu .menu_bar {
-    background-color: var(--active) !important;
+    background-color: var(--color) !important;
 }
 
 // HEADER - NAVIGATION MENU
