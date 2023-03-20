@@ -1,5 +1,5 @@
 <header>
-    <nav class="admin_nav px-5">
+    <nav class="admin_nav fixed-top px-5">
         <ul class="d-md-flex flex-nowrap justify-content-between align-items-center p-0 m-0">
 
             <li class="li_space me-3">

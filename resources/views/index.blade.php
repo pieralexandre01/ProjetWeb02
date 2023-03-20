@@ -12,8 +12,14 @@
 
         .user_name,
         .user_name:hover,
+        .dropdown_connected:hover,
         .logo:hover {
             color: var(--vivid-pink) !important;
+        }
+
+        li.user_name,
+        li.user_name:hover {
+            cursor: default !important;
         }
 
         .user_icon:hover,

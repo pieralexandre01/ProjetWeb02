@@ -1,5 +1,6 @@
 main {
     height: 100vh;
+    padding-bottom: 0px;
     padding-top: 70px;
 
     .form-container {
@@ -46,10 +47,39 @@ main {
 }
 
 footer {
-    height: 45px;
-
     #copyright {
-        padding-bottom: 15px !important;
+        padding-bottom: 15px;
+    }
+}
+
+
+// MEDIA QUERIES ----------
+
+@media only screen and (min-width: 1700px) {
+    nav {
+        padding-inline: 5vw;
+
+        .nav_center-logo{
+            padding-inline: 2vw;
+        }
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .nav_center-logo {
+        .title_reflection {
+            line-height: 40%;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav {
+        height: 100px;
+    }
+
+    main {
+        padding-top: 100px;
     }
 }
 

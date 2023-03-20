@@ -23,6 +23,11 @@
         .menu_bar:active {
             background-color: var(--dark-turquoise) !important;
         }
+
+        footer {
+            height: 45px !important;
+        }
+
     </style>
 
     <x-public.header />

@@ -155,25 +155,20 @@ nav {
             top: 50%;
             transform: rotate(-45deg);
         }
-
-        .dropdown_right {
-            margin-top: 10px !important;
-        }
     }
 }
 // MAIN ----------
 
-// main {
-//     height: 200vh;
-//     padding-bottom: 100vh;
-//     padding-top: 70px;
-// }
+main {
+    height: 200vh;
+    padding-bottom: 100vh;
+}
 
 
 // FOOTER ----------
 
 footer {
-    height: 100vh;
+    height: 100vh !important;
 
     .wrapper {
         margin-top: 70px;
@@ -268,6 +263,10 @@ footer {
             top: -101px;
             width: 0px;
             height: 0px;
+        }
+
+        .dropdown_right {
+            margin-top: 10px !important;
         }
     }
 
