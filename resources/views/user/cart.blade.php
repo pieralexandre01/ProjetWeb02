@@ -28,39 +28,40 @@
     <main>
         <p>Cart</p>
 
-        @foreach ($packages as $package)
-            {{ $package['title'] }}
-            {{ $package['price'] }}
-            {{ $package['quantity'] }}
-            <a href="">delete</a> {{-- Supprimer le forfait de la session --}}
-            <br>
-        @endforeach
+        @isset($packages)
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+            @foreach ($packages as $package)
+                {{ $package['title'] }}
+                {{ $package['price'] }}
+                {{ $package['quantity'] }}
+                <a href="">delete</a> {{-- Supprimer le forfait de la session --}}
+                <br>
+                {{ $total_price }}
+                <div id="paypal-button-container"></div>
+            @endforeach
 
-        {{-- <div id="paypal">
-            <total-price-component v-bind:variable-vue="{{ json_encode($total_price) }}">
-            </total-price-component>
-        </div> --}}
+        @endisset
 
-        {{ $total_price }}
+        @if ($packages == null)
+            <p>Empty cart</p>
+            <p>boutons</p>
+        @endif
 
-        {{-- <a href="{{ route('reservation-store') }}">buy</a> --}}
-        {{-- <div id="paypal-button-container"></div> --}}
+
+
+
 
     </main>
 
     <x-public.footer />
 
-    {{-- <script
+    <script>
+        const packages = {!! json_encode($packages) !!}
+        const price = {{ $total_price }}
+    </script>
+    <script
         src="https://www.paypal.com/sdk/js?client-id=Ab1B6QPVTldsAdp5TMypbJ33_GcAhBwCMN3ky3hZKiv6m9MUZ7D3A0c2XydAQTfKtZRsavmoPEMbugO6&currency=CAD">
     </script>
-    <script src="{{ asset('js/paypal.js') }}" type="module"></script> --}}
+    <script src="{{ asset('js/cart.js') }}" type="module"></script>
 
 </x-public.layout>

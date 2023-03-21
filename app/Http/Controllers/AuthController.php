@@ -187,6 +187,8 @@ class AuthController extends Controller
     public function logout() {
         auth()->logout();
 
+        session()->forget('packages');
+
         return redirect()
             ->route('homepage');
     }
