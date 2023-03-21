@@ -1,4 +1,9 @@
 @import "../styles.css";
+:root {
+  --color: var(--dark-blue);
+  --color-hover: var(--vivid-blue);
+}
+
 .admin_nav .li_space {
   flex-basis: 20%;
 }
@@ -13,7 +18,7 @@
   background-position: center;
 }
 .admin_nav a:hover {
-  color: var(--dark-blue) !important;
+  color: var(--color) !important;
 }
 .admin_nav a:hover .return_icon {
   background-image: url("../../media/icons/return_hover.svg");
@@ -33,21 +38,21 @@ main {
 main .form-container {
   height: 458px;
   width: 525px;
-  border: 3px solid var(--dark-blue);
-  box-shadow: 0px 0px 10px var(--vivid-blue);
+  border: 3px solid var(--color);
+  box-shadow: 0px 0px 10px var(--color-hover);
 }
 main .form-container form input[type=text],
 main .form-container form input[type=password],
 main .form-container form input[type=submit],
 main .form-container form textarea {
-  border-color: var(--dark-blue);
-  box-shadow: 0px 0px 5px var(--vivid-blue);
+  border-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
 }
 main .form-container form input[type=text]:focus,
 main .form-container form input[type=password]:focus,
 main .form-container form input[type=submit]:focus,
 main .form-container form textarea:focus {
-  box-shadow: 0px 0px 5px 2px var(--vivid-blue);
+  box-shadow: 0px 0px 5px 2px var(--color-hover);
   outline: none;
 }
 main .form-container form input[type=text],
@@ -60,8 +65,8 @@ main .form-container form input[type=submit] {
   padding-inline: 1.5em;
 }
 main .form-container form input[type=submit]:hover, main .form-container form input[type=submit]:focus {
-  background-color: var(--dark-blue) !important;
-  box-shadow: 0px 0px 5px var(--vivid-blue !important);
+  background-color: var(--color) !important;
+  box-shadow: 0px 0px 5px var(--color-hover !important);
 }
 
 footer #copyright {

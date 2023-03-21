@@ -1,5 +1,10 @@
 @import "../styles.css";
 
+:root {
+    --color: var(--dark-blue);
+    --color-hover: var(--vivid-blue);
+}
+
 .admin_nav {
     .li_space {
         flex-basis: 20%;
@@ -20,7 +25,7 @@
     }
 
     a:hover {
-        color: var(--dark-blue) !important;
+        color: var(--color) !important;
 
         .return_icon {
             background-image: url("../../media/icons/return_hover.svg");
@@ -44,19 +49,19 @@ main {
     .form-container {
         height: 458px;
         width:525px;
-        border: 3px solid var(--dark-blue);
-        box-shadow: 0px 0px 10px var(--vivid-blue);
+        border: 3px solid var(--color);
+        box-shadow: 0px 0px 10px var(--color-hover);
 
         form {
             input[type=text],
             input[type=password],
             input[type=submit],
             textarea {
-                border-color: var(--dark-blue);
-                box-shadow: 0px 0px 5px var(--vivid-blue);
+                border-color: var(--color);
+                box-shadow: 0px 0px 5px var(--color-hover);
 
                 &:focus {
-                    box-shadow: 0px 0px 5px 2px var(--vivid-blue);
+                    box-shadow: 0px 0px 5px 2px var(--color-hover);
                     outline: none;
                 }
             }
@@ -73,8 +78,8 @@ main {
 
                 &:hover,
                 &:focus {
-                    background-color: var(--dark-blue) !important;
-                    box-shadow: 0px 0px 5px var(--vivid-blue !important);
+                    background-color: var(--color) !important;
+                    box-shadow: 0px 0px 5px var(--color-hover !important);
                 }
             }
         }
