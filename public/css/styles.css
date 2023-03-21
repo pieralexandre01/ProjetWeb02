@@ -201,7 +201,7 @@ footer {
 }
 
 @media only screen and (min-width: 991px) {
-  .nav_center-logo .title_reflection {
+  .title_reflection {
     line-height: 45% !important;
   }
 }
@@ -264,5 +264,8 @@ footer {
     font-weight: 300;
     letter-spacing: 0.025rem;
     line-height: 1.875rem;
+  }
+  nav {
+    height: 100px;
   }
 }/*# sourceMappingURL=styles.css.map */
