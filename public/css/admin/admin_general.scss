@@ -13,7 +13,7 @@
     .return_icon,
     .logout_icon {
         img {
-            opacity: 0 !important;
+            opacity: 0;
         }
     }
 
@@ -25,7 +25,7 @@
     }
 
     a:hover {
-        color: var(--color) !important;
+        color: var(--color);
 
         .return_icon {
             background-image: url("../../media/icons/return_hover.svg");
@@ -44,7 +44,7 @@
 }
 
 main {
-    height: 100vh !important;
+    height: 100vh;
 
     .form-container {
         height: 458px;
@@ -78,8 +78,8 @@ main {
 
                 &:hover,
                 &:focus {
-                    background-color: var(--color) !important;
-                    box-shadow: 0px 0px 5px var(--color-hover !important);
+                    background-color: var(--color);
+                    box-shadow: 0px 0px 5px var(--color-hover);
                 }
             }
         }
