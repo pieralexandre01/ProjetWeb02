@@ -9,7 +9,7 @@
 }
 .admin_nav .return_icon img,
 .admin_nav .logout_icon img {
-  opacity: 0 !important;
+  opacity: 0;
 }
 .admin_nav .return_icon {
   background: none;
@@ -18,7 +18,7 @@
   background-position: center;
 }
 .admin_nav a:hover {
-  color: var(--color) !important;
+  color: var(--color);
 }
 .admin_nav a:hover .return_icon {
   background-image: url("../../media/icons/return_hover.svg");
@@ -33,7 +33,7 @@
 }
 
 main {
-  height: 100vh !important;
+  height: 100vh;
 }
 main .form-container {
   height: 458px;
@@ -65,8 +65,8 @@ main .form-container form input[type=submit] {
   padding-inline: 1.5em;
 }
 main .form-container form input[type=submit]:hover, main .form-container form input[type=submit]:focus {
-  background-color: var(--color) !important;
-  box-shadow: 0px 0px 5px var(--color-hover !important);
+  background-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
 }
 
 footer #copyright {

@@ -95,6 +95,7 @@ label {
   font-size: 1.125rem;
   font-weight: 200;
   letter-spacing: 0.027rem;
+  white-space: nowrap;
 }
 
 p,

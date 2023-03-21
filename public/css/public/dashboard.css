@@ -5,7 +5,7 @@
 
 .user_icon:hover,
 .user_icon:focus {
-  background-image: url("../../media/icons/user_icon_turquoise.svg") !important;
+  background-image: url("../../media/icons/user_icon_turquoise.svg");
 }
 
 .user_icon_connected {

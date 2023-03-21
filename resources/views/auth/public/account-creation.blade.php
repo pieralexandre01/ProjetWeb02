@@ -7,16 +7,16 @@
         <main class="d-flex align-items-center">
 
             <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
-                <div id="account_create" class="form-container d-inline-block py-2 py-md-4 w-100">
+                <div id="account_create" class="form-container d-inline-block py-2 w-100">
 
-                    <h3 class="text-center mb-3 mb-sm-4 mb-md-5 mt-sm-3">CREATE AN ACCOUNT</h3>
+                    <h3 class="text-center mb-3 mb-sm-4 mt-sm-3">CREATE AN ACCOUNT</h3>
 
                     <form action="{{ route('account-create') }}" method="post" class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100">
                         @csrf
 
                         <input type="hidden" name="privilege_type" value="public">
 
-                        <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 mb-xxl-5 w-100">
+                        <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
                             <div class="d-flex flex-column w-100">
                                 <label for="first_name" class="mb-1">FIRST NAME</label>
                                 <input id="first_name" name="first_name" type="text">
@@ -27,12 +27,12 @@
                             </div>
                         </div>
 
-                        <div class="d-flex flex-column mb-md-3 mb-lg-4 mb-xxl-5 w-100">
+                        <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
                             <label for="email" class="mb-1">E-MAIL</label>
                             <input id="email" name="email" type="text">
                         </div>
 
-                        <div class="d-flex flex-column flex-md-row align-items-end gap-2 gap-md-5 mb-md-5 w-100">
+                        <div class="d-flex flex-column flex-md-row align-items-end gap-2 gap-md-5 mb-md-4 w-100">
                             <div class="d-flex flex-column w-100">
                                 <label for="password" class="mb-1">PASSWORD</label>
                                 <input id="password" name="password" type="password">
@@ -52,7 +52,7 @@
                         </span>
                     @enderror
 
-                    <p class="mt-4 text-center"><span class="d-none d-md-inline-block">already</span> have an account? <a href="{{ route('login') }}" class="text_link">login!</a></p>
+                    <p class="mt-3 text-center"><span class="d-none d-md-inline-block">already</span> have an account? <a href="{{ route('login') }}" class="text_link">login!</a></p>
                 </div>
 
                 <img src="{{ asset('/../media/images/account_create_img.png') }}" class="d-none d-xxl-block ps-xxl-5 ms-xxl-5" alt="Digital imaging of a human body">
