@@ -33,6 +33,7 @@ class UserController extends Controller
 
         $packages = session()->get('packages');
         $cart = [];
+        $total_price = 0;
 
         foreach($packages as $package) {
 
@@ -48,14 +49,16 @@ class UserController extends Controller
                 "quantity" => $package["package_quantity"],
             ];
 
+            $total_price += $package_infos->price * $package["package_quantity"];
         }
 
         return view('user.cart', [
             'title' => 'Mirror World | Cart',
             "page" => "cart",
             'packages' => $cart,
-        ]);
+            'total_price' => $total_price,
+        ])
+        // ->with('variableVue', $total_price)
+        ;
     }
-    // Réserver un forfait *************************
-    // Poser question à Julien : Comment entrer une valeur dans la table pivot dans Laravel ?
 }

@@ -80,12 +80,12 @@ Route::get('/cart', [UserController::class, 'showCart'])
     ->name('cart')
     ->middleware('auth');
 
-// Réserver
-Route::get('/reservations/create/{id}', [Reservation::class, 'create'])
-    ->name('reservation-create')
-    ->middleware('auth');
+// Réserver le ou les forfaits
+// Route::get('/reservations/create/{id}', [Reservation::class, 'create'])
+//     ->name('reservation-create')
+//     ->middleware('auth');
 
-Route::post('/reservations/create/{id}', [Reservation::class, 'store'])
+Route::post('/reservations/create', [ReservationController::class, 'store'])
     ->name('reservation-store')
     ->middleware('auth');
 
