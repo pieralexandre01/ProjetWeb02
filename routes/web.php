@@ -83,7 +83,7 @@ Route::get('/cart', [UserController::class, 'showCart'])
     ->middleware('auth');
 
 // Enregistrer le et les forfait(s) acheté(s)
-Route::post('/reservations/store', [ReservationController::class, 'store'])
+Route::get('/reservations/store', [ReservationController::class, 'store'])
     ->name('reservation-store')
     ->middleware('auth');
 

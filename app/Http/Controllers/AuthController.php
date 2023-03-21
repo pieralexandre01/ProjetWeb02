@@ -178,6 +178,12 @@ class AuthController extends Controller
             $user->save();
             auth()->login($user);
 
+            // vérifier la session - redirection au cart
+            if(session()->get('packages') !== null) {
+                return redirect()
+                    ->route('cart');
+            }
+
             return redirect()
                 ->route('homepage');
         }

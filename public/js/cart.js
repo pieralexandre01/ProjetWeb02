@@ -46,7 +46,7 @@ paypal.Buttons({
         // Capture the funds from the transaction
         return actions.order.capture().then(function (details) {
             // Save the details of the transaction in your database
-            window.location = "/reservations/create/" + data.orderID + "/" + data.payerID
+            window.location = "/reservations/store"
         });
     }
 }).render('#paypal-button-container');
