@@ -211,16 +211,13 @@ footer {
     }
 }
 
+// MEDIA QUERIES
 @media only screen and (min-width: 991px) {
-    .nav_center-logo {
-        .title_reflection {
-            line-height: 45% !important;
-        }
+    .title_reflection {
+        line-height: 45% !important;
     }
 }
 
-
-// MEDIA QUERIES
 @media only screen and (min-width: 768px) {
     h1,
     .h1 {
@@ -286,6 +283,10 @@ footer {
         font-weight: 300;
         letter-spacing: 0.025rem;
         line-height: 1.875rem;
+    }
+
+    nav {
+        height: 100px;
     }
 }
 
