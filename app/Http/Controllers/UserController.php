@@ -54,7 +54,7 @@ class UserController extends Controller
 
         return view('user.cart', [
             'title' => 'Mirror World | Cart',
-            "page" => "cart",
+            'page' => "cart",
             'packages' => $cart,
             'total_price' => $total_price,
         ])

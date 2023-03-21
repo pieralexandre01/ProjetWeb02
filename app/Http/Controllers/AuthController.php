@@ -33,7 +33,8 @@ class AuthController extends Controller
      */
     public function showLoginAdmin() {
         return view('auth.admin.login', [
-            "title" => "MW | Admin | Login"
+            "title" => "MW | Admin | Login",
+            "page" => "login",
         ]);
     }
 

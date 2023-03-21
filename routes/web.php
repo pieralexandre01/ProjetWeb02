@@ -66,7 +66,9 @@ Route::middleware([RedirectUserIfAuthenticated::class])->group(function () {
 Route::post('/account/create',[AuthController::class, 'storeAccount'])
     ->name('account-create');
 
-// ------------------------------------------------------------------------------------ Dashboard public
+
+// ------------------------------------------------------------------------------------ Dashboard public et panier
+
 Route::get('/dashboard', [UserController::class, 'showDashboard'])
     ->name('dashboard')
     ->middleware('auth');
@@ -80,16 +82,13 @@ Route::get('/cart', [UserController::class, 'showCart'])
     ->name('cart')
     ->middleware('auth');
 
-// Réserver le ou les forfaits
-// Route::get('/reservations/create/{id}', [Reservation::class, 'create'])
-//     ->name('reservation-create')
-//     ->middleware('auth');
-
 Route::post('/reservations/create', [ReservationController::class, 'store'])
     ->name('reservation-store')
     ->middleware('auth');
 
+
 // ------------------------------------------------------------------------------------ Public et admin
+
 // Déconnexion
 Route::get('/logout',[AuthController::class, 'logout'])
     ->name('logout');
@@ -103,7 +102,9 @@ Route::post('/reservations/delete/{id}', [ReservationController::class, 'destroy
 
 Route::middleware([AuthenticateAdmin::class])->group(function () {
 
+
     // Connexion ------------------------------------------------------------
+
     Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
         ->name('admin-login')
         // Ajout d'un middleware qui redirige au dashboard si déjà connecté
@@ -114,17 +115,18 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'showDashboardAdmin'])
         ->name('admin-dashboard');
 
+
     // Users -----------------------------------------------------------------
+
     // affichge formulaire création admin
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
         ->name('admin-create');
 
-    // modif
-    // affichage formulaire modif user admin
+    // modif admin
     Route::get('/admin/edit/{id}', [AdminController::class, 'editAdmin'])
     ->name('admin-edit');
 
-    // affichage formulaire modif user public
+    // modif public
     Route::get('/admin/user/edit/{id}', [AdminController::class, 'editUser'])
     ->name('user-edit');
 
@@ -140,7 +142,9 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::post('/admin/user/unblock/{id}', [AdminController::class, 'unblock'])
         ->name('user-unblock');
 
+
     // Articles -----------------------------------------------------------------
+
     // création
     Route::get('/admin/articles/create', [ArticleController::class, 'create'])
         ->name('article-create');
@@ -161,6 +165,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
 
 
     // Activities ------------------------------------------------------------
+
     // création
     Route::get('/admin/activities/create', [ActivityController::class, 'create'])
      ->name('activity-create');

@@ -21,6 +21,7 @@ class AdminController extends Controller
     public function showDashboardAdmin() {
         return view('admin.dashboard', [
             "title" => "MW | Admin | Dashboard",
+            "page" => "admin-dashboard",
             'user_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get(),
             'articles' => Article::all(),
             'activities' => Activity::all(),
@@ -39,6 +40,7 @@ class AdminController extends Controller
     public function editUser($id) {
         return view('admin.form.modify.user', [
             "title" => "MW | User | Modify",
+            "page" => "edit-user",
             "user" => User::findOrFail($id),
         ]);
     }
@@ -53,6 +55,7 @@ class AdminController extends Controller
     public function editAdmin($id) {
         return view('admin.form.modify.admin', [
             "title" => "MW | Admin | Modify",
+            "page" => "edit-admin",
             "user" => User::findOrFail($id),
         ]);
     }

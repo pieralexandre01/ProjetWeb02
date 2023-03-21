@@ -15,10 +15,9 @@ class ArticleController extends Controller
      */
     public function show() {
         return view('articles', [
-            // 'articles' => Article::all(),
-            "categorie" => Category::with('articles')->get(),
             "title" => "Mirror World | Articles",
             "page" => "articles",
+            "categorie" => Category::with('articles')->get(),
         ]);
     }
 
@@ -31,8 +30,9 @@ class ArticleController extends Controller
      */
     public function showById($id) {
         return view('article', [
+            "title" => "Mirror World | " . Article::findOrFail($id)->title,
+            "page" => "article",
             "article" => Article::findOrFail($id),
-            "title" => Article::findOrFail($id)->title,
         ]);
     }
 
@@ -44,6 +44,8 @@ class ArticleController extends Controller
      */
     public function create() {
         return view('admin.form.create.article', [
+            'title' => 'MW | Article | Create',
+            'page' => "article-create",
             "categories" => Category::all()
         ]);
     }
@@ -96,9 +98,10 @@ class ArticleController extends Controller
      */
     public function edit($id) {
         return view('admin.form.modify.article', [
+            "title" => 'MW | Article | Modify',
+            "page" => "article-edit",
             "article" => Article::findOrFail($id),
             "categories" => Category::all(),
-            "title" => "MW | Modify | Article"
         ]);
     }
 
