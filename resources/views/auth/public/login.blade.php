@@ -22,10 +22,10 @@
 
     <main class="d-flex align-items-center">
 
-        <div class="container d-flex flex-nowrap justify-content-center align-items-center">
-            <div class="form-container d-inline-block">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
+            <div class="form-container d-inline-block py-2 py-md-4">
 
-                <h3 class="text-center mb-5">LOGIN</h3>
+                <h3 class="text-center mb-5 mt-3">LOGIN</h3>
 
                 <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start">
                     @csrf

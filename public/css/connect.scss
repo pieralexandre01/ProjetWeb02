@@ -59,6 +59,13 @@ footer {
     input[type=password] {
         width: max(18.75rem, 100%);
     }
+
+}
+
+@media only screen and (min-width: 992px) {
+    div.container {
+        width: 75% !important;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -68,13 +75,17 @@ footer {
 
     main {
         padding-top: 100px;
+
+        .form-container {
+            border: 3px solid var(--dark-turquoise);
+            box-shadow: inset 0px 0px 5px var(--vivid-turquoise), 0px 0px 5px var(--vivid-turquoise);
+        }
     }
 }
 
 @media only screen and (min-width: 576px) {
     .form-container {
-        border: 3px solid var(--dark-turquoise);
-        box-shadow: inset 0px 0px 5px var(--vivid-turquoise), 0px 0px 5px var(--vivid-turquoise);
+
 
         form {
             input[type=text],
