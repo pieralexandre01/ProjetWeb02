@@ -32,6 +32,16 @@ class UserController extends Controller
     public function showCart() {
 
         $packages = session()->get('packages');
+
+        if($packages == null) {
+            return view('user.cart', [
+                'title' => 'Mirror World | Cart',
+                'page' => "cart",
+                'packages' => null,
+                'total_price' => null,
+            ]);
+        }
+
         $cart = [];
         $total_price = 0;
 
@@ -57,8 +67,8 @@ class UserController extends Controller
             'page' => "cart",
             'packages' => $cart,
             'total_price' => $total_price,
-        ])
-        // ->with('variableVue', $total_price)
-        ;
+        ]);
     }
+
+    // supprimer un forfait de la session
 }
