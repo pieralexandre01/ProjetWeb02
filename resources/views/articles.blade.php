@@ -1,26 +1,6 @@
 <x-public.layout>
     <x-slot name="title">{{ $title }}</x-slot>
     <x-slot name="css_file">public/articles</x-slot>
-    <style>
-        :root {
-            --color: var(--dark-blue);
-            --color-hover: var(--vivid-blue);
-        }
-
-        .user_icon:hover,
-        .user_icon:focus {
-            background-image: url("../../media/icons/user_icon_blue.svg") !important;
-        }
-
-        .user_icon_connected {
-            background-image: url("../../media/icons/user_icon_blue_connected.svg") !important;
-        }
-
-        .user_icon_connected:hover,
-        .user_icon_connected:focus {
-            background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
-        }
-    </style>
 
     <x-public.header :page="$page" />
 

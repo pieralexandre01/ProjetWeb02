@@ -1,3 +1,13 @@
+:root {
+  --color: var(--dark-turquoise);
+  --color-hover: var(--vivid-turquoise);
+}
+
+.user_icon:hover,
+.user_icon:focus {
+  background-image: url("../../media/icons/user_icon_turquoise.svg") !important;
+}
+
 main {
   height: 100vh;
   padding-bottom: 0px;
@@ -36,6 +46,9 @@ main .form-container .text_link:hover {
   text-decoration: underline;
 }
 
+footer {
+  height: 45px !important;
+}
 footer #copyright {
   padding-bottom: 15px;
 }

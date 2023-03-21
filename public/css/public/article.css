@@ -15,10 +15,4 @@
 .user_icon_connected:hover,
 .user_icon_connected:focus {
   background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
-}
-
-main {
-  height: 200vh;
-  padding-bottom: 100vh;
-  padding-top: 70px;
-}/*# sourceMappingURL=contact.css.map */
+}/*# sourceMappingURL=article.css.map */
