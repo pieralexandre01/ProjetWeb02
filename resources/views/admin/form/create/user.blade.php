@@ -1,4 +1,6 @@
-<x-admin.layout>
+{{-- PAS BESOIN DE CETTE VUE JE PENSE -PAT --}}
+
+{{-- <x-admin.layout>
     <x-slot name="title">{{ $title }}</x-slot>
     <x-slot name="css_file">forms</x-slot>
 
@@ -25,4 +27,4 @@
 
     <x-footer />
 
-</x-admin.layout>
+</x-admin.layout> --}}
