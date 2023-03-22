@@ -124,6 +124,7 @@ textarea {
 .error {
   font-size: 0.75rem;
   margin-bottom: 0px;
+  line-height: normal;
 }
 
 .active_link,
