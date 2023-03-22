@@ -7,7 +7,7 @@
         <main class="d-flex align-items-center">
 
             <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
-                <div id="account_create" class="form-container d-inline-block py-2 w-100">
+                <div id="account_create" class="form-container border_box py-2 w-100">
 
                     <h3 class="text-center mb-3 mb-sm-4 mt-sm-3">CREATE AN ACCOUNT</h3>
 
@@ -55,7 +55,7 @@
                     <p class="mt-3 text-center"><span class="d-none d-md-inline-block">already</span> have an account? <a href="{{ route('login') }}" class="text_link">login!</a></p>
                 </div>
 
-                <img src="{{ asset('/../media/images/account_create_img.png') }}" class="d-none d-xxl-block ps-xxl-5 ms-xxl-5" alt="Digital imaging of a human body">
+                <img src="{{ asset('/../media/images/account_create.png') }}" class="d-none d-xxl-block ps-xxl-5 ms-xxl-5" alt="Digital imaging of a human body">
             </div>
 
         </main>

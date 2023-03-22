@@ -1,7 +1,7 @@
 @import "../styles.css";
 :root {
-  --color: var(--dark-blue);
-  --color-hover: var(--vivid-blue);
+  --color: var(--dark-blue) !important;
+  --color-hover: var(--vivid-blue) !important;
 }
 
 .admin_nav {
@@ -37,6 +37,7 @@
 
 main {
   height: 100vh;
+  padding-top: 100px;
 }
 main .form-container {
   height: 458px;

@@ -161,8 +161,9 @@ nav {
 // MAIN ----------
 
 main {
-    height: 200vh;
+    min-height: 200vh;
     padding-bottom: 100vh;
+    padding-top: 70px;
 }
 
 
@@ -260,10 +261,6 @@ footer {
         .dropdown_right {
             margin-top: 10px !important;
         }
-    }
-
-    main {
-        padding-top: 100px;
     }
 
     footer {

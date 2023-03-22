@@ -128,8 +128,9 @@ nav .menu_container .open_menu .bar_2 {
 }
 
 main {
-  height: 200vh;
+  min-height: 200vh;
   padding-bottom: 100vh;
+  padding-top: 70px;
 }
 
 footer {
@@ -203,9 +204,6 @@ footer #footer_nav {
   }
   nav .dropdown_right {
     margin-top: 10px !important;
-  }
-  main {
-    padding-top: 100px;
   }
   footer .wrapper {
     margin-top: 100px;

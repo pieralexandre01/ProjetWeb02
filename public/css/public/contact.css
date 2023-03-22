@@ -17,8 +17,52 @@
   background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
 }
 
-main {
-  height: 200vh;
-  padding-bottom: 100vh;
-  padding-top: 70px;
+main .container {
+  overflow-x: hidden;
+}
+main .social_media_icons img {
+  max-height: 30px;
+}
+main .address {
+  height: 300px;
+  width: 300px;
+  background-image: url("../../media/images/contact_us_mobile.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main #google_map {
+  padding-top: 100px;
+}
+main iframe {
+  height: 12.5rem;
+  width: min(425px, 80vw);
+}
+main .arrow_down {
+  animation: arrow_down 2s infinite ease-in-out;
+}
+@keyframes arrow_down {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(0%, -200%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main #google_map {
+    padding-top: 0px;
+  }
+  main .border_box {
+    padding-inline: 0;
+  }
+}
+@media only screen and (min-width: 576px) {
+  main .border_box {
+    padding-inline: 3rem;
+  }
 }/*# sourceMappingURL=contact.css.map */

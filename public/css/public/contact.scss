@@ -18,8 +18,69 @@
 }
 
 main {
-    height: 200vh;
-    padding-bottom: 100vh;
-    padding-top: 70px;
+
+    .container {
+        overflow-x:hidden;
+    }
+
+    .social_media_icons {
+        img {
+            max-height: 30px;
+        }
+    }
+
+    .address {
+        height: max(300px);
+        width: max(300px);
+        background-image: url("../../media/images/contact_us_mobile.png");
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #google_map {
+        padding-top: 100px;
+    }
+
+    iframe {
+        height: 12.5rem;
+        width: min(425px, 80vw);
+    }
+
+    .arrow_down {
+        animation: arrow_down 2s infinite ease-in-out;
+
+        @keyframes arrow_down {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(0%, -200%);
+            }
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+    }
 }
 
+@media only screen and (min-width: 768px) {
+    main {
+        #google_map {
+            padding-top: 0px;
+        }
+
+        .border_box {
+            padding-inline: 0;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 576px) {
+    main {
+        .border_box {
+            padding-inline: 3rem;
+        }
+    }
+}

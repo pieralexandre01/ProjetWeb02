@@ -6,8 +6,8 @@
 
         <main class="d-flex align-items-center">
 
-            <div class="container d-flex flex-nowrap justify-content-center align-items-center mt-5">
-                <div class="form-container d-inline-block py-2 py-md-4">
+            <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
+                <div class="form-container border_box py-2 py-md-4">
 
                     <h3 class="text-center mb-5 mt-3">LOGIN</h3>
 
@@ -26,7 +26,7 @@
 
                 </div>
 
-                <img src="{{ asset('/../media/images/login_img.png') }}" class="d-none d-lg-block ps-lg-5 ms-lg-5" alt="Digital imaging of a human body">
+                <img src="{{ asset('/../media/images/login.png') }}" class="d-none d-lg-block ps-lg-5 ms-lg-5" alt="Digital imaging of a human body">
             </div>
 
         </main>
