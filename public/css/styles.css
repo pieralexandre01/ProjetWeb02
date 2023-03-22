@@ -208,9 +208,42 @@ footer {
   color: var(--white);
 }
 
-@media only screen and (min-width: 991px) {
+.page_title {
+  max-width: 500px;
+}
+.page_title .title_decoration {
+  background-color: var(--white);
+  height: 2px;
+  width: 100%;
+  position: relative;
+}
+.page_title .title_decoration .circle {
+  background-color: var(--white);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  margin-left: 7.5px;
+  position: absolute;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 1200px) {
   .title_reflection {
     line-height: 45% !important;
+  }
+  .page_title .title_decoration {
+    height: 3px;
+  }
+  .page_title .title_decoration .circle {
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .page_title {
+    max-width: 600px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -218,7 +251,7 @@ footer {
   .h1 {
     font-family: "ethnocentric", sans-serif;
     font-size: 3.125rem;
-    letter-spacing: 1.2rem;
+    letter-spacing: 0.078rem;
   }
   h2,
   .h2 {
