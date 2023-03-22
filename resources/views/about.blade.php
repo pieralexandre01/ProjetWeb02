@@ -5,15 +5,13 @@
     <x-public.header :page="$page" />
 
     <main>
-        {{-- <div class="container"> --}}
-            <div class="page_title">
-                <h1 class="text-end">ABOUT US</h1>
+        <div class="page_title">
+            <h1 class="text-end">ABOUT US</h1>
 
-                <div class="title_decoration">
-                    <div class="circle"></div>
-                </div>
+            <div class="title_decoration">
+                <div class="circle"></div>
             </div>
-        {{-- </div> --}}
+        </div>
 
         <div class="container mt-5 px-4">
             <div class="d-flex">
@@ -25,7 +23,7 @@
                         </div>
 
                         <div class="d-lg-none">
-                            <img src="{{ asset('/../media/images/about.webp') }}" class="object-fit-cover w-100" alt="Robotic hand upright">
+                            <img src="{{ asset('/../media/images/about_mobile.webp') }}" class="object-fit-cover w-100" alt="Robotic hand upright">
                         </div>
                     </div>
 
