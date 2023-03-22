@@ -115,7 +115,7 @@ textarea{
 }
 
 .paragraph {
-    line-height: 1.875rem;
+    margin-bottom: 1.875rem;
 }
 
 .error {
@@ -198,6 +198,56 @@ nav {
     }
 }
 
+
+// MAIN
+
+main {
+    .page_title {
+        max-width: 500px;
+
+        .title_decoration {
+            background-color: var(--white);
+            height: 2px;
+            width: 100%;
+            position: relative;
+
+            .circle {
+                background-color: var(--white);
+                border-radius: 50%;
+                height: 15px;
+                width: 15px;
+                margin-left: calc(15px / 2);
+                position: absolute;
+                    left: 0%;
+
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    // FORMS
+    .border_box {
+        background-color: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding-inline: 3rem;
+        padding-block: 1rem;
+
+        form {
+            input[type=text],
+            input[type=password],
+            input[type=submit],
+            textarea {
+                background-color: var(--bg-color);
+                border-radius: 10px;
+                border-width: 1px;
+                color: var(--white);
+            }
+        }
+    }
+}
+
+
 // FOOTER
 footer {
     position: absolute;
@@ -207,50 +257,6 @@ footer {
 }
 
 
-// FORMS
-.border_box {
-    background-color: none;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding-inline: 3rem;
-    padding-block: 1rem;
-
-    form {
-        input[type=text],
-        input[type=password],
-        input[type=submit],
-        textarea {
-            background-color: var(--bg-color);
-            border-radius: 10px;
-            border-width: 1px;
-            color: var(--white);
-        }
-    }
-}
-
-
-.page_title {
-    max-width: 500px;
-
-    .title_decoration {
-        background-color: var(--white);
-        height: 2px;
-        width: 100%;
-        position: relative;
-
-        .circle {
-            background-color: var(--white);
-            border-radius: 50%;
-            height: 15px;
-            width: 15px;
-            margin-left: calc(15px / 2);
-            position: absolute;
-                left: 0%;
-
-            transform: translate(-50%, -50%);
-        }
-    }
-}
 // MEDIA QUERIES
 @media only screen and (min-width: 1200px) {
     .title_reflection {

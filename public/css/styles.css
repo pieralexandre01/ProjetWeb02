@@ -118,7 +118,7 @@ textarea {
 }
 
 .paragraph {
-  line-height: 1.875rem;
+  margin-bottom: 1.875rem;
 }
 
 .error {
@@ -193,40 +193,16 @@ nav .festival {
   top: 0.75em;
 }
 
-footer {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  text-align: center;
-}
-
-.border_box {
-  background-color: none;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding-inline: 3rem;
-  padding-block: 1rem;
-}
-.border_box form input[type=text],
-.border_box form input[type=password],
-.border_box form input[type=submit],
-.border_box form textarea {
-  background-color: var(--bg-color);
-  border-radius: 10px;
-  border-width: 1px;
-  color: var(--white);
-}
-
-.page_title {
+main .page_title {
   max-width: 500px;
 }
-.page_title .title_decoration {
+main .page_title .title_decoration {
   background-color: var(--white);
   height: 2px;
   width: 100%;
   position: relative;
 }
-.page_title .title_decoration .circle {
+main .page_title .title_decoration .circle {
   background-color: var(--white);
   border-radius: 50%;
   height: 15px;
@@ -235,6 +211,29 @@ footer {
   position: absolute;
   left: 0%;
   transform: translate(-50%, -50%);
+}
+main .border_box {
+  background-color: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+}
+main .border_box form input[type=text],
+main .border_box form input[type=password],
+main .border_box form input[type=submit],
+main .border_box form textarea {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border-width: 1px;
+  color: var(--white);
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1200px) {

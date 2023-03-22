@@ -8,7 +8,7 @@
 
         <div class="about">
 
-            <div class="container-fluid ps-5 pt-5">
+            <div class="container-fluid">
                 <div class="page_title">
                     <h1 class="text-end">ABOUT US</h1>
                     <div class="title_decoration">
