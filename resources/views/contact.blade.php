@@ -5,10 +5,17 @@
     <x-public.header :page="$page" />
 
     <main>
+        <div class="page_title d-md-none">
+            <h1 class="text-end">CONTACT US</h1>
+
+            <div class="title_decoration">
+                <div class="circle"></div>
+            </div>
+        </div>
         <div class="container d-flex flex-nowrap justify-content-center px-lg-3 gap-xl-5 pt-4 pt-lg-5">
 
             <div class="border_box d-flex flex-column justify-content-between align-items-center align-items-md-stretch gap-1">
-                <h1 class="h3 mb-4 mt-3 text-end">CONTACT US</h1>
+                <h1 class="d-none d-md-block h3 mb-4 mt-3 text-end">CONTACT US</h1>
 
                 <div class="d-flex flex-column text-center gap-4 justify-content-between text-md-start gap-md-0">
                     <div class="d-flex flex-column text-center gap-4 justify-content-between flex-nowrap flex-md-row text-md-start gap-md-0">

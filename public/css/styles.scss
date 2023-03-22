@@ -155,7 +155,7 @@ li.user_name:hover {
 
 // HEADER - NAVIGATION MENU
 nav {
-    background: linear-gradient(var(--bg-color) 60%, transparent);
+    background: linear-gradient(var(--bg-color) 80%, transparent);
     padding-inline: clamp(20px, 2vw, 8.75rem);
     padding-top: 1.625rem;
     height: clamp(5rem, 7rem, 8rem);
@@ -204,9 +204,8 @@ nav {
 
 main {
     .page_title {
-        padding-top: 5%;
-        max-width: 500px;
         padding-inline: clamp(20px, 2vw, 8.75rem);
+        padding-top: 10%;
 
         .title_decoration {
             background-color: var(--white);
@@ -267,6 +266,8 @@ footer {
     }
 
     .page_title {
+        // max-width: 70vw;
+
         .title_decoration {
             height: 3px;
 
@@ -279,10 +280,9 @@ footer {
     }
 }
 
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
     .page_title {
-        max-width: 600px;
+        max-width: 60vw;
     }
 }
 
@@ -317,14 +317,27 @@ footer {
 
     nav {
         height: 100px !important;
+        background: linear-gradient(var(--bg-color) 60%, transparent);
     }
 
     main {
         padding-top: 100px !important;
 
+        .page_title {
+            // max-width: 70vw;
+            padding-top: 5%;
+        }
+
         .border_box {
             border: 3px solid var(--color);
             box-shadow: inset 0px 0px 5px var(--color-hover), 0px 0px 5px var(--color-hover);
         }
+    }
+}
+
+
+@media only screen and (min-width: 576px) {
+    .page_title {
+        max-width: 70vw;
     }
 }
