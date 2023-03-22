@@ -17,6 +17,7 @@ class AdminController extends Controller
     /**
      * Affiche le dashboard de l'administrateur
      *
+     * @return void
      */
     public function showDashboardAdmin() {
         return view('admin.dashboard', [
@@ -75,13 +76,13 @@ class AdminController extends Controller
             'password' => 'required',
             'password_confirm' => 'required|same:password'
         ], [
-            'first_name.required' => 'Your first name is required',
-            'last_name.required' => 'Your last name is required',
-            'email.required' => 'Your e-mail is required',
-            'email.email' => 'Your e-mail must be valid',
-            'password.required' => 'The password is required',
-            'password_confirm.required' => 'The password confirmation is required',
-            'password_confirm.same' => 'The password confirmation does not match the password entered'
+            'first_name.required' => 'First name is required',
+            'last_name.required' => 'Last name is required',
+            'email.required' => 'E-mail is required',
+            'email.email' => 'E-mail must be valid',
+            'password.required' => 'Password is required',
+            'password_confirm.required' => 'Password confirmation is required',
+            'password_confirm.same' => 'Passwords do not matchd'
         ]);
 
         // Création d'un nouvel utilisateur
@@ -117,7 +118,7 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('admin-dashboard')
-            ->with('user-blocked-success', 'The user has been succesfully blocked');
+            ->with('user-blocked', 'The user has been succesfully blocked');
     }
 
     /**
@@ -131,6 +132,6 @@ class AdminController extends Controller
         $user->restore();
         return redirect()
             ->route('admin-dashboard')
-            ->with('user-unblocked-success', 'The user has been successfully unblocked');
+            ->with('user-unblocked', 'The user has been successfully unblocked');
     }
 }

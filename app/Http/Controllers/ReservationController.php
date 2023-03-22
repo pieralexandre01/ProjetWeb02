@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller {
 
+    /**
+     * Enregistre une réservation dans la bdd suite au paiement
+     *
+     * @return void
+     */
     public function store() {
-
         $packages = session()->get('packages');
 
         $user = Auth::user();
@@ -31,4 +35,6 @@ class ReservationController extends Controller {
         return redirect()
             ->route('dashboard');
     }
+
+    // Supprime une réservation de la bdd
 }
