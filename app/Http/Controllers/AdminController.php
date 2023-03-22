@@ -104,7 +104,7 @@ class AdminController extends Controller
 
         return redirect()
             ->route('admin-dashboard')
-            ->with('account-created', "The user's account has been modified succesfully");
+            ->with('account-created', "The user's account has been succesfully modified");
     }
 
     /**
@@ -117,7 +117,7 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('admin-dashboard')
-            ->with('user-blocked-success', 'The user has been blocked successfully');
+            ->with('user-blocked-success', 'The user has been succesfully blocked');
     }
 
     /**
@@ -131,6 +131,6 @@ class AdminController extends Controller
         $user->restore();
         return redirect()
             ->route('admin-dashboard')
-            ->with('user-unblocked-success', 'The user has been unblocked successfully.');
+            ->with('user-unblocked-success', 'The user has been successfully unblocked');
     }
 }
