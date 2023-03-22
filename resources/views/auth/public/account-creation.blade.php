@@ -9,10 +9,10 @@
         <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
             <div id="account_create" class="form-container border_box py-2 w-100">
 
-                <h3 class="text-center mb-3 mb-sm-4 mt-sm-3">CREATE AN ACCOUNT</h3>
+                <h3 class="text-center mt-sm-3">CREATE AN ACCOUNT</h3>
 
                 <form action="{{ route('account-create') }}" method="post"
-                    class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100">
+                    class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
                     @csrf
 
                     <input type="hidden" name="privilege_type" value="public">
