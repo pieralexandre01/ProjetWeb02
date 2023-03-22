@@ -64,12 +64,6 @@ class AuthController extends Controller
             // Création d'un objet avec les informations de l'utlisateur
             $user = User::where(['email' => $request->email])->first();
 
-            // Vérifier si le user est bloqué
-            if($user->deleted_at != null){
-                return back()
-                    ->with('login-blocked', "Access denied");
-            }
-
             // vérifier la session - redirection au cart
             if(session()->get('packages') !== null) {
                 return redirect()
@@ -98,6 +92,15 @@ class AuthController extends Controller
             // Connexion public réussi
             return redirect()
                 ->route('homepage');
+        }
+
+        // ECHEC
+        // Vérifier si le user qui tente de se connecter est bloqué
+        $failed_user = User::withTrashed()->where(['email' => $request->email])->first();
+
+        if ($failed_user != null && $failed_user->deleted_at != null) {
+            return back()
+                ->with('login-blocked', "Access denied");
         }
 
         // En cas d'échec de la connexion
