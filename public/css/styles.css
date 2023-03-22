@@ -117,9 +117,13 @@ textarea {
   line-height: 1.875rem;
 }
 
+.paragraph {
+  line-height: 1.875rem;
+}
+
 .error {
   font-size: 0.75rem;
-  margin: 0 !important;
+  margin-bottom: 0px;
 }
 
 .active_link,
