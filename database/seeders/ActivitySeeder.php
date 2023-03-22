@@ -24,6 +24,7 @@ class ActivitySeeder extends Seeder
                 'title' => $activity["title"],
                 'description' => $activity["description"],
                 'image' => $activity["image"],
+                'date' => $activity["date"],
             ]);
         };
     }
