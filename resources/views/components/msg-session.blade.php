@@ -1,7 +1,7 @@
-@props(['key', 'class_name'])
+@props(['key', 'className'])
 
 @if (session($key))
-    <p class="{{ $class_name }}">{{ session($key) }}</p>
+    <p class="{{ $className }}, mb-0">{{ session($key) }}</p>
 @endif
 
 {{-- Exemple d'utilisation : --}}
