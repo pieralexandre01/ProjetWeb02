@@ -1,6 +1,8 @@
 paypal.Buttons({
     createOrder: function (data, actions) {
 
+        // création du tableau contenant la commande
+        // packages = les forfaits venant de la session (panier)
         let items = []
 
         for (let item of packages) {
@@ -18,6 +20,7 @@ paypal.Buttons({
             })
         }
 
+        // mise en forme de la commande
         const infos_paypal = {
             purchase_units: [{
                 items: items,
@@ -37,15 +40,15 @@ paypal.Buttons({
             }]
         }
 
-        console.log(infos_paypal)
-
-        // Set up the transaction
+        // set up de la transaction
         return actions.order.create(infos_paypal);
     },
     onApprove: function (data, actions) {
-        // Capture the funds from the transaction
+
+        // finaliser la transaction
         return actions.order.capture().then(function (details) {
-            // Save the details of the transaction in your database
+
+            // redirection vers l'enregistrement dans données dans la bdd
             window.location = "/reservations/store"
         });
     }
