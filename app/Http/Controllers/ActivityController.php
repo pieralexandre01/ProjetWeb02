@@ -11,6 +11,7 @@ class ActivityController extends Controller
     /**
      * Affiche la page d'activités (activities)
      *
+     * @return void
      */
     public function show() {
         return view('activities', [
@@ -20,7 +21,6 @@ class ActivityController extends Controller
         ]);
     }
 
-    // JACKIE - AJOUT -----------------------------------------------------------------------------
     /**
      * Affiche le formulaire de création d'une activité
      *
@@ -90,7 +90,6 @@ class ActivityController extends Controller
         ]);
     }
 
-
     /**
      * Modifie une activité
      *
@@ -137,7 +136,7 @@ class ActivityController extends Controller
     /**
      * Supprime une activité
      *
-     * @param INT $id
+     * @param int $id
      * @return void
      */
     public function destroy($id){
@@ -146,6 +145,6 @@ class ActivityController extends Controller
 
         return redirect()
                 ->route('admin-dashboard')
-                ->with('activity-deleted-success', 'The activity has been successfully deleted');
+                ->with('activity-delete', 'The activity has been successfully deleted');
     }
 }

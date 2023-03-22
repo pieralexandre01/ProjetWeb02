@@ -82,7 +82,12 @@ Route::get('/cart', [UserController::class, 'showCart'])
     ->name('cart')
     ->middleware('auth');
 
-// Enregistrer le et les forfait(s) acheté(s)
+// Supprimer un forfait du panier
+Route::get('cart/package/delete/{index}', [UserController::class, 'deletePackageFromCart'])
+    ->name('cart-package-delete')
+    ->middleware('auth');
+
+// Enregistrer le ou les forfait(s) acheté(s)
 Route::get('/reservations/store', [ReservationController::class, 'store'])
     ->name('reservation-store')
     ->middleware('auth');
@@ -95,7 +100,7 @@ Route::get('/logout',[AuthController::class, 'logout'])
     ->name('logout');
 
 // Supprimer une réservation (public et admin)
-Route::post('/reservations/delete/{id}', [ReservationController::class, 'destroy'])
+Route::get('/reservations/delete/{id}', [ReservationController::class, 'destroy'])
     ->name('reservation-delete')
     ->middleware('auth');
 
@@ -161,7 +166,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('article-update');
 
     // supprimer
-    Route::post('/admin/articles/delete/{id}', [AdminController::class, 'destroy'])
+    Route::get('/admin/articles/delete/{id}', [AdminController::class, 'destroy'])
         ->name('article-delete');
 
 
@@ -182,7 +187,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('activity-update');
 
     // supprimer
-    Route::post('/admin/activities/delete/{id}', [ActivityController::class, 'destroy'])
+    Route::get('/admin/activities/delete/{id}', [ActivityController::class, 'destroy'])
         ->name('activity-delete');
 
 });

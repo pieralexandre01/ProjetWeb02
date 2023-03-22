@@ -53,9 +53,9 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ], [
-            'email.required' => "The e-mail is required",
-            'email.email' => "Please enter a valid e-mail",
-            'password.required' => "The password is required"
+            'email.required' => "E-mail is required",
+            'email.email' => "E-mail must be valid",
+            'password.required' => "Password is required"
         ]);
 
         // Tentative de connexion
@@ -102,7 +102,7 @@ class AuthController extends Controller
 
         // En cas d'échec de la connexion
         return back()
-                ->with('login-failed', 'The informations submitted could not be verified');
+                ->with('login-failed', 'The information submitted could not be verified');
     }
 
 
@@ -144,13 +144,13 @@ class AuthController extends Controller
             'password' => 'required',
             'password_confirm' => 'required|same:password'
         ], [
-            'first_name.required' => 'Your first name is required',
-            'last_name.required' => 'Your last name is required',
-            'email.required' => 'Your e-mail is required',
-            'email.email' => 'Your e-mail must be valid',
-            'password.required' => 'The password is required',
-            'password_confirm.required' => 'The password confirmation is required',
-            'password_confirm.same' => 'The passwords do not match'
+            'first_name.required' => 'First name is required',
+            'last_name.required' => 'Last name is required',
+            'email.required' => 'E-mail is required',
+            'email.email' => 'E-mail must be valid',
+            'password.required' => 'Password is required',
+            'password_confirm.required' => 'Password confirmation is required',
+            'password_confirm.same' => 'Passwords do not match'
         ]);
 
         // Création d'un nouvel utilisateur
@@ -170,7 +170,7 @@ class AuthController extends Controller
 
             return redirect()
                 ->route('admin-dashboard')
-                ->with('account-created', 'The account has been created succesfully');
+                ->with('account-created', 'The account has been succesfully created');
 
         } elseif ($request->privilege_type == 'public') {
             $user->privilege_id = 2;

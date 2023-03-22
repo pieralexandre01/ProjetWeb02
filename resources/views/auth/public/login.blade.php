@@ -11,9 +11,12 @@
         <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
             <div class="form-container border_box py-2">
 
-                <h3 class="text-center mb-4 mt-3">LOGIN</h3>
+                <h3 class="text-center mt-3">LOGIN</h3>
 
-                <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start">
+                <x-msg-session key="login-blocked" class_name="error" />
+                <x-msg-session key="login-failed" class_name="error" />
+
+                <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start mt-4">
                     @csrf
                     <div class="d-flex flex-column mb-5 w-100">
                         <label for="email" class="mb-1">E-MAIL</label>

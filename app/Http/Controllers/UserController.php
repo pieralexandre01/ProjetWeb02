@@ -10,8 +10,9 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     /**
-     * Affiche le dashboard de l'utilisateur public
+     * Affiche le dashboard publique
      *
+     * @return void
      */
     public function showDashboard() {
         $user = auth()->user();
@@ -26,8 +27,9 @@ class UserController extends Controller
     }
 
     /**
-     * Affiche le cart de l'utilisateur public
+     * Affiche le panier et les réservations dans la session
      *
+     * @return void
      */
     public function showCart() {
 
@@ -70,5 +72,20 @@ class UserController extends Controller
         ]);
     }
 
-    // supprimer un forfait de la session
+    /**
+     * Supprimer un forfait du panier (de la session)
+     *
+     * @param int $index
+     * @return void
+     */
+    public function deletePackageFromCart($index) {
+        $packages = session()->get('packages');
+
+        array_splice($packages, $index, 1);
+
+        session()->put('packages', $packages);
+
+        return redirect()
+            ->back();
+    }
 }
