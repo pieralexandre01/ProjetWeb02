@@ -30,15 +30,17 @@
 
         @isset($packages)
 
-            @foreach ($packages as $package)
+            @foreach ($packages as $counter => $package)
                 {{ $package['title'] }}
                 {{ $package['price'] }}
                 {{ $package['quantity'] }}
-                <a href="">delete</a> {{-- Supprimer le forfait de la session --}}
+
+                <a href="{{ route('cart-package-delete', $counter) }}">delete</a>
                 <br>
-                {{ $total_price }}
-                <div id="paypal-button-container"></div>
             @endforeach
+
+            {{ $total_price }}
+            <div id="paypal-button-container"></div>
 
         @endisset
 
