@@ -204,7 +204,9 @@ nav {
 
 main {
     .page_title {
+        padding-top: 5%;
         max-width: 500px;
+        padding-inline: clamp(20px, 2vw, 8.75rem);
 
         .title_decoration {
             background-color: var(--white);
@@ -216,8 +218,8 @@ main {
                 background-color: var(--white);
                 border-radius: 50%;
                 height: 15px;
-                width: 15px;
                 margin-left: calc(15px / 2);
+                width: 15px;
                 position: absolute;
                     left: 0%;
 
@@ -266,14 +268,12 @@ footer {
 
     .page_title {
         .title_decoration {
-
             height: 3px;
 
             .circle {
                 margin-left: calc(20px / 2);
                 height: 20px;
                 width: 20px;
-
             }
         }
     }

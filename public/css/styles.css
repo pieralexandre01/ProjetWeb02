@@ -195,7 +195,9 @@ nav .festival {
 }
 
 main .page_title {
+  padding-top: 5%;
   max-width: 500px;
+  padding-inline: clamp(20px, 2vw, 8.75rem);
 }
 main .page_title .title_decoration {
   background-color: var(--white);
@@ -207,8 +209,8 @@ main .page_title .title_decoration .circle {
   background-color: var(--white);
   border-radius: 50%;
   height: 15px;
-  width: 15px;
   margin-left: 7.5px;
+  width: 15px;
   position: absolute;
   left: 0%;
   transform: translate(-50%, -50%);

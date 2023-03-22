@@ -18,9 +18,11 @@
 }
 
 main {
+    img {
+        margin-bottom: 1.875rem;
+    }
 
-    .about {
-
-
+    .img_mobile {
+        position: sticky !important;
     }
 }
