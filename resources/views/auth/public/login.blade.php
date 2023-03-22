@@ -6,6 +6,8 @@
 
     <main class="d-flex align-items-center">
 
+        <x-msg-session key="connexion-cart" class-name="success" />
+
         <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
             <div class="form-container border_box py-2">
 

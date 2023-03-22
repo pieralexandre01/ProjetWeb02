@@ -51,7 +51,8 @@ class PackageController extends Controller
 
         if ( ! Auth::check()) {
             return redirect()
-                ->route('login');
+                ->route('login')
+                    ->with('connexion-cart', 'You must be logged in to add a package to your cart');
         }
 
         return redirect()
