@@ -1,7 +1,7 @@
 @props(['field'])
 
 @error($field)
-    <p class="">{{ $message }}</p>
+    <p class="error">{{ $message }}</p>
 @enderror
 
 {{-- Exemple d'utilisation : --}}
