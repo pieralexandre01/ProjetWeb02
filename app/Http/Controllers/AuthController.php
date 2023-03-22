@@ -150,7 +150,7 @@ class AuthController extends Controller
             'email.email' => 'Your e-mail must be valid',
             'password.required' => 'The password is required',
             'password_confirm.required' => 'The password confirmation is required',
-            'password_confirm.same' => 'The password confirmation does not match the password entered'
+            'password_confirm.same' => 'The passwords do not match'
         ]);
 
         // Création d'un nouvel utilisateur

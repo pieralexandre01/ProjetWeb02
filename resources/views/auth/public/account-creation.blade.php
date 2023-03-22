@@ -4,61 +4,69 @@
 
     <x-public.header :page="$page" />
 
-        <main class="d-flex align-items-center">
+    <main class="d-flex align-items-center">
 
-            <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
-                <div id="account_create" class="form-container border_box py-2 w-100">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
+            <div id="account_create" class="form-container border_box py-2 w-100">
 
-                    <h3 class="text-center mb-3 mb-sm-4 mt-sm-3">CREATE AN ACCOUNT</h3>
+                <h3 class="text-center mb-3 mb-sm-4 mt-sm-3">CREATE AN ACCOUNT</h3>
 
-                    <form action="{{ route('account-create') }}" method="post" class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100">
-                        @csrf
+                <form action="{{ route('account-create') }}" method="post"
+                    class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100">
+                    @csrf
 
-                        <input type="hidden" name="privilege_type" value="public">
+                    <input type="hidden" name="privilege_type" value="public">
 
-                        <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
-                            <div class="d-flex flex-column w-100">
-                                <label for="first_name" class="mb-1">FIRST NAME</label>
-                                <input id="first_name" name="first_name" type="text">
-                            </div>
-                            <div class="d-flex flex-column w-100">
-                                <label for="last_name" class="mb-1">LAST NAME</label>
-                                <input id="last_name" name="last_name" type="text">
-                            </div>
+                    <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
+                        <div class="d-flex flex-column w-100">
+                            <label for="first_name" class="mb-1">FIRST NAME</label>
+                            <input id="first_name" name="first_name" type="text">
+                            <x-msg-error field="first_name" />
                         </div>
-
-                        <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
-                            <label for="email" class="mb-1">E-MAIL</label>
-                            <input id="email" name="email" type="text">
+                        <div class="d-flex flex-column w-100">
+                            <label for="last_name" class="mb-1">LAST NAME</label>
+                            <input id="last_name" name="last_name" type="text">
+                            <x-msg-error field="last_name" />
                         </div>
+                    </div>
 
-                        <div class="d-flex flex-column flex-md-row align-items-end gap-2 gap-md-5 mb-md-4 w-100">
-                            <div class="d-flex flex-column w-100">
-                                <label for="password" class="mb-1">PASSWORD</label>
-                                <input id="password" name="password" type="password">
-                            </div>
-                            <div class="d-flex flex-column w-100">
-                                <label for="password_confirm" class="mb-1">CONFIRM PASSWORD</label>
-                                <input id="password_confirm" name="password_confirm" type="password">
-                            </div>
+                    <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
+                        <label for="email" class="mb-1">E-MAIL</label>
+                        <input id="email" name="email" type="text">
+                        <x-msg-error field="email" />
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-4 w-100">
+                        <div class="d-flex flex-column w-100">
+                            <label for="password" class="mb-1">PASSWORD</label>
+                            <input id="password" name="password" type="password">
+                            <x-msg-error field="password" />
                         </div>
+                        <div class="d-flex flex-column w-100">
+                            <label for="password_confirm" class="mb-1">CONFIRM PASSWORD</label>
+                            <input id="password_confirm" name="password_confirm" type="password">
+                            <x-msg-error field="password_confirm" />
+                        </div>
+                    </div>
 
-                        <input type="submit" class="align-self-center mt-3 mt-md-0">
-                    </form>
+                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                </form>
 
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
-                    <p class="mt-3 text-center"><span class="d-none d-md-inline-block">already</span> have an account? <a href="{{ route('login') }}" class="text_link">login!</a></p>
-                </div>
-
-                <img src="{{ asset('/../media/images/account_create.png') }}" class="d-none d-xxl-block ps-xxl-5 ms-xxl-5" alt="Digital imaging of a human body">
+                <p class="mt-3 text-center"><span class="d-none d-md-inline-block">already</span> have an account? <a
+                        href="{{ route('login') }}" class="text_link">login!</a></p>
             </div>
 
-        </main>
+            <img src="{{ asset('/../media/images/account_create.png') }}" class="d-none d-xxl-block ps-xxl-5 ms-xxl-5"
+                alt="Digital imaging of a human body">
+        </div>
+
+    </main>
 
     <x-footer />
 
