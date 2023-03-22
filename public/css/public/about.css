@@ -15,4 +15,11 @@
 .user_icon_connected:hover,
 .user_icon_connected:focus {
   background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
+}
+
+main img {
+  margin-bottom: 1.875rem;
+}
+main .img_mobile {
+  position: sticky !important;
 }/*# sourceMappingURL=about.css.map */
