@@ -63,8 +63,8 @@ class ActivityController extends Controller
         $activity->description = $request->description;
 
         // Traitement de l'image
-        Storage::putFile('public/imgages/activities', $request->image);
-        $activity->image = '/storage/imgages/' . $request->image->hashName();
+        Storage::putFile('public/images/activities', $request->image);
+        $activity->image = '/storage/images/' . $request->image->hashName();
 
         $activity->date = $request->date;
 
@@ -102,10 +102,13 @@ class ActivityController extends Controller
         $request->validate([
             "title" => "required|max:25",
             "description" => "required",
+            "date" => "required|date"
         ], [
             "title.required" => "Title is required",
             "title.max" => "Title must be 25 characters or less",
             "description.required" => "Description is required",
+            "date.required" => "Date and time are required",
+            "date.date" => "Date format must be respected",
         ]);
 
         $activity = Activity::findOrFail($id);
@@ -124,6 +127,7 @@ class ActivityController extends Controller
         $activity->title = $request->title;
         $activity->description = $request->description;
         $activity->image = $image;
+        $activity->date = $request->date;
 
         // Enregistrement
         $activity->save();
