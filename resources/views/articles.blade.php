@@ -4,7 +4,21 @@
 
     <x-public.header :page="$page" />
 
-    <main></main>
+    <main>
+
+        <div class="container pt-5">
+            <div class="page_title">
+
+                <h1 class="text-end">ARTICLES</h1>
+
+                <div class="title_decoration">
+                    <div class="circle"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
 
     <x-public.footer />
 
