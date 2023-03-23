@@ -62,6 +62,7 @@ h3,
 
 a,
 li,
+button,
 .link {
     color: var(--white);
     font-family: "termina", sans-serif;
@@ -69,26 +70,20 @@ li,
     font-weight: 500 !important;
     letter-spacing: 0.03rem;
     text-decoration: none;
+    white-space: nowrap;
 
     &:hover {
         font-weight: 500 !important;
     }
 }
 
-button,
 input[type=submit] {
     font-family: "ethnocentric", sans-serif;
     font-size: 1rem;
     font-weight: 300;
-}
-
-button {
-    letter-spacing: 1.5rem;
-}
-
-input[type=submit] {
     letter-spacing: 0.1rem;
 }
+
 
 label {
     font-family: "ethnocentric", sans-serif;
@@ -127,7 +122,6 @@ textarea{
 // COLOR THEMES
 .active_link,
 a:hover,
-button:focus,
 .link:hover,
 .dropdown-item:hover,
 .dropdown_connected {
@@ -227,12 +221,17 @@ main {
         }
     }
 
+    .container {
+        height: calc(100vh - 70px);
+        padding-inline: 0px;
+    }
+
     // FORMS
     .border_box {
         background-color: none;
         border-radius: 10px;
         box-sizing: border-box;
-        padding-inline: 3rem;
+        padding-inline: 1.25rem;
         padding-block: 1rem;
 
         form {
@@ -266,8 +265,6 @@ footer {
     }
 
     .page_title {
-        // max-width: 70vw;
-
         .title_decoration {
             height: 3px;
 
@@ -323,8 +320,11 @@ footer {
     main {
         padding-top: 100px !important;
 
+        .container {
+            height: calc(100vh - 100px);
+        }
+
         .page_title {
-            // max-width: 70vw;
             padding-top: 5%;
         }
 
@@ -339,5 +339,8 @@ footer {
 @media only screen and (min-width: 576px) {
     .page_title {
         max-width: 70vw;
+    }
+    .border_box {
+        padding-inline: 3rem !important;
     }
 }
