@@ -15,4 +15,120 @@
 .user_icon_connected:hover,
 .user_icon_connected:focus {
   background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
+}
+
+.button, .category_button {
+  font-family: "ocr-b-std", monospace;
+  font-size: 1.375rem !important;
+  text-align: start;
+}
+
+.button {
+  background-color: var(--bg-color);
+  border-color: var(--color-hover) !important;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px var(--color-hover) !important;
+  color: var(--white);
+  flex-shrink: 1;
+  padding-block: 0.5em !important;
+  padding-inline: 1em !important;
+}
+.button:hover {
+  background-color: var(--color-hover);
+  color: var(--white) !important;
+}
+
+.container {
+  height: 100% !important;
+}
+.container section {
+  margin-block: 8rem;
+}
+.container section h2 {
+  padding-inline: 1.25rem;
+}
+.container section .mobile_frame {
+  border-block: 2px solid var(--color);
+  margin-inline: 20px;
+}
+.container section .mobile_frame:hover {
+  border-bottom: 2px solid var(--color-hover);
+  border-top: 2px solid var(--color-hover);
+}
+.container .pill_box {
+  width: -moz-max-content;
+  width: max-content;
+}
+.container .pill_box .category_tag {
+  background-color: var(--color);
+  border-radius: 10px;
+  flex-shrink: 1;
+  opacity: 0.5;
+  padding-block: 0.25em;
+  padding-inline: 0.75em;
+  white-space: nowrap;
+}
+.container .date {
+  color: var(--grey);
+}
+.container .hr {
+  border-bottom: 1px solid var(--grey);
+}
+.container p {
+  max-width: 800px;
+}
+.container .read_more_button {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1320px) {
+  .category_selector {
+    display: flex;
+    flex-direction: row !important;
+    gap: 3rem;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 768px) {
+  section {
+    margin-block: 15rem;
+  }
+  section .category_button {
+    white-space: nowrap !important;
+  }
+  section .category_tag {
+    background-color: var(--color);
+    border-radius: 10px;
+    flex-shrink: 1;
+    opacity: 0.5;
+    padding-block: 0.5em;
+    padding-inline: 1em;
+  }
+  section .date {
+    color: var(--grey);
+  }
+  section .hr {
+    border-bottom: 1px solid var(--grey);
+  }
+  section p {
+    max-width: 800px;
+  }
+  .read_more_button {
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .mobile_frame {
+    border: 2px solid var(--color);
+    margin-inline: 20px;
+  }
+  .mobile_frame:hover {
+    border-block: 2px solid var(--color-hover);
+  }
+}
+@media only screen and (max-width: 500px) {
+  .category_button {
+    white-space: pre-wrap !important;
+  }
 }/*# sourceMappingURL=articles.css.map */

@@ -16,7 +16,7 @@
         <div class="container mt-5 px-4">
             <div class="d-flex">
                 <div>
-                    <div class="d-flex flex-column flex-lg-row justify-content-lg-between">
+                    <div class="d-flex flex-column">
                         <div class="d-flex flex-column">
                             <p class="paragraph">In 2023, Mirror World was born thanks to Jacqueline Lebel, Patricia Massie, and Pier-Alexandre Auger-Matteau, during their training in Web Design and Programming at Cégep de Saint-Jérôme. Their goal was to create an online festival that would celebrate technological advances while promoting moral and ethical use of technology.</p>
                             <p class="paragraph">Mirror World offers you the opportunity to enjoy the festival from the comfort of your own home, while sipping on your favorite beverages and without having to worry about who will be the designated driver. You can explore the latest technological advancements while socializing with festival-goers from around the world in the comfort of your own home thanks to virtual reality.</p>

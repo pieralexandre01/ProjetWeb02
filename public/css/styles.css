@@ -64,6 +64,7 @@ h3,
 
 a,
 li,
+button,
 .link {
   color: var(--white);
   font-family: "termina", sans-serif;
@@ -71,25 +72,19 @@ li,
   font-weight: 500 !important;
   letter-spacing: 0.03rem;
   text-decoration: none;
+  white-space: nowrap;
 }
 a:hover,
 li:hover,
+button:hover,
 .link:hover {
   font-weight: 500 !important;
 }
 
-button,
 input[type=submit] {
   font-family: "ethnocentric", sans-serif;
   font-size: 1rem;
   font-weight: 300;
-}
-
-button {
-  letter-spacing: 1.5rem;
-}
-
-input[type=submit] {
   letter-spacing: 0.1rem;
 }
 
@@ -129,7 +124,6 @@ textarea {
 
 .active_link,
 a:hover,
-button:focus,
 .link:hover,
 .dropdown-item:hover,
 .dropdown_connected {
@@ -214,11 +208,15 @@ main .page_title .title_decoration .circle {
   left: 0%;
   transform: translate(-50%, -50%);
 }
+main .container {
+  height: calc(100vh - 70px);
+  padding-inline: 0px;
+}
 main .border_box {
   background-color: none;
   border-radius: 10px;
   box-sizing: border-box;
-  padding-inline: 3rem;
+  padding-inline: 1.25rem;
   padding-block: 1rem;
 }
 main .border_box form input[type=text],
@@ -288,6 +286,9 @@ footer {
   main {
     padding-top: 100px !important;
   }
+  main .container {
+    height: calc(100vh - 100px);
+  }
   main .page_title {
     padding-top: 5%;
   }
@@ -299,5 +300,8 @@ footer {
 @media only screen and (min-width: 576px) {
   .page_title {
     max-width: 70vw;
+  }
+  .border_box {
+    padding-inline: 3rem !important;
   }
 }/*# sourceMappingURL=styles.css.map */

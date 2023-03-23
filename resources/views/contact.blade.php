@@ -12,7 +12,7 @@
                 <div class="circle"></div>
             </div>
         </div>
-        <div class="container d-flex flex-nowrap justify-content-center px-lg-3 gap-xl-5 pt-4 pt-lg-5">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center px-lg-3 gap-xl-5">
 
             <div class="border_box d-flex flex-column justify-content-between align-items-center align-items-md-stretch gap-1">
                 <h1 class="d-none d-md-block h3 mb-4 mt-3 text-end">CONTACT US</h1>

@@ -6,7 +6,7 @@
 
     <main class="d-flex align-items-center">
 
-        <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center">
             <div class="form-container border_box py-2 py-md-4">
 
                 <h3 class="text-center mt-3">ADMIN LOGIN</h3>

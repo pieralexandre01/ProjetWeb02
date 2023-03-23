@@ -8,7 +8,7 @@
 
         <x-msg-session key="connexion-cart" class-name="success" />
 
-        <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center">
             <div class="form-container border_box py-2">
 
                 <h3 class="text-center mt-3">LOGIN</h3>

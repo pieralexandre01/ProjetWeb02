@@ -18,7 +18,6 @@
 }
 
 main {
-
     .container {
         overflow-x:hidden;
     }
@@ -44,7 +43,7 @@ main {
 
     iframe {
         height: 12.5rem;
-        width: min(425px, 80vw);
+        width: min(425px, 90vw);
     }
 
     .arrow_down {

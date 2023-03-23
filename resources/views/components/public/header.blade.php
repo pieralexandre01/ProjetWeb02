@@ -11,7 +11,6 @@
                         experience
                     </button>
                     <ul class="dropdown-menu drop-center text-center p-0">
-                        {{-- <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li> --}}
                         <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'homepage') active_link @endif" aria-current="{{ $page }}">homepage</a></li>
                         <hr class="m-0">
                         <li><a class="dropdown-item" href="{{ route('activities') }}" class="@if($page == 'activities') active_link @endif" aria-current="{{ $page }}">activities</a></li>

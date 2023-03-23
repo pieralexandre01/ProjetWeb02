@@ -6,7 +6,7 @@
 
     <main class="d-flex align-items-center">
 
-        <div class="container d-flex flex-nowrap justify-content-center align-items-center mb-5">
+        <div class="container d-flex flex-nowrap justify-content-center align-items-center pb-3 px-2 px-sm-0">
             <div id="account_create" class="form-container border_box py-2 w-100">
 
                 <h3 class="text-center mt-sm-3">CREATE AN ACCOUNT</h3>
