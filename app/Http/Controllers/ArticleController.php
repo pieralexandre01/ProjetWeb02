@@ -65,13 +65,13 @@ class ArticleController extends Controller
             "user_id" => "required|numeric",
             "category" => "required|numeric",
         ], [
-            "title.required" => "Title is required",
-            "title.max" => "Title must be 50 characters or less",
-            "text.required" => "Text is required",
-            "user_id.required" => "User is required",
-            "user_id.numeric" => "User id is required",
-            "category.required" => "Category is required",
-            "category.numeric" => "Category id is required",
+            "title.required" => "The title is required",
+            "title.max" => "The title must be 50 characters or less",
+            "text.required" => "The text is required",
+            "user_id.required" => "The user is required",
+            "user_id.numeric" => "The user id is required",
+            "category.required" => "The category is required",
+            "category.numeric" => "The category id is required",
         ]);
 
         // Créer
@@ -121,13 +121,13 @@ class ArticleController extends Controller
             "user_id" => "required|numeric",
             "category" => "required|numeric",
         ], [
-            "title.required" => "Title is required",
-            "title.max" => "Title must be 50 characters or less",
-            "text.required" => "Text is required",
-            "user_id.required" => "User is required",
-            "user_id.numeric" => "User id is required",
-            "category.required" => "Category is required",
-            "category.numeric" => "Category id is required",
+            "title.required" => "The title is required",
+            "title.max" => "The title must be 50 characters or less",
+            "text.required" => "The text is required",
+            "user_id.required" => "The user is required",
+            "user_id.numeric" => "The user id is required",
+            "category.required" => "The category is required",
+            "category.numeric" => "The category id is required",
         ]);
 
         // Modifier

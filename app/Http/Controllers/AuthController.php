@@ -53,9 +53,9 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ], [
-            'email.required' => "E-mail is required",
-            'email.email' => "E-mail must be valid",
-            'password.required' => "Password is required"
+            'email.required' => "The e-mail is required",
+            'email.email' => "The e-mail must be valid",
+            'password.required' => "The password is required"
         ]);
 
         // Tentative de connexion
@@ -128,7 +128,7 @@ class AuthController extends Controller
      * @return void
      */
     public function createAdmin() {
-        return view('auth.admin.account-creation', [
+        return view('admin.form.create.admin', [
             "title" => "MW | Admin | Account"
         ]);
     }
@@ -147,13 +147,13 @@ class AuthController extends Controller
             'password' => 'required',
             'password_confirm' => 'required|same:password'
         ], [
-            'first_name.required' => 'First name is required',
-            'last_name.required' => 'Last name is required',
-            'email.required' => 'E-mail is required',
-            'email.email' => 'E-mail must be valid',
-            'password.required' => 'Password is required',
-            'password_confirm.required' => 'Password confirmation is required',
-            'password_confirm.same' => 'Passwords do not match'
+            'first_name.required' => 'The first name is required',
+            'last_name.required' => 'The last name is required',
+            'email.required' => 'The e-mail is required',
+            'email.email' => 'The e-mail must be valid',
+            'password.required' => 'The password is required',
+            'password_confirm.required' => 'The password confirmation is required',
+            'password_confirm.same' => 'The passwords do not match'
         ]);
 
         // Création d'un nouvel utilisateur
@@ -166,16 +166,11 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
 
         // Gère le type de user qui est en train de se créer un compte
-        if($request->privilege_type == 'admin') {
-            $user->privilege_id = 1;
+        // user public
+        $previous_url = $request->header('referer');
+        $public_url = URL::to('/') . '/account/create';
 
-            $user->save();
-
-            return redirect()
-                ->route('admin-dashboard')
-                ->with('account-created', 'The account has been succesfully created');
-
-        } elseif ($request->privilege_type == 'public') {
+        if($previous_url == $public_url) {
             $user->privilege_id = 2;
 
             $user->save();
@@ -189,13 +184,25 @@ class AuthController extends Controller
 
             return redirect()
                 ->route('homepage');
+        } else {
+            // user admin
+            $user->privilege_id = 1;
+            $user->save();
+
+            return redirect()
+                ->route('admin-dashboard')
+                ->with('account-created', 'The account has been succesfully created');
         }
     }
 
-    // Déconnexion de l'utilisateur
+    /**
+     * Déconnexion de l'utilisateur
+     *
+     * @return void
+     */
     public function logout() {
-        auth()->logout();
 
+        auth()->logout();
         session()->forget('packages');
 
         return redirect()

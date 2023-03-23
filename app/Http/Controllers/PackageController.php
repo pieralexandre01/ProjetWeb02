@@ -21,6 +21,13 @@ class PackageController extends Controller
         ]);
     }
 
+    /**
+     * Ajouter un forfait au panier
+     *
+     * @param Request $request
+     * @param int $id
+     * @return void
+     */
     public function addToCart(Request $request, $id) {
 
         $request->validate([
@@ -35,7 +42,7 @@ class PackageController extends Controller
             'package_quantity.max' => "The package's quantity must be maximum 4",
         ]);
 
-        // enregistrer dans la session
+        // création du panier et enregistrement dans la session
         $cart = session()->get('packages');
 
         if($cart == null) {
@@ -49,12 +56,14 @@ class PackageController extends Controller
 
         session()->put('packages', $cart);
 
+        // redirection à la page de login si le user n'est pas connecté
         if ( ! Auth::check()) {
             return redirect()
                 ->route('login')
                     ->with('connexion-cart', 'You must be logged in to add a package to your cart');
         }
 
+        // redirection au panier sur le user est connecté
         return redirect()
             ->route('cart');
     }

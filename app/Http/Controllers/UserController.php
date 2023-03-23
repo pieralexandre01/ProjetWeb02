@@ -33,8 +33,10 @@ class UserController extends Controller
      */
     public function showCart() {
 
+        // récupérer la session
         $packages = session()->get('packages');
 
+        // redirection panier vide
         if($packages == null) {
             return view('user.cart', [
                 'title' => 'Mirror World | Cart',
@@ -44,6 +46,7 @@ class UserController extends Controller
             ]);
         }
 
+        // récupérer les forfaits de la bdd et stocker les infos dans la session
         $cart = [];
         $total_price = 0;
 
@@ -51,6 +54,7 @@ class UserController extends Controller
 
             $package_infos = Package::where(['id' => $package["package_id"]])->first();
 
+            // création du panier
             $cart[] = [
                 "id" => $package_infos->id,
                 "title" => $package_infos->title,

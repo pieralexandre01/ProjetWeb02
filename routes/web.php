@@ -128,6 +128,10 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::get('/admin/create', [AuthController::class, 'createAdmin'])
         ->name('admin-create');
 
+    // création d'un admin
+    Route::post('/admin/store', [AuthController::class, 'storeAccount'])
+        ->name('admin-store');
+
     // modif admin
     Route::get('/admin/edit/{id}', [AdminController::class, 'editAdmin'])
     ->name('admin-edit');

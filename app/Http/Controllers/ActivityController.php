@@ -47,13 +47,13 @@ class ActivityController extends Controller
             "image" => "required|mimes:png,jpg,jpeg,webp",
             "date" => "required|date"
         ], [
-            "title.required" => "Title is required",
-            "title.max" => "Title must be 25 characters or less",
-            "description.required" => "Description is required",
-            "image.required" => "Image is required",
-            "image.mimes" => "File must have one of the following extensions: .png, .jpg, .jpeg ou .webp",
-            "date.required" => "Date and time are required",
-            "date.date" => "Date format must be respected",
+            "title.required" => "The title is required",
+            "title.max" => "The title must be 25 characters or less",
+            "description.required" => "The description is required",
+            "image.required" => "The image is required",
+            "image.mimes" => "The file must have one of the following extensions: .png, .jpg, .jpeg ou .webp",
+            "date.required" => "The date and time are required",
+            "date.date" => "The date format must be respected",
 
         ]);
 
@@ -104,11 +104,11 @@ class ActivityController extends Controller
             "description" => "required",
             "date" => "required|date"
         ], [
-            "title.required" => "Title is required",
-            "title.max" => "Title must be 25 characters or less",
-            "description.required" => "Description is required",
-            "date.required" => "Date and time are required",
-            "date.date" => "Date format must be respected",
+            "title.required" => "The title is required",
+            "title.max" => "The title must be 25 characters or less",
+            "description.required" => "The description is required",
+            "date.required" => "The date and time are required",
+            "date.date" => "The date format must be respected",
         ]);
 
         $activity = Activity::findOrFail($id);

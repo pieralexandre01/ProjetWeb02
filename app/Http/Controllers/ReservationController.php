@@ -36,5 +36,21 @@ class ReservationController extends Controller {
             ->route('dashboard');
     }
 
-    // Supprime une réservation de la bdd
+    /**
+     * Supprime une réservation de la bdd
+     *
+     * @param int $id
+     * @return void
+     */
+    public function destroy($id) {
+        $reservation = Reservation::findOrFail($id);
+
+        // Vérification de la date
+
+        // $reservation->delete();
+
+        // return redirect()
+        //     ->route('dashboard')
+        //     ->with('reservation-delete', 'The reservation has been successfully deleted');
+    }
 }

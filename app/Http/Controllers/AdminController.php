@@ -73,39 +73,32 @@ class AdminController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => ['required', 'email', new UniqueEmailNotSoftDeleted],
-            'password' => 'required',
-            'password_confirm' => 'required|same:password'
         ], [
-            'first_name.required' => 'First name is required',
-            'last_name.required' => 'Last name is required',
-            'email.required' => 'E-mail is required',
-            'email.email' => 'E-mail must be valid',
-            'password.required' => 'Password is required',
-            'password_confirm.required' => 'Password confirmation is required',
-            'password_confirm.same' => 'Passwords do not matchd'
+            'first_name.required' => 'The first name is required',
+            'last_name.required' => 'The last name is required',
+            'email.required' => 'The e-mail is required',
+            'email.email' => 'The e-mail must be valid',
         ]);
 
-        // Création d'un nouvel utilisateur
         $user = User::findOrFail($id);
 
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
-        // Encryption du mot de passe
-        $user->password = Hash::make($request->password);
 
-        // Gère le type de user qui est en train de se créer un compte
+        // Gère le type de user à modifier
         if($request->privilege_type == 'admin') {
             $user->privilege_id = 1;
         } elseif ($request->privilege_type == 'public') {
             $user->privilege_id = 2;
         }
 
+        // Enregistrement
         $user->save();
 
         return redirect()
             ->route('admin-dashboard')
-            ->with('account-created', "The user's account has been succesfully modified");
+            ->with('account-edit', "The user's account has been succesfully modified");
     }
 
     /**
