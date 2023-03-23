@@ -16,6 +16,7 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->string('title', 25);
+            $table->string('subcategory', 25)->nullable();
             $table->text('description');
             $table->string('image');
             $table->dateTime('date');

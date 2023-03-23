@@ -22,6 +22,7 @@ class ActivitySeeder extends Seeder
         foreach($activities as $activity) {
             Activity::create([
                 'title' => $activity["title"],
+                'subcategory' => $activity["subcategory"],
                 'description' => $activity["description"],
                 'image' => $activity["image"],
                 'date' => $activity["date"],
