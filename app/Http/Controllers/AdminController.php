@@ -31,6 +31,7 @@ class AdminController extends Controller
         ]);
     }
 
+
     /**
      * Affiche le formulaire de modification de compte Public
      *
@@ -46,6 +47,7 @@ class AdminController extends Controller
         ]);
     }
 
+
     /**
      * Affiche le formulaire de modification de compte Public
      *
@@ -60,6 +62,7 @@ class AdminController extends Controller
             "user" => User::findOrFail($id),
         ]);
     }
+
 
     /**
      * Traite la modification d'un user
@@ -86,31 +89,22 @@ class AdminController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
 
-        // Gère le type de user à modifier
-        // if($request->privilege_type == 'admin') {
-        //     $user->privilege_id = 1;
-        // } elseif ($request->privilege_type == 'public') {
-        //     $user->privilege_id = 2;
-        // }
-
         // Enregistrement
         $user->save();
 
         return redirect()
-            ->route('admin-dashboard')
+            ->back()
             ->with('account-edit', "The user's account has been succesfully modified");
     }
 
 
-    public function editPassword($id) {
-        return view('admin.form.modify.password', [
-            "title" => "MW | Admin | Modify PW",
-            "page" => "edit-password",
-            "user" => User::findOrFail($id),
-        ]);
-    }
-
-
+    /**
+     * Modifie le mot de passe de l'utilisateur
+     *
+     * @param Request $request
+     * @param int $id
+     * @return void
+     */
     public function updatePassword(Request $request, $id) {
         // Valider
         $request->validate([
@@ -122,25 +116,19 @@ class AdminController extends Controller
             'password_confirm.same' => 'The passwords do not match'
         ]);
 
+        // trouver le user
         $user = User::findOrFail($id);
 
+        // remplacer le mdp
         $user->password = $request->password;
         $user->password_confirm = $request->password_confirm;
 
         // Enregistrement
         $user->save();
 
-        // Retourner à la page de modif du user admin-edit OU user-edit ?
-        // /admin/edit/{id}
-        // /admin/user/edit/{id}
-
-        $previous_url = $request->header('referer');
-        // problème : le previous_url sera le form de changement de pw qui est le même pour les 2 types de user.
-        // utiliser le privilege->id pour déterminer sur quelle page retouner??
-
-        // return redirect()
-        //     ->back
-        //     ->with('password-edit', "The user's password has been succesfully modified");
+        return redirect()
+            ->back()
+            ->with('password-edit', "The user's password has been succesfully modified");
     }
 
 
@@ -153,9 +141,11 @@ class AdminController extends Controller
     public function block($id) {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('admin-dashboard')
+        return redirect()
+            ->route('admin-dashboard')
             ->with('user-blocked', 'The user has been succesfully blocked');
     }
+
 
     /**
      * Débloque un utilisateur

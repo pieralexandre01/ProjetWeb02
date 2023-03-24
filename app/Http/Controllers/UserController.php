@@ -21,7 +21,7 @@ class UserController extends Controller
 
         return view('user.dashboard', [
             'title' => 'Mirror World | Reservations',
-            "page" => "dashboard",
+            'page' => "dashboard",
             'reservations' => $reservations,
         ]);
     }
@@ -34,17 +34,7 @@ class UserController extends Controller
     public function showCart() {
 
         // récupérer la session
-        $packages = session()->get('packages');
-
-        // redirection panier vide
-        if($packages == null) {
-            return view('user.cart', [
-                'title' => 'Mirror World | Cart',
-                'page' => "cart",
-                'packages' => null,
-                'total_price' => null,
-            ]);
-        }
+        $packages = session()->get('packages') ?? [];
 
         // récupérer les forfaits de la bdd et stocker les infos dans la session
         $cart = [];
@@ -53,6 +43,13 @@ class UserController extends Controller
         foreach($packages as $package) {
 
             $package_infos = Package::where(['id' => $package["package_id"]])->first();
+
+            // vérifier si le festival est terminé -> si oui, vider le panier
+            if(now() > $package_infos->end_date) {
+                $cart = [];
+                session()->put('packages', []);
+                break;
+            }
 
             // création du panier
             $cart[] = [
@@ -65,13 +62,13 @@ class UserController extends Controller
                 "quantity" => $package["package_quantity"],
             ];
 
-            $total_price += $package_infos->price * $package["package_quantity"];
+            $total_price += round($package_infos->price, 2) * $package["package_quantity"];
         }
 
         return view('user.cart', [
             'title' => 'Mirror World | Cart',
             'page' => "cart",
-            'packages' => $cart,
+            'cart' => $cart,
             'total_price' => $total_price,
         ]);
     }

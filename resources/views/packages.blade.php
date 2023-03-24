@@ -23,7 +23,8 @@
             </div>
 
             @foreach ($packages as $package)
-                <div class="row">
+                <section class="row">
+                    {{-- ajouter une classe dynamique pour inverser un sur deux --}}
                     {{-- revoir les distances/largeurs --}}
                     <div class="col-7">
                         <h2>{{ $package->title }}</h2>
@@ -36,25 +37,44 @@
                         {{-- AJOUTER LES AUTRES INFOS --}}
 
                         {{-- styliser les boutons --}}
+
                         <form action="{{ route('package-addtocart', $package->id) }}" method="post">
                             @csrf
                             <input type="hidden" name="package_id" value="{{ $package->id }}">
-                            <select name="package_quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                            <input class="" type="submit" value="reserve">
-                            {{-- class de Jackie : read_more_button --}}
+
+                            <div class="d-flex align-items-center justify-content-between">
+
+                                <div class="price">
+                                    <p>$ {{ $package->price }}</p>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    @if (now() < $package->end_date)
+                                        <select name="package_quantity">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+
+                                        <span class="ms-3"><input type="submit" value="reserve"></span>
+                                    @else
+                                        <p class="m-0">the festival is over</p>
+                                        {{-- ajouter du JS pour que le bouton ne soit pas cliquable dans cette condition ! --}}
+                                        <span class="ms-3"><input type="submit" disabled value="reserve"></span>
+                                    @endif
+                                </div>
+
+                            </div>
                         </form>
                     </div>
 
-                    <div class="col-7">
+                    <div class="col-5">
                         <img src="" alt="">
                     </div>
-                </div>
+                </section>
             @endforeach
+
     </main>
 
     <x-public.footer />
