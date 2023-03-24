@@ -23,11 +23,11 @@ class AdminController extends Controller
         return view('admin.dashboard', [
             "title" => "MW | Admin | Dashboard",
             "page" => "admin-dashboard",
-            'user_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get(),
+            'users_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get(),
             'articles' => Article::all(),
             'activities' => Activity::all(),
             'reservations' => Reservation::all(),
-            'user_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get()
+            'users_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get()
         ]);
     }
 
