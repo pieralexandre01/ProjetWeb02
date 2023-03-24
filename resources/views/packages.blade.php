@@ -4,6 +4,21 @@
 
     <x-public.header :page="$page" />
 
+    <style>
+        .package_img {
+            height: 25rem;
+        }
+
+        section {
+            margin-top: 9.4rem !important;
+        }
+
+        /* section:first-child {
+            border: 1px solid #fff;
+            padding: 3rem;
+        } */
+    </style>
+
     <main>
         {{-- comment arranger le footer qui embarque sur le contenu? --}}
 
@@ -19,14 +34,14 @@
 
             {{-- style à appliquer sur le premier forfait seulement --}}
             {{-- border_box = est-ce une classe créé par Jackie puisqu'elle s'adapte bien au rose? --}}
-            <div class="border_box p-2">
-            </div>
+            {{-- <div class="border_box p-2">
+            </div> --}}
 
             @foreach ($packages as $package)
-                <section class="row">
-                    {{-- ajouter une classe dynamique pour inverser un sur deux --}}
-                    {{-- revoir les distances/largeurs --}}
-                    <div class="col-7">
+                <section
+                    class="row align-items-center @if ($package->id % 2 == 1) flex-row-reverse @endif @if ($package->id == 1) border_box p-5 @endif">
+
+                    <div class="col-8 @if ($package->id % 2 == 1) ps-5 @else pe-5 @endif">
                         <h2>{{ $package->title }}</h2>
                         {{-- ajuster la ligne --}}
                         {{-- <div class="title_decoration">
@@ -67,8 +82,9 @@
                         </form>
                     </div>
 
-                    <div class="col-4 ms-auto">
-                        <img src=" {{ $package->image }}" alt=" {{ $package->title }} " class="img-fluid">
+                    <div
+                        class="col-4 package_img @if ($package->id % 2 == 1) me-auto @else ms-auto @endif bg-primary">
+                        <img src=" {{ $package->image }}" alt=" {{ $package->title }} " class="img-fluid rounded">
                     </div>
 
                 </section>
@@ -76,6 +92,6 @@
 
     </main>
 
-    <x-public.footer />
+    {{-- <x-public.footer /> --}}
 
 </x-public.layout>
