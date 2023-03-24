@@ -21,6 +21,7 @@ main .button {
   flex-shrink: 1;
   padding-block: 0.5em !important;
   padding-inline: 1em !important;
+  margin: 25px 0px 0px 30px;
 }
 main .button:hover {
   background-color: var(--color-hover);
