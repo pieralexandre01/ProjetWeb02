@@ -36,8 +36,11 @@
 }
 
 main {
-  height: 100vh;
+  height: auto;
   padding-top: 100px;
+}
+main .container {
+  height: auto;
 }
 main .form-container {
   border: 3px solid var(--color);
