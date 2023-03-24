@@ -26,11 +26,11 @@
     <x-public.header :page="$page" />
 
     <main>
-        <p>Cart</p>
+        <h1>Cart</h1>
 
-        @isset($packages)
+        @if (!empty($cart))
 
-            @foreach ($packages as $counter => $package)
+            @foreach ($cart as $counter => $package)
                 {{ $package['title'] }}
                 {{ $package['price'] }}
                 {{ $package['quantity'] }}
@@ -41,24 +41,17 @@
 
             {{ $total_price }}
             <div id="paypal-button-container"></div>
-
-        @endisset
-
-        @if ($packages == null)
+        @else
             <p>Empty cart</p>
             <p>boutons</p>
         @endif
-
-
-
-
 
     </main>
 
     <x-public.footer />
 
     <script>
-        const packages = {!! json_encode($packages) !!}
+        const cart = {!! json_encode($cart) !!}
         const price = {{ $total_price }}
     </script>
     <script

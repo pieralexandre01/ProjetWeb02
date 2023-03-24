@@ -108,7 +108,6 @@ Route::get('/reservations/delete/{id}', [ReservationController::class, 'destroy'
 
 Route::middleware([AuthenticateAdmin::class])->group(function () {
 
-
     // Connexion ------------------------------------------------------------
 
     Route::get('/admin/login', [AuthController::class, 'showLoginAdmin'])
@@ -143,6 +142,10 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     // envoie du formulaire de modif d'un user
     Route::post('/admin/user/update/{id}', [AdminController::class, 'updateUser'])
         ->name('user-update');
+
+    // envoie du formulaire de modif d'un mdp
+    Route::post('/admin/password/update/{id}', [AdminController::class, 'updatePassword'])
+        ->name('password-update');
 
     // bloquer - admin et public
     Route::post('/admin/user/block/{id}', [AdminController::class, 'block'])

@@ -8,6 +8,30 @@
 
     <main>
         <p>Dashboard</p>
+
+        @isset($reservations)
+
+            @foreach ($reservations as $reservation)
+                {{ $reservation->package->title }}
+                {{ $reservation->package->price }}
+                {{ $reservation->quantity }}
+
+                {{-- à ajouter dans la zone admin pour l'annulation aussi --}}
+                @if (now() < $reservation->package->start_date)
+                    <a href="{{ route('reservation-delete', $reservation->id) }}">cancel</a>
+                @endif
+
+                <br>
+            @endforeach
+
+        @endisset
+
+        {{-- @if ($reservations == null)
+            <p>boutons</p>
+        @endif --}}
+
+
+
     </main>
 
     <x-public.footer />

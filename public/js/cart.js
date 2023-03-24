@@ -5,7 +5,7 @@ paypal.Buttons({
         // packages = les forfaits venant de la session (panier)
         let items = []
 
-        for (let item of packages) {
+        for (let item of cart) {
             items.push({
                 name: item.title,
                 quantity: item.quantity,
@@ -13,7 +13,7 @@ paypal.Buttons({
                     value: item.price,
                     currency_code: 'CAD',
                     tax: {
-                        value: item.price * 0.149,
+                        value: (item.price * 0.149).toFixed(2),
                         currency_code: 'CAD'
                     }
                 }
@@ -28,7 +28,7 @@ paypal.Buttons({
                     value: price * 1.149,
                     breakdown: {
                         tax_total: {
-                            value: price * 0.149,
+                            value: (price * 0.149).toFixed(2),
                             currency_code: 'CAD'
                         },
                         item_total: {
