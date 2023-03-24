@@ -25,5 +25,21 @@ class Article extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // accesseur de 150 caractères pour la vue
+    /**
+     * Retourne les 150 premiers caractères du texte
+     *
+     * @return string
+     */
+    public function getResumeAttribute() {
+        return substr($this->text, 0, 150) . "...";
+    }
+
+    /**
+     * Retourne le texte avec des sauts de ligne
+     *
+     * @return string
+     */
+    public function getFormattedTextAttribute() {
+        return nl2br($this->text);
+    }
 }

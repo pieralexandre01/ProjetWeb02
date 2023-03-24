@@ -17,6 +17,7 @@ class ArticleController extends Controller
         return view('articles', [
             "title" => "Mirror World | Articles",
             "page" => "articles",
+            "articles" => Article::all(),
             "categorie" => Category::with('articles')->get(),
         ]);
     }
