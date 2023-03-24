@@ -12,6 +12,10 @@ main {
     padding-bottom: 0px;
     padding-top: 70px;
 
+    .admin_create_container {
+        width: 46.25rem;
+    }
+
     .button {
         background-color: var(--bg-color);
         border-color: var(--color-hover) !important;

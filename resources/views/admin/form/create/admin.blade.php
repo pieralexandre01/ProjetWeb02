@@ -14,9 +14,9 @@
             </div>
         </div>
 
-        <span><button href="" class="button category_button">go back</button></span>
+        <span><button href="{{ route('admin-dashboard') }}" class="button category_button">go back</button></span>
 
-        <div class="container">
+        <div class="admin_create_container">
             <div id="account_create" class="form-container border_box py-2">
 
                 <h3 class="text-center mt-sm-3">CREATE AN ACCOUNT</h3>
