@@ -1,5 +1,6 @@
-<x-layout>
-    {{-- <x-slot name="titre"></x-slot> --}}
+<x-admin.layout>
+    <x-slot name="title">{{ $title }}</x-slot>
+    <x-slot name="css_file">forms</x-slot>
 
     <x-admin.header />
 
@@ -7,4 +8,4 @@
 
     <x-footer />
 
-</x-layout>
+</x-admin.layout>

@@ -1,6 +1,6 @@
 <x-admin.layout>
     <x-slot name="title">{{ $title }}</x-slot>
-    <x-slot name="css_file">admin/forms</x-slot>
+    <x-slot name="css_file">forms</x-slot>
 
     <x-admin.header />
 
@@ -10,6 +10,9 @@
             @csrf
             <input name="title" type="text" value="{{ $activity->title }}">
             <x-msg-error field="title" />
+
+            <input name="subcategory" type="subcategory" value="{{ $activity->subcategory }}">
+            <x-msg-error field="subcategory" />
 
             <textarea name="description" cols="30" rows="10">{{ $activity->description }}</textarea>
             <x-msg-error field="description" />
