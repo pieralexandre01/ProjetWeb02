@@ -3,15 +3,15 @@
         "title": "unlimited access",
         "description": "This access is intended for participants who want to experience all aspects of the futuristic festival. With this access, participants will have unlimited access to all areas of the festival, including the VR, robotics, and AI zones. They will be able to enjoy all presentations, demonstrations, workshops, and experiences without any restrictions. This type of access is ideal for participants who want to explore all areas of futuristic technology and have a complete festival experience.",
         "price": 500,
-        "image": "",
+        "image": "media/images/packages/unlimited.webp",
         "start_date": "2023-09-08",
         "end_date": "2023-09-10"
     },
     {
         "title": "general access",
-        "description": "",
+        "description": "This package is designed to provide participants with a limited introduction to the different technological zones of the Mirror World festival. Participants will be able to explore the VR zone for an immersive demonstration, the robotics zone to learn about robots and their applications, and the AI zone to discover the latest advancements in artificial intelligence. They will also have access to workshops and presentations that will help them better understand these technologies and their potential. The total number of activities available across all zones is limited to 10.",
         "price": 150,
-        "image": "",
+        "image": "media/images/packages/general.webp",
         "start_date": "2023-09-08",
         "end_date": "2023-09-10"
     },
@@ -19,7 +19,7 @@
         "title": "immersive VR access",
         "description": "This access is intended for participants who want to explore virtual worlds with the latest virtual reality technologies. Participants will have access to live demonstrations, immersive experiences, and presentations from renowned VR content creators.",
         "price": 200,
-        "image": "",
+        "image": "media/images/packages/vr.webp",
         "start_date": "2023-09-08",
         "end_date": "2023-09-10"
     },
@@ -27,7 +27,7 @@
         "title": "advanced robotics access",
         "description": "This access is designed for participants passionate about robots and automation. Participants will have access to presentations on advanced robots, robot contests, robot building workshops, as well as demonstrations of robots working in tandem with humans.",
         "price": 200,
-        "image": "",
+        "image": "media/images/packages/robotics.webp",
         "start_date": "2023-09-08",
         "end_date": "2023-09-10"
     },
@@ -35,7 +35,7 @@
         "title": "innovative AI access",
         "description": "This access is for participants who want to learn more about artificial intelligence and its latest advancements. Participants will have access to presentations on AI and its applications, group discussions on AI-related issues, as well as demonstrations of high-performing AI systems.",
         "price": 200,
-        "image": "",
+        "image": "media/images/packages/ai.webp",
         "start_date": "2023-09-08",
         "end_date": "2023-09-10"
     }
