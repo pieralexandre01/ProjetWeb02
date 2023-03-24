@@ -34,8 +34,6 @@
                         </div> --}}
                         <p>{{ $package->description }}</p>
 
-                        {{-- AJOUTER LES AUTRES INFOS --}}
-
                         {{-- styliser les boutons --}}
 
                         <form action="{{ route('package-addtocart', $package->id) }}" method="post">
@@ -60,7 +58,7 @@
                                         <span class="ms-3"><input type="submit" value="reserve"></span>
                                     @else
                                         <p class="m-0">the festival is over</p>
-                                        {{-- ajouter du JS pour que le bouton ne soit pas cliquable dans cette condition ! --}}
+                                        {{-- style différent pour ce bouton --}}
                                         <span class="ms-3"><input type="submit" disabled value="reserve"></span>
                                     @endif
                                 </div>
@@ -69,9 +67,10 @@
                         </form>
                     </div>
 
-                    <div class="col-5">
-                        <img src="" alt="">
+                    <div class="col-4 ms-auto">
+                        <img src=" {{ $package->image }}" alt=" {{ $package->title }} " class="img-fluid">
                     </div>
+
                 </section>
             @endforeach
 
