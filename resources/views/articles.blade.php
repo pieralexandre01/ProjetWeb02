@@ -5,7 +5,6 @@
     <x-public.header :page="$page" />
 
     <main>
-
         <div class="page_title">
             <h1 class="text-end">ARTICLES</h1>
 
@@ -46,14 +45,12 @@
                         </span>
                     </div>
 
-
                     <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
                         <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>
                         <button class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
                     </div>
 
                 </div>
-
             </section>
 
 
@@ -79,7 +76,6 @@
                         </span>
                     </div>
 
-
                     <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
                         <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>
                         <button class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
@@ -88,8 +84,8 @@
                 </div>
             </section>
 
-            <section id="robotics">
 
+            <section id="robotics">
                 <h2 class="text-end mb-5">robotics</h2>
 
                 <div class="border_box mobile_frame d-flex flex-column py-5">
@@ -110,7 +106,6 @@
                             <span class="category_tag d-flex align-self-center ms-md-5">robotics</span>
                         </span>
                     </div>
-
 
                     <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
                         <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>

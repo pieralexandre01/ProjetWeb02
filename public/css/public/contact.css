@@ -20,10 +20,13 @@
 main .container {
   overflow-x: hidden;
 }
-main .social_media_icons img {
+main .container .border_box {
+  padding-inline: 0;
+}
+main .container .social_media_icons img {
   max-height: 30px;
 }
-main .address {
+main .container .address {
   height: 300px;
   width: 300px;
   background-image: url("../../media/images/contact_us_mobile.png");
@@ -31,14 +34,15 @@ main .address {
   background-position: center;
   background-repeat: no-repeat;
 }
-main #google_map {
+main .container #google_map {
   padding-top: 100px;
 }
-main iframe {
+main .container #google_map iframe {
+  padding: 0px !important;
   height: 12.5rem;
   width: min(425px, 90vw) !important;
 }
-main .arrow_down {
+main .container .arrow_down {
   animation: arrow_down 2s infinite ease-in-out;
 }
 @keyframes arrow_down {
