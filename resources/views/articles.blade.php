@@ -22,7 +22,7 @@
 
         <div class=""><img src="{{ asset('/../media/images/articles.webp') }}" class="w-100" alt="Digital image of a robotic hand and a human hand sharing an electric current"></div>
 
-        <div class="container">
+        <div class="container h-100">
 
             <section id="virtual_reality">
                 <h2 class="text-end mb-5">virtual reality</h2>

@@ -46,12 +46,14 @@
 }
 
 main {
-    height: auto;
-    padding-top: 100px;
+    padding-bottom: 60px;
+    // height: auto;
+    // padding-top: 100px;
 
-    .container {
-        height: auto;
-    }
+    // .container {
+    //     height: auto;
+    // }
+
 
     .form-container {
         border: 3px solid var(--color);
@@ -92,7 +94,5 @@ main {
 }
 
 footer {
-    #copyright {
-        padding-bottom: 15px;
-    }
+    height: 45px !important;
 }

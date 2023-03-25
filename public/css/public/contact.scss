@@ -43,7 +43,7 @@ main {
 
     iframe {
         height: 12.5rem;
-        width: min(425px, 90vw);
+        width: min(425px, 90vw) !important;
     }
 
     .arrow_down {

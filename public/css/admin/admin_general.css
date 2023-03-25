@@ -36,11 +36,7 @@
 }
 
 main {
-  height: auto;
-  padding-top: 100px;
-}
-main .container {
-  height: auto;
+  padding-bottom: 60px;
 }
 main .form-container {
   border: 3px solid var(--color);
@@ -74,6 +70,6 @@ main .form-container form input[type=submit]:hover, main .form-container form in
   box-shadow: 0px 0px 5px var(--color-hover);
 }
 
-footer #copyright {
-  padding-bottom: 15px;
+footer {
+  height: 45px !important;
 }/*# sourceMappingURL=admin_general.css.map */

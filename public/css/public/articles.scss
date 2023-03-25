@@ -41,8 +41,6 @@
 }
 
 .container {
-    height: 100% !important;
-
     section {
         margin-block: 8rem;
 
@@ -89,13 +87,29 @@
     p {
         max-width: 800px;
     }
-
-    .read_more_button {
-        width: 100%;
-    }
 }
 
 
+#article {
+    .breadcrumb_trail {
+        a {
+            font-weight: 300 !important;
+        }
+
+        .current_article {
+            color: var(--grey);
+        }
+    }
+
+    .content {
+        padding-top: 10rem;
+        max-width: 800px;
+
+        h3 {
+            margin-bottom: 5rem;
+        }
+    }
+}
 
 // MEDIA QUERIES
 @media only screen and (min-width: 1320px) {
@@ -108,37 +122,39 @@
 }
 
 @media only screen and (min-width: 768px) {
-    section {
-        margin-block: 15rem;
+    main {
+        section {
+            margin-block: 15rem;
 
-        .category_button {
-        white-space: nowrap !important;
+            .category_button {
+            white-space: nowrap !important;
+            }
+
+            .category_tag {
+                background-color: var(--color);
+                border-radius: 10px;
+                flex-shrink: 1;
+                opacity: 0.5;
+                padding-block: 0.5em;
+                padding-inline: 1em;
+            }
+
+            .date {
+                color: var(--grey);
+            }
+
+            .hr {
+                border-bottom: 1px solid var(--grey);
+            }
+
+            p {
+                max-width: 800px;
+            }
+
+            .general_button {
+                width: max-content !important;
+            }
         }
-
-        .category_tag {
-            background-color: var(--color);
-            border-radius: 10px;
-            flex-shrink: 1;
-            opacity: 0.5;
-            padding-block: 0.5em;
-            padding-inline: 1em;
-        }
-
-        .date {
-            color: var(--grey);
-        }
-
-        .hr {
-            border-bottom: 1px solid var(--grey);
-        }
-
-        p {
-            max-width: 800px;
-        }
-    }
-
-    .read_more_button {
-        width: max-content !important;
     }
 }
 
