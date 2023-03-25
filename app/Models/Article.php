@@ -40,6 +40,25 @@ class Article extends Model
      * @return string
      */
     public function getFormattedTextAttribute() {
+
         return nl2br($this->text);
+    }
+
+    /**
+     * Retourne le nom complet de l'auteur d'un article
+     *
+     * @return void
+     */
+    public function getAuthorAttribute() {
+        return $this->user->first_name . ' ' . $this->user->last_name;
+    }
+
+    /**
+     * Retourne la valeur formatée de la colonne created_at dans la table articles
+     *
+     * @return void
+     */
+    public function getDateCreationAttribute() {
+        return $this->created_at->format('Y-m-d');
     }
 }

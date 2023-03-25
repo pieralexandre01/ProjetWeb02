@@ -16,8 +16,8 @@
 
         <span><button href="{{ route('admin-dashboard') }}" class="button category_button">go back</button></span>
 
-        <div class="admin_create_container">
-            <div id="account_create" class="form-container border_box py-2">
+        <div class="admin_create_container mx-auto">
+            <div id="account_create" class="form-container border_box py-4">
 
                 <h3 class="text-center mt-sm-3">CREATE AN ACCOUNT</h3>
 
