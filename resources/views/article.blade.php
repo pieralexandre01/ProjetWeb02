@@ -16,12 +16,12 @@
                 <span>
                     <a href="{{ route('articles') }}">articles</a>
                 </span>
-                <span class="mx-2">></span>
+                <span class="mx-1 mx-lg-2">></span>
                 {{-- lien vers une catégorie de la page d'articles --}}
                 <span>
-                    <a href="{{ route('articles') }}#">virtual reality</a>
+                    <a href="{{ route('articles') }}#">artificial intelligence</a>
                 </span>
-                <span class="mx-3">></span>
+                <span class="mx-1 mx-lg-2">></span>
                 <span class="current_article">
                     {{-- make link below disabled --}}
                     <a href="#" aria-current="{{ $page }}">Beyond reality...</a>

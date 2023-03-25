@@ -23,35 +23,48 @@
 
         <div class="container h-100">
 
-            <section id="virtual_reality">
-                <h2 class="text-end mb-5">virtual reality</h2>
 
-                <div class="border_box mobile_frame d-flex flex-column py-5">
+            @foreach ($categories as $category)
 
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                        <div class="d-flex flex-column">
-                            <h3 class="mb-4 mb-md-0 text-end text-md-start">BEYOND REALITY: VR REVOLUTION</h3>
+                <section>
+                    <h2 class="text-end mb-5">{{ $category->name }}</h2>
 
-                            <span class="hr mt-3 mb-2 mb-md-0 text-start">
-                                <div class="d-flex flex-column flex-md-row">
-                                    <span>by Angela Doe</span>
-                                    <span class="date ms-md-5">2023-02-08</span>
+                    @foreach ($articles as $article)
+                        <div class="border_box mobile_frame d-flex flex-column py-5">
+
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                                <div class="d-flex flex-column">
+                                    <h3 class="mb-4 mb-md-0 text-end text-md-start">BEYOND REALITY: VR REVOLUTION</h3>
+
+                                    <span class="hr mt-3 mb-2 mb-md-0 text-start">
+                                        <div class="d-flex flex-column flex-md-row">
+                                            <span>by Angela Doe</span>
+                                            <span class="date ms-md-5">2023-02-08</span>
+                                        </div>
+                                    </span>
                                 </div>
-                            </span>
+
+                                <span class="pill_box">
+                                    <span class="category_tag d-flex align-self-center ms-md-5">virtual reality</span>
+                                </span>
+                            </div>
+
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
+                                <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>
+
+                                <button href="#" class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
+                                {{-- <a href="#" class="read_more_button mt-5 ms-md-4 text-md-end">read more</a> --}}
+                            </div>
                         </div>
+                    @endforeach
 
-                        <span class="pill_box">
-                            <span class="category_tag d-flex align-self-center ms-md-5">virtual reality</span>
-                        </span>
-                    </div>
+                </section>
 
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
-                        <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>
-                        <button class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
-                    </div>
+            @endforeach
 
-                </div>
-            </section>
+
+
+
 
 
             <section id="artificial_intelligence">

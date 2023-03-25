@@ -52,6 +52,7 @@
                         <div class="accordion-body">text</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
@@ -62,9 +63,11 @@
                         <div class="accordion-body">text</div>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
+
 
     <x-public.footer />
 

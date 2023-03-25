@@ -58,7 +58,6 @@
                 border-bottom: 2px solid var(--color-hover);
                 border-top: 2px solid var(--color-hover);
             }
-
         }
     }
 
@@ -89,11 +88,15 @@
     }
 }
 
-
 #article {
     .breadcrumb_trail {
-        a {
-            font-weight: 300 !important;
+        span {
+            font-size: 0.75rem;
+
+            a {
+                font-size: 0.75rem;
+                font-weight: 300 !important;
+            }
         }
 
         .current_article {
@@ -118,6 +121,18 @@
         flex-direction: row !important;
         gap: 3rem;
         justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .breadcrumb_trail {
+        span {
+            font-size: 0.85rem !important;
+
+            a {
+                font-size: 0.938rem !important;
+            }
+        }
     }
 }
 

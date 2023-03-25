@@ -75,7 +75,11 @@
   max-width: 800px;
 }
 
-#article .breadcrumb_trail a {
+#article .breadcrumb_trail span {
+  font-size: 0.75rem;
+}
+#article .breadcrumb_trail span a {
+  font-size: 0.75rem;
   font-weight: 300 !important;
 }
 #article .breadcrumb_trail .current_article {
@@ -95,6 +99,14 @@
     flex-direction: row !important;
     gap: 3rem;
     justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .breadcrumb_trail span {
+    font-size: 0.85rem !important;
+  }
+  .breadcrumb_trail span a {
+    font-size: 0.938rem !important;
   }
 }
 @media only screen and (min-width: 768px) {
