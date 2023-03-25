@@ -4,9 +4,6 @@
 
     <x-public.header :page="$page" />
 
-<<<<<<< Updated upstream
-    <main></main>
-=======
     <main id="article">
         <div class="page_title">
             <h1 class="text-end">ARTICLE</h1>
@@ -15,7 +12,7 @@
                 <div class="circle"></div>
             </div>
 
-            <div class="breadcrumb_trail d-none d-md-block container pt-2 text-end">
+            <div class="breadcrumb_trail d-none d-md-block pt-2 text-end">
                 <span>
                     <a href="{{ route('articles') }}">articles</a>
                 </span>
@@ -55,7 +52,6 @@
 
         </div>
     </main>
->>>>>>> Stashed changes
 
     <x-public.footer />
 
