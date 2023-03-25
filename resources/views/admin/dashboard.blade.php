@@ -37,7 +37,7 @@
                     <div class="collapsed ps-0 d-flex justify-content-between" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         {{-- mettre le style du h3 au h2 --}}
-                        <h2 class="text-white">admin</h2>
+                        <h2 class="h3 text-white">admin</h2>
                         <div class="arrow d-flex justify-content-center align-items-center">
                             <div>V</div> {{-- toggle sur une flèche qui change de direction (et couleur?) --}}
                         </div>

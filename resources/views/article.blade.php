@@ -1,6 +1,6 @@
 <x-public.layout>
     <x-slot name="title">{{ $title }}</x-slot>
-    <x-slot name="css_file">public/article</x-slot>
+    <x-slot name="css_file">public/articles</x-slot>
 
     <x-public.header :page="$page" />
 
@@ -12,7 +12,7 @@
                 <div class="circle"></div>
             </div>
 
-            <div class="breadcrumb_trail d-none d-md-block pt-2 text-end">
+            <div class="breadcrumb_trail d-none d-md-block container pt-2 text-end">
                 <span>
                     <a href="{{ route('articles') }}">articles</a>
                 </span>

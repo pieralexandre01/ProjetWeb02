@@ -162,8 +162,12 @@ nav {
 
 main {
     min-height: 200vh;
-    padding-bottom: 100vh;
+    padding-bottom: 100vh !important;
     padding-top: 70px;
+
+    .general_button {
+        width: 100%;
+    }
 
     button {
         background-color: var(--bg-color);

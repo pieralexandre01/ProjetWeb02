@@ -129,8 +129,11 @@ nav .menu_container .open_menu .bar_2 {
 
 main {
   min-height: 200vh;
-  padding-bottom: 100vh;
+  padding-bottom: 100vh !important;
   padding-top: 70px;
+}
+main .general_button {
+  width: 100%;
 }
 main button {
   background-color: var(--bg-color);
