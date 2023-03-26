@@ -16,3 +16,79 @@
 .user_icon_connected:focus {
     background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
+
+.activities {
+    .accordion {
+        border: 2px solid var(--color) !important;
+        border-radius: 10px;
+
+        .accordion-item {
+            background-color: var(--bg-color) !important;
+            border: 1px solid var(--color) !important;
+            border-width: 3px;
+            color: var(--white);
+
+            .accordion-header {
+            border-bottom: 2px solid var(--color) !important;
+            }
+
+            .accordion-button {
+                background-color: var(--bg-color) !important;
+                border-color: var(--color) !important;
+                box-shadow: none !important;
+                color: var(--white);
+
+                &:hover {
+                    background-color: var(--color) !important;
+                }
+
+                &:active,
+                &:focus {
+                    background-color: var(--color-hover) !important;
+                }
+            }
+
+
+            .accordion-body {
+                border-bottom: 2px solid var(--color) !important;
+                padding-block: 3rem !important;
+
+                .subcategory_bar {
+                    background-color: var(--color);
+                    box-shadow: 0px 0px 5px var(--color-hover);
+                    height: 1.5px;
+                    width: 75%;
+                }
+
+                img {
+                    border-radius: 10px;
+                    height: 200px;
+                    width: 200px;
+                }
+
+                .activity_date {
+                    font-size: 0.785rem;
+                    font-weight: 100;
+                    font-family: "termina", sans-serif;
+                    letter-spacing: 0.025rem;
+                }
+
+                p {
+                    max-width: 600px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .accordion {
+        .accordion-body {
+
+            .activity_date {
+                padding-right: 3rem;
+            }
+            padding-inline: 3rem;
+        }
+    }
+}

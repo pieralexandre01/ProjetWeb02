@@ -15,4 +15,63 @@
 .user_icon_connected:hover,
 .user_icon_connected:focus {
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
+}
+
+.activities .accordion {
+  border: 2px solid var(--color) !important;
+  border-radius: 10px;
+}
+.activities .accordion .accordion-item {
+  background-color: var(--bg-color) !important;
+  border: 1px solid var(--color) !important;
+  border-width: 3px;
+  color: var(--white);
+}
+.activities .accordion .accordion-item .accordion-header {
+  border-bottom: 2px solid var(--color) !important;
+}
+.activities .accordion .accordion-item .accordion-button {
+  background-color: var(--bg-color) !important;
+  border-color: var(--color) !important;
+  box-shadow: none !important;
+  color: var(--white);
+}
+.activities .accordion .accordion-item .accordion-button:hover {
+  background-color: var(--color) !important;
+}
+.activities .accordion .accordion-item .accordion-button:active, .activities .accordion .accordion-item .accordion-button:focus {
+  background-color: var(--color-hover) !important;
+}
+.activities .accordion .accordion-item .accordion-body {
+  border-bottom: 2px solid var(--color) !important;
+  padding-block: 3rem !important;
+}
+.activities .accordion .accordion-item .accordion-body .subcategory_bar {
+  background-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
+  height: 1.5px;
+  width: 75%;
+}
+.activities .accordion .accordion-item .accordion-body img {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+.activities .accordion .accordion-item .accordion-body .activity_date {
+  font-size: 0.785rem;
+  font-weight: 100;
+  font-family: "termina", sans-serif;
+  letter-spacing: 0.025rem;
+}
+.activities .accordion .accordion-item .accordion-body p {
+  max-width: 600px;
+}
+
+@media only screen and (min-width: 768px) {
+  .accordion .accordion-body {
+    padding-inline: 3rem;
+  }
+  .accordion .accordion-body .activity_date {
+    padding-right: 3rem;
+  }
 }/*# sourceMappingURL=activities.css.map */
