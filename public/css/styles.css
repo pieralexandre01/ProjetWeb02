@@ -184,6 +184,10 @@ nav .festival {
   top: 0.75em;
 }
 
+main {
+  min-height: 100vh;
+  padding-top: 70px;
+}
 main .page_title {
   padding-inline: clamp(20px, 2vw, 8.75rem);
   padding-top: 10%;
@@ -251,19 +255,16 @@ footer {
   }
 }
 @media only screen and (min-width: 768px) {
-  h1,
-  .h1 {
+  h1 {
     font-family: "ethnocentric", sans-serif;
     font-size: 3.125rem;
     letter-spacing: 0.078rem;
   }
-  h2,
-  .h2 {
+  h2 {
     font-family: "ocr-b-std", monospace;
     font-size: 2.75rem;
   }
-  h3, h2.h3,
-  .h3 {
+  h3, h2.h3 {
     font-family: "ethnocentric", sans-serif;
     font-size: 2rem;
     font-weight: 300;

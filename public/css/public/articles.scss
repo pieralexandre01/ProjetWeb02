@@ -47,17 +47,18 @@
         h2 {
             padding-inline: 1.25rem;
         }
+    }
 
-        .mobile_frame {
-            // border: 2px solid var(--color);
-            border-block: 2px solid var(--color);
-            // border-inline: 2px solid var(--color);
-            margin-inline: 20px;
+    .mobile_frame {
+        // border: 2px solid var(--color);
+        border-block: 2px solid var(--color);
+        // border-inline: 2px solid var(--color);
+        margin-bottom: 6rem;
+        margin-inline: 20px;
 
-            &:hover {
-                border-bottom: 2px solid var(--color-hover);
-                border-top: 2px solid var(--color-hover);
-            }
+        &:hover {
+            border-bottom: 2px solid var(--color-hover);
+            border-top: 2px solid var(--color-hover);
         }
     }
 
@@ -82,10 +83,6 @@
     .hr {
         border-bottom: 1px solid var(--grey);
     }
-
-    p {
-        max-width: 800px;
-    }
 }
 
 #article {
@@ -106,15 +103,41 @@
 
     .content {
         padding-top: 10rem;
-        max-width: 800px;
+        max-width: calc(800px + 1.5rem * 2);
 
         h3 {
             margin-bottom: 5rem;
         }
     }
+
+    .suggestions {
+        margin-top: 12rem;
+
+        .sub_title {
+            margin-inline: 20px;
+        }
+
+        .article_suggestion {
+            div {
+                .hr {
+                    border-bottom: 1px solid var(--grey);
+                }
+            }
+        }
+    }
 }
 
 // MEDIA QUERIES
+@media only screen and (min-width: 1400px) {
+    #article {
+        .article_suggestion {
+            flex-shrink: 0;
+            max-width: 400px;
+            padding-inline: 1.5rem !important;
+        }
+    }
+}
+
 @media only screen and (min-width: 1320px) {
     .category_selector {
         display: flex;
@@ -139,8 +162,6 @@
 @media only screen and (min-width: 768px) {
     main {
         section {
-            margin-block: 15rem;
-
             .category_button {
             white-space: nowrap !important;
             }
@@ -171,12 +192,18 @@
             }
         }
     }
+
+    #article {
+        .suggestions {
+            margin-top: 15rem;
+        }
+    }
 }
 
 @media only screen and (min-width: 576px) {
     .mobile_frame {
         border: 2px solid var(--color);
-        margin-inline: 20px;
+        margin-bottom: 3rem !important;
 
         &:hover {
             border-block: 2px solid var(--color-hover);

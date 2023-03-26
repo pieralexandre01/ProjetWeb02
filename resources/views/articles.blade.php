@@ -24,47 +24,47 @@
         <div class="container">
             @foreach ($categories as $category)
 
-                <section>
-                    <h2 class="text-end mb-5">{{ $category->name }}</h2>
+            <section>
+                <h2 class="text-end mb-5">{{ $category->name }}</h2>
 
-                    @foreach ($articles as $article)
+                @foreach ($articles as $article)
 
-                        @if ($article->category->name == $category->name)
+                    @if ($article->category->name == $category->name)
 
-                            <div class="border_box mobile_frame d-flex flex-column py-5">
+                        <div class="border_box mobile_frame d-flex flex-column py-5">
 
-                                <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                                    <div class="d-flex flex-column">
-                                        <h3 class="mb-4 mb-md-0 text-end text-md-start">{{ $article->title }}</h3>
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                                <div class="d-flex flex-column">
+                                    <h3 class="mb-4 mb-md-0 text-end text-md-start">{{ $article->title }}</h3>
 
-                                        <span class="hr mt-3 mb-2 mb-md-0 text-start">
-                                            <div class="d-flex flex-column flex-md-row">
-                                                <span>by {{ $article->author }}</span>
-                                                <span class="date ms-md-5">{{ $article->date_creation }}</span>
-                                            </div>
-                                        </span>
-                                    </div>
-
-                                    <span class="pill_box">
-                                        <span class="category_tag d-flex align-self-center ms-md-5">{{ $category->name }}</span>
+                                    <span class="hr mt-3 mb-2 mb-md-0 text-start">
+                                        <div class="d-flex flex-column flex-md-row">
+                                            <span>by {{ $article->author }}</span>
+                                            <span class="date ms-md-5">{{ $article->date_creation }}</span>
+                                        </div>
                                     </span>
                                 </div>
 
-                                <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
-                                    <p class="mb-0">{{ $article->resume }}</p>
-
-                                    <a href="{{ route('article', $article->id) }}">
-                                        <button href="#" class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
-                                    </a>
-                                    {{-- <a href="#" class="read_more_button mt-5 ms-md-4 text-md-end">read more</a> --}}
-                                </div>
+                                <span class="pill_box">
+                                    <span class="category_tag d-flex align-self-center ms-md-5">{{ $category->name }}</span>
+                                </span>
                             </div>
 
-                        @endif
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
+                                <p class="mb-0">{{ $article->resume }}</p>
 
-                    @endforeach
+                                <a href="{{ route('article', $article->id) }}">
+                                    <button href="#" class="general_button mt-5 ms-md-4 text-md-end">read more</button>
+                                </a>
+                                {{-- <a href="#" class="read_more_button mt-5 ms-md-4 text-md-end">read more</a> --}}
+                            </div>
+                        </div>
 
-                </section>
+                    @endif
+
+                @endforeach
+
+            </section>
 
             @endforeach
 

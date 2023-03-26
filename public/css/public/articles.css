@@ -44,11 +44,12 @@
 .container section h2 {
   padding-inline: 1.25rem;
 }
-.container section .mobile_frame {
+.container .mobile_frame {
   border-block: 2px solid var(--color);
+  margin-bottom: 6rem;
   margin-inline: 20px;
 }
-.container section .mobile_frame:hover {
+.container .mobile_frame:hover {
   border-bottom: 2px solid var(--color-hover);
   border-top: 2px solid var(--color-hover);
 }
@@ -71,9 +72,6 @@
 .container .hr {
   border-bottom: 1px solid var(--grey);
 }
-.container p {
-  max-width: 800px;
-}
 
 #article .breadcrumb_trail span {
   font-size: 0.75rem;
@@ -87,12 +85,28 @@
 }
 #article .content {
   padding-top: 10rem;
-  max-width: 800px;
+  max-width: calc(800px + 3rem);
 }
 #article .content h3 {
   margin-bottom: 5rem;
 }
+#article .suggestions {
+  margin-top: 12rem;
+}
+#article .suggestions .sub_title {
+  margin-inline: 20px;
+}
+#article .suggestions .article_suggestion div .hr {
+  border-bottom: 1px solid var(--grey);
+}
 
+@media only screen and (min-width: 1400px) {
+  #article .article_suggestion {
+    flex-shrink: 0;
+    max-width: 400px;
+    padding-inline: 1.5rem !important;
+  }
+}
 @media only screen and (min-width: 1320px) {
   .category_selector {
     display: flex;
@@ -110,9 +124,6 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  main section {
-    margin-block: 15rem;
-  }
   main section .category_button {
     white-space: nowrap !important;
   }
@@ -137,11 +148,14 @@
     width: -moz-max-content !important;
     width: max-content !important;
   }
+  #article .suggestions {
+    margin-top: 15rem;
+  }
 }
 @media only screen and (min-width: 576px) {
   .mobile_frame {
     border: 2px solid var(--color);
-    margin-inline: 20px;
+    margin-bottom: 3rem !important;
   }
   .mobile_frame:hover {
     border-block: 2px solid var(--color-hover);

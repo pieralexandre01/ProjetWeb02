@@ -10,8 +10,9 @@
 
 main {
     min-height: 100vh !important;
-    padding-bottom: 0px;
-    padding-top: 70px;
+    // max-height: 100vh !important;
+    padding-bottom: 60px !important;
+    // padding-top: 70px;
 
     .container {
 
@@ -46,7 +47,7 @@ main {
                     }
                 }
             }
-    }
+        }
 
         .text_link {
             color: var(--color-hover);
@@ -69,7 +70,6 @@ footer {
     input[type=password] {
         width: max(18.75rem, 100%);
     }
-
 }
 
 @media only screen and (min-width: 992px) {
