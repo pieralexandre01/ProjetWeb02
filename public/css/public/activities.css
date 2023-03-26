@@ -19,6 +19,7 @@
 
 .activities .accordion {
   border: 2px solid var(--color) !important;
+  box-shadow: 0px 0px 5px var(--color-hover);
   border-radius: 10px;
 }
 .activities .accordion .accordion-item {
@@ -65,13 +66,4 @@
 }
 .activities .accordion .accordion-item .accordion-body p {
   max-width: 600px;
-}
-
-@media only screen and (min-width: 768px) {
-  .accordion .accordion-body {
-    padding-inline: 3rem;
-  }
-  .accordion .accordion-body .activity_date {
-    padding-right: 3rem;
-  }
 }/*# sourceMappingURL=activities.css.map */

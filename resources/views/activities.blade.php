@@ -23,13 +23,13 @@
                         <div class="accordion-header">
 
                             {{-- dynamic aria-expanded on click -> true --}}
-                            <button class="accordion-button px-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $activity->id }}" aria-expanded="false" aria-controls="collapse{{ $activity->id }}">
-
+                            {{-- can aria information contain numbers (id) ?? --}}
+                            <button class="accordion-button px-4 px-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $activity->id }}" aria-expanded="false" aria-controls="collapse{{ $activity->id }}">
                                 {{ $activity->title }}
                             </button>
                         </div>
                         <div id="collapse{{ $activity->id }}" class="accordion-collapse collapse" data-bs-parent="#activity_accordion">
-                            <div class="accordion-body">
+                            <div class="accordion-body px-sm-4 px-md-5">
 
                                 @if ($activity->subcategory != null)
                                     {{-- en lettres majuscules: --}}
@@ -37,11 +37,17 @@
                                     <div class="subcategory_bar mb-4"></div>
                                 @endif
 
-                                <div class="d-flex flex-column align-items-center">
-                                    <img src="{{ asset('/../' . $activity->image ) }}" alt="">
-                                    <div class="activity_date align-self-end mt-3 mb-3">{{ $activity->date }}</div>
+                                <div class="d-flex flex-column flex-md-row-reverse align-items-center">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <img src="{{ asset('/../' . $activity->image ) }}" alt="">
+                                        <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->date }}</div>
+                                    </div>
+
+                                    <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->date }}</div>
+
+                                    <p class="mb-0 pb-md-4 pe-md-5">{{ $activity->description }}</p>
                                 </div>
-                                <p class="mb-0">{{ $activity->description }}</p>
+
                                 {{-- ENLEVER ??? : <p>check your e-mail to access this event!</p> --}}
                             </div>
                         </div>
