@@ -4,7 +4,7 @@
 
     <x-public.header :page="$page" />
 
-    <main>
+    <main >
         <div class="page_title">
             <h1 class="text-end">ACTIVITIES</h1>
 
@@ -37,7 +37,7 @@
 
                                 <div class="d-flex flex-column flex-md-row-reverse align-items-center">
                                     <div class="d-flex flex-column align-items-center">
-                                        <img src="{{ asset('/../' . $activity->image ) }}" alt="">
+                                        <img src="{{ asset('/../' . $activity->image ) }}" class="activity_image"  alt="">
                                         <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->date }}</div>
                                     </div>
 
@@ -59,13 +59,13 @@
         </div>
 
 
-        <div class="container mt-5 d-none d-lg-block">
+        <div class="container mt-5 d-none d-lg-block d-flex flex-row flex-nowrap">
 
             <section id="activity_list" class="d-flex flex-column">
 
-                @foreach ($activities as $activity)
+                @foreach ($activities as $key => $activity)
 
-                    <button class="activity_button px-3" type="button">
+                    <button class="activity_button px-3" type="button" @@click="activity = {{ $key }}">
                         {{ $activity->title }}
                     </button>
 
@@ -76,28 +76,27 @@
 
             <section id="spa">
 
-                @foreach ($activities as $activity)
+                @foreach ($activities as $key => $activity)
+                    <div class="activity border_box px-sm-4 px-md-5" v-show="{{ $key }} == activity">
 
-                <div class="activity px-sm-4 px-md-5">
+                        @if ($activity->subcategory != null)
+                            {{-- en lettres majuscules: --}}
+                            <h2>{{ $activity->subcategory }}</h2>
+                            <div class="subcategory_bar mb-4"></div>
+                        @endif
 
-                    @if ($activity->subcategory != null)
-                        {{-- en lettres majuscules: --}}
-                        <h2>{{ $activity->subcategory }}</h2>
-                        <div class="subcategory_bar mb-4"></div>
-                    @endif
+                        <div class="d-flex flex-column flex-md-row-reverse align-items-center">
+                            <div class="d-flex flex-column align-items-center">
+                                <img src="{{ asset('/../' . $activity->image ) }}" class="activity_image" alt="">
+                                <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->date }}</div>
+                            </div>
 
-                    <div class="d-flex flex-column flex-md-row-reverse align-items-center">
-                        <div class="d-flex flex-column align-items-center">
-                            <img src="{{ asset('/../' . $activity->image ) }}" alt="">
-                            <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->date }}</div>
+                            <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->date }}</div>
+
+                            <p class="mb-0 pb-md-4 pe-md-5">{{ $activity->description }}</p>
                         </div>
 
-                        <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->date }}</div>
-
-                        <p class="mb-0 pb-md-4 pe-md-5">{{ $activity->description }}</p>
                     </div>
-
-                </div>
 
                 @endforeach
 
