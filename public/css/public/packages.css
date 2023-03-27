@@ -15,4 +15,79 @@
 .user_icon_connected:hover,
 .user_icon_connected:focus {
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
+}
+
+main section {
+  margin-top: 11rem !important;
+}
+main section h3.featured_package {
+  color: var(--dark-pink);
+}
+main section .title_decoration {
+  background-color: var(--dark-pink);
+  height: 2px;
+  width: 100%;
+  position: relative;
+}
+main section .title_decoration .circle {
+  background-color: var(--dark-pink);
+  border-radius: 50%;
+  height: 15px;
+  margin-left: 7.5px;
+  width: 15px;
+  position: absolute;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+main section p.description {
+  margin-bottom: 2rem;
+}
+main section div.price p {
+  font-family: "ethnocentric", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+}
+main section form select {
+  height: 3rem;
+  background-color: var(--bg-color);
+  color: var(--white);
+  padding: 0rem 1rem;
+}
+main section form p.festival_over {
+  color: var(--vivid-pink);
+}
+main section form input[type=submit] {
+  background-color: var(--bg-color);
+  border-color: var(--color-hover);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px var(--color-hover);
+  color: var(--white);
+  flex-shrink: 1;
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  font-family: "termina", sans-serif;
+}
+main section form input[type=submit].disabled {
+  opacity: 0.7;
+  border-color: var(--white);
+  box-shadow: none;
+}
+main section form input[type=submit].disabled:hover {
+  opacity: 0.7;
+  background-color: var(--bg-color);
+}
+main section form input[type=submit]:hover {
+  background-color: var(--color-hover);
+  color: var(--white);
+}
+main section div.package_img img {
+  height: 25rem;
+  width: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+div.footer {
+  padding-top: 6rem !important;
 }/*# sourceMappingURL=packages.css.map */
