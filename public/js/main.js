@@ -15,6 +15,9 @@ function toggleMenu() {
 
 // Activity page
 const activity = ref(0)
+const activity_list = ref(1)
+
+
 
 // Homepage
 
@@ -26,7 +29,7 @@ const root = {
             //Propriétés
             is_open,
             activity,
-
+            activity_list,
             //Méthodes
             toggleMenu,
         }

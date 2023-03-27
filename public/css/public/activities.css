@@ -17,6 +17,12 @@
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
+.subcategory_bar {
+  background-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
+  height: 1.5px;
+}
+
 .activity_image {
   border-radius: 10px;
   height: 200px;
@@ -30,39 +36,48 @@
   letter-spacing: 0.025rem;
 }
 
-#activity_list {
+#desktop_version .container {
+  margin-inline: 20px;
+}
+#desktop_version #activity_list {
   border: 1px solid var(--color);
   border-radius: 10px;
-  margin-left: 20px;
-  width: -moz-max-content;
-  width: max-content;
+  width: auto;
 }
-#activity_list .activity_button {
+#desktop_version #activity_list .activity_button {
   background-color: var(--bg-color) !important;
   border: 2px solid var(--color);
-  border-radius: 0px;
   border-color: var(--color) !important;
+  border-radius: 0px;
   box-shadow: none !important;
   color: var(--white);
 }
-#activity_list .activity_button:hover {
+#desktop_version #activity_list .activity_button:hover {
   background-color: var(--color) !important;
 }
-#activity_list .activity_button:active, #activity_list .activity_button:focus {
+#desktop_version #activity_list .activity_button:active, #desktop_version #activity_list .activity_button:focus {
   background-color: var(--color-hover) !important;
 }
-#activity_list .activity_button:first-of-type {
+#desktop_version #activity_list .activity_button:first-of-type,
+#desktop_version #activity_list .activity_button:nth-child(9) {
   border-radius: 10px 10px 0px 0px;
 }
-#activity_list .activity_button:last-of-type {
+#desktop_version #activity_list .activity_button:last-of-type,
+#desktop_version #activity_list .activity_button:nth-child(10) {
   border-radius: 0px 0px 10px 10px;
 }
-
-#spa .activity .subcategory_bar {
-  background-color: var(--color);
-  box-shadow: 0px 0px 5px var(--color-hover);
-  height: 1.5px;
-  width: 75%;
+#desktop_version #activity_list .activity_list_button,
+#desktop_version #activity_list .button {
+  border: none;
+  box-shadow: none;
+}
+#desktop_version #activity_list .activity_list_button:hover, #desktop_version #activity_list .activity_list_button:focus,
+#desktop_version #activity_list .button:hover,
+#desktop_version #activity_list .button:focus {
+  background-color: var(--bg-color) !important;
+  color: var(--color-hover) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 #accordion {
@@ -98,9 +113,6 @@
   padding-block: 3rem !important;
 }
 #accordion .accordion-item .accordion-body .subcategory_bar {
-  background-color: var(--color);
-  box-shadow: 0px 0px 5px var(--color-hover);
-  height: 1.5px;
   width: 75%;
 }
 #accordion .accordion-item .accordion-body p {

@@ -17,12 +17,11 @@
     background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
-// .subcategory_bar {
-//     background-color: var(--color);
-//     box-shadow: 0px 0px 5px var(--color-hover);
-//     height: 1.5px;
-//     width: 75%;
-// }
+.subcategory_bar {
+    background-color: var(--color);
+    box-shadow: 0px 0px 5px var(--color-hover);
+    height: 1.5px;
+}
 
 .activity_image {
     border-radius: 10px;
@@ -37,53 +36,60 @@
     letter-spacing: 0.025rem;
 }
 
-#activity_list {
-    border: 1px solid var(--color);
-    border-radius: 10px;
-    margin-left: 20px;
-    width: max-content;
+#desktop_version {
 
-    .activity_button {
-        background-color: var(--bg-color) !important;
-        border: 2px solid var(--color);
-        border-radius: 0px;
-        border-color: var(--color) !important;
-        box-shadow: none !important;
-        color: var(--white);
+    .container {
+        margin-inline: 20px;
+    }
 
-        &:hover {
-            background-color: var(--color) !important;
+    #activity_list {
+        border: 1px solid var(--color);
+        border-radius: 10px;
+        width: auto;
+
+        .activity_button {
+            background-color: var(--bg-color) !important;
+            border: 2px solid var(--color);
+            border-color: var(--color) !important;
+            border-radius: 0px;
+            box-shadow: none !important;
+            color: var(--white);
+
+            &:hover {
+                background-color: var(--color) !important;
+            }
+
+            &:active,
+            &:focus {
+                background-color: var(--color-hover) !important;
+            }
         }
 
-        &:active,
-        &:focus {
-            background-color: var(--color-hover) !important;
+        .activity_button:first-of-type,
+        .activity_button:nth-child(9) {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .activity_button:last-of-type,
+        .activity_button:nth-child(10) {
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .activity_list_button,
+        .button {
+            border: none;
+            box-shadow: none;
+
+            &:hover,
+            &:focus {
+                background-color: var(--bg-color) !important;
+                color: var(--color-hover) !important;
+                text-decoration: underline;
+                text-underline-offset: 0.25em;
+            }
         }
     }
-
-    .activity_button:first-of-type {
-        border-radius: 10px 10px 0px 0px;
-    }
-
-    .activity_button:last-of-type {
-        border-radius: 0px 0px 10px 10px;
-    }
-
 }
-
-
-
-#spa {
-    .activity {
-        .subcategory_bar {
-            background-color: var(--color);
-            box-shadow: 0px 0px 5px var(--color-hover);
-            height: 1.5px;
-            width: 75%;
-        }
-    }
-}
-
 
 
 #accordion {
@@ -94,7 +100,6 @@
     --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 
-
     .accordion-item {
         background-color: var(--bg-color) !important;
         border: 1px solid var(--color) !important;
@@ -102,7 +107,7 @@
         color: var(--white);
 
         .accordion-header {
-        border-bottom: 2px solid var(--color) !important;
+            border-bottom: 2px solid var(--color) !important;
         }
 
         .accordion-button {
@@ -125,11 +130,7 @@
             border-bottom: 2px solid var(--color) !important;
             padding-block: 3rem !important;
 
-
             .subcategory_bar {
-                background-color: var(--color);
-                box-shadow: 0px 0px 5px var(--color-hover);
-                height: 1.5px;
                 width: 75%;
             }
 
@@ -139,11 +140,3 @@
         }
     }
 }
-
-
-
-// @media only screen and (min-width: 1050px) {
-//     #activity_list {
-//         margin-left: 0px;
-//     }
-// }

@@ -46,7 +46,6 @@
                                     <p class="mb-0 pb-md-4 pe-md-5">{{ $activity->description }}</p>
                                 </div>
 
-                                {{-- ENLEVER ??? : <p>check your e-mail to access this event!</p> --}}
                             </div>
                         </div>
 
@@ -59,41 +58,55 @@
         </div>
 
 
-        <div class="container mt-5 d-none d-lg-block d-flex flex-row flex-nowrap">
+        <div id="desktop_version" class="container mt-5 d-none d-lg-flex flex-nowrap">
 
-            <section id="activity_list" class="d-flex flex-column">
+            <section id="activity_list" class="d-flex flex-column me-5 justify-content-between">
 
-                @foreach ($activities as $key => $activity)
+                <div class="d-flex flex-column">
+                    @foreach ($activities as $key => $activity)
+                        <button class="activity_button px-3 text-start" type="button" @@click="activity = {{ $key }}" v-show="activity_list == {{ floor($key / 9) + 1}}">
+                            {{ $activity->title }}
+                        </button>
+                    @endforeach
+                </div>
 
-                    <button class="activity_button px-3" type="button" @@click="activity = {{ $key }}">
-                        {{ $activity->title }}
-                    </button>
-
-                @endforeach
+                <div class="text-center">
+                    <button class="activity_list_button" @@click="activity_list = 1">1</button>
+                    <button class="activity_list_button" @@click="activity_list = 2">2</button>
+                </div>
 
             </section>
-
 
             <section id="spa">
 
                 @foreach ($activities as $key => $activity)
-                    <div class="activity border_box px-sm-4 px-md-5" v-show="{{ $key }} == activity">
 
+                    <div class="activity border_box p-5" v-show="{{ $key }} == activity">
+
+                        <h2 class="text-end">{{ $activity->title }}</h2>
+                        <div class="subcategory_bar mb-2 w-100"></div>
                         @if ($activity->subcategory != null)
                             {{-- en lettres majuscules: --}}
-                            <h2>{{ $activity->subcategory }}</h2>
-                            <div class="subcategory_bar mb-4"></div>
+                            <div class="d-flex flex-nowrap align-items-start justify-content-between">
+                                <h3>{{ $activity->subcategory }}</h3>
+
+                                <div class="activity_date pt-1">{{ $activity->date }}</div>
+                            </div>
+
+                        @else
+
+                            <div class="activity_date text-end">{{ $activity->date }}</div>
+
                         @endif
 
-                        <div class="d-flex flex-column flex-md-row-reverse align-items-center">
+                        <div class="d-flex flex-column flex-md-row-reverse align-items-center mt-4">
                             <div class="d-flex flex-column align-items-center">
                                 <img src="{{ asset('/../' . $activity->image ) }}" class="activity_image" alt="">
-                                <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->date }}</div>
                             </div>
 
                             <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->date }}</div>
 
-                            <p class="mb-0 pb-md-4 pe-md-5">{{ $activity->description }}</p>
+                            <p class="mb-0 pe-md-5">{{ $activity->description }}</p>
                         </div>
 
                     </div>
