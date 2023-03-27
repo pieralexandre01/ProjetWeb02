@@ -17,4 +17,9 @@ class Package extends Model
     public function reservations() {
         return $this->hasMany(Reservation::class);
     }
+
+    public function formattedDate($db_date) {
+        $date = new \DateTime($this->{$db_date});
+        return $date->format('Y-m-d');
+    }
 }

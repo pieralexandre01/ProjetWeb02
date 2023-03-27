@@ -18,7 +18,40 @@
 }
 
 main {
-    h2.user_name {
-        color: var(--color);
+
+    .container {
+        padding-inline: 20px;
+
+        h2.user_name {
+
+            color: var(--color);
+        }
+
+        .package_title {
+            font-weight: 600;
+        }
+
+        .subtotal {
+            span {
+                font-weight: 600;
+                font-size: 1.8rem;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+
+            .package_title {
+                width: 25%;
+            }
+
+            .package_date {
+                width: 37%;
+            }
+
+            .package_price {
+                width: 15%;
+            }
+        }
     }
+
 }
