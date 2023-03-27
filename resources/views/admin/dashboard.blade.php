@@ -4,13 +4,21 @@
 
     <x-admin.header />
 
-    {{-- comment arranger le footer qui embarque sur le contenu? --}}
 
     {{-- à mettre dans le fichier css ------------------------------------------------------------------------------ --}}
     <style>
         .accordion-button,
         .accordion-button:not(.collapsed) {
             background-color: transparent;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            background-color: #fff;
+            height: 100%;
         }
 
         .accordion-button:not(.collapsed)::after,
@@ -21,8 +29,6 @@
         div.arrow {
             background-color: #fff;
             width: 30px;
-            /* changer pour la bonne couleur */
-            color: blue;
         }
     </style>
     {{-- --------------------------------------------------------------------------------------------------------- --}}
@@ -36,11 +42,16 @@
 
                     <div class="collapsed ps-0 d-flex justify-content-between" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h2 class="h3 text-white">admin</h2>
+                        </button>
                         {{-- mettre le style du h3 au h2 --}}
-                        <h2 class="h3 text-white">admin</h2>
-                        <div class="arrow d-flex justify-content-center align-items-center">
-                            <div>V</div> {{-- toggle sur une flèche qui change de direction (et couleur?) --}}
-                        </div>
+
+                        {{-- <div class="arrow d-flex justify-content-center align-items-center">
+
+                        </div> --}}
                     </div>
                     <hr class="mt-0">
 
