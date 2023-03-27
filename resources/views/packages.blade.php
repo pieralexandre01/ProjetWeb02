@@ -4,25 +4,9 @@
 
     <x-public.header :page="$page" />
 
-    <style>
-        .package_img {
-            height: 25rem;
-        }
+    <main class="px-5">
 
-        section {
-            margin-top: 9.4rem !important;
-        }
-
-        /* section:first-child {
-            border: 1px solid #fff;
-            padding: 3rem;
-        } */
-    </style>
-
-    <main>
-        {{-- comment arranger le footer qui embarque sur le contenu? --}}
-
-        <div class="page_title pb-5">
+        <div class="page_title">
             <h1 class="text-end">PACKAGES</h1>
 
             <div class="title_decoration">
@@ -32,66 +16,67 @@
 
         <div class="container">
 
-            {{-- style à appliquer sur le premier forfait seulement --}}
-            {{-- border_box = est-ce une classe créé par Jackie puisqu'elle s'adapte bien au rose? --}}
-            {{-- <div class="border_box p-2">
-            </div> --}}
-
             @foreach ($packages as $package)
-                <section
-                    class="row align-items-center @if ($package->id % 2 == 1) flex-row-reverse @endif @if ($package->id == 1) border_box p-5 @endif">
+                <section>
 
-                    <div class="col-8 @if ($package->id % 2 == 1) ps-5 @else pe-5 @endif">
-                        <h2>{{ $package->title }}</h2>
-                        {{-- ajuster la ligne --}}
-                        {{-- <div class="title_decoration">
-                            <div class="circle"></div>
-                        </div> --}}
-                        <p>{{ $package->description }}</p>
-
-                        {{-- styliser les boutons --}}
-
-                        <form action="{{ route('package-addtocart', $package->id) }}" method="post">
-                            @csrf
-                            <input type="hidden" name="package_id" value="{{ $package->id }}">
-
-                            <div class="d-flex align-items-center justify-content-between">
-
-                                <div class="price">
-                                    <p>$ {{ $package->price }}</p>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    @if (now() < $package->end_date)
-                                        <select name="package_quantity">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-
-                                        <span class="ms-3"><input type="submit" value="reserve"></span>
-                                    @else
-                                        <p class="m-0">the festival is over</p>
-                                        {{-- style différent pour ce bouton --}}
-                                        <span class="ms-3"><input type="submit" disabled value="reserve"></span>
-                                    @endif
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
+                    @if ($package->id == 1)
+                        <h3 class="m-0 featured_package">featured package</h3>
+                    @endif
 
                     <div
-                        class="col-4 package_img @if ($package->id % 2 == 1) me-auto @else ms-auto @endif bg-primary">
-                        <img src=" {{ $package->image }}" alt=" {{ $package->title }} " class="img-fluid rounded">
-                    </div>
+                        class="row align-items-center @if ($package->id % 2 == 1) flex-lg-row-reverse @endif @if ($package->id == 1) border_box p-5 @endif">
 
+                        <div
+                            class="col-12 col-lg-4 package_img @if ($package->id % 2 == 1) me-lg-auto @else ms-lg-auto @endif mb-5 mb-lg-0 p-0">
+                            <img src=" {{ $package->image }}" alt=" {{ $package->title }} ">
+                        </div>
+
+                        <div class="col-12 col-lg-8 @if ($package->id % 2 == 1) pe-lg-5 @else ps-lg-5 @endif">
+
+                            <h2 class="ps-4">{{ $package->title }}</h2>
+
+                            <div class="title_decoration mb-5">
+                                <div class="circle"></div>
+                            </div>
+
+                            <p class="description">{{ $package->description }}</p>
+
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="price">
+                                    <p>*$ {{ $package->price }}</p>
+                                </div>
+                                <form action="{{ route('package-addtocart', $package->id) }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="package_id" value="{{ $package->id }}">
+                                    <div class="d-flex align-items-center">
+
+                                        @if (now() < $package->end_date)
+                                            <select name="package_quantity" class="rounded">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                            <span class="ms-3"><input type="submit" value="reserve"></span>
+                                        @else
+                                            <p class="m-0 festival_over">the festival is over</p>
+                                            <span class="ms-3"><input class="disabled" type="submit" disabled
+                                                    value="reserve"></span>
+                                        @endif
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
                 </section>
             @endforeach
 
     </main>
 
-    {{-- <x-public.footer /> --}}
+    <div class="footer">
+        <x-public.footer />
+    </div>
 
 </x-public.layout>
