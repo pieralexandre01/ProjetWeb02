@@ -27,12 +27,31 @@ class Article extends Model
     }
 
     /**
-     * Retourne les 150 premiers caractères du texte
+     * Retourne les 20 premiers mots sans jamais dépasser 150 caractères
      *
      * @return string
      */
-    public function getResumeAttribute() {
-        return substr($this->text, 0, 150) . "...";
+    public function getSummaryAttribute() {
+        $words = str_word_count($this->text, 1);
+        $summary = '';
+
+        foreach ($words as $word) {
+            // Ajoute le mot actuel au sommaire
+            $summary .= $word . ' ';
+
+            // Arrête la boucle si on dépasse 150 caractères
+            if (strlen($summary) > 150) {
+                break;
+            }
+        }
+
+        // Trim les espaces blanc au début et à la fin du string, puis concatène les ... au sommaire
+        $summary = trim($summary);
+        if (strlen($summary) < strlen($this->text)) {
+            $summary .= '...';
+        }
+
+        return $summary;
     }
 
     /**
