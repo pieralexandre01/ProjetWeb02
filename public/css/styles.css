@@ -106,6 +106,7 @@ p,
 span,
 textarea {
   line-height: 1.875rem;
+  max-width: 800px;
 }
 
 .paragraph {

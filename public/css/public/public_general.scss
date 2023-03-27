@@ -167,9 +167,11 @@ main {
 
     .general_button {
         width: 100%;
+        border: 2px solid var(--color) !important;
     }
 
-    button {
+    button,
+    .general_button {
         background-color: var(--bg-color);
         border-color: var(--color-hover);
         border-radius: 10px;
@@ -181,7 +183,7 @@ main {
 
         &:hover {
             background-color: var(--color-hover);
-            color: var(--white);
+            color: var(--white) !important;
         }
     }
 }

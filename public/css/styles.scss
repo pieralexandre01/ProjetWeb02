@@ -108,6 +108,7 @@ p,
 span,
 textarea{
     line-height: 1.875rem;
+    max-width: 800px;
 }
 
 .paragraph {
@@ -230,7 +231,7 @@ main {
         padding-inline: 0px;
     }
 
-    // FORMS
+    // FORMS & other
     .border_box {
         background-color: none;
         border-radius: 10px;
