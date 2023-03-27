@@ -21,10 +21,7 @@
 
                     <div class="accordion-item">
                         <div class="accordion-header">
-
-                            {{-- dynamic aria-expanded on click -> true --}}
-                            {{-- can aria information contain numbers (id) ?? --}}
-                            <button class="accordion-button px-4 px-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $activity->id }}" aria-expanded="false" aria-controls="collapse{{ $activity->id }}">
+                            <button class="accordion-button @if ($activity->id != 1) collapsed @endif px-4 px-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $activity->id }}" aria-expanded="false" aria-controls="collapse{{ $activity->id }}">
                                 {{ $activity->title }}
                             </button>
                         </div>

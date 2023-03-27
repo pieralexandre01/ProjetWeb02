@@ -19,7 +19,7 @@
                 <span class="mx-1 mx-lg-2">></span>
                 {{-- lien vers une catégorie de la page d'articles --}}
                 <span>
-                    <a href="{{ route('articles') }}#">{{ $article->category->name }}</a>
+                    <a href="{{ route('articles') }}#{{ $category->name_reference }}">{{ $article->category->name }}</a>
                 </span>
                 <span class="mx-1 mx-lg-2">></span>
                 <span class="current_article">
@@ -35,16 +35,20 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex flex-column">
                         <h3 class="text-end ms-5 ps-5">{{ $article->title }}</h3>
-                        <span class="hr mt-3 mb-2 text-start">
-                            <div class="d-flex">
+
+                        <div class="d-flex mt-3 mb-2 text-start">
+                            <span class="hr d-flex flex-column flex-sm-row">
                                 <span>by {{ $article->author }}</span>
-                                <span class="date ms-md-5">{{ $article->date_creation }}</span>
-                            </div>
+                                <span class="date ms-sm-5">{{ $article->date_creation }}</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <span class="pill_box">
+                            <span class="category_tag">{{ $article->category->name }}</span>
                         </span>
                     </div>
-                    <span class="pill_box">
-                        <span class="category_tag d-flex align-self-center">{{ $article->category->name }}</span>
-                    </span>
                 </div>
 
                 <p class="mb-0 mt-5">{!! $article->formatted_text !!}</p>
@@ -52,11 +56,10 @@
 
         </div>
 
-
         <section class="suggestions container">
             <p class="sub_title">check out more <span>{{ $article->category->name }}</span> articles :</p>
 
-            <div class="d-flex flex-column flex-xxl-row justify-content-xxl-between">
+            <div class="d-flex flex-column flex-xxl-row justify-content-xxl-center">
                 @foreach ($categories as $category)
 
                     @if ($category->id === $article->category->id)
@@ -69,15 +72,16 @@
                                     <h3 class="mb-4 text-end">{{ $article->title }}</h3>
 
                                     <div>
-                                        <div class="hr mt-3">
-                                            <p class="my-0">by {{ $article->author }}</p>
+                                        <div class="mt-3">
+                                            <p class="my-0">
+                                                <span class="hr">by {{ $article->author }}</span>
+                                            </p>
                                         </div>
                                         <p class="date">{{ $article->date_creation }}</p>
                                         <p class="mb-0">{{ Str::limit($article->resume, 120) }}</p>
-                                        <a href="{{ route('article', $article->id) }}">
-                                            <button href="#" class="general_button mt-5">read more</button>
-                                        </a>
-                                        {{-- <a href="#" class="general_button mt-5 ms-md-4">read more</a> --}}
+                                        <div class=" mt-5">
+                                            <a href="{{ route('article', $article->id) }}" class="general_button">read more</a>
+                                        </div>
                                     </div>
                                 </div>
 

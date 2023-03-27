@@ -134,8 +134,10 @@ main {
 }
 main .general_button {
   width: 100%;
+  border: 2px solid var(--color) !important;
 }
-main button {
+main button,
+main .general_button {
   background-color: var(--bg-color);
   border-color: var(--color-hover);
   border-radius: 10px;
@@ -145,9 +147,10 @@ main button {
   padding-block: 0.5em;
   padding-inline: 1em;
 }
-main button:hover {
+main button:hover,
+main .general_button:hover {
   background-color: var(--color-hover);
-  color: var(--white);
+  color: var(--white) !important;
 }
 
 footer {

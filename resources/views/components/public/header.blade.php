@@ -55,6 +55,8 @@
                         <ul class="dropdown-menu dropdown_right text-end p-0">
                             <li class="user_name dropdown-item dropdown_right">{{ Auth::user()->first_name }}</li>
                             <hr class="m-0">
+                            <li><a class="dropdown-item" href="{{ route('cart') }}" class="@if($page == 'cart') active_link @endif" aria-current="{{ $page }}">cart</a></li>
+                             <hr class="m-0">
                             <li><a class="dropdown-item" href="{{ route('dashboard') }}" class="@if($page == 'dashboard') active_link @endif" aria-current="{{ $page }}">dashboard</a></li>
                             <hr class="m-0">
                             <li><a class="dropdown-item" href="{{ route('logout') }}">logout</a></li>
@@ -95,6 +97,8 @@
                     <hr class="m-0">
                     @auth
                         <li class="user_name dropdown-item dropdown_right">{{ Auth::user()->first_name }}</li>
+                        <hr class="m-0">
+                        <li><a class="dropdown_connected dropdown-item" href="{{ route('cart') }}" class="@if($page == 'cart') active_link @endif" aria-current="{{ $page }}">cart</a></li>
                         <hr class="m-0">
                         <li><a class="dropdown_connected dropdown-item" href="{{ route('dashboard') }}" class="@if($page == 'dashboard') active_link @endif" aria-current="{{ $page }}">dashboard</a></li>
                         <hr class="m-0">

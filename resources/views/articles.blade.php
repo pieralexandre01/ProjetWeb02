@@ -13,18 +13,23 @@
             </div>
 
             <div class="category_selector container pt-5 d-flex flex-column gap-4 gap-xl-4 gap-xxl-5">
-                <span><button href="#virtual_reality" class="button category_button">virtual reality</button></span>
-                <span><button href="#artificial_intelligence" class="button category_button">artificial intelligence</button></span>
-                <span><button href="#robotics" class="button category_button">robotics</button></span>
+
+                @foreach ($categories as $category)
+
+                    <span><a href="#{{ $category->name_reference }}" class="category_button d-inline-block">{{ $category->name }}</a></span>
+
+                @endforeach
+
             </div>
         </div>
 
         <div class=""><img src="{{ asset('/../media/images/articles.webp') }}" class="w-100" alt="Digital image of a robotic hand and a human hand sharing an electric current"></div>
 
         <div class="container">
+
             @foreach ($categories as $category)
 
-            <section>
+            <section id="{{ $category->name_reference }}">
                 <h2 class="text-end mb-5">{{ $category->name }}</h2>
 
                 @foreach ($articles as $article)
@@ -37,26 +42,25 @@
                                 <div class="d-flex flex-column">
                                     <h3 class="mb-4 mb-md-0 text-end text-md-start">{{ $article->title }}</h3>
 
-                                    <span class="hr mt-3 mb-2 mb-md-0 text-start">
-                                        <div class="d-flex flex-column flex-md-row">
+                                    <div class="d-flex mt-3 mb-2 mb-md-0 text-start">
+                                        <span class="hr d-flex flex-column flex-sm-row justify-content-sm-between">
                                             <span>by {{ $article->author }}</span>
-                                            <span class="date ms-md-5">{{ $article->date_creation }}</span>
-                                        </div>
-                                    </span>
+                                            <span class="date ms-sm-5">{{ $article->date_creation }}</span>
+                                        </span>
+                                    </div>
                                 </div>
 
-                                <span class="pill_box">
-                                    <span class="category_tag d-flex align-self-center ms-md-5">{{ $category->name }}</span>
-                                </span>
+                                <div class="pt-1">
+                                    <span class="pill_box">
+                                        <span class="category_tag text-start ms-md-5">{{ $category->name }}</span>
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
                                 <p class="mb-0">{{ $article->resume }}</p>
 
-                                <a href="{{ route('article', $article->id) }}">
-                                    <button href="#" class="general_button mt-5 ms-md-4 text-md-end">read more</button>
-                                </a>
-                                {{-- <a href="#" class="read_more_button mt-5 ms-md-4 text-md-end">read more</a> --}}
+                                <div><a href="{{ route('article', $article->id) }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a></div>
                             </div>
                         </div>
 
@@ -67,68 +71,6 @@
             </section>
 
             @endforeach
-
-
-            {{-- <section id="artificial_intelligence">
-                <h2 class="text-end mb-5">artificial intelligence</h2>
-
-                <div class="border_box mobile_frame d-flex flex-column py-5">
-
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                        <div class="d-flex flex-column">
-                            <h3 class="mb-4 mb-md-0 text-end text-md-start">BEYOND REALITY: VR REVOLUTION</h3>
-
-                            <span class="hr mt-3 mb-2 mb-md-0 text-start">
-                                <div class="d-flex flex-column flex-md-row">
-                                    <span>by Angela Doe</span>
-                                    <span class="date ms-md-5">2023-02-08</span>
-                                </div>
-                            </span>
-                        </div>
-
-                        <span class="pill_box">
-                            <span class="category_tag d-flex align-self-center ms-md-5">artificial intelligence</span>
-                        </span>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
-                        <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>
-                        <button class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
-                    </div>
-
-                </div>
-            </section>
-
-
-            <section id="robotics">
-                <h2 class="text-end mb-5">robotics</h2>
-
-                <div class="border_box mobile_frame d-flex flex-column py-5">
-
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                        <div class="d-flex flex-column">
-                            <h3 class="mb-4 mb-md-0 text-end text-md-start">BEYOND REALITY: VR REVOLUTION</h3>
-
-                            <span class="hr mt-3 mb-2 mb-md-0 text-start">
-                                <div class="d-flex flex-column flex-md-row">
-                                    <span>by Angela Doe</span>
-                                    <span class="date ms-md-5">2023-02-08</span>
-                                </div>
-                            </span>
-                        </div>
-
-                        <span class="pill_box">
-                            <span class="category_tag d-flex align-self-center ms-md-5">robotics</span>
-                        </span>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
-                        <p class="mb-0">Virtual reality is transforming the way we interact with the world, from immersive gaming experiences to revolutionizing education and training. Discover how VR is changing the way we experience reality.</p>
-                        <button class="read_more_button mt-5 ms-md-4 text-md-end">read more</button>
-                    </div>
-
-                </div>
-            </section> --}}
 
         </div>
     </main>
