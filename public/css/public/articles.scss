@@ -47,6 +47,19 @@
         h2 {
             padding-inline: 1.25rem;
         }
+
+        .article_preview {
+            border-radius: 0px;
+        }
+
+        .article_preview:first-of-type {
+            border-radius: 10px 10px 0px 0px !important;
+        }
+
+        .article_preview:last-of-type {
+            border-radius: 0px 0px 10px 10px !important;
+        }
+
     }
 
     .mobile_frame {

@@ -31,7 +31,7 @@
 
                     @if ($article->category->name == $category->name)
 
-                        <div class="border_box mobile_frame d-flex flex-column py-5">
+                        <div class="article_preview border_box mobile_frame d-flex flex-column py-5">
 
                             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                                 <div class="d-flex flex-column">

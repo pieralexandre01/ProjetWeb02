@@ -17,70 +17,128 @@
     background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
-.activities {
-    .accordion {
-        border: 2px solid var(--color) !important;
-        box-shadow: 0px 0px 5px var(--color-hover);
-        border-radius: 10px;
+// .subcategory_bar {
+//     background-color: var(--color);
+//     box-shadow: 0px 0px 5px var(--color-hover);
+//     height: 1.5px;
+//     width: 75%;
+// }
 
-        .accordion-item {
+#activity_list {
+    border: 1px solid var(--color);
+    border-radius: 10px;
+    margin-left: 20px;
+    width: max-content;
+
+    .activity_button {
+        background-color: var(--bg-color) !important;
+        border: 2px solid var(--color);
+        border-radius: 0px;
+        border-color: var(--color) !important;
+        box-shadow: none !important;
+        color: var(--white);
+
+        &:hover {
+            background-color: var(--color) !important;
+        }
+
+        &:active,
+        &:focus {
+            background-color: var(--color-hover) !important;
+        }
+    }
+    .activity_button:first-of-type {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .activity_button:last-of-type {
+        border-radius: 0px 0px 10px 10px;
+    }
+
+}
+
+
+
+#spa {
+    .activity {
+        .subcategory_bar {
+            background-color: var(--color);
+            box-shadow: 0px 0px 5px var(--color-hover);
+            height: 1.5px;
+            width: 75%;
+        }
+    }
+}
+
+
+
+#accordion {
+    border: 2px solid var(--color) !important;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px var(--color-hover);
+
+    .accordion-item {
+        background-color: var(--bg-color) !important;
+        border: 1px solid var(--color) !important;
+        border-width: 3px;
+        color: var(--white);
+
+        .accordion-header {
+        border-bottom: 2px solid var(--color) !important;
+        }
+
+        .accordion-button {
             background-color: var(--bg-color) !important;
-            border: 1px solid var(--color) !important;
-            border-width: 3px;
+            border-color: var(--color) !important;
+            box-shadow: none !important;
             color: var(--white);
 
-            .accordion-header {
+            &:hover {
+                background-color: var(--color) !important;
+            }
+
+            &:active,
+            &:focus {
+                background-color: var(--color-hover) !important;
+            }
+        }
+
+        .accordion-body {
             border-bottom: 2px solid var(--color) !important;
+            padding-block: 3rem !important;
+
+
+            .subcategory_bar {
+                background-color: var(--color);
+                box-shadow: 0px 0px 5px var(--color-hover);
+                height: 1.5px;
+                width: 75%;
             }
 
-            .accordion-button {
-                background-color: var(--bg-color) !important;
-                border-color: var(--color) !important;
-                box-shadow: none !important;
-                color: var(--white);
-
-                &:hover {
-                    background-color: var(--color) !important;
-                }
-
-                &:active,
-                &:focus {
-                    background-color: var(--color-hover) !important;
-                }
+            img {
+                border-radius: 10px;
+                height: 200px;
+                width: 200px;
             }
 
+            .activity_date {
+                font-size: 0.785rem;
+                font-weight: 100;
+                font-family: "termina", sans-serif;
+                letter-spacing: 0.025rem;
+            }
 
-            .accordion-body {
-                border-bottom: 2px solid var(--color) !important;
-                padding-block: 3rem !important;
-
-
-                .subcategory_bar {
-                    background-color: var(--color);
-                    box-shadow: 0px 0px 5px var(--color-hover);
-                    height: 1.5px;
-                    width: 75%;
-                }
-
-                img {
-                    border-radius: 10px;
-                    height: 200px;
-                    width: 200px;
-                }
-
-                .activity_date {
-                    font-size: 0.785rem;
-                    font-weight: 100;
-                    font-family: "termina", sans-serif;
-                    letter-spacing: 0.025rem;
-                }
-
-                p {
-                    max-width: 600px;
-                }
+            p {
+                max-width: 600px;
             }
         }
     }
 }
 
 
+
+// @media only screen and (min-width: 1050px) {
+//     #activity_list {
+//         margin-left: 0px;
+//     }
+// }

@@ -44,6 +44,15 @@
 .container section h2 {
   padding-inline: 1.25rem;
 }
+.container section .article_preview {
+  border-radius: 0px;
+}
+.container section .article_preview:first-of-type {
+  border-radius: 10px 10px 0px 0px !important;
+}
+.container section .article_preview:last-of-type {
+  border-radius: 0px 0px 10px 10px !important;
+}
 .container .mobile_frame {
   border-block: 2px solid var(--color);
   margin-bottom: 6rem;
