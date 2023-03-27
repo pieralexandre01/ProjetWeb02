@@ -19,12 +19,11 @@
                 <span class="mx-1 mx-lg-2">></span>
                 {{-- lien vers une catégorie de la page d'articles --}}
                 <span>
-                    <a href="{{ route('articles') }}#{{ $category->name_reference }}">{{ $article->category->name }}</a>
+                    <a href="{{ route('articles') }}#{{ $article->category->name_reference }}">{{ $article->category->name }}</a>
                 </span>
                 <span class="mx-1 mx-lg-2">></span>
                 <span class="current_article">
-                    {{-- make link below disabled --}}
-                    <a href="#" aria-current="{{ $page }}">{{ Str::words($article->title, 2) }}</a>
+                    {{ Str::words($article->title, 2) }}
                 </span>
             </div>
         </div>

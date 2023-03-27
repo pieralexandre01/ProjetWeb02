@@ -34,7 +34,7 @@ class ArticleController extends Controller
             "title" => "Mirror World | " . Article::findOrFail($id)->title,
             "page" => "article",
             "article" => Article::findOrFail($id),
-            "articles" => Article::inRandomOrder()->limit(3)->get(),
+            "articles" => Article::inRandomOrder()->take(3)->get(),
             "categories" => Category::with('articles')->get(),
         ]);
     }

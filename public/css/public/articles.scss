@@ -17,11 +17,6 @@
     background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
 }
 
-// .button,
-// .category_button {
-
-// }
-
 .category_button {
     background-color: var(--bg-color);
     border-color: var(--color-hover) !important;
@@ -61,7 +56,6 @@
         .article_preview:last-of-type {
             border-radius: 0px 0px 10px 10px !important;
         }
-
     }
 
     .mobile_frame {
@@ -165,7 +159,6 @@
                     border-radius: 10px !important;
                 }
             }
-
         }
     }
 }
@@ -195,7 +188,7 @@
     main {
         section {
             .category_button {
-            white-space: nowrap !important;
+                white-space: nowrap !important;
             }
 
             .category_tag {
@@ -214,10 +207,6 @@
             .hr {
                 border-bottom: 1px solid var(--grey);
             }
-
-            // .general_button {
-            //     width: auto;
-            // }
         }
     }
 
