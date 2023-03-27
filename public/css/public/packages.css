@@ -20,17 +20,21 @@
 main section {
   margin-top: 11rem !important;
 }
+main section .border_box {
+  border: 3px solid var(--color);
+  box-shadow: inset 0px 0px 5px var(--color-hover), 0px 0px 5px var(--color-hover);
+}
 main section h3.featured_package {
-  color: var(--dark-pink);
+  color: var(--color);
 }
 main section .title_decoration {
-  background-color: var(--dark-pink);
+  background-color: var(--color);
   height: 2px;
   width: 100%;
   position: relative;
 }
 main section .title_decoration .circle {
-  background-color: var(--dark-pink);
+  background-color: var(--color);
   border-radius: 50%;
   height: 15px;
   margin-left: 7.5px;
@@ -54,7 +58,7 @@ main section form select {
   padding: 0rem 1rem;
 }
 main section form p.festival_over {
-  color: var(--vivid-pink);
+  color: var(--color-hover);
 }
 main section form input[type=submit] {
   background-color: var(--bg-color);
@@ -81,11 +85,16 @@ main section form input[type=submit]:hover {
   color: var(--white);
 }
 main section div.package_img img {
-  height: 25rem;
+  height: 15rem;
   width: 100%;
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media only screen and (min-width: 576px) {
+  main section div.package_img img {
+    height: 25rem;
+  }
 }
 
 div.footer {

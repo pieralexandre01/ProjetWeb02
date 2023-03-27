@@ -19,20 +19,26 @@
 
 main {
     section {
+
+        .border_box {
+            border: 3px solid var(--color);
+            box-shadow: inset 0px 0px 5px var(--color-hover), 0px 0px 5px var(--color-hover);
+        }
+
         margin-top: 11rem !important;
 
         h3.featured_package {
-            color: var(--dark-pink)
+            color: var(--color)
         }
 
         .title_decoration {
-            background-color: var(--dark-pink);
+            background-color: var(--color);
             height: 2px;
             width: 100%;
             position: relative;
 
             .circle {
-                background-color: var(--dark-pink);
+                background-color: var(--color);
                 border-radius: 50%;
                 height: 15px;
                 margin-left: 7.5px;
@@ -65,7 +71,7 @@ main {
             }
 
             p.festival_over {
-                color: var(--vivid-pink);
+                color: var(--color-hover);
             }
 
             input[type=submit] {
@@ -100,10 +106,14 @@ main {
 
         div.package_img {
             img {
-                height: 25rem;
+                height: 15rem;
                 width: 100%;
                 border-radius: 10px;
                 object-fit: cover;
+
+                @media only screen and (min-width: 576px) {
+                    height: 25rem;
+                }
             }
         }
     }
