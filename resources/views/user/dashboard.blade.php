@@ -17,7 +17,7 @@
             <h2 class="user_name pb-5 mb-5">Hello {{ Auth::user()->first_name }} !</h2>
 
 
-            @if (!empty($reservations))
+            @if (!empty($cart))
                 @foreach ($reservations as $reservation)
                     {{ $reservation->package->title }}
                     {{ $reservation->package->price }}
