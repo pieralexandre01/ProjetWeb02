@@ -25,7 +25,7 @@ paypal.Buttons({
             purchase_units: [{
                 items: items,
                 amount: {
-                    value: price * 1.149,
+                    value: (price * 1.149).toFixed(2),
                     breakdown: {
                         tax_total: {
                             value: (price * 0.149).toFixed(2),

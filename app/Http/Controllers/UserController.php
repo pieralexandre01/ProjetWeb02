@@ -87,6 +87,7 @@ class UserController extends Controller
         session()->put('packages', $packages);
 
         return redirect()
-            ->back();
+            ->back()
+            ->with('package-cart-delete', 'The package has been successfully deleted');
     }
 }

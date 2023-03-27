@@ -6,15 +6,15 @@
 
     <main class="d-flex align-items-center">
 
-        <x-msg-session key="connexion-cart" class-name="success" />
+        <x-msg-session key="connexion-cart" class-name="success text-center" />
 
         <div class="container d-flex flex-nowrap justify-content-center align-items-center">
             <div class="form-container border_box py-2">
 
                 <h3 class="text-center mt-3">LOGIN</h3>
 
-                <x-msg-session key="login-blocked" class_name="error" />
-                <x-msg-session key="login-failed" class_name="error" />
+                <x-msg-session key="login-blocked" class_name="error text-center" />
+                <x-msg-session key="login-failed" class_name="error text-center" />
 
                 <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start mt-4">
                     @csrf

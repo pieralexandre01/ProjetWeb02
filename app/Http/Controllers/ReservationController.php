@@ -34,7 +34,8 @@ class ReservationController extends Controller {
 
         // Redirige le user vers son dashboard
         return redirect()
-            ->route('dashboard');
+            ->route('dashboard')
+                ->with('reservation-success', 'Thank you for you purchase. We look forward for seeing you!');
     }
 
     /**

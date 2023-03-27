@@ -24,7 +24,7 @@
                     @endif
 
                     <div
-                        class="row align-items-center @if ($package->id % 2 == 1) flex-lg-row-reverse @endif @if ($package->id == 1) border_box p-5 @endif">
+                        class="row align-items-center @if ($package->id % 2 == 1) flex-lg-row-reverse @endif @if ($package->id == 1) border_box px-3 p-sm-5 @endif">
 
                         <div
                             class="col-12 col-lg-4 package_img @if ($package->id % 2 == 1) me-lg-auto @else ms-lg-auto @endif mb-5 mb-lg-0 p-0">
@@ -73,7 +73,7 @@
                 </section>
             @endforeach
 
-            <div class="text-center mt-5 pt-5">
+            <div class="text-center mt-5 pt-5 d-flex flex-column align-items-center">
                 <p>*Upon purchasing a package, you will receive an email with all the necessary information to access
                     the
                     online activities.</p>

@@ -17,6 +17,27 @@
   background-image: url("../../media/icons/user_icon_turquoise_connected_hover.svg") !important;
 }
 
-main h2.user_name {
+main .container {
+  padding-inline: 20px;
+}
+main .container h2.user_name {
   color: var(--color);
+}
+main .container .package_title {
+  font-weight: 600;
+}
+main .container .subtotal span {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+@media only screen and (min-width: 992px) {
+  main .container .package_title {
+    width: 25%;
+  }
+  main .container .package_date {
+    width: 37%;
+  }
+  main .container .package_price {
+    width: 15%;
+  }
 }/*# sourceMappingURL=dashboard.css.map */
