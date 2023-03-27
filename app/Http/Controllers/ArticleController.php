@@ -30,12 +30,26 @@ class ArticleController extends Controller
      * @return void
      */
     public function showById($id) {
+
+        // récupère l'article en fonction de son ID
+        $article = Article::findOrFail($id);
+
+        // Récupère l'ID de la catégorie de l'article
+        $category_id = $article->category_id;
+
+        // Récupérer les 3 articles aléatoires pour une catégorie donnée, en excluant l'article avec l'ID donné
+        $more_articles = Article::where('category_id', $category_id)
+            ->whereNotIn('id', [$id])
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+
         return view('article', [
-            "title" => "Mirror World | " . Article::findOrFail($id)->title,
+            "title" => "Mirror World | " . $article->title,
             "page" => "article",
-            "article" => Article::findOrFail($id),
-            "articles" => Article::inRandomOrder()->take(3)->get(),
+            "article" => $article,
             "categories" => Category::with('articles')->get(),
+            "more_articles" => $more_articles
         ]);
     }
 

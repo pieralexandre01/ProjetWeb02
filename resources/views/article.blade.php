@@ -58,37 +58,30 @@
         <section class="suggestions container">
             <p class="sub_title">check out more <span>{{ $article->category->name }}</span> articles :</p>
 
-            <div class="d-flex flex-column flex-xxl-row justify-content-xxl-center">
-                @foreach ($categories as $category)
+            <div class="d-flex flex-column flex-xxl-row justify-content-xxl-between">
+                @foreach ($more_articles as $article)
 
-                    @if ($category->id === $article->category->id)
+                <div class="article_suggestion border_box mobile_frame d-flex flex-column justify-content-between py-5">
 
-                        @foreach ($articles as $article)
+                    <h3 class="mb-4 text-end">{{ $article->title }}</h3>
 
-                            @if ($article->category->name == $category->name)
+                    <div>
+                        <div class="mt-3">
+                            <p class="my-0">
+                                <span class="hr">by {{ $article->author }}</span>
+                            </p>
+                        </div>
 
-                                <div class="article_suggestion border_box mobile_frame d-flex flex-column justify-content-between py-5">
-                                    <h3 class="mb-4 text-end">{{ $article->title }}</h3>
+                        <p class="date">{{ $article->date_creation }}</p>
 
-                                    <div>
-                                        <div class="mt-3">
-                                            <p class="my-0">
-                                                <span class="hr">by {{ $article->author }}</span>
-                                            </p>
-                                        </div>
-                                        <p class="date">{{ $article->date_creation }}</p>
-                                        <p class="mb-0">{{ Str::limit($article->resume, 120) }}</p>
-                                        <div class=" mt-5">
-                                            <a href="{{ route('article', $article->id) }}" class="general_button">read more</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <p class="mb-0">{{ Str::limit($article->summary, 120) }}</p>
 
-                            @endif
+                        <div class=" mt-5">
+                            <a href="{{ route('article', $article->id) }}" class="general_button">read more</a>
+                        </div>
+                    </div>
 
-                        @endforeach
-
-                    @endif
+                 </div>
 
                 @endforeach
             </div>

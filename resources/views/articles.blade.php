@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end mt-4">
-                                <p class="mb-0">{{ $article->resume }}</p>
+                                <p class="mb-0">{{ $article->summary }}</p>
 
                                 <div><a href="{{ route('article', $article->id) }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a></div>
                             </div>
