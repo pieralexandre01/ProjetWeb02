@@ -15,4 +15,13 @@ class Category extends Model
     public function articles(){
         return $this->hasMany(Article::class);
     }
+
+    /**
+     * Retourne le nom d'une
+     *
+     * @return void
+     */
+    public function getNameReferenceAttribute() {
+        return strtolower(str_replace(' ', '_', $this->name));
+    }
 }

@@ -19,6 +19,7 @@ class CreateActivitiesTable extends Migration
             $table->string('subcategory', 25)->nullable();
             $table->text('description');
             $table->string('image');
+            $table->string('alt_description')->nullable();
             $table->dateTime('date');
             $table->timestamps();
         });

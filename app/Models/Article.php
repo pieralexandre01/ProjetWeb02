@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Article extends Model
 {
@@ -60,5 +61,14 @@ class Article extends Model
      */
     public function getDateCreationAttribute() {
         return $this->created_at->format('Y-m-d');
+    }
+
+    /**
+     * Retourne les deux premiers mots d'un titre d'article pour le fil d'Arianne
+     *
+     * @return void
+     */
+    public function getBreadcrumbTrailAttribute() {
+        return Str::words($this->title, 2);
     }
 }

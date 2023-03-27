@@ -25,6 +25,7 @@ class ActivitySeeder extends Seeder
                 'subcategory' => $activity["subcategory"],
                 'description' => $activity["description"],
                 'image' => $activity["image"],
+                'alt_description' => $activity["alt_description"],
                 'date' => $activity["date"],
             ]);
         };
