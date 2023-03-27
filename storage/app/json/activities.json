@@ -2,10 +2,10 @@
     {
         "title": "Meet & Greet - VR",
         "subcategory": "pixelina",
-        "description": "Pixelina is a virtual cyber gamer who immerses herself in the world of virtual reality gaming. With her keen eye for detail and quick reflexes, she conquers the toughest challenges in digital domains, and takes pride in her pixelated prowess.",
+        "description": "Pixelina is a legendary virtual cyber gamer. With her keen eye for detail and quick reflexes, she conquers the toughest challenges in digital domains, and takes pride in her pixelated prowess.",
         "image": "media/images/activities/meet_and_greets_vr.webp",
         "alt_description": "Pixelina",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-08 16:00:00"
     },
     {
         "title": "Meet & Greet - AI",
@@ -13,7 +13,7 @@
         "description": "Neo-Samouraï is a digital samurai blending traditional values with high-tech skills to navigate complex virtual environments with ease.",
         "image": "media/images/activities/meet_and_greets_ai.webp",
         "alt_description": "Neo-samouraï",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-09 16:00:00"
     },
     {
         "title": "Meet & Greet - RBT",
@@ -21,15 +21,15 @@
         "description": "Vaporknight is a cyber warrior with lightning-fast reflexes and unmatched precision in the world of virtual reality gaming.",
         "image": "media/images/activities/meet_and_greets_rbt.webp",
         "alt_description": "Vaporknight",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-10 18:00:00"
     },
     {
         "title": "Tech Talks",
         "subcategory": null,
-        "description": "Tech Talks brings together industry experts to share insights on new tech and its impact on society. Engaging presentations and discussions explore the potential of technology in shaping the future.",
+        "description": "Tech Talks brings together industry experts to share insights on new tech and its impact on society. Engaging presentations explore the potential of technology in shaping the future.",
         "image": "media/images/activities/tech_talks.webp",
         "alt_description": "Presentation of a panel of experts",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-08 13:00:00"
     },
     {
         "title": "Cyber Soiree",
@@ -37,7 +37,7 @@
         "description": "Synthwave Spectacular : Dance to pulsating synthwave beats in a neon-lit, 80s-inspired virtual club, connecting partygoers from across the globe in a retro-futuristic extravaganza.",
         "image": "media/images/activities/cyber_soiree.webp",
         "alt_description": "Neon light panel that indicates what's happening in the Cyber Soiree",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-09 21:00:00"
     },
     {
         "title": "Autom-a-thon",
@@ -45,7 +45,7 @@
         "description": "Robo Rumble : Witness cutting-edge robotics as teams showcase their autonomous creations in a series of thrilling challenges, pushing the boundaries of AI and engineering.",
         "image": "media/images/activities/autom_o_thon.webp",
         "alt_description": "Robot playing piano",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-10 13:00:00"
     },
     {
         "title": "Next Gen VR",
@@ -53,7 +53,7 @@
         "description": "Haptic Haven : Explore the latest in haptic feedback technology, allowing users to touch and feel virtual objects, revolutionizing the way we experience virtual worlds.",
         "image": "media/images/activities/next_gen_vr.webp",
         "alt_description": "A man experimenting virtual reality",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-08 14:00:00"
     },
     {
         "title": "Machine Minds",
@@ -61,7 +61,7 @@
         "description": "AI Artistry : Discover stunning art pieces created by artificial intelligence, blurring the lines between human creativity and machine-generated masterpieces.",
         "image": "media/images/activities/machine_minds.webp",
         "alt_description": "A robot with its arms raised",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-09 14:00:00"
     },
     {
         "title": "Data Driven",
@@ -69,7 +69,7 @@
         "description": "The Big Data Bonanza : Learn about the power of big data analytics and its role in shaping modern industries, from healthcare to entertainment.",
         "image": "media/images/activities/data_driven.webp",
         "alt_description": "A data center full of servers",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-10 14:30:00"
     },
     {
         "title": "Immersive X",
@@ -77,7 +77,7 @@
         "description": "Time Travel Tours : Embark on a journey through history in immersive, 360-degree environments, experiencing key moments in time as if you were there.",
         "image": "media/images/activities/immersive_x.webp",
         "alt_description": "A vintage photo of a woman experimenting machines",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-08 15:00:00"
     },
     {
         "title": "Virtual Vortex",
@@ -85,7 +85,7 @@
         "description": "Spatial Soundscapes : Delight your senses with an audiovisual experience that leverages 3D spatial audio, enveloping you in a symphony of sound and visuals.",
         "image": "media/images/activities/virtual_vortex.webp",
         "alt_description": "A pair of headphones on a blue background",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-09 14:45:00"
     },
     {
         "title": "Code Crunch",
@@ -93,7 +93,7 @@
         "description": "Hack the Matrix : Compete in a fast-paced coding challenge, solving complex problems and testing your skills against fellow programmers in a virtual environment.",
         "image": "media/images/activities/code_crunch.webp",
         "alt_description": "Computer programmers programming",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-10 13:30:00"
     },
     {
         "title": "Robo Revolution",
@@ -101,7 +101,7 @@
         "description": "Drone Derby : Pilot drones in high-stakes races through intricate courses, showcasing the advancements in aerial robotics and control systems.",
         "image": "media/images/activities/robo_revolution.webp",
         "alt_description": "A drone flying in the sky",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-08 15:00:00"
     },
     {
         "title": "Smart Systems",
@@ -109,7 +109,7 @@
         "description": "IoT Innovations : Explore the interconnected world of smart devices and their applications, revealing the potential of the Internet of Things in our everyday lives.",
         "image": "media/images/activities/smart_systems.webp",
         "alt_description": "A cell phone controlling the front door of a house",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-09 20:00:00"
     },
     {
         "title": "Intelligent Future",
@@ -117,7 +117,7 @@
         "description": "Brain-Computer Interfaces : Learn about the latest developments in brain-computer interfaces, merging human cognition with advanced technology to unlock new potential.",
         "image": "media/images/activities/intelligent_future.webp",
         "alt_description": "An interconnected neuron",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-10 16:00:00"
     },
     {
         "title": "Cyber Insights",
@@ -125,7 +125,7 @@
         "description": "Blockchain Breakthroughs : Dive into the world of decentralized technologies, understanding how blockchain is transforming industries and empowering individuals.",
         "image": "media/images/activities/cyber_insights.webp",
         "alt_description": "A bitcoin token",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-08 21:00:00"
     },
     {
         "title": "Electric Evolution",
@@ -133,7 +133,7 @@
         "description": "E-Sports Extravaganza : Join an electrifying e-sports tournament featuring popular games, celebrating the competitive spirit of the digital gaming community.",
         "image": "media/images/activities/electric_evolution.webp",
         "alt_description": "An e-sports player competing",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-09 17:15:00"
     },
     {
         "title": "Virtual Maze",
@@ -141,6 +141,6 @@
         "description": "Labyrinth of Legends : Navigate a vast, ever-changing maze filled with puzzles and challenges, testing your wit and problem-solving skills in this immersive adventure.",
         "image": "media/images/activities/virtual_maze.webp",
         "alt_description": "A labyrinth with someone in the middle",
-        "date": "2023-11-09 16:00:00"
+        "date": "2023-09-10 12:30:00"
     }
 ]
