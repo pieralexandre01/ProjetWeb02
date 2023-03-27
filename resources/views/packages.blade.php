@@ -73,6 +73,18 @@
                 </section>
             @endforeach
 
+            <div class="text-center mt-5 pt-5">
+                <p>*Upon purchasing a package, you will receive an email with all the necessary information to access
+                    the
+                    online activities.</p>
+                <p>This email will contain detailed instructions on how to access the online activities, as well as
+                    login
+                    links and required credentials. Please be sure to check your inbox to find this important email.</p>
+                <p class="help">If you encounter any difficulties accessing the online activities, do not hesitate to
+                    contact us for
+                    assistance. We are here to help you fully enjoy your online festival experience.</p>
+            </div>
+
     </main>
 
     <div class="footer">

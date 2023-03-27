@@ -96,6 +96,9 @@ main section div.package_img img {
     height: 25rem;
   }
 }
+main p.help {
+  color: var(--grey);
+}
 
 div.footer {
   padding-top: 6rem !important;
