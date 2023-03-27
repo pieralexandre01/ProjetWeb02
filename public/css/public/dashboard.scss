@@ -16,3 +16,9 @@
 .user_icon_connected:focus {
     background-image: url("../../media/icons/user_icon_turquoise_connected_hover.svg") !important;
 }
+
+main {
+    h2.user_name {
+        color: var(--color);
+    }
+}
