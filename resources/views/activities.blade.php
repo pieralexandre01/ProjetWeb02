@@ -32,8 +32,10 @@
                                 @if ($activity->subcategory != null)
                                     {{-- en lettres majuscules: --}}
                                     <h2>{{ $activity->subcategory }}</h2>
-                                    <div class="subcategory_bar mb-4"></div>
-                                @endif
+                                @else
+                                    <h2>{{ $activity->title }}</h2>
+                                    @endif
+                                    <div class="subcategory_bar"></div>
 
                                 <div class="d-flex flex-column flex-md-row-reverse align-items-center">
                                     <div class="d-flex flex-column align-items-center">
@@ -58,11 +60,11 @@
         </div>
 
 
-        <div id="desktop_version" class="container mt-5 d-none d-lg-flex flex-nowrap">
+        <div id="desktop_version" class="container mt-5 d-none d-lg-flex flex-nowrap align-items-center">
 
             <section id="activity_list" class="d-flex flex-column me-5 justify-content-between">
 
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column justify-content-between">
                     @foreach ($activities as $key => $activity)
                         <button class="activity_button px-3 text-start" type="button" @@click="activity = {{ $key }}" v-show="activity_list == {{ floor($key / 9) + 1}}">
                             {{ $activity->title }}
@@ -70,7 +72,7 @@
                     @endforeach
                 </div>
 
-                <div class="text-center">
+                <div class="activity_list_pagination text-center d-flex justify-content-center align-items-center">
                     <button class="activity_list_button" @@click="activity_list = 1">1</button>
                     <button class="activity_list_button" @@click="activity_list = 2">2</button>
                 </div>

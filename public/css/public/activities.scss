@@ -43,17 +43,18 @@
     }
 
     #activity_list {
-        border: 1px solid var(--color);
+        border: 2px solid var(--color);
         border-radius: 10px;
         width: auto;
+        height: auto;
 
         .activity_button {
             background-color: var(--bg-color) !important;
-            border: 2px solid var(--color);
-            border-color: var(--color) !important;
+            border: 2px solid var(--color) !important;
             border-radius: 0px;
             box-shadow: none !important;
             color: var(--white);
+            width: 235px;
 
             &:hover {
                 background-color: var(--color) !important;
@@ -66,26 +67,29 @@
         }
 
         .activity_button:first-of-type,
-        .activity_button:nth-child(9) {
-            border-radius: 10px 10px 0px 0px;
-        }
-
-        .activity_button:last-of-type,
         .activity_button:nth-child(10) {
-            border-radius: 0px 0px 10px 10px;
+            border-radius: 0px 0px 0px 0px;
+            border-radius: 7px 7px 0px 0px !important;
         }
 
-        .activity_list_button,
-        .button {
-            border: none;
-            box-shadow: none;
+        .activity_list_pagination {
+            border: 2px solid var(--color) !important;
+            border-radius: 0px 0px 7px 7px !important;
 
-            &:hover,
-            &:focus {
-                background-color: var(--bg-color) !important;
-                color: var(--color-hover) !important;
-                text-decoration: underline;
-                text-underline-offset: 0.25em;
+            .activity_list_button,
+            button {
+                background: none !important;
+                border: none;
+                box-shadow: none;
+                width: 46px;
+
+                &:hover,
+                &:focus {
+                    background: none !important;
+                    color: var(--color-hover) !important;
+                    text-decoration: underline;
+                    text-underline-offset: 0.25em;
+                }
             }
         }
     }
@@ -128,15 +132,34 @@
 
         .accordion-body {
             border-bottom: 2px solid var(--color) !important;
-            padding-block: 3rem !important;
+            padding-block: 2.5rem !important;
 
             .subcategory_bar {
+                margin-bottom: 2rem;
                 width: 75%;
             }
 
             p {
                 max-width: 600px;
             }
+        }
+    }
+
+    .accordion-item:first-of-type {
+        .accordion-button,
+        .accordion-header {
+            border-radius: 5px 5px 0px 0px;
+        }
+    }
+
+    .accordion-item:last-of-type {
+        .accordion-button
+         {
+            border-radius: 0px 0px 3px 3px;
+        }
+
+        .accordion-header {
+            border-radius: 0px 0px 5px 5px;
         }
     }
 }
