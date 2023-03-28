@@ -4,8 +4,9 @@ nav {
   padding-top: 1rem;
   height: 70px;
 }
-nav ul,
-nav div {
+nav #left-side_menu,
+nav #right-side_menu,
+nav #dropdown_menu {
   flex-basis: 25%;
 }
 nav .nav_center-logo .logo {
@@ -15,6 +16,8 @@ nav .nav_center-logo .logo .title,
 nav .nav_center-logo .logo .title_reflection {
   font-size: clamp(1.25rem, 3vw, 3rem);
   letter-spacing: 0.25rem;
+  direction: rtl;
+  text-indent: -0.15rem;
 }
 nav .nav_center-logo .logo .title {
   line-height: 55%;

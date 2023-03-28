@@ -3,7 +3,7 @@
 <header>
     <nav class="fixed-top d-flex flex-row justify-content-between">
 
-        <ul class="d-md-flex flex-nowrap justify-content-start justify-content-xxl-between align-items-center p-0 m-0">
+        <ul id="left-side_menu" class="d-md-flex flex-nowrap justify-content-start justify-content-xxl-between align-items-center p-0 m-0">
             <li class="d-none d-md-block d-xxl-none ms-2 dropdown-center align-self-center">
                 <button class="link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     experience
@@ -29,7 +29,8 @@
                 <div class="title_reflection">MIRROR WORLD</div>
             </a>
         </div>
-        <ul class="d-md-flex flex-nowrap justify-content-end justify-content-xxl-between align-items-center p-0 m-0">
+
+        <ul id="right-side_menu" class="d-md-flex flex-nowrap justify-content-end justify-content-xxl-between align-items-center p-0 m-0">
             <li class="d-none d-xxl-block"><a href="{{ route('about') }}" class="@if($page == 'about') active_link @endif" aria-current="{{ $page }}">about</a></li>
             <li class="d-none d-xxl-block"><a href="{{ route('articles') }}" class="@if($page == 'articles') active_link @endif" aria-current="{{ $page }}">articles</a></li>
             <li class="d-none d-xxl-block"><a href="{{ route('contact') }}" class="@if($page == 'contact') active_link @endif" aria-current="{{ $page }}">contact</a></li>
@@ -71,10 +72,9 @@
                     </ul>
                 @endguest
             </li>
-
         </ul>
 
-        <div class="menu_container d-block d-md-none dropdown">
+        <div id="dropdown_menu" class="menu_container d-block d-md-none dropdown">
             <button id="menu_burger" class="d-block d-md-none me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" :class="{ open_menu : is_open }" @@click="toggleMenu()">
                 <div class="menu_bar bar_1"></div>
                 <div class="menu_bar bar_2"></div>

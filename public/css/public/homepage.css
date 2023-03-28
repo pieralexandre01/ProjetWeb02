@@ -1,6 +1,8 @@
 :root {
   --color: var(--dark-pink);
   --color-hover: var(--vivid-pink);
+  --viewport-width: calc(100vw - (100vw - 100%));
+  --50vw: calc((100vw - (100vw - 100%)) / 2);
 }
 
 .user_icon:hover,
@@ -15,4 +17,164 @@
 .user_icon_connected:hover,
 .user_icon_connected:focus {
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
+}
+
+header nav #homepage_left-side_menu,
+header nav #homepage_right-side_menu,
+header nav .nav_center {
+  flex-basis: 25%;
+}
+header nav .nav_center {
+  width: 0%;
+  opacity: 0;
+  animation: test1 5s 3s ease-in forwards;
+}
+@keyframes test1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#intro_header {
+  height: 100vh;
+}
+#intro_header .header_image {
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+  width: var(--viewport-width);
+  height: 100vh !important;
+  animation: test3 5s 3s ease-in forwards;
+}
+@keyframes test3 {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#intro_header .container {
+  padding-inline: 20px !important;
+}
+#intro_header .container #festival_date,
+#intro_header .container #festival_tagline {
+  font-family: "termina", sans-serif;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  max-width: 96vw;
+  position: fixed;
+  left: var(--50vw);
+  transform: translate(-50%, -50%);
+  width: max(40vw, 1100px) !important;
+  overflow-wrap: normal !important;
+}
+#intro_header .container #festival_date {
+  top: 32vh;
+  animation: test4 4s 3s ease-in forwards;
+}
+@keyframes test4 {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+#intro_header .container #festival_tagline {
+  top: 85vh;
+  animation: test5 5s 3s ease-in forwards;
+}
+@keyframes test5 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#intro_header .container #festival_logo {
+  position: fixed;
+  left: var(--50vw);
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  animation: test 4s 4s ease-in forwards;
+}
+@keyframes test {
+  0% {
+    position: fixed;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    position: fixed;
+    top: 5rem;
+    left: 7rem;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+#intro_header .container #festival_logo.nav_center-logo .logo {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  padding-inline: 1rem;
+}
+#intro_header .container #festival_logo.nav_center-logo .logo:hover {
+  color: var(--white) !important;
+}
+#intro_header .container #festival_logo.nav_center-logo .title,
+#intro_header .container #festival_logo.nav_center-logo .title_reflection {
+  direction: rtl;
+  font-family: "ethnocentric", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 6.25rem);
+  font-weight: 300;
+  letter-spacing: 0.5rem;
+  text-indent: -0.15rem;
+  white-space: nowrap;
+}
+#intro_header .container #festival_logo.nav_center-logo .title {
+  line-height: 45%;
+  position: relative;
+  top: 10px;
+}
+#intro_header .container #festival_logo.nav_center-logo .title_reflection {
+  opacity: 0.1;
+  opacity: 0.05;
+  transform: scale(1, -1);
+}
+#intro_header .container #festival_logo.nav_center-logo .festival {
+  font-family: "termina", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  position: relative;
+  top: 0.75em;
+}
+
+@media only screen and (min-width: 1400px) {
+  #festival_logo {
+    position: fixed;
+    left: var(--50vw);
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    animation: test 4s 4s ease-in forwards;
+  }
+  @keyframes test {
+    0% {
+      position: fixed;
+      top: 50vh;
+    }
+    100% {
+      position: fixed;
+      top: 8rem;
+      transform: translate(-50%, -50%) scale(0.6);
+    }
+  }
 }/*# sourceMappingURL=homepage.css.map */
