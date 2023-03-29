@@ -24,19 +24,6 @@ header nav #homepage_right-side_menu,
 header nav .nav_center {
   flex-basis: 25%;
 }
-header nav .nav_center {
-  width: 0%;
-  opacity: 0;
-  animation: test1 5s 3s ease-in forwards;
-}
-@keyframes test1 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
 
 #intro_header {
   height: 100vh;
@@ -158,7 +145,47 @@ header nav .nav_center {
   top: 0.75em;
 }
 
+#keywords .container span {
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+#keywords .container span .dark_pink {
+  color: var(--dark-pink);
+  font-weight: 500;
+}
+#keywords .container span .dark_blue {
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
 @media only screen and (min-width: 1400px) {
+  .nav_center {
+    flex-basis: auto !important;
+    animation: test6 5s 2s linear forwards;
+  }
+  @keyframes test6 {
+    0% {
+      flex-basis: auto !important;
+    }
+    100% {
+      flex-basis: 25% !important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .nav_center {
+    width: 25%;
+    opacity: 0 !important;
+    animation: test1 5s 3s ease-in forwards;
+  }
+  @keyframes test1 {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
   #festival_logo {
     position: fixed;
     left: var(--50vw);
