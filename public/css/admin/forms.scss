@@ -26,6 +26,8 @@ main {
         form {
             input[type=text],
             input[type=password],
+            input[type=file],
+            input[type=datetime-local],
             input[type=submit] {
                 border-color: var(--color);
                 box-shadow: 0px 0px 5px var(--color-hover);
@@ -37,10 +39,26 @@ main {
             }
 
             input[type=text],
+            input[type=file],
+            input[type=datetime-local],
             input[type=password] {
                 padding-block: 0.5em;
                 padding-inline: 1em;
             }
+
+            // .custom-file-upload {
+            //     display: inline-block;
+            //     padding-block: 0.5em;
+            //     padding-inline: 1em;
+            //     cursor: pointer;
+            //     color: #fff;
+            //     background-color: var(--bg-color);
+            //     border-radius: 10px;
+            // }
+
+            // .file-upload-button {
+            //     background-color: aquamarine;
+            // }
 
             input[type=submit] {
                 padding-block: 0.25em;

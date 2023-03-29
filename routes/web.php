@@ -144,6 +144,10 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('user-update');
 
     // envoie du formulaire de modif d'un mdp
+    Route::get('/admin/password/edit/{id}', [AdminController::class, 'editPassword'])
+        ->name('password-edit');
+
+    // envoie du formulaire de modif d'un mdp
     Route::post('/admin/password/update/{id}', [AdminController::class, 'updatePassword'])
         ->name('password-update');
 

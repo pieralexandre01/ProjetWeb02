@@ -22,7 +22,7 @@
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <button class="accordion-button @if ($activity->id != 1) collapsed @endif px-4 px-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $activity->id }}" aria-expanded="false" aria-controls="collapse{{ $activity->id }}">
-                                {{ $activity->formatted_title }}
+                                {{ $activity->title }}
                             </button>
                         </div>
                         {{-- add condition to add background-color accordion-button if show is active --}}
@@ -33,17 +33,17 @@
                                     {{-- en lettres majuscules: --}}
                                     <h2>{{ $activity->subcategory }}</h2>
                                 @else
-                                    <h2>{{ $activity->formatted_title }}</h2>
+                                    <h2>{{ $activity->clean_title }}</h2>
                                     @endif
                                     <div class="subcategory_bar"></div>
 
                                 <div class="d-flex flex-column flex-md-row-reverse align-items-center">
                                     <div class="d-flex flex-column align-items-center">
                                         <img src="{{ asset('/../' . $activity->image ) }}" class="activity_image"  alt="">
-                                        <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->date }}</div>
+                                        <div class="activity_date align-self-end my-3 mb-md-0 d-none d-md-block">{{ $activity->formatted_date }}</div>
                                     </div>
 
-                                    <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->date }}</div>
+                                    <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->formatted_date }}</div>
 
                                     <p class="mb-0 pb-md-4 pe-md-5">{{ $activity->description }}</p>
                                 </div>
@@ -67,7 +67,7 @@
                 <div class="d-flex flex-column justify-content-between">
                     @foreach ($activities as $key => $activity)
                         <button class="activity_button px-3 text-start" type="button" @@click="activity = {{ $key }}" v-show="activity_list == {{ floor($key / 9) + 1}}">
-                            {{ $activity->formatted_title }}
+                            {{ $activity->title }}
                         </button>
                     @endforeach
                 </div>
@@ -92,12 +92,12 @@
                             <div class="d-flex flex-nowrap align-items-start justify-content-between">
                                 <h3>{{ $activity->subcategory }}</h3>
 
-                                <div class="activity_date pt-1">{{ $activity->date }}</div>
+                                <div class="activity_date pt-1">{{ $activity->formatted_date }}</div>
                             </div>
 
                         @else
 
-                            <div class="activity_date text-end">{{ $activity->date }}</div>
+                            <div class="activity_date text-end">{{ $activity->formatted_date }}</div>
 
                         @endif
 
@@ -106,7 +106,7 @@
                                 <img src="{{ asset('/../' . $activity->image ) }}" class="activity_image" alt="">
                             </div>
 
-                            <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->date }}</div>
+                            <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->formatted_date }}</div>
 
                             <p class="mb-0 pe-md-5">{{ $activity->description }}</p>
                         </div>
