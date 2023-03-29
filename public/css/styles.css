@@ -158,25 +158,25 @@ nav .logo {
        user-select: none;
   padding-inline: 1rem;
 }
-nav .title,
-nav .title_reflection {
+nav .logo .title,
+nav .logo .title_reflection {
   font-family: "ethnocentric", sans-serif;
   font-size: clamp(1.5rem, 3vw, 3rem);
   font-weight: 200;
   letter-spacing: 0.5rem;
   white-space: nowrap;
 }
-nav .title {
+nav .logo .title {
   line-height: 55%;
   position: relative;
   top: 10px;
 }
-nav .title_reflection {
+nav .logo .title_reflection {
   opacity: 0.1;
   transform: scale(1, -1);
   line-height: 75%;
 }
-nav .festival {
+nav .logo .festival {
   font-family: "termina", sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.5rem);
   font-weight: 400;
