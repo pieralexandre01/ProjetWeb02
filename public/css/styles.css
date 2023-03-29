@@ -148,7 +148,7 @@ li.user_name:hover {
 
 nav {
   background: linear-gradient(var(--bg-color) 80%, transparent);
-  padding-inline: clamp(20px, 2vw, 8.75rem);
+  padding-inline: clamp(20px, 2vw, 8.75rem) !important;
   padding-top: 1.625rem;
   height: 7rem;
 }

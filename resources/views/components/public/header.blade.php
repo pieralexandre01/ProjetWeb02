@@ -22,7 +22,7 @@
         </ul>
 
         <div class="nav_center-space">
-            <div class="nav_center-logo">
+            <div class="nav_logo">
                 <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
                     <div class="title d-flex flex-column">
                         MIRROR WORLD

@@ -152,7 +152,7 @@ li.user_name:hover {
 // HEADER - NAVIGATION MENU
 nav {
     background: linear-gradient(var(--bg-color) 80%, transparent);
-    padding-inline: clamp(20px, 2vw, 8.75rem);
+    padding-inline: clamp(20px, 2vw, 8.75rem) !important;
     padding-top: 1.625rem;
     height: clamp(5rem, 7rem, 8rem);
 

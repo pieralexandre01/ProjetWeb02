@@ -9,7 +9,7 @@
             <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
             <div class="container">
                 <p id="festival_date" class="text-center">8-9-10 september 2023</p>
-                {{-- <div id="festival_logo" class="nav_center-logo">
+                {{-- <div id="festival_logo" class="nav_logo">
                     <div class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
                         <div class="title d-flex flex-column">
                             MIRROR WORLD
