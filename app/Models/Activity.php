@@ -27,22 +27,10 @@ class Activity extends Model
     public function getCleanTitleAttribute() {
         $title = $this->title;
 
-        if (str_starts_with($title, 'Meet & Greet')) {
+        if (str_starts_with($title, 'meet & greet')) {
             $title = str_replace(['- VR', '- AI', '- RBT'], '', $title);
         }
 
         return trim(strtolower($title));
-    }
-
-    /**
-     * Retourne le titre en minuscules avec le suffixe "- VR", "- AI" ou "- RBT" en majuscules
-     *
-     * @return string
-     */
-    public function getFormattedTitleAttribute() {
-        $title = strtolower($this->title);
-        $title = str_replace([' vr', ' ai', ' rbt', ' x'], [' VR', ' AI', ' RBT', ' X'], $title);
-
-        return $title;
     }
 }

@@ -1,6 +1,6 @@
 [
     {
-        "title": "Meet & Greet - VR",
+        "title": "meet & greet - VR",
         "subcategory": "pixelina",
         "description": "Pixelina is a legendary virtual cyber gamer. With her keen eye for detail and quick reflexes, she conquers the toughest challenges in digital domains, and takes pride in her pixelated prowess.",
         "image": "media/images/activities/meet_and_greets_vr.webp",
@@ -8,7 +8,7 @@
         "date": "2023-09-08 16:00:00"
     },
     {
-        "title": "Meet & Greet - AI",
+        "title": "meet & greet - AI",
         "subcategory": "neo-samuraï",
         "description": "Neo-Samouraï is a digital samurai blending traditional values with high-tech skills to navigate complex virtual environments with ease.",
         "image": "media/images/activities/meet_and_greets_ai.webp",
@@ -16,7 +16,7 @@
         "date": "2023-09-09 16:00:00"
     },
     {
-        "title": "Meet & Greet - RBT",
+        "title": "meet & greet - RBT",
         "subcategory": "vaporknight",
         "description": "Vaporknight is a cyber warrior with lightning-fast reflexes and unmatched precision in the world of virtual reality gaming.",
         "image": "media/images/activities/meet_and_greets_rbt.webp",
@@ -24,7 +24,7 @@
         "date": "2023-09-10 18:00:00"
     },
     {
-        "title": "Tech Talks",
+        "title": "tech talks",
         "subcategory": null,
         "description": "Tech Talks brings together industry experts to share insights on new tech and its impact on society. Engaging presentations explore the potential of technology in shaping the future.",
         "image": "media/images/activities/tech_talks.webp",
@@ -32,7 +32,7 @@
         "date": "2023-09-08 13:00:00"
     },
     {
-        "title": "Cyber Soiree",
+        "title": "cyber soiree",
         "subcategory": null,
         "description": "Synthwave Spectacular : Dance to pulsating synthwave beats in a neon-lit, 80s-inspired virtual club, connecting partygoers from across the globe in a retro-futuristic extravaganza.",
         "image": "media/images/activities/cyber_soiree.webp",
@@ -40,7 +40,7 @@
         "date": "2023-09-09 21:00:00"
     },
     {
-        "title": "Autom-a-thon",
+        "title": "autom-a-thon",
         "subcategory": null,
         "description": "Robo Rumble : Witness cutting-edge robotics as teams showcase their autonomous creations in a series of thrilling challenges, pushing the boundaries of engineering.",
         "image": "media/images/activities/autom_o_thon.webp",
@@ -48,7 +48,7 @@
         "date": "2023-09-10 13:00:00"
     },
     {
-        "title": "Next Gen VR",
+        "title": "next gen VR",
         "subcategory": null,
         "description": "Haptic Haven : Explore the latest in haptic feedback technology, allowing users to touch and feel virtual objects, revolutionizing the way we experience virtual worlds.",
         "image": "media/images/activities/next_gen_vr.webp",
@@ -56,7 +56,7 @@
         "date": "2023-09-08 14:00:00"
     },
     {
-        "title": "Machine Minds",
+        "title": "machine minds",
         "subcategory": null,
         "description": "AI Artistry : Discover stunning art pieces created by artificial intelligence, blurring the lines between human creativity and machine-generated masterpieces.",
         "image": "media/images/activities/machine_minds.webp",
@@ -64,7 +64,7 @@
         "date": "2023-09-09 14:00:00"
     },
     {
-        "title": "Data Driven",
+        "title": "data driven",
         "subcategory": null,
         "description": "The Big Data Bonanza : Learn about the power of big data analytics and its role in shaping modern industries, from healthcare to entertainment.",
         "image": "media/images/activities/data_driven.webp",
@@ -72,7 +72,7 @@
         "date": "2023-09-10 14:30:00"
     },
     {
-        "title": "Immersive X",
+        "title": "immersive X",
         "subcategory": null,
         "description": "Time Travel Tours : Embark on a journey through history in immersive, 360-degree environments, experiencing key moments in time as if you were there.",
         "image": "media/images/activities/immersive_x.webp",
@@ -80,7 +80,7 @@
         "date": "2023-09-08 15:00:00"
     },
     {
-        "title": "Virtual Vortex",
+        "title": "virtual vortex",
         "subcategory": null,
         "description": "Spatial Soundscapes : Delight your senses with an audiovisual experience that leverages 3D spatial audio, enveloping you in a symphony of sound and visuals.",
         "image": "media/images/activities/virtual_vortex.webp",
@@ -88,7 +88,7 @@
         "date": "2023-09-09 14:45:00"
     },
     {
-        "title": "Code Crunch",
+        "title": "code crunch",
         "subcategory": null,
         "description": "Hack the Matrix : Compete in a fast-paced coding challenge, solving complex problems and testing your skills against fellow programmers in a virtual environment.",
         "image": "media/images/activities/code_crunch.webp",
@@ -96,7 +96,7 @@
         "date": "2023-09-10 13:30:00"
     },
     {
-        "title": "Robo Revolution",
+        "title": "robo revolution",
         "subcategory": null,
         "description": "Drone Derby : Pilot drones in high-stakes races through intricate courses, showcasing the advancements in aerial robotics and control systems.",
         "image": "media/images/activities/robo_revolution.webp",
@@ -104,7 +104,7 @@
         "date": "2023-09-08 15:00:00"
     },
     {
-        "title": "Smart Systems",
+        "title": "smart systems",
         "subcategory": null,
         "description": "IoT Innovations : Explore the interconnected world of smart devices and their applications, revealing the potential of the Internet of Things in our everyday lives.",
         "image": "media/images/activities/smart_systems.webp",
@@ -112,7 +112,7 @@
         "date": "2023-09-09 20:00:00"
     },
     {
-        "title": "Intelligent Future",
+        "title": "intelligent future",
         "subcategory": null,
         "description": "Brain-Computer Interfaces : Learn about the latest developments in brain-computer interfaces, merging human cognition with advanced technology to unlock new potential.",
         "image": "media/images/activities/intelligent_future.webp",
@@ -120,7 +120,7 @@
         "date": "2023-09-10 16:00:00"
     },
     {
-        "title": "Cyber Insights",
+        "title": "cyber insights",
         "subcategory": null,
         "description": "Blockchain Breakthroughs : Dive into the world of decentralized technologies, understanding how blockchain is transforming industries and empowering individuals.",
         "image": "media/images/activities/cyber_insights.webp",
@@ -128,7 +128,7 @@
         "date": "2023-09-08 21:00:00"
     },
     {
-        "title": "Electric Evolution",
+        "title": "electric evolution",
         "subcategory": null,
         "description": "E-Sports Extravaganza : Join an electrifying e-sports tournament featuring popular games, celebrating the competitive spirit of the digital gaming community.",
         "image": "media/images/activities/electric_evolution.webp",
@@ -136,7 +136,7 @@
         "date": "2023-09-09 17:15:00"
     },
     {
-        "title": "Virtual Maze",
+        "title": "virtual maze",
         "subcategory": null,
         "description": "Labyrinth of Legends : Navigate a vast, ever-changing maze filled with puzzles and challenges, testing your wit and problem-solving skills in this immersive adventure.",
         "image": "media/images/activities/virtual_maze.webp",
