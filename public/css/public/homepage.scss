@@ -21,18 +21,28 @@
 
 header {
     nav {
-        animation: nav_bg 4s 3s linear forwards;
+        .nav_logo {
+            animation: test_mobile 4s 2s ease-in forwards;
+            position: relative;
+            top: 50vh;
 
-        @keyframes nav_bg {
-            0% {
-                background-color: #02040200;
-            }
-            100% {
-                background-color: var(--bg-color);
-            }
+            transform: scale(1.5);
         }
 
+        @keyframes test_mobile {
+            0% {
+                position: relative;
+                top: 50vh;
+                transform: scale(1.5);
+            }
 
+            100% {
+                position: relative;
+                top: 1rem;
+                left: 20px;
+                transform: scale(1);
+            }
+        }
     }
 }
 
@@ -107,87 +117,9 @@ header {
             @keyframes test5 {
                 0% {
                     opacity: 1;
-                    // transform: translate(-50%, -50%) scale(1);
                 }
                 100% {
                     opacity: 0;
-                    // transform: translate(-50%, -50%) scale(0);
-                }
-            }
-            // *************************************************
-        }
-
-        #festival_logo {
-            position: fixed;
-                left: var(--50vw);
-                top: 50vh;
-            transform: translate(-50%, -50%);
-            // 1031 pour être plus haut que le z-index setté par Bootstrap pour la classe .fixed-top
-            z-index: 1031;
-
-            // *************************************************
-            animation: test 4s 4s ease-in forwards;
-
-            @keyframes test {
-                0% {
-                    position: fixed;
-                    top: 50vh;
-                    transform: translate(-50%, -50%);
-                }
-                100% {
-                    position: fixed;
-                    top: 3rem;
-                    left: 7rem;
-                    transform: translate(-50%, -50%) scale(0.6);
-
-                }
-            }
-            // *************************************************
-
-            &.nav_center-logo {
-                .logo{
-                    -webkit-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                    padding-inline: 1rem;
-
-                    &:hover {
-                        color: var(--white) !important;
-                    }
-                }
-
-                .title,
-                .title_reflection {
-                    direction: rtl;
-                    font-family: "ethnocentric", sans-serif;
-                    font-size: clamp(1.5rem, 3vw, 6.25rem);
-                    font-weight: 300;
-                    letter-spacing: clamp(0.15rem, 0.5rem, 0.75rem);
-                    text-indent: clamp(-0.15rem, -0.5rem, -0.75rem);
-                    white-space: nowrap;
-                }
-
-                .title {
-                    line-height: 45%;
-                    position: relative;
-                        top: 10px;
-                }
-
-                .title_reflection {
-                    opacity: 0.1;
-                    //transition opacity from 0.05 to 0.1
-                    opacity: 0.05;
-                    transform: scale(1, -1);
-                    // line-height: 75%;
-                }
-
-                .festival {
-                    font-family: "termina", sans-serif;
-                    font-size: clamp(1rem, 1.5rem, 3.125rem);
-                    font-weight: clamp(200, 400, 500);
-                    letter-spacing: clamp(0.036rem, 0.05rem, 0.075rem);
-                    position: relative;
-                        top: clamp(0.25em, 0.75em, 1em);
                 }
             }
         }
@@ -197,6 +129,7 @@ header {
         max-width: 15% !important;
     }
 }
+
 
 main {
     p {
@@ -212,9 +145,11 @@ main {
         }
     }
 
-    #keywords {
-        // z-index: 1;
+    section {
+        padding-block: 540px !important;
+    }
 
+    #keywords {
         .container {
             span {
                 font-weight: 400;
@@ -232,18 +167,10 @@ main {
             }
         }
     }
-
-    section {
-        padding-block: 540px !important;
-    }
 }
 
-// #about {
-//     z-index: 1;
-// }
 
 @media only screen and (min-width: 1400px) {
-
     .nav_center-space {
         width: 2.75vw;
         animation: center_space 5s 3s ease-in forwards;
@@ -259,128 +186,23 @@ main {
         }
     }
 
-    .nav_center-logo {
+    .nav_logo {
         animation: test1 4s 2s ease-in forwards;
         position: relative;
-        // left: 50vw;
         top: 50vh;
         transform: scale(2);
     }
 
     @keyframes test1 {
         0% {
-            // width: 0;
             position: relative;
-            // left: 50vw;
             top: 50vh;
             transform: scale(2);
         }
 
         100% {
-            // width: 60%;
             top: 1rem;
             transform: scale(1);
         }
     }
 }
-
-
-// #festival_logo {
-//     position: fixed;
-//         left: var(--50vw);
-//         top: 50vh;
-//     transform: translate(-50%, -50%);
-//     // 1031 pour être plus haut que le z-index setté par Bootstrap pour la classe .fixed-top
-//     z-index: 1031;
-
-//     // *************************************************
-//     animation: test 4s 4s ease-in forwards;
-
-//     @keyframes test {
-//         0% {
-//             position: fixed;
-//             top: 50vh;
-//             transform: translate(-50%, -50%);
-//         }
-//         100% {
-//             position: fixed;
-//             top: 3rem;
-//             left: 7rem;
-//             transform: translate(-50%, -50%) scale(0.6);
-
-//         }
-//     }
-// }
-// @media only screen and (min-width: 768px) {
-    // header {
-    //     nav {
-    //         .nav_center {
-    //             // max-width: 1000px !important;
-    //             width: 0%;
-    //             opacity: 0;
-
-    //             // *************************************************
-    //             animation: test1 5s 3s ease-in forwards;
-
-    //             @keyframes test1 {
-    //                 0% {
-    //                     width: 0%;
-
-    //                     // transform: translate(-50%, -50%);
-    //                 }
-    //                 100% {
-    //                     width: 100%;
-
-    //                 }
-    //             }
-    //             // *************************************************
-    //         }
-    //     }
-    // }
-    // .nav_center-logo {
-        // max-width: 1000px !important;
-        // width: 25%;
-        // opacity: 0 !important;
-
-        // // *************************************************
-        // animation: test1 5s 3s ease-in forwards;
-
-        // @keyframes test1 {
-        //     0% {
-        //         width: 0%;
-
-        //         // transform: translate(-50%, -50%);
-        //     }
-        //     100% {
-        //         width: 100%;
-
-        //     }
-        // }
-       // *************************************************
-    // }
-
-    // #festival_logo {
-    //     position: fixed;
-    //         left: var(--50vw);
-    //         top: 50vh;
-    //     transform: translate(-50%, -50%);
-    //     z-index: 1031;
-
-    //     // *************************************************
-    //     animation: test 4s 4s ease-in forwards;
-
-    //     @keyframes test {
-    //         0% {
-    //             position: fixed;
-    //             top: 50vh;
-    //             // transform: translate(-50%, -50%);
-    //         }
-    //         100% {
-    //             position: fixed;
-    //             top: 5rem;
-    //             transform: translate(-50%, -50%) scale(0.6);
-    //         }
-    //     }
-    //     // *************************************************
-    // }
-// }
