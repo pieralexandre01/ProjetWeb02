@@ -11,11 +11,6 @@
         </div>
     </div>
 
-    {{-- <div class="social_media_icons">
-        <a href="https://www.instagram.com" class="icon"><img src="{{ asset('media/icons/instagram.svg') }}" alt="Instagram icon"></a>
-        <a href="https://www.facebook.com" class="icon mx-5"><img src="{{ asset('media/icons/facebook.svg') }}" alt="Facebook icon"></a>
-        <a href="https://discord.com" class="icon"><img src="{{ asset('media/icons/discord.svg') }}" alt="Discord icon"></a>
-    </div> --}}
     <div class="social_media_icons">
         <a href="https://www.instagram.com" class="icon"><img src="{{ asset('media/icons/instagram.svg') }}" alt="Instagram icon"></a>
         <a href="https://www.facebook.com" class="icon mx-5"><img src="{{ asset('media/icons/facebook.svg') }}" alt="Facebook icon"></a>
