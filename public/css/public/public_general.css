@@ -137,12 +137,11 @@ main {
 }
 main .general_button {
   width: 100%;
-  border: 2px solid var(--color) !important;
+  border: 2px solid var(--color-hover) !important;
 }
 main button,
 main .general_button {
   background-color: var(--bg-color);
-  border-color: var(--color-hover);
   border-radius: 10px;
   box-shadow: 0px 0px 5px var(--color-hover);
   color: var(--white);
