@@ -1,9 +1,9 @@
 @props(["page"])
 
 <header>
-    <nav class="fixed-top d-flex flex-row justify-content-between">
+    <nav class="fixed-top d-flex flex-row justify-content-center">
 
-        <ul id="left-side_menu" class="d-md-flex flex-nowrap justify-content-start justify-content-xxl-between align-items-center p-0 m-0">
+        <ul id="left-side_menu" class="d-md-flex flex-nowrap flex-shrink-0 justify-content-start justify-content-xxl-between align-items-center p-0 me-1">
             <li class="d-none d-md-block d-xxl-none ms-2 dropdown-center align-self-center">
                 <button class="link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     experience
@@ -20,17 +20,20 @@
             <li class="d-none d-xxl-block"><a href="{{ route('activities') }}" class="@if($page == 'activities') active_link @endif" aria-current="{{ $page }}">activities</a></li>
             <li class="d-none d-xxl-block"><a href="{{ route('packages') }}" class="@if($page == 'packages') active_link @endif" aria-current="{{ $page }}">packages</a></li>
         </ul>
-        <div class="nav_center-logo">
-            <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
-                <div class="title d-flex flex-column">
-                    MIRROR WORLD
-                    <div class="festival">festival</div>
-                </div>
-                <div class="title_reflection">MIRROR WORLD</div>
-            </a>
+
+        <div class="nav_center-space">
+            <div class="nav_center-logo">
+                <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
+                    <div class="title d-flex flex-column">
+                        MIRROR WORLD
+                        <div class="festival">festival</div>
+                    </div>
+                    <div class="title_reflection">MIRROR WORLD</div>
+                </a>
+            </div>
         </div>
 
-        <ul id="right-side_menu" class="d-md-flex flex-nowrap justify-content-end justify-content-xxl-between align-items-center p-0 m-0">
+        <ul id="right-side_menu" class="d-md-flex flex-nowrap flex-shrink-0 justify-content-end justify-content-xxl-between align-items-center p-0 ms-1">
             <li class="d-none d-xxl-block"><a href="{{ route('about') }}" class="@if($page == 'about') active_link @endif" aria-current="{{ $page }}">about</a></li>
             <li class="d-none d-xxl-block"><a href="{{ route('articles') }}" class="@if($page == 'articles') active_link @endif" aria-current="{{ $page }}">articles</a></li>
             <li class="d-none d-xxl-block"><a href="{{ route('contact') }}" class="@if($page == 'contact') active_link @endif" aria-current="{{ $page }}">contact</a></li>

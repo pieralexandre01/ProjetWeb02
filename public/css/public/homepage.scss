@@ -19,22 +19,26 @@
     background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
-// header {
-    // nav {
+header {
+    nav {
+        animation: nav_bg 4s 3s linear forwards;
 
-    //     #homepage_left-side_menu,
-    //     #homepage_right-side_menu,
-    //     .nav_center {
-    //         flex-basis: 25%;
-    //         // width: 30%;
-    //     }
+        @keyframes nav_bg {
+            0% {
+                background-color: #02040200;
+            }
+            100% {
+                background-color: var(--bg-color);
+            }
+        }
 
 
-    // }
-// }
+    }
+}
 
 #intro_header {
     height: 100vh;
+    padding-block: 0px !important;
 
     .header_image {
         position: fixed;
@@ -43,7 +47,6 @@
         width: var(--viewport-width);
         height: 100% !important;
         pointer-events: none;
-        // z-index: -1;
 
         // *************************************************
         animation: test3 5s 3s ease-in forwards;
@@ -189,8 +192,26 @@
             }
         }
     }
+
+    #interactive_text {
+        max-width: 15% !important;
+    }
 }
+
 main {
+    p {
+        max-width: none;
+    }
+
+    #about,
+    #packages,
+    #activities,
+    #tech_talks {
+        p {
+            max-width: 800px !important;
+        }
+    }
+
     #keywords {
         // z-index: 1;
 
@@ -212,9 +233,9 @@ main {
         }
     }
 
-    // section.call_to_action {
-    //     padding-block: 1000px !important;
-    // }
+    section {
+        padding-block: 540px !important;
+    }
 }
 
 // #about {
@@ -222,26 +243,75 @@ main {
 // }
 
 @media only screen and (min-width: 1400px) {
-    #homepage_left-side_menu,
-    #homepage_right-side_menu {
-        flex-basis: 25%;
-        flex-basis: 0 !important;
-        animation: test6 5s 2s linear forwards;
+
+    .nav_center-space {
+        width: 2.75vw;
+        animation: center_space 5s 3s ease-in forwards;
     }
 
-    @keyframes test6 {
+    @keyframes center_space {
         0% {
-            flex-basis: 0%;
+            width: 2.75vw;
         }
 
         100% {
-            flex-basis: 25% !important;
+            width: 100%;
         }
     }
 
+    .nav_center-logo {
+        animation: test1 4s 2s ease-in forwards;
+        position: relative;
+        // left: 50vw;
+        top: 50vh;
+        transform: scale(2);
+    }
+
+    @keyframes test1 {
+        0% {
+            // width: 0;
+            position: relative;
+            // left: 50vw;
+            top: 50vh;
+            transform: scale(2);
+        }
+
+        100% {
+            // width: 60%;
+            top: 1rem;
+            transform: scale(1);
+        }
+    }
 }
 
-@media only screen and (min-width: 768px) {
+
+// #festival_logo {
+//     position: fixed;
+//         left: var(--50vw);
+//         top: 50vh;
+//     transform: translate(-50%, -50%);
+//     // 1031 pour être plus haut que le z-index setté par Bootstrap pour la classe .fixed-top
+//     z-index: 1031;
+
+//     // *************************************************
+//     animation: test 4s 4s ease-in forwards;
+
+//     @keyframes test {
+//         0% {
+//             position: fixed;
+//             top: 50vh;
+//             transform: translate(-50%, -50%);
+//         }
+//         100% {
+//             position: fixed;
+//             top: 3rem;
+//             left: 7rem;
+//             transform: translate(-50%, -50%) scale(0.6);
+
+//         }
+//     }
+// }
+// @media only screen and (min-width: 768px) {
     // header {
     //     nav {
     //         .nav_center {
@@ -267,49 +337,50 @@ main {
     //         }
     //     }
     // }
-    .nav_center {
+    // .nav_center-logo {
         // max-width: 1000px !important;
-        width: 25%;
-        opacity: 0 !important;
+        // width: 25%;
+        // opacity: 0 !important;
 
-        // *************************************************
-        animation: test1 5s 3s ease-in forwards;
+        // // *************************************************
+        // animation: test1 5s 3s ease-in forwards;
 
-        @keyframes test1 {
-            0% {
-                width: 0%;
+        // @keyframes test1 {
+        //     0% {
+        //         width: 0%;
 
-                // transform: translate(-50%, -50%);
-            }
-            100% {
-                width: 100%;
+        //         // transform: translate(-50%, -50%);
+        //     }
+        //     100% {
+        //         width: 100%;
 
-            }
-        }
+        //     }
+        // }
        // *************************************************
-    }
+    // }
 
-    #festival_logo {
-        position: fixed;
-            left: var(--50vw);
-            top: 50vh;
-        transform: translate(-50%, -50%);
-        z-index: 1031;
-        // *************************************************
-        animation: test 4s 4s ease-in forwards;
+    // #festival_logo {
+    //     position: fixed;
+    //         left: var(--50vw);
+    //         top: 50vh;
+    //     transform: translate(-50%, -50%);
+    //     z-index: 1031;
 
-        @keyframes test {
-            0% {
-                position: fixed;
-                top: 50vh;
-                // transform: translate(-50%, -50%);
-            }
-            100% {
-                position: fixed;
-                top: 5rem;
-                transform: translate(-50%, -50%) scale(0.6);
-            }
-        }
-        // *************************************************
-    }
-}
+    //     // *************************************************
+    //     animation: test 4s 4s ease-in forwards;
+
+    //     @keyframes test {
+    //         0% {
+    //             position: fixed;
+    //             top: 50vh;
+    //             // transform: translate(-50%, -50%);
+    //         }
+    //         100% {
+    //             position: fixed;
+    //             top: 5rem;
+    //             transform: translate(-50%, -50%) scale(0.6);
+    //         }
+    //     }
+    //     // *************************************************
+    // }
+// }
