@@ -6,7 +6,7 @@
 
     <main>
 
-        <div class="page_title">
+        <div class="page_title mb-4">
             <h1 class="text-end">ADD: ADMIN</h1>
 
             <div class="title_decoration">
@@ -14,9 +14,9 @@
             </div>
         </div>
 
-        <span><button href="{{ route('admin-dashboard') }}" class="button category_button">go back</button></span>
+        <span><a class="general_button ms-5" href="{{ route('admin-dashboard') }}">go back</a></span>
 
-        <div class="admin_create_container mx-auto">
+        <div class="admin_create_container mx-auto mt-4">
             <div id="account_create" class="form-container border_box py-4">
 
                 <h3 class="text-center mt-sm-3">CREATE AN ACCOUNT</h3>

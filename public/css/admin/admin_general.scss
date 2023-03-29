@@ -47,13 +47,26 @@
 
 main {
     padding-bottom: 60px;
-    // height: auto;
-    // padding-top: 100px;
 
-    // .container {
-    //     height: auto;
-    // }
+    .general_button {
+        width: 100%;
+        border: 2px solid var(--color-hover) !important;
+    }
+    .general_button {
 
+        background-color: var(--bg-color);
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px var(--color-hover);
+        color: var(--white);
+        flex-shrink: 1;
+        padding-block: 0.5em;
+        padding-inline: 1em;
+
+        &:hover {
+            background-color: var(--color-hover);
+            color: var(--white) !important;
+        }
+    }
 
     .form-container {
         border: 3px solid var(--color);

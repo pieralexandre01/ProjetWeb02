@@ -6,21 +6,58 @@
 
     <main>
 
-        <form action="{{ route('admin-update'), $user->id }}" method="post">
-            @csrf
-            <input type="hidden" name="privilege_type" value="admin">
-            <input type="text" name="first_name" value="{{ $user->first_name }}">
-            <input type="text" name="last_name" value="{{ $user->last_name }}">
-            <input type="email" name="email" value="{{ $user->email }}">
-            <input type="password" name="password">
-            <input type="password" name="password_confirm">
-            <input type="submit">
-        </form>
-        @error('email')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
+        <div class="page_title mb-4">
+            <h1 class="text-end">EDIT: ADMIN</h1>
+
+            <div class="title_decoration">
+                <div class="circle"></div>
+            </div>
+        </div>
+
+        <span><a class="general_button ms-5" href="{{ route('admin-dashboard') }}">go back</a></span>
+
+        <div class="admin_create_container mx-auto mt-4">
+            <div id="account_create" class="form-container border_box py-4">
+
+                <h3 class="text-center mt-sm-3">EDIT AN ADMIN ACCOUNT</h3>
+
+                <form action="{{ route('admin-edit', $user->id) }}" method="post"
+                    class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
+                    @csrf
+
+                    <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
+                        <div class="d-flex flex-column w-100">
+                            <label for="first_name" class="mb-1">FIRST NAME</label>
+                            <input id="first_name" name="first_name" type="text" value="{{ $user->first_name }}">
+                            <x-msg-error field="first_name" />
+                        </div>
+                        <div class="d-flex flex-column w-100">
+                            <label for="last_name" class="mb-1">LAST NAME</label>
+                            <input id="last_name" name="last_name" type="text" value="{{ $user->last_name }}">
+                            <x-msg-error field="last_name" />
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
+                        <label for="email" class="mb-1">E-MAIL</label>
+                        <input id="email" name="email" type="text" value="{{ $user->email }}">
+                        <x-msg-error field="email" />
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center mb-md-4 w-100">
+                        <p>Click <a href=""><u>here</u></a> if you want to modify the password.</p>
+                    </div>
+
+                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                </form>
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
 
     </main>
 
