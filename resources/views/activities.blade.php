@@ -22,7 +22,7 @@
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <button class="accordion-button @if ($activity->id != 1) collapsed @endif px-4 px-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $activity->id }}" aria-expanded="false" aria-controls="collapse{{ $activity->id }}">
-                                {{ $activity->title }}
+                                {{ $activity->formatted_title }}
                             </button>
                         </div>
                         {{-- add condition to add background-color accordion-button if show is active --}}
@@ -33,7 +33,7 @@
                                     {{-- en lettres majuscules: --}}
                                     <h2>{{ $activity->subcategory }}</h2>
                                 @else
-                                    <h2>{{ $activity->title }}</h2>
+                                    <h2>{{ $activity->formatted_title }}</h2>
                                     @endif
                                     <div class="subcategory_bar"></div>
 
@@ -67,7 +67,7 @@
                 <div class="d-flex flex-column justify-content-between">
                     @foreach ($activities as $key => $activity)
                         <button class="activity_button px-3 text-start" type="button" @@click="activity = {{ $key }}" v-show="activity_list == {{ floor($key / 9) + 1}}">
-                            {{ $activity->title }}
+                            {{ $activity->formatted_title }}
                         </button>
                     @endforeach
                 </div>
@@ -85,7 +85,7 @@
 
                     <div class="activity border_box p-5" v-show="{{ $key }} == activity">
 
-                        <h2 class="text-end">{{ $activity->title }}</h2>
+                        <h2 class="text-end">{{ $activity->clean_title }}</h2>
                         <div class="subcategory_bar mb-2 w-100"></div>
                         @if ($activity->subcategory != null)
                             {{-- en lettres majuscules: --}}
