@@ -4,7 +4,7 @@
 
     {{-- <x-public.header :page="$page" /> --}}
 
-    <header>
+    {{-- <header>
         <nav class="fixed-top d-flex flex-row justify-content-md-between justify-content-xxl-center">
 
             <ul id="homepage_left-side_menu" class="d-md-flex flex-nowrap justify-content-start justify-content-xxl-between align-items-center p-0 m-0">
@@ -121,11 +121,11 @@
             </div>
 
         </nav>
-    </header>
+    </header> --}}
 
     <main>
-        {{-- <section id="intro_header">
-            <img src="{{ asset('/../media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
+        <section id="intro_header">
+            <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
             <div class="container">
                 <p id="festival_date" class="text-center">8-9-10 september 2023</p>
                 <div id="festival_logo" class="nav_center-logo">
@@ -139,12 +139,14 @@
                 </div>
                 <p id="festival_tagline" class="text-center">Immerse yourself in a world of limitless possibilities and visionary technologies shaping tomorrow</p>
             </div>
-        </section> --}}
+        </section>
+
         {{-- <section>
             <p>Reflecting the Future</p>
             <p>Where <span>Reality</span></p>
             <p>Meets <span>Innovation</span></p>
         </section> --}}
+
         {{-- <section>
             <p>SCROLL TO GET A GLIMPSE</p>
             <div
@@ -152,13 +154,15 @@
                 <p>FUTURE</p>
             </div>
         </section> --}}
+
         {{-- <section id="keywords">
-            <div class="container">
+            <div class="container text-center">
                 <span class="dark_pink">innovate</span>
-                .connect.
+                <span>.connect.</span>
                 <span class="dark_blue">transform</span>
             </div>
         </section> --}}
+
         <section id="about" class="call_to_action">
             <div class="container">
                 <div class="d-flex flex-column align-items-end">
@@ -172,7 +176,8 @@
                 </div>
             </div>
         </section>
-        <section id="packages" class="call_to_action">
+
+        {{-- <section id="packages" class="call_to_action">
             <div class="container">
                 <div class="d-flex flex-column align-items-start">
                     <h2 class="mb-5">PACKAGES</h2>
@@ -185,6 +190,7 @@
                 </div>
             </div>
         </section>
+
         <section id="activities" class="call_to_action">
             <div class="container">
                 <div class="d-flex flex-column align-items-end">
@@ -198,6 +204,7 @@
                 </div>
             </div>
         </section>
+
         <section id="tech_talks" class="call_to_action">
             <div class="container">
                 <div class="d-flex flex-column align-items-start">
@@ -210,7 +217,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
+
+
     </main>
 
     <x-public.footer />

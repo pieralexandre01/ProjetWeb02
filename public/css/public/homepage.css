@@ -19,12 +19,6 @@
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
-header nav #homepage_left-side_menu,
-header nav #homepage_right-side_menu,
-header nav .nav_center {
-  flex-basis: 25%;
-}
-
 #intro_header {
   height: 100vh;
 }
@@ -34,7 +28,8 @@ header nav .nav_center {
      object-fit: cover;
   opacity: 0.5;
   width: var(--viewport-width);
-  height: 100vh !important;
+  height: 100% !important;
+  pointer-events: none;
   animation: test3 5s 3s ease-in forwards;
 }
 @keyframes test3 {
@@ -92,6 +87,7 @@ header nav .nav_center {
   left: var(--50vw);
   top: 50vh;
   transform: translate(-50%, -50%);
+  z-index: 1031;
   animation: test 4s 4s ease-in forwards;
 }
 @keyframes test {
@@ -102,7 +98,7 @@ header nav .nav_center {
   }
   100% {
     position: fixed;
-    top: 5rem;
+    top: 3rem;
     left: 7rem;
     transform: translate(-50%, -50%) scale(0.6);
   }
@@ -145,27 +141,29 @@ header nav .nav_center {
   top: 0.75em;
 }
 
-#keywords .container span {
+main #keywords .container span {
   font-weight: 400;
   letter-spacing: 0.2rem;
 }
-#keywords .container span .dark_pink {
-  color: var(--dark-pink);
+main #keywords .container .dark_pink {
+  color: var(--dark-pink) !important;
   font-weight: 500;
 }
-#keywords .container span .dark_blue {
-  color: var(--dark-blue);
+main #keywords .container .dark_blue {
+  color: var(--dark-blue) !important;
   font-weight: 500;
 }
 
 @media only screen and (min-width: 1400px) {
-  .nav_center {
-    flex-basis: auto !important;
+  #homepage_left-side_menu,
+  #homepage_right-side_menu {
+    flex-basis: 25%;
+    flex-basis: 0 !important;
     animation: test6 5s 2s linear forwards;
   }
   @keyframes test6 {
     0% {
-      flex-basis: auto !important;
+      flex-basis: 0%;
     }
     100% {
       flex-basis: 25% !important;
@@ -191,6 +189,7 @@ header nav .nav_center {
     left: var(--50vw);
     top: 50vh;
     transform: translate(-50%, -50%);
+    z-index: 1031;
     animation: test 4s 4s ease-in forwards;
   }
   @keyframes test {
@@ -200,7 +199,7 @@ header nav .nav_center {
     }
     100% {
       position: fixed;
-      top: 8rem;
+      top: 5rem;
       transform: translate(-50%, -50%) scale(0.6);
     }
   }
