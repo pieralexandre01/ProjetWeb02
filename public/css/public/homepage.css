@@ -134,8 +134,10 @@ header nav .nav_logo {
   position: relative;
   left: 2%;
 }
-#interactive_text span {
-  font-size: clamp(1rem, 10vw, 3rem) !important;
+#interactive_text .span_1,
+#interactive_text .span_2,
+#interactive_text .span_3 {
+  font-size: clamp(1rem, 2vw, 4rem) !important;
   margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
   white-space: nowrap;
 }
@@ -155,19 +157,109 @@ main #tech_talks p {
   max-width: 800px !important;
 }
 main section {
-  padding-block: 540px !important;
+  padding-block: 360px !important;
+}
+main #scroll_down,
+main #byte-side_CTA {
+  padding-inline: 20px;
+}
+main #scroll_down .grey_effect,
+main #scroll_down .rainbow_effect,
+main #byte-side_CTA .grey_effect,
+main #byte-side_CTA .rainbow_effect {
+  animation: gradient_effect 3s linear infinite;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+@keyframes gradient_effect {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+main #scroll_down .grey_effect,
+main #byte-side_CTA .grey_effect {
+  background-image: linear-gradient(to left, var(--white), var(--grey), var(--white));
+}
+main #scroll_down .rainbow_effect,
+main #byte-side_CTA .rainbow_effect {
+  background-image: linear-gradient(to right, var(--color-hover), var(--vivid-blue), var(--color-hover));
 }
 main #keywords .container span {
+  font-size: clamp(1rem, 2vw, 4rem);
   font-weight: 400;
   letter-spacing: 0.2rem;
 }
+main #keywords .container .dark_pink,
+main #keywords .container .dark_blue,
+main #keywords .container .white {
+  animation: gradient_effect 3s linear infinite;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  white-space: nowrap;
+}
+@keyframes gradient_effect {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
 main #keywords .container .dark_pink {
-  color: var(--dark-pink) !important;
+  background-image: linear-gradient(to right, var(--dark-pink), var(--vivid-pink), var(--dark-pink));
   font-weight: 500;
 }
+main #keywords .container .white {
+  background-image: linear-gradient(to right, var(--white), var(--grey), var(--white));
+}
 main #keywords .container .dark_blue {
-  color: var(--dark-blue) !important;
+  background-image: linear-gradient(to right, var(--dark-blue), var(--vivid-blue), var(--dark-blue));
   font-weight: 500;
+}
+main #scroll_down p,
+main #scroll_down span {
+  line-height: normal;
+  font-size: clamp(1rem, 4vw, 5rem) !important;
+  white-space: nowrap;
+}
+main #scroll_down p span,
+main #scroll_down span span {
+  font-weight: 400;
+}
+main #scroll_down p.grey_effect {
+  font-size: clamp(1.4rem, 6vw, 8rem) !important;
+  font-weight: 500;
+}
+main #scroll_down p.rainbow_effect {
+  font-size: clamp(2rem, 15vw, 15rem) !important;
+  font-weight: 600;
+}
+main #byte-side_CTA div p {
+  line-height: normal !important;
+  font-size: clamp(1rem, 6vw, 8rem) !important;
+  font-weight: 500;
+}
+main #immerse_text .glow_effect {
+  animation: glow 5s ease infinite alternate;
+  font-family: "ethnocentric", sans-serif;
+  font-size: clamp(1rem, 4vw, 5rem) !important;
+  letter-spacing: 0.05rem;
+  line-height: normal !important;
+  white-space: nowrap;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px var(--white), 0 0 20px var(--var-color), 0 0 30px var(--color);
+  }
+  to {
+    text-shadow: 0 0 5px var(--white), 0 0 30px var(--color-hover), 0 0 40px var(--color-hover);
+  }
 }
 
 @media only screen and (min-width: 768px) {

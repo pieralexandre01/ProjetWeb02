@@ -9,53 +9,53 @@
             <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
             <div class="container">
                 <p id="festival_date" class="text-center">8-9-10 september 2023</p>
-                {{-- <div id="festival_logo" class="nav_logo">
-                    <div class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
-                        <div class="title d-flex flex-column">
-                            MIRROR WORLD
-                            <div class="festival">festival</div>
-                        </div>
-                        <div class="title_reflection">MIRROR WORLD</div>
-                    </div>
-                </div> --}}
+
                 <p id="festival_tagline" class="text-center">Immerse yourself in a world of limitless possibilities and visionary technologies shaping tomorrow</p>
             </div>
         </section>
 
-        <div id="interactive_text" class="d-flex flex-nowrap justify-content-center">
+        <div id="interactive_text" class="d-flex flex-nowrap justify-content-center" @@mouseenter="animateText()">
             <div class="d-flex flex-column">
                 <div class="line_decoration1">
                     <div class="circle"></div>
                 </div>
                 <span class="span_1 pt-5 px-5">Reflecting the Future</span>
-                <span class="span_2 px-5">Where <span>Reality</span></span>
-                <span class="span_3 mb-0 pb-5 pe-5">Meets <span>Innovation</span></span>
+                @verbatim
+                    <span class="span_2 ps-5">Where <span class="animated_word" :data-value="original_word1"></span>{{ word1 }}</span>
+                    <span class="span_3 mb-0 pb-5 pe-5">Meets <span class="animated_word" :data-value="original_word2"></span>{{ word2 }}</span>
+                @endverbatim
             </div>
             <div class="line_decoration2"></div>
         </div>
 
-        {{-- <div class="container">
+        <div class="container">
             <div class="text-center">
                 <a href="#scroll_down">
                     <img src="{{ asset('/../media/icons/down_arrow.svg') }}" class="arrow_down" alt="Arrow directing downwards">
                 </a>
             </div>
-        </div> --}}
+        </div>
 
         <section id="scroll_down">
             <div class="container text-center">
-                <p>SCROLL TO GET A GLIMPSE</p>
-                <div>
-                    <p>OF THE <span>FESTIVAL</span> OF THE</p>
-                    <p>FUTURE</p>
+                <p>SCROLL TO GET A <span>GLIMPSE</span></p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <p>OF THE</p>
+                    <p class="grey_effect">&nbsp;FESTIVAL&nbsp;</p>
+                    <p>OF THE</p>
                 </div>
+                <p class="rainbow_effect">FUTURE</p>
             </div>
         </section>
 
         <section id="keywords">
-            <div class="container text-center">
+            <div class="container d-flex flex-column align-items-center flex-sm-row justify-content-sm-center">
                 <span class="dark_pink">innovate</span>
-                <span> . connect . </span>
+                <span>
+                    <span class="d-none d-sm-inline-block">&nbsp;.&nbsp;</span>
+                    <span class="white">connect</span>
+                    <span class="d-none d-sm-inline-block">&nbsp;.&nbsp;</span>
+                </span>
                 <span class="dark_blue">transform</span>
             </div>
         </section>
@@ -117,11 +117,20 @@
         </section>
 
         <section id="byte-side_CTA">
-            <div class="container flex-column text-center">
-                <p>JOIN THE BYTE-SIDE</p>
-                <div class="">
-                    <a href="{{ route('account-create') }}" class="general_button text-center mt-5 mt-md-0">read more</a>
+
+                 <div class="d-flex flex-column text-center">
+                    <p class="grey_effect mb-5">JOIN THE BYTE-SIDE</p>
+
+                    <div>
+                        <a href="{{ route('account-create') }}" class="general_button text-center mt-5 mt-md-0">read more</a>
+                    </div>
                 </div>
+
+        </section>
+
+        <section id="immerse_text">
+            <div class="container text-center">
+                <p class="glow_effect">IMMERSE YOURSELF</p>
             </div>
         </section>
 
