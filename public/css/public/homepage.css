@@ -27,12 +27,11 @@ header nav .nav_logo {
 }
 @keyframes test_mobile {
   0% {
-    position: relative;
     top: 50vh;
+    left: 0px;
     transform: scale(1.5);
   }
   100% {
-    position: relative;
     top: 1rem;
     left: 20px;
     transform: scale(1);
@@ -93,6 +92,7 @@ header nav .nav_logo {
 }
 #intro_header .container #festival_tagline {
   top: 85vh;
+  z-index: 1032;
   animation: test5 5s 3s ease-in forwards;
 }
 @keyframes test5 {
@@ -103,8 +103,46 @@ header nav .nav_logo {
     opacity: 0;
   }
 }
-#intro_header #interactive_text {
-  max-width: 15% !important;
+
+#interactive_text {
+  position: fixed;
+  bottom: 10%;
+  left: 8%;
+  max-width: 800px !important;
+  z-index: 1033;
+}
+#interactive_text .line_decoration1 {
+  background-color: var(--grey);
+  height: 2px;
+  width: 102%;
+  position: relative;
+}
+#interactive_text .line_decoration1 .circle {
+  background-color: var(--white);
+  border-radius: 50%;
+  height: 20px;
+  margin-left: 10px;
+  width: 20px;
+  position: absolute;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+#interactive_text .line_decoration2 {
+  background-color: var(--grey);
+  width: 2px !important;
+  height: 100%;
+  position: relative;
+  left: 2%;
+}
+#interactive_text span {
+  font-size: clamp(1rem, 10vw, 3rem) !important;
+  margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
+  white-space: nowrap;
+}
+#interactive_text .span_3 {
+  border-bottom: 2px solid var(--white);
+  border-left: 2px solid var(--white);
+  padding-left: clamp(4rem, 15vw + 3rem, 205px + 3rem);
 }
 
 main p {
@@ -132,8 +170,10 @@ main #keywords .container .dark_blue {
   font-weight: 500;
 }
 
-@media only screen and (min-width: 1400px) {
-  .nav_center-space {
+@media only screen and (min-width: 768px) {
+  header nav .nav_center-space {
+    display: flex;
+    justify-content: center;
     width: 2.75vw;
     animation: center_space 5s 3s ease-in forwards;
   }
@@ -145,7 +185,7 @@ main #keywords .container .dark_blue {
       width: 100%;
     }
   }
-  .nav_logo {
+  header nav .nav_logo {
     animation: test1 4s 2s ease-in forwards;
     position: relative;
     top: 50vh;

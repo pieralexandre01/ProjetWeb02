@@ -13,7 +13,7 @@ nav {
         flex-basis: 25%;
     }
 
-    .nav_center-logo {
+    .nav_logo {
         .logo {
             padding-inline: 0;
 
@@ -263,7 +263,7 @@ footer {
     nav {
         padding-inline: 5vw;
 
-        .nav_center-logo{
+        .nav_logo{
             padding-inline: 2vw;
         }
     }
@@ -304,7 +304,7 @@ footer {
 }
 
 @media only screen and (max-width: 767px) {
-    .nav_center-logo {
+    .nav_logo {
         position: absolute;
             top: 35px;
         transform: translateY(-50%);

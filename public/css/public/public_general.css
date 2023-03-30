@@ -9,26 +9,26 @@ nav #right-side_menu,
 nav #dropdown_menu {
   flex-basis: 25%;
 }
-nav .nav_center-logo .logo {
+nav .nav_logo .logo {
   padding-inline: 0;
 }
-nav .nav_center-logo .logo .title,
-nav .nav_center-logo .logo .title_reflection {
+nav .nav_logo .logo .title,
+nav .nav_logo .logo .title_reflection {
   font-size: clamp(1.25rem, 3vw, 3rem);
   letter-spacing: 0.25rem;
   direction: rtl;
   text-indent: -0.15rem;
 }
-nav .nav_center-logo .logo .title {
+nav .nav_logo .logo .title {
   line-height: 55%;
   position: relative;
   top: 10px;
 }
-nav .nav_center-logo .logo .title_reflection {
+nav .nav_logo .logo .title_reflection {
   transform: scale(1, -1);
   line-height: 75%;
 }
-nav .nav_center-logo .logo .festival {
+nav .nav_logo .logo .festival {
   font-size: clamp(1rem, 1.6vw, 1.5rem);
   font-weight: 100;
   position: relative;
@@ -209,7 +209,7 @@ footer #footer_nav {
   nav {
     padding-inline: 5vw;
   }
-  nav .nav_center-logo {
+  nav .nav_logo {
     padding-inline: 2vw;
   }
 }
@@ -238,7 +238,7 @@ footer #footer_nav {
   }
 }
 @media only screen and (max-width: 767px) {
-  .nav_center-logo {
+  .nav_logo {
     position: absolute;
     top: 35px;
     transform: translateY(-50%);
