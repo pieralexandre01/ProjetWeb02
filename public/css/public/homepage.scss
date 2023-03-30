@@ -166,8 +166,10 @@ header {
         left: 2%;
     }
 
-    span {
-        font-size: clamp(1rem, 10vw, 3rem) !important;
+    .span_1,
+    .span_2,
+    .span_3 {
+        font-size: clamp(1rem, 2vw, 4rem) !important;
         margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
         white-space: nowrap;
     }
@@ -195,24 +197,135 @@ main {
     }
 
     section {
-        padding-block: 540px !important;
+        padding-block: 360px !important;
+    }
+
+    #scroll_down,
+    #byte-side_CTA {
+        padding-inline: 20px;
+
+        .grey_effect,
+        .rainbow_effect {
+            animation: gradient_effect 3s linear infinite;
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+
+            @keyframes gradient_effect {
+                from {
+                    background-position: 0% center;
+                }
+                to {
+                    background-position: -200% center;
+                }
+            }
+        }
+
+        .grey_effect {
+            background-image: linear-gradient(to left, var(--white), var(--grey), var(--white));
+        }
+
+        .rainbow_effect {
+            background-image: linear-gradient(to right, var(--color-hover), var(--vivid-blue), var(--color-hover));
+        }
     }
 
     #keywords {
         .container {
             span {
+                font-size: clamp(1rem, 2vw, 4rem);
                 font-weight: 400;
                 letter-spacing: 0.2rem;
             }
 
+            .dark_pink,
+            .dark_blue,
+            .white {
+                animation: gradient_effect 3s linear infinite;
+                background-size: 200%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent !important;
+                white-space: nowrap;
+
+                @keyframes gradient_effect {
+                    from {
+                        background-position: 0% center;
+                    }
+                    to {
+                        background-position: -200% center;
+                    }
+                }
+            }
+
             .dark_pink{
-                color: var(--dark-pink) !important;
+                // color: var(--dark-pink) !important;
+                background-image: linear-gradient(to right, var(--dark-pink), var(--vivid-pink), var(--dark-pink));
                 font-weight: 500;
             }
 
+            .white {
+                background-image: linear-gradient(to right, var(--white), var(--grey), var(--white));
+            }
+
             .dark_blue {
-                color: var(--dark-blue) !important;
+                // color: var(--dark-blue) !important;
+                background-image: linear-gradient(to right, var(--dark-blue), var(--vivid-blue), var(--dark-blue));
                 font-weight: 500;
+            }
+        }
+    }
+
+    #scroll_down {
+        p,
+        span {
+            line-height: normal;
+            font-size: clamp(1rem, 4vw, 5rem) !important;
+            white-space: nowrap;
+
+            span {
+                font-weight : 400;
+            }
+        }
+
+        p.grey_effect {
+            font-size: clamp(1.4rem, 6vw, 8rem) !important;
+            font-weight: 500;
+        }
+
+        p.rainbow_effect {
+            font-size: clamp(2rem, 15vw, 15rem) !important;
+            font-weight: 600;
+        }
+    }
+
+    #byte-side_CTA {
+        div {
+            p {
+                line-height: normal !important;
+                font-size: clamp(1rem, 6vw, 8rem) !important;
+                font-weight: 500;
+            }
+        }
+    }
+
+    #immerse_text {
+        .glow_effect {
+            animation: glow 5s ease infinite alternate;
+            font-family: "ethnocentric", sans-serif;
+            font-size: clamp(1rem, 4vw, 5rem) !important;
+            letter-spacing: 0.05rem;
+            line-height: normal !important;
+            white-space: nowrap;
+
+            @keyframes glow {
+                from {
+                    text-shadow: 0 0 5px var(--white), 0 0 20px var(--var-color), 0 0 30px var(--color)
+                }
+
+                to {
+                  text-shadow: 0 0 5px var(--white), 0 0 30px var(--color-hover), 0 0 40px var(--color-hover)
+                }
             }
         }
     }
@@ -261,4 +374,8 @@ main {
 
         }
     }
+}
+
+@media only screen and (min-width: 576px){
+
 }
