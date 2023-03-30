@@ -31,13 +31,12 @@ header {
 
         @keyframes test_mobile {
             0% {
-                position: relative;
                 top: 50vh;
+                left: 0px;
                 transform: scale(1.5);
             }
 
             100% {
-                position: relative;
                 top: 1rem;
                 left: 20px;
                 transform: scale(1);
@@ -110,6 +109,7 @@ header {
 
         #festival_tagline {
             top: 85vh;
+            z-index: 1032;
 
             // *************************************************
             animation: test5 5s 3s ease-in forwards;
@@ -124,9 +124,58 @@ header {
             }
         }
     }
+}
 
-    #interactive_text {
-        max-width: 15% !important;
+#interactive_text {
+    // border-left: 1px solid var(--grey);
+    // border-bottom: 1px solid var(--grey);
+    // margin-left: clamp(20px, 140px, 5vw);
+
+    position: fixed;
+    bottom: 10%;
+    left: 8%;
+    max-width: 800px !important;
+    z-index: 1033;
+
+    .line_decoration1 {
+        // background-color: var(--white);
+        background-color: var(--grey);
+        height: 2px;
+        width: 102%;
+        position: relative;
+
+        .circle {
+            background-color: var(--white);
+            border-radius: 50%;
+            height: 20px;
+            margin-left: calc(20px / 2);
+            width: 20px;
+            position: absolute;
+                left: 0%;
+
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .line_decoration2 {
+        // background-color: var(--white);
+        background-color: var(--grey);
+        width: 2px !important;
+        height: 100%;
+        position: relative;
+        left: 2%;
+    }
+
+    span {
+        font-size: clamp(1rem, 10vw, 3rem) !important;
+        margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
+        white-space: nowrap;
+    }
+
+    .span_3 {
+        border-bottom: 2px solid var(--white);
+        border-left: 2px solid var(--white);
+        padding-left: clamp(1rem + 3rem, 15vw + 3rem, 205px + 3rem);
     }
 }
 
@@ -170,39 +219,46 @@ main {
 }
 
 
-@media only screen and (min-width: 1400px) {
-    .nav_center-space {
-        width: 2.75vw;
-        animation: center_space 5s 3s ease-in forwards;
-    }
+@media only screen and (min-width: 768px) {
+    header {
+        nav {
+            .nav_center-space {
+                display: flex;
+                justify-content: center;
+                width: 2.75vw;
+                animation: center_space 5s 3s ease-in forwards;
+            }
 
-    @keyframes center_space {
-        0% {
-            width: 2.75vw;
-        }
+            @keyframes center_space {
+                0% {
+                    width: 2.75vw;
+                }
 
-        100% {
-            width: 100%;
-        }
-    }
+                100% {
+                    width: 100%;
+                }
+            }
 
-    .nav_logo {
-        animation: test1 4s 2s ease-in forwards;
-        position: relative;
-        top: 50vh;
-        transform: scale(2);
-    }
+            .nav_logo {
+                animation: test1 4s 2s ease-in forwards;
+                position: relative;
+                top: 50vh;
+                transform: scale(2);
+            }
 
-    @keyframes test1 {
-        0% {
-            position: relative;
-            top: 50vh;
-            transform: scale(2);
-        }
+            @keyframes test1 {
+                0% {
+                    position: relative;
+                    top: 50vh;
+                    transform: scale(2);
+                }
 
-        100% {
-            top: 1rem;
-            transform: scale(1);
+                100% {
+                    top: 1rem;
+                    transform: scale(1);
+                }
+            }
+
         }
     }
 }

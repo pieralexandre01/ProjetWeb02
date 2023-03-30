@@ -20,14 +20,27 @@
                 </div> --}}
                 <p id="festival_tagline" class="text-center">Immerse yourself in a world of limitless possibilities and visionary technologies shaping tomorrow</p>
             </div>
-
-            <div id="interactive_text" class="d-flex flex-column">
-                <span>Reflecting the Future</span>
-                <span>Where <span>Reality</span></span>
-                <span class="text-end">Meets <span>Innovation</span></span>
-            </div>
         </section>
 
+        <div id="interactive_text" class="d-flex flex-nowrap justify-content-center">
+            <div class="d-flex flex-column">
+                <div class="line_decoration1">
+                    <div class="circle"></div>
+                </div>
+                <span class="span_1 pt-5 px-5">Reflecting the Future</span>
+                <span class="span_2 px-5">Where <span>Reality</span></span>
+                <span class="span_3 mb-0 pb-5 pe-5">Meets <span>Innovation</span></span>
+            </div>
+            <div class="line_decoration2"></div>
+        </div>
+
+        {{-- <div class="container">
+            <div class="text-center">
+                <a href="#scroll_down">
+                    <img src="{{ asset('/../media/icons/down_arrow.svg') }}" class="arrow_down" alt="Arrow directing downwards">
+                </a>
+            </div>
+        </div> --}}
 
         <section id="scroll_down">
             <div class="container text-center">
