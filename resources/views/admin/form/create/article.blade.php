@@ -5,19 +5,57 @@
     <x-admin.header />
 
     <main>
-        <form action="{{ route('article-store') }}" method="post">
-            @csrf
-            {{-- garder le input hidden pour le user id --}}
-            <input name="user_id" type="hidden" value="{{ Auth::user()->id }}">
-            <input name="title" type="text">
-            <textarea name="text" cols="30" rows="10"></textarea>
-            <select name="category">
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-            </select>
-            <input type="submit">
-        </form>
+
+        <div class="page_title mb-4">
+            <h1 class="text-end">ADD: ARTICLE</h1>
+
+            <div class="title_decoration">
+                <div class="circle"></div>
+            </div>
+        </div>
+
+        <span><a class="general_button ms-5" href="{{ route('admin-dashboard') }}">go back</a></span>
+
+        <div class="admin_create_container mx-auto mt-4">
+            <div id="account_create" class="form-container border_box py-4">
+
+                <h3 class="text-center mt-sm-3">ADD AN ARTICLE</h3>
+
+                <form action="{{ route('article-store') }}" method="post" enctype="multipart/form-data"
+                    class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
+                    @csrf
+
+                    <input name="user_id" type="hidden">
+
+                    <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
+                        <div class="d-flex flex-column w-100">
+                            <label for="title" class="mb-1">TITLE</label>
+                            <input name="title" type="text">
+                            <x-msg-error field="title" />
+                        </div>
+                        <div class="d-flex flex-column w-100">
+                            <label for="category" class="mb-1">CATEGORY</label>
+                            <select name="category" class="category">
+                                @foreach ($categories as $category)
+                                    <option>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
+                        <label for="description" class="mb-1">DESCRIPTION</label>
+                        <textarea name="text" cols="30" rows="10"></textarea>
+                        <x-msg-error field="description" />
+                    </div>
+
+                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                </form>
+            </div>
+        </div>
+
     </main>
 
     <x-footer />

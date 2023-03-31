@@ -42,7 +42,6 @@ main .form-container form .custom-file-upload {
   border-radius: 10px;
   border-color: var(--color);
   box-shadow: 0px 0px 5px var(--color-hover);
-  border: 5px;
 }
 main .form-container form input[type=datetime-local] {
   border-color: var(--color);
@@ -58,6 +57,19 @@ main .form-container form input[type=datetime-local]::-webkit-calendar-picker-in
   width: 15px;
   height: 15px;
   cursor: pointer;
+}
+main .form-container form .category {
+  color: #fff;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  padding-block: 0.38em;
+  padding-inline: 1em;
+  border-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
+}
+main .form-container form .category:focus {
+  box-shadow: 0px 0px 5px 2px var(--color-hover);
+  outline: none;
 }
 main .form-container form input[type=submit] {
   padding-block: 0.25em;
