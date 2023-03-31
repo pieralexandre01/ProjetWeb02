@@ -128,13 +128,9 @@ header {
 }
 
 #interactive_text {
-    // border-bottom: 2px solid var(--white);
     position: fixed;
     bottom: 10%;
-    // left: 7.45%;
-    // width: calc(50vw - 9.45%) !important;
     left: 50%;
-    // width: calc((100vw - (100vw - 100%)) - 3.45% - 20px * 2);
     transform: translateX(-50%);
     width: 292.5px;
     z-index: 1033;
@@ -161,9 +157,6 @@ header {
             background-color: var(--white);
             border-radius: 50%;
             height: 12px;
-            // height: 20px;
-            // margin-left: calc(20px / 2);
-            // width: 20px;
             margin-left: calc(12px / 2);
             width: 12px;
             position: absolute;
@@ -188,7 +181,6 @@ header {
         }
     }
 
-
     .span_1,
     .span_2,
     .span_3 {
@@ -200,7 +192,6 @@ header {
 
     .span_3 {
         border-left: 2px solid var(--white);
-        // padding-left: clamp(1rem + 3rem, 9.5vw + 3rem, 185px + 3rem);
         padding-left: 3rem;
     }
 }
@@ -215,13 +206,54 @@ main {
     #packages,
     #activities,
     #tech_talks {
+        padding-inline: 20px;
+
         p {
             max-width: 800px !important;
+        }
+
+        .button_space {
+            width: 100%;
         }
     }
 
     section {
         padding-block: 360px !important;
+    }
+
+    #experience_divider,
+    #interact_divider,
+    #discover_divider {
+
+        padding-inline: 20px;
+
+        img {
+            border-radius: 10px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .first_line,
+        .second_line {
+            background-color: var(--color);
+            box-shadow: 0px 0px 5px var(--color-hover);
+            height: 3px;
+        }
+
+        span {
+            font-weight: 500;
+            line-height: normal !important;
+        }
+    }
+
+    #interact_divider {
+        --color: var(--dark-turquoise);
+        --color-hover: var(--vivid-turquoise);
+    }
+
+    #discover_divider {
+        --color: var(--dark-blue);
+        --color-hover: var(--vivid-blue);
     }
 
     #scroll_down,
@@ -355,15 +387,14 @@ main {
     }
 }
 
-// @media only screen and (min-width: 576px){
-//     #interactive_text {
-
-//         // width: calc(75vw - 9.45%);
-//         left: 20px;
-//         // width: calc((100vw - (100vw - 100%) - 40vw) - 3.45%);
-//         width: 304.848px;
-//     }
-// }
+@media only screen and (min-width: 576px) {
+    #about,
+    #packages,
+    #activities,
+    #tech_talks {
+        padding-inline: 40px;
+    }
+}
 
 @media only screen and (min-width: 768px) {
     header {
@@ -409,29 +440,37 @@ main {
         }
     }
 
-    #interactive_text {
-        // border-bottom: 2px solid var(--white);
-        position: fixed;
-        // bottom: 10%;
-        left: 7.45% !important;
-        // width: calc(50vw - 9.45%) !important;
-        width: calc((100vw - (100vw - 100%) - 40vw) - 9.45%);
-        transform: translateX(0%);
-        .line_decoration1 {
+    main {
 
-            .circle {
-                height: 15px;
-                margin-left: calc(15px / 2);
-                width: 15px;
+        #interactive_text {
+            position: fixed;
+            left: 7.45% !important;
+            width: calc((100vw - (100vw - 100%) - 40vw) - 9.45%);
+            transform: translateX(0%);
+            .line_decoration1 {
+
+                .circle {
+                    height: 15px;
+                    margin-left: calc(15px / 2);
+                    width: 15px;
+                }
+            }
+
+            .span_1,
+            .span_2,
+            .span_3 {
+                padding-left: 3rem;
             }
         }
 
-        .span_1,
-        .span_2,
-        .span_3 {
-            padding-left: 3rem;
+        #about,
+        #packages,
+        #activities,
+        #tech_talks {
+            .button_space {
+                width: auto;
+            }
         }
-
     }
 }
 

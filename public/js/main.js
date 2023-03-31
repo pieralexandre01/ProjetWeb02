@@ -80,6 +80,25 @@ function changeOriginalWord2() {
     }
 }
 
+function generateWords(word, original_word, iteration) {
+    return word
+    .split("")
+    .map((letter, index) => {
+        if (index < iteration) {
+            return original_word[index]
+        }
+
+        const random_letter = letters[Math.floor(Math.random() * 26)]
+
+        if (index === 0) {
+            return random_letter.toUpperCase()
+        } else {
+            return random_letter
+        }
+    })
+    .join("")
+}
+
 function animateText() {
     let iteration = 0
     let interval = null
@@ -91,39 +110,9 @@ function animateText() {
 
     interval = setInterval(() => {
 
-        word1.value = word1.value
-            .split("")
-            .map((letter, index) => {
-                if (index < iteration) {
-                    return original_word1.value[index]
-                }
+        word1.value = generateWords(word1.value, original_word1.value, iteration)
 
-                const random_letter = letters[Math.floor(Math.random() * 26)]
-
-                if (index === 0) {
-                    return random_letter.toUpperCase()
-                } else {
-                    return random_letter
-                }
-            })
-            .join("")
-
-        word2.value = word2.value
-            .split("")
-            .map((letter, index) => {
-                if (index < iteration) {
-                    return original_word2.value[index]
-                }
-
-                const random_letter = letters[Math.floor(Math.random() * 26)]
-
-                if (index === 0) {
-                    return random_letter.toUpperCase()
-                } else {
-                    return random_letter
-                }
-            })
-            .join("")
+        word2.value = generateWords(word2.value, original_word2.value, iteration)
 
         if (iteration >= word1.value.length && iteration >= word2.value.length) {
             clearInterval(interval);
@@ -133,8 +122,6 @@ function animateText() {
 
     }, 30)
 }
-
-
 
 
 const root = {

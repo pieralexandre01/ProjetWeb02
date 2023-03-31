@@ -34,8 +34,9 @@
                                     <h2>{{ $activity->subcategory }}</h2>
                                 @else
                                     <h2>{{ $activity->clean_title }}</h2>
-                                    @endif
-                                    <div class="subcategory_bar"></div>
+                                @endif
+
+                                <div class="subcategory_bar"></div>
 
                                 <div class="d-flex flex-column flex-md-row-reverse align-items-center">
                                     <div class="d-flex flex-column align-items-center">
@@ -103,7 +104,7 @@
 
                         <div class="d-flex flex-column flex-md-row-reverse align-items-center mt-4">
                             <div class="d-flex flex-column align-items-center">
-                                <img src="{{ asset('/../' . $activity->image ) }}" class="activity_image" alt="">
+                                <img src="{{ $activity->image }}" class="activity_image" alt="Activity's image">
                             </div>
 
                             <div class="activity_date align-self-end my-3 d-md-none">{{ $activity->formatted_date }}</div>

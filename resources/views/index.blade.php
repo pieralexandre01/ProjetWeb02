@@ -5,16 +5,16 @@
     <x-public.header :page="$page" />
 
     <main>
-        <section id="intro_header">
+        {{-- <section id="intro_header">
             <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
             <div class="container">
                 <p id="festival_date" class="text-center">8-9-10 september 2023</p>
 
                 <p id="festival_tagline" class="text-center">Immerse yourself in a world of limitless possibilities and visionary technologies shaping tomorrow</p>
             </div>
-        </section>
+        </section> --}}
 
-        <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
+        {{-- <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
             <div class="line_decoration1">
                 <div class="circle"></div>
             </div>
@@ -33,7 +33,7 @@
                 </a>
             </div>
             <div class="bottom_line"></div>
-        </div>
+        </div> --}}
 
         {{-- <div class="container">
             <div class="text-center">
@@ -68,25 +68,39 @@
         </section>
 
         <section id="about" class="call_to_action">
-            <div class="container">
+            <div class="container px-sm-2 px-lg-5">
                 <div class="d-flex flex-column align-items-end">
                     <h2 class="text-end mb-5">BEHIND THE SCENES</h2>
-                    <div class="d-flex align-items-center justify-content-between w-100">
-                        <div>
+                    <div class="d-flex flex-column flex-md-row-reverse align-items-center justify-content-between w-100">
+                        <p class="ps-md-5 ps-xxl-0 text-end mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
+                        <div class="">
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
-                        <p class="text-end mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="experience_divider">
+            <img src="{{ asset('/../media/images/homepage/experience.webp') }}" alt="Experience VR image">
+
+            <div class="d-flex flex-column align-items-end">
+                <div class="d-flex flex-row flex-nowrap align-items-center w-100">
+                    <div class="first_line w-100 me-2"></div>
+                    <span>EXPERIENCE</span>
+                </div>
+                <span>virtual reality with</span>
+                <span>the latest technology</span>
+            </div>
+            <div class="second_line mt-2"></div>
         </section>
 
         <section id="packages" class="call_to_action">
-            <div class="container">
+            <div class="container px-sm-2 px-lg-5">
                 <div class="d-flex flex-column align-items-start">
                     <h2 class="mb-5">PACKAGES</h2>
-                    <div class="d-flex align-items-center justify-content-between w-100">
-                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+                        <p class="pe-md-5 pe-xxl-0 mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                         <div>
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
@@ -95,27 +109,58 @@
             </div>
         </section>
 
+        @foreach( $activities as $activity)
+
+            <section id="interact_divider">
+                <img src="{{ $activity->image }}" class="mb-5" alt="{{ $activity->subcategory }}">
+                <div class="d-flex flex-column align-items-end">
+                    <div class="d-flex flex-row flex-nowrap align-items-center w-100">
+                        <div class="first_line w-100 me-2"></div>
+                        <span>INTERACT</span>
+                    </div>
+                    <span>with cyber legends</span>
+                    <span>{{ $activity->subcategory }}</span>
+                </div>
+                <div class="second_line mt-2"></div>
+            </section>
+
+        @endforeach
+
         <section id="activities" class="call_to_action">
-            <div class="container">
+            <div class="container px-sm-2 px-lg-5">
                 <div class="d-flex flex-column align-items-end">
                     <h2 class="text-end mb-5">ACTIVITIES</h2>
-                    <div class="d-flex align-items-center justify-content-between w-100">
+                    <div class="d-flex flex-column flex-md-row-reverse align-items-center justify-content-between w-100">
+                        <p class="ps-md-5 ps-xxl-0 text-end mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                         <div>
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
-                        <p class="text-end mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="discover_divider">
+            <img src="{{ asset('/../media/images/homepage/discover.png') }}" class="mb-5" alt="Image of human-like robot">
+
+            <div class="d-flex flex-column align-items-end">
+                <div class="d-flex flex-row flex-nowrap align-items-center w-100">
+                    <div class="first_line w-100 me-2"></div>
+                    <span>DISCOVER</span>
+                </div>
+                <span>the most advanced</span>
+                <span>autonomous systems</span>
+            </div>
+            <div class="second_line mt-2"></div>
         </section>
 
         <section id="tech_talks" class="call_to_action">
-            <div class="container">
+            <div class="container px-sm-2 px-lg-5">
                 <div class="d-flex flex-column align-items-start">
                     <h2 class="mb-5">TECH NEWS</h2>
-                    <div class="d-flex align-items-center justify-content-between w-100">
-                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
-                        <div>
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+                        <p class="pe-md-5 pe-xxl-0 mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
+                        <div class="button_space">
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
                     </div>
