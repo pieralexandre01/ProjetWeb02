@@ -56,15 +56,20 @@
         </div>
     </main>
 
+
     <x-public.footer />
 
-    <script>
-        const cart = {!! json_encode($cart) !!}
-        const price = {{ $total_price }}
-    </script>
-    <script {{-- src="https://www.paypal.com/sdk/js?client-id=Ab1B6QPVTldsAdp5TMypbJ33_GcAhBwCMN3ky3hZKiv6m9MUZ7D3A0c2XydAQTfKtZRsavmoPEMbugO6&currency=CAD"> --}}
-        src="https://www.paypal.com/sdk/js?client-id=AYVxBcqWnIGx-aTKA4Y0o_UcwXsNCKuNvf1U6hvk5Er3ZN8KUky8MHs9eJ1gmHNoZgjB6tez_s_ib_-W&currency=CAD">
-    </script>
-    <script src="{{ asset('js/cart.js') }}" type="module"></script>
+
+    <x-slot name="scripts">
+        <script>
+            const cart = {!! json_encode($cart) !!}
+            const price = {{ $total_price }}
+        </script>
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=AYVxBcqWnIGx-aTKA4Y0o_UcwXsNCKuNvf1U6hvk5Er3ZN8KUky8MHs9eJ1gmHNoZgjB6tez_s_ib_-W&currency=CAD">
+        </script>
+        {{-- <script src="{{ asset('js/cart.js') }}" type="module"></script>s --}}
+    </x-slot>
+
 
 </x-public.layout>
