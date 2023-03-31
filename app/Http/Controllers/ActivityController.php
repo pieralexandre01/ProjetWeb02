@@ -43,14 +43,13 @@ class ActivityController extends Controller
         // Valider les champs
         $request->validate([
             "title" => "required|max:25",
-            "subcategory" => "required|max:25",
+            "subcategory" => "max:25",
             "description" => "required",
             "image" => "required|mimes:png,jpg,jpeg,webp",
             "date" => "required|date"
         ], [
             "title.required" => "The title is required",
             "title.max" => "The title must be 25 characters or less",
-            "subcategory.required" => "The subcategory is required",
             "subcategory.max" => "The subcategory must be 25 characters or less",
             "description.required" => "The description is required",
             "image.required" => "The image is required",
@@ -105,13 +104,12 @@ class ActivityController extends Controller
         // Valider les champs
         $request->validate([
             "title" => "required|max:25",
-            "subcategory" => "required|max:25",
+            "subcategory" => "max:25",
             "description" => "required",
             "date" => "required|date"
         ], [
             "title.required" => "The title is required",
             "title.max" => "The title must be 25 characters or less",
-            "subcategory.required" => "The subcategory is required",
             "subcategory.max" => "The subcategory must be 25 characters or less",
             "description.required" => "The description is required",
             "date.required" => "The date and time are required",

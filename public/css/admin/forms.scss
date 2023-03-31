@@ -26,7 +26,6 @@ main {
         form {
             input[type=text],
             input[type=password],
-            input[type=file],
             input[type=datetime-local],
             input[type=submit] {
                 border-color: var(--color);
@@ -47,11 +46,13 @@ main {
             }
 
             .custom-file-upload {
-                max-width: 300px;
                 display: inline-block;
                 color: #fff;
                 background-color: var(--bg-color);
                 border-radius: 10px;
+                border-color: var(--color);
+                box-shadow: 0px 0px 5px var(--color-hover);
+                border: 5px;
             }
 
             input[type=datetime-local] {
@@ -60,14 +61,14 @@ main {
                 color: #fff;
                 background-color: var(--bg-color);
                 box-shadow: 0px 0px 5px var(--color-hover);
-              }
+            }
 
             input[type=datetime-local]::-webkit-calendar-picker-indicator {
-            appearance: none;
-            background: url('../../media/icons/copyright.svg') no-repeat center center;
-            width: 15px;
-            height: 15px;
-            cursor: pointer;
+                appearance: none;
+                background: url('../../media/icons/calendar.svg') no-repeat center center;
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
             }
 
 
