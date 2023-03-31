@@ -27,7 +27,7 @@ class AdminController extends Controller
             'articles' => Article::all(),
             'activities' => Activity::all(),
             'reservations' => Reservation::all(),
-            'users_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get()
+            'users_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL DESC, deleted_at DESC')->get()
         ]);
     }
 

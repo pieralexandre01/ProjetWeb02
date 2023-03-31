@@ -43,6 +43,11 @@
   width: 700px;
 }
 
+.full_name,
+.package_title {
+  width: 400px;
+}
+
 a.edit {
   color: var(--dark-blue);
 }
