@@ -16,7 +16,6 @@ main .admin_create_container {
 }
 main .form-container form input[type=text],
 main .form-container form input[type=password],
-main .form-container form input[type=file],
 main .form-container form input[type=datetime-local],
 main .form-container form input[type=submit] {
   border-color: var(--color);
@@ -24,7 +23,6 @@ main .form-container form input[type=submit] {
 }
 main .form-container form input[type=text]:focus,
 main .form-container form input[type=password]:focus,
-main .form-container form input[type=file]:focus,
 main .form-container form input[type=datetime-local]:focus,
 main .form-container form input[type=submit]:focus {
   box-shadow: 0px 0px 5px 2px var(--color-hover);
@@ -38,11 +36,13 @@ main .form-container form input[type=password] {
   padding-inline: 1em;
 }
 main .form-container form .custom-file-upload {
-  max-width: 300px;
   display: inline-block;
   color: #fff;
   background-color: var(--bg-color);
   border-radius: 10px;
+  border-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
+  border: 5px;
 }
 main .form-container form input[type=datetime-local] {
   border-color: var(--color);
@@ -54,7 +54,7 @@ main .form-container form input[type=datetime-local] {
 main .form-container form input[type=datetime-local]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
           appearance: none;
-  background: url("../../media/icons/copyright.svg") no-repeat center center;
+  background: url("../../media/icons/calendar.svg") no-repeat center center;
   width: 15px;
   height: 15px;
   cursor: pointer;

@@ -44,11 +44,16 @@
                             <input type="datetime-local" name="date" class="custom-file-datetime" value="{{ $activity->date }}">
                             <x-msg-error field="date" />
                         </div>
-                        <div class="d-flex flex-column w-100">
-                            <label for="image" class="mb-1">IMAGE</label>
-                            <input type="file" name="image" id="file-upload" class="custom-file-upload">
-                            <x-msg-error field="image" />
-                        </div>
+
+                        <div class="d-flex flex-column w-100"></div>
+                    </div>
+
+                    <div class="d-flex flex-column w-100 mb-lg-4">
+                        <label for="image" class="mb-1">IMAGE</label>
+                        <span class="custom-file-upload">
+                            <input type="file" name="image" id="file-upload">
+                        </span>
+                        <x-msg-error field="image" />
                     </div>
 
                     <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
@@ -59,12 +64,6 @@
 
                     <input type="submit" class="align-self-center mt-3 mt-md-0">
                 </form>
-
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
             </div>
         </div>
 
