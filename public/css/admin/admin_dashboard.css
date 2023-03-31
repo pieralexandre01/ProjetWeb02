@@ -8,13 +8,35 @@
   --vivid-pink: #f500ed;
 }
 
-.accordion-button,
-.accordion-button:not(.collapsed) {
+.accordion .accordion-button,
+.accordion .accordion-button:not(.collapsed) {
   background-color: transparent;
+  padding: 0 0 0 20px;
+}
+.accordion .accordion-button:focus {
+  box-shadow: none;
+}
+.accordion .accordion-button::after {
+  background: none;
+  content: "-";
+  color: var(--dark-blue);
+  transform: none;
+  display: inline-block;
+  font-family: "ethnocentric", sans-serif;
+  font-size: 1.5rem;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+.accordion .collapsed.accordion-button::after {
+  content: "+";
 }
 
-.accordion-button:focus {
-  box-shadow: none;
+.first_name,
+.last_name {
+  width: 250px !important;
 }
 
 a.edit {
@@ -29,4 +51,8 @@ a.delete {
 }
 a.delete:hover {
   color: var(--vivid-pink) !important;
+}
+
+.user_block {
+  opacity: 0.5;
 }/*# sourceMappingURL=admin_dashboard.css.map */

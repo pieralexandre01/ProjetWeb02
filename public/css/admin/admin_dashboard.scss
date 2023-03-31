@@ -8,21 +8,50 @@
     --vivid-pink: #f500ed;
 }
 
-.accordion-button,
-.accordion-button:not(.collapsed) {
-    background-color: transparent;
+
+// Ajustement de l'accordéon
+
+.accordion {
+
+    .accordion-button,
+    .accordion-button:not(.collapsed) {
+        background-color: transparent;
+        padding: 0 0 0 20px;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    .accordion-button::after {
+        background: none;
+        content: "-";
+        color: var(--dark-blue);
+        transform: none;
+        display: inline-block;
+        font-family: "ethnocentric", sans-serif;
+        font-size: 1.5rem;
+        background-color: var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 15px;
+    }
+
+    .collapsed.accordion-button::after {
+        content: "+";
+    }
 }
 
-.accordion-button:focus {
-    box-shadow: none;
+
+// Espacement des infos dans les "listes"
+.first_name,
+.last_name {
+    width: 250px !important;
 }
 
-// espacement des infos
-// .admin_first_name {
-//     width: 50% !important;
-// }
 
-// btn (modifier et supprimer)
+// Btn/lien (modifier, supprimer et etc.)
 a.edit {
     color: var(--dark-blue);
 
@@ -37,4 +66,10 @@ a.delete {
     &:hover {
         color: var(--vivid-pink) !important;
     }
+}
+
+
+// Autres
+.user_block {
+    opacity: 0.5;
 }

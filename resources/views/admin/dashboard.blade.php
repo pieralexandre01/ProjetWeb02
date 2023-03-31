@@ -14,13 +14,13 @@
             <x-msg-session key="user-unblocked" class-name="success" />
 
 
-            <section id="users_admin">
+            <section id="users_admin" class="mb-5 pb-2">
                 <div class="accordion">
 
-                    <div class="collapsed ps-0 d-flex justify-content-between" type="button" data-bs-toggle="collapse"
+                    <div class="ps-0 d-flex justify-content-between" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        <button class="collapsed accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <h2 class="h3 text-white">admin</h2>
                         </button>
@@ -36,11 +36,11 @@
                         @foreach ($users_admin as $user_admin)
                             <div class="d-flex justify-content-between pt-3">
 
-                                <div class="infos d-flex">
+                                <div class="infos d-flex @if ($user_admin->deleted_at != null) user_block @endif">
                                     {{-- ajuster les distances --}}
-                                    <p class="admin_first_name">{{ $user_admin->first_name }}</p>
-                                    <p class="admin_last_name">{{ $user_admin->last_name }}</p>
-                                    <p class="admin_email">{{ $user_admin->email }}</p>
+                                    <p class="first_name">{{ $user_admin->first_name }}</p>
+                                    <p class="last_name">{{ $user_admin->last_name }}</p>
+                                    <p class="email">{{ $user_admin->email }}</p>
                                 </div>
 
                                 <div class="buttons d-flex">
@@ -61,7 +61,6 @@
                 </div>
             </section>
 
-        </div>
 
         </div>
 
