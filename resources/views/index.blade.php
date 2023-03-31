@@ -14,27 +14,34 @@
             </div>
         </section>
 
-        <div id="interactive_text" class="d-flex flex-nowrap justify-content-center" @@mouseenter="animateText()">
+        <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
+            <div class="line_decoration1">
+                <div class="circle"></div>
+            </div>
             <div class="d-flex flex-column">
-                <div class="line_decoration1">
-                    <div class="circle"></div>
-                </div>
+
                 <span class="span_1 pt-5 px-5">Reflecting the Future</span>
                 @verbatim
                     <span class="span_2 ps-5">Where <span class="animated_word" :data-value="original_word1"></span>{{ word1 }}</span>
                     <span class="span_3 mb-0 pb-5 pe-5">Meets <span class="animated_word" :data-value="original_word2"></span>{{ word2 }}</span>
                 @endverbatim
+
             </div>
-            <div class="line_decoration2"></div>
+            <div class="line_decoration2">
+                <a href="#scroll_down" class="arrow_down d-inline-block">
+                    <img src="{{ asset('/../media/icons/down_arrow.svg') }}" alt="Arrow directing downwards">
+                </a>
+            </div>
+            <div class="bottom_line"></div>
         </div>
 
-        <div class="container">
+        {{-- <div class="container">
             <div class="text-center">
                 <a href="#scroll_down">
                     <img src="{{ asset('/../media/icons/down_arrow.svg') }}" class="arrow_down" alt="Arrow directing downwards">
                 </a>
             </div>
-        </div>
+        </div> --}}
 
         <section id="scroll_down">
             <div class="container text-center">
@@ -105,7 +112,7 @@
         <section id="tech_talks" class="call_to_action">
             <div class="container">
                 <div class="d-flex flex-column align-items-start">
-                    <h2 class="mb-5">TECH TALKS</h2>
+                    <h2 class="mb-5">TECH NEWS</h2>
                     <div class="d-flex align-items-center justify-content-between w-100">
                         <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                         <div>

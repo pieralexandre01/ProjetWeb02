@@ -9,6 +9,9 @@ nav #right-side_menu,
 nav #dropdown_menu {
   flex-basis: 25%;
 }
+nav .nav_center-space {
+  width: 100%;
+}
 nav .nav_logo .logo {
   padding-inline: 0;
 }

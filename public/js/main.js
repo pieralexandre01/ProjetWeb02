@@ -21,12 +21,12 @@ const activity_list = ref(1)
 // Homepage -----------------------
 
 //Interactive_text
-const letters = "abcdefghijklmnopqrstuvwxyz";
+const letters = "abcdefghijklmnopqrstuvwxyz"
 
-const word1 = ref("Reality");
-const original_word1 = ref("Reality");
-const word2 = ref("Innovation");
-const original_word2 = ref("Innovation");
+const word1 = ref("Reality")
+const original_word1 = ref("Reality")
+const word2 = ref("Innovation")
+const original_word2 = ref("Innovation")
 
 function changeOriginalWord1() {
     if (original_word1.value === "Reality") {
@@ -81,13 +81,13 @@ function changeOriginalWord2() {
 }
 
 function animateText() {
-    let iteration = 0;
-    let interval = null;
+    let iteration = 0
+    let interval = null
 
     changeOriginalWord1()
     changeOriginalWord2()
 
-    clearInterval(interval);
+    clearInterval(interval)
 
     interval = setInterval(() => {
 
@@ -95,45 +95,43 @@ function animateText() {
             .split("")
             .map((letter, index) => {
                 if (index < iteration) {
-                    if (index == 0) { }
-                    return original_word1.value[index];
+                    return original_word1.value[index]
                 }
 
-                const random_letter = letters[Math.floor(Math.random() * 26)];
+                const random_letter = letters[Math.floor(Math.random() * 26)]
 
                 if (index === 0) {
                     return random_letter.toUpperCase()
                 } else {
-                    return random_letter;
+                    return random_letter
                 }
             })
-            .join("");
+            .join("")
 
         word2.value = word2.value
             .split("")
             .map((letter, index) => {
                 if (index < iteration) {
-                    if (index == 0) { }
-                    return original_word2.value[index];
+                    return original_word2.value[index]
                 }
 
-                const random_letter = letters[Math.floor(Math.random() * 26)];
+                const random_letter = letters[Math.floor(Math.random() * 26)]
 
                 if (index === 0) {
                     return random_letter.toUpperCase()
                 } else {
-                    return random_letter;
+                    return random_letter
                 }
             })
-            .join("");
+            .join("")
 
         if (iteration >= word1.value.length && iteration >= word2.value.length) {
             clearInterval(interval);
         }
 
-        iteration += 1 / 3;
+        iteration += 1 / 3
 
-    }, 30);
+    }, 30)
 }
 
 
