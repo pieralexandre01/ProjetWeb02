@@ -41,7 +41,7 @@
                     <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
                         <div class="d-flex flex-column w-100">
                             <label for="date" class="mb-1">DATE</label>
-                            <input type="datetime-local" name="date" value="{{ $activity->date }}">
+                            <input type="datetime-local" name="date" class="custom-file-datetime" value="{{ $activity->date }}">
                             <x-msg-error field="date" />
                         </div>
                         <div class="d-flex flex-column w-100">

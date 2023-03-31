@@ -19,7 +19,7 @@
         <div class="admin_create_container mx-auto mt-4">
             <div id="account_create" class="form-container border_box py-4">
 
-                <h3 class="text-center mt-sm-3">EDIT AN USER ACCOUNT</h3>
+                <h3 class="text-center mt-sm-3">EDIT A USER ACCOUNT</h3>
 
                 <form action="{{ route('user-update', $user->id) }}" method="post"
                     class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
@@ -44,10 +44,6 @@
                         <x-msg-error field="email" />
                     </div>
 
-                    <div class="d-flex align-items-center justify-content-center mb-md-4 w-100">
-                        <p>Click <a href="{{ route('password-edit', $user->id) }}"><u>here</u></a> if you want to modify the password.</p>
-                    </div>
-
                     <input type="submit" class="align-self-center mt-3 mt-md-0">
                 </form>
 
@@ -56,6 +52,28 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
+            </div>
+
+            <div id="account_create" class="form-container border_box py-4 mt-4">
+                <h3 class="text-center mt-sm-3">CHANGE PASSWORD</h3>
+                <form action="{{ route('password-update', $user->id) }}" method="post"
+                    class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
+                    @csrf
+
+                    <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
+                        <div class="d-flex flex-column w-100">
+                            <label for="password" class="mb-1">PASSWORD</label>
+                            <input id="password" name="password" type="password">
+                            <x-msg-error field="password" />
+                        </div>
+                        <div class="d-flex flex-column w-100">
+                            <label for="password_confirm" class="mb-1">CONFIRM PASSWORD</label>
+                            <input id="password_confirm" name="password_confirm" type="password">
+                            <x-msg-error field="password_confirm" />
+                        </div>
+                    </div>
+                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                </form>
             </div>
         </div>
 
