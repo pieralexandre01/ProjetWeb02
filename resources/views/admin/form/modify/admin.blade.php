@@ -16,6 +16,9 @@
 
         <span><a class="general_button ms-5" href="{{ route('admin-dashboard') }}">go back</a></span>
 
+        <x-msg-session key="account-edit" class-name="success text-center" />
+        <x-msg-session key="password-edit" class-name="success text-center" />
+
         <div class="admin_create_container mx-auto mt-4">
             <div id="account_create" class="form-container border_box py-4">
 
