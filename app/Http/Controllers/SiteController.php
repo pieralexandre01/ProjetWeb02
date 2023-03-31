@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -14,6 +15,7 @@ class SiteController extends Controller
         return view('index', [
             "title" => "Mirror World | Homepage",
             "page" => "homepage",
+            "activities" => Activity::where('title', 'like', 'meet & greet%')->get()
         ]);
     }
 

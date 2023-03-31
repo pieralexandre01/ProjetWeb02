@@ -71,6 +71,27 @@ main .form-container form .category:focus {
   box-shadow: 0px 0px 5px 2px var(--color-hover);
   outline: none;
 }
+main .form-container form textarea::-webkit-scrollbar {
+  width: 15px;
+  background-color: var(--bg-color);
+  border-radius: 6px;
+}
+main .form-container form textarea::-webkit-scrollbar-thumb {
+  background-color: var(--color);
+  border-radius: 0px 3px 0px 0px;
+}
+main .form-container form textarea::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-hover);
+}
+main .form-container form textarea {
+  background-color: var(--bg-color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+}
+main .form-container form textarea::-webkit-resizer {
+  background-color: var(--bg-color);
+  border: 2px solid var(--color);
+}
 main .form-container form input[type=submit] {
   padding-block: 0.25em;
   padding-inline: 1.5em;
