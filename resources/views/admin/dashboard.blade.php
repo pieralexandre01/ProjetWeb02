@@ -4,38 +4,15 @@
 
     <x-admin.header />
 
-
-    {{-- à mettre dans le fichier css ------------------------------------------------------------------------------ --}}
-    <style>
-        .accordion-button,
-        .accordion-button:not(.collapsed) {
-            background-color: transparent;
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-button::after {
-            background-color: #fff;
-            height: 100%;
-        }
-
-        .accordion-button:not(.collapsed)::after,
-        .accordion-button.collapsed::before {
-            color: #fff;
-        }
-
-        div.arrow {
-            background-color: #fff;
-            width: 30px;
-        }
-    </style>
-    {{-- --------------------------------------------------------------------------------------------------------- --}}
-
     <main>
 
-        <div class="container pt-5 mt-5">
+        <div class="container py-5 mt-5">
+
+            <x-msg-session key="account-created" class-name="success" />
+            <x-msg-session key="account-edit" class-name="success" />
+            <x-msg-session key="user-blocked" class-name="success" />
+            <x-msg-session key="user-unblocked" class-name="success" />
+
 
             <section id="users_admin">
                 <div class="accordion">
@@ -47,33 +24,34 @@
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <h2 class="h3 text-white">admin</h2>
                         </button>
-                        {{-- mettre le style du h3 au h2 --}}
 
-                        {{-- <div class="arrow d-flex justify-content-center align-items-center">
-
-                        </div> --}}
                     </div>
                     <hr class="mt-0">
 
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
-                        {{-- styliser le bouton --}}
-                        <div class="my-5"><a href="">add</a></div>
+
+                        <div class="my-5"><a class="general_button" href="{{ route('admin-create') }}">add</a></div>
 
                         @foreach ($users_admin as $user_admin)
                             <div class="d-flex justify-content-between pt-3">
 
                                 <div class="infos d-flex">
                                     {{-- ajuster les distances --}}
-                                    <p class="">{{ $user_admin->email }}</p>
-                                    <p class="">{{ $user_admin->first_name }}</p>
-                                    <p class="">{{ $user_admin->last_name }}</p>
+                                    <p class="admin_first_name">{{ $user_admin->first_name }}</p>
+                                    <p class="admin_last_name">{{ $user_admin->last_name }}</p>
+                                    <p class="admin_email">{{ $user_admin->email }}</p>
                                 </div>
 
                                 <div class="buttons d-flex">
-                                    {{-- changer les couleurs et hover --}}
-                                    <a href="" class="me-4">modifier</a>
-                                    <a href="">supprimer</a>
+
+                                    @if ($user_admin->deleted_at == null)
+                                        <a href="{{ route('admin-edit', $user_admin->id) }}" class="edit me-5">EDIT</a>
+                                        <a href="{{ route('user-block', $user_admin->id) }}" class="delete">BLOCK</a>
+                                    @else
+                                        <a href="{{ route('user-unblock', $user_admin->id) }}"
+                                            class="delete">UNBLOCK</a>
+                                    @endif
                                 </div>
 
                             </div>

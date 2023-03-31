@@ -1,0 +1,40 @@
+:root {
+    --bg-color: #020402;
+    --grey: #9d9d9d;
+    --white: #ffffff;
+    --dark-blue: #0058b9;
+    --vivid-blue: #017aff;
+    --dark-pink: #8e0089;
+    --vivid-pink: #f500ed;
+}
+
+.accordion-button,
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+// espacement des infos
+// .admin_first_name {
+//     width: 50% !important;
+// }
+
+// btn (modifier et supprimer)
+a.edit {
+    color: var(--dark-blue);
+
+    &:hover {
+        color: var(--vivid-blue) !important;
+    }
+}
+
+a.delete {
+    color: var(--dark-pink);
+
+    &:hover {
+        color: var(--vivid-pink) !important;
+    }
+}
