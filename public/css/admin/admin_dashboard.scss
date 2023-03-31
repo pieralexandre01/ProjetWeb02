@@ -50,6 +50,10 @@
     width: 250px !important;
 }
 
+.article_title {
+    width: 700px;
+}
+
 
 // Btn/lien (modifier, supprimer et etc.)
 a.edit {
@@ -72,4 +76,11 @@ a.delete {
 // Autres
 .user_block {
     opacity: 0.5;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    object-fit: cover;
 }

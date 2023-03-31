@@ -173,7 +173,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('article-update');
 
     // supprimer
-    Route::get('/admin/articles/delete/{id}', [AdminController::class, 'destroy'])
+    Route::get('/admin/articles/delete/{id}', [ArticleController::class, 'destroy'])
         ->name('article-delete');
 
 

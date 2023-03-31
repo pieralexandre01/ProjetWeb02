@@ -39,6 +39,10 @@
   width: 250px !important;
 }
 
+.article_title {
+  width: 700px;
+}
+
 a.edit {
   color: var(--dark-blue);
 }
@@ -55,4 +59,12 @@ a.delete:hover {
 
 .user_block {
   opacity: 0.5;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=admin_dashboard.css.map */

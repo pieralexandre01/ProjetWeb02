@@ -66,8 +66,13 @@ class ActivityController extends Controller
         $activity->description = $request->description;
 
         // Traitement de l'image
-        Storage::putFile('media/images/activities', $request->image);
-        $activity->image = '/storage/images/' . $request->image->hashName();
+        $image = $request->file('image');
+        // Générer un nom de fichier unique
+        $image_name = uniqid() . '.' . $image->getClientOriginalExtension();
+        // Déplacer
+        $image->move(public_path('media/images/activities'), $image_name);
+        // Enregistrer le chemin
+        $activity->image = 'media/images/activities/' . $image_name;
 
         $activity->date = $request->date;
 
@@ -120,9 +125,16 @@ class ActivityController extends Controller
 
         // Gestion de l'image
         if ($request->hasFile('image')) {
+
             // Téléverser la nouvelle image
-            $path = $request->file('image')->store('media/images/activities');
-            $image = basename($path);
+            $img = $request->file('image');
+            // Générer un nom de fichier unique
+            $image_name = uniqid() . '.' . $img->getClientOriginalExtension();
+            // Déplacer
+            $img->move(public_path('media/images/activities'), $image_name);
+            // Enregistrer le chemin
+            $image = 'media/images/activities/' . $image_name;
+
         } else {
             // Utiliser l'ancienne valeur de l'image
             $image = $activity->image;

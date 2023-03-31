@@ -8,10 +8,21 @@
 
         <div class="container py-5 mt-5">
 
-            <x-msg-session key="account-created" class-name="success" />
-            <x-msg-session key="account-edit" class-name="success" />
-            <x-msg-session key="user-blocked" class-name="success" />
-            <x-msg-session key="user-unblocked" class-name="success" />
+
+            <div class="mb-5">
+                <x-msg-session key="account-created" class-name="success" />
+                <x-msg-session key="account-edit" class-name="success" />
+                <x-msg-session key="user-blocked" class-name="success" />
+                <x-msg-session key="user-unblocked" class-name="success" />
+
+                <x-msg-session key="article-create" class-name="success" />
+                <x-msg-session key="article-edit" class-name="success" />
+                <x-msg-session key="article-delete" class-name="success" />
+
+                <x-msg-session key="activity-create" class-name="success" />
+                <x-msg-session key="activity-edit" class-name="success" />
+                <x-msg-session key="activity-delete" class-name="success" />
+            </div>
 
 
             <section id="users_admin" class="mb-5 pb-2">
@@ -37,7 +48,6 @@
                             <div class="d-flex justify-content-between pt-3">
 
                                 <div class="infos d-flex @if ($user_admin->deleted_at != null) user_block @endif">
-                                    {{-- ajuster les distances --}}
                                     <p class="first_name">{{ $user_admin->first_name }}</p>
                                     <p class="last_name">{{ $user_admin->last_name }}</p>
                                     <p class="email">{{ $user_admin->email }}</p>
@@ -52,6 +62,89 @@
                                         <a href="{{ route('user-unblock', $user_admin->id) }}"
                                             class="delete">UNBLOCK</a>
                                     @endif
+                                </div>
+
+                            </div>
+                            <hr>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="articles" class="mb-5 pb-2">
+                <div class="accordion">
+
+                    <div class="ps-0 d-flex justify-content-between" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+
+                        <button class="collapsed accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <h2 class="h3 text-white">articles</h2>
+                        </button>
+
+                    </div>
+                    <hr class="mt-0">
+
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+
+                        <div class="my-5"><a class="general_button" href="{{ route('article-create') }}">add</a>
+                        </div>
+
+                        @foreach ($articles as $article)
+                            <div class="d-flex justify-content-between pt-3">
+
+                                <div class="infos d-flex">
+                                    <p class="article_title">{{ $article->title }}</p>
+                                    <p>{{ $article->category->name }}</p>
+                                </div>
+
+                                <div class="buttons d-flex">
+                                    <a href="{{ route('article-edit', $article->id) }}" class="edit me-5">EDIT</a>
+                                    <a href="{{ route('article-delete', $article->id) }}" class="delete">DELETE</a>
+                                </div>
+
+                            </div>
+                            <hr>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="activities" class="mb-5 pb-2">
+                <div class="accordion">
+
+                    <div class="ps-0 d-flex justify-content-between" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+
+                        <button class="collapsed accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <h2 class="h3 text-white">activities</h2>
+                        </button>
+
+                    </div>
+                    <hr class="mt-0">
+
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+
+                        <div class="my-5"><a class="general_button" href="{{ route('activity-create') }}">add</a>
+                        </div>
+
+                        @foreach ($activities as $activity)
+                            <div class="d-flex justify-content-between align-items-center pt-3">
+
+                                <div class="infos d-flex align-items-center">
+                                    <img src="{{ $activity->image }}" class="image rounded">
+                                    <p>{{ $activity->title }}</p>
+                                </div>
+
+                                <div class="buttons d-flex">
+                                    <a href="{{ route('activity-edit', $activity->id) }}" class="edit me-5">EDIT</a>
+                                    <a href="{{ route('activity-delete', $activity->id) }}" class="delete">DELETE</a>
                                 </div>
 
                             </div>
