@@ -52,7 +52,7 @@ main {
                 border-radius: 10px;
                 border-color: var(--color);
                 box-shadow: 0px 0px 5px var(--color-hover);
-                border: 5px;
+                // border: 5px;
             }
 
             input[type=datetime-local] {
@@ -71,6 +71,20 @@ main {
                 cursor: pointer;
             }
 
+            .category {
+                color: #fff;
+                background-color: var(--bg-color);
+                border-radius: 10px;
+                padding-block: 0.38em;
+                padding-inline: 1em;
+                border-color: var(--color);
+                box-shadow: 0px 0px 5px var(--color-hover);
+
+                &:focus {
+                    box-shadow: 0px 0px 5px 2px var(--color-hover);
+                    outline: none;
+                }
+            }
 
             input[type=submit] {
                 padding-block: 0.25em;
