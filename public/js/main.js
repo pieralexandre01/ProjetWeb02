@@ -1,11 +1,12 @@
 
-import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import { createApp, ref, onMounted } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import initPaypal from './cart.js'
 
 // Header - navigation -----------------------
 const is_open = ref(false)
 
 function toggleMenu() {
-    if( ! is_open.value){
+    if (!is_open.value) {
         is_open.value = true
 
     } else {
@@ -28,25 +29,25 @@ const word2 = ref("Innovation");
 const original_word2 = ref("Innovation");
 
 function changeOriginalWord1() {
-    if(original_word1.value === "Reality"){
+    if (original_word1.value === "Reality") {
         word1.value = "Curiosity"
         original_word1.value = "Curiosity"
         return
     }
 
-    if(original_word1.value === "Curiosity"){
+    if (original_word1.value === "Curiosity") {
         word1.value = "Humanity"
         original_word1.value = "Humanity"
         return
     }
 
-    if(original_word1.value === "Humanity"){
+    if (original_word1.value === "Humanity") {
         word1.value = "Impossibility"
         original_word1.value = "Impossibility"
         return
     }
 
-    if(original_word1.value === "Impossibility") {
+    if (original_word1.value === "Impossibility") {
         word1.value = "Reality"
         original_word1.value = "Reality"
         return
@@ -54,25 +55,25 @@ function changeOriginalWord1() {
 }
 
 function changeOriginalWord2() {
-    if(original_word2.value === "Innovation"){
+    if (original_word2.value === "Innovation") {
         word2.value = "Exploration"
         original_word2.value = "Exploration"
         return
     }
 
-    if(original_word2.value === "Exploration"){
+    if (original_word2.value === "Exploration") {
         word2.value = "Automation"
         original_word2.value = "Automation"
         return
     }
 
-    if(original_word2.value === "Automation"){
+    if (original_word2.value === "Automation") {
         word2.value = "Opportunity"
         original_word2.value = "Opportunity"
         return
     }
 
-    if(original_word2.value === "Opportunity") {
+    if (original_word2.value === "Opportunity") {
         word2.value = "Innovation"
         original_word2.value = "Innovation"
         return
@@ -91,43 +92,43 @@ function animateText() {
     interval = setInterval(() => {
 
         word1.value = word1.value
-        .split("")
-        .map((letter, index) => {
-            if (index < iteration) {
-                if(index == 0) {}
-            return original_word1.value[index];
-            }
+            .split("")
+            .map((letter, index) => {
+                if (index < iteration) {
+                    if (index == 0) { }
+                    return original_word1.value[index];
+                }
 
-            const random_letter = letters[Math.floor(Math.random() * 26)];
+                const random_letter = letters[Math.floor(Math.random() * 26)];
 
-            if(index === 0){
-                return random_letter.toUpperCase()
-            } else {
-                return random_letter;
-            }
-        })
-        .join("");
+                if (index === 0) {
+                    return random_letter.toUpperCase()
+                } else {
+                    return random_letter;
+                }
+            })
+            .join("");
 
         word2.value = word2.value
-        .split("")
-        .map((letter, index) => {
-            if (index < iteration) {
-                if(index == 0) {}
-            return original_word2.value[index];
-            }
+            .split("")
+            .map((letter, index) => {
+                if (index < iteration) {
+                    if (index == 0) { }
+                    return original_word2.value[index];
+                }
 
-            const random_letter = letters[Math.floor(Math.random() * 26)];
+                const random_letter = letters[Math.floor(Math.random() * 26)];
 
-            if(index === 0){
-                return random_letter.toUpperCase()
-            } else {
-                return random_letter;
-            }
-        })
-        .join("");
+                if (index === 0) {
+                    return random_letter.toUpperCase()
+                } else {
+                    return random_letter;
+                }
+            })
+            .join("");
 
         if (iteration >= word1.value.length && iteration >= word2.value.length) {
-        clearInterval(interval);
+            clearInterval(interval);
         }
 
         iteration += 1 / 3;
@@ -141,6 +142,9 @@ function animateText() {
 const root = {
 
     setup() {
+
+        onMounted(initPaypal)
+
         return {
             //Propriétés
             is_open,
