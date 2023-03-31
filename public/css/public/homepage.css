@@ -168,14 +168,62 @@ header nav .nav_logo {
 main p {
   max-width: none;
 }
+main #about,
+main #packages,
+main #activities,
+main #tech_talks {
+  padding-inline: 20px;
+}
 main #about p,
 main #packages p,
 main #activities p,
 main #tech_talks p {
   max-width: 800px !important;
 }
+main #about .button_space,
+main #packages .button_space,
+main #activities .button_space,
+main #tech_talks .button_space {
+  width: 100%;
+}
 main section {
   padding-block: 360px !important;
+}
+main #experience_divider,
+main #interact_divider,
+main #discover_divider {
+  padding-inline: 20px;
+}
+main #experience_divider img,
+main #interact_divider img,
+main #discover_divider img {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+main #experience_divider .first_line,
+main #experience_divider .second_line,
+main #interact_divider .first_line,
+main #interact_divider .second_line,
+main #discover_divider .first_line,
+main #discover_divider .second_line {
+  background-color: var(--color);
+  box-shadow: 0px 0px 5px var(--color-hover);
+  height: 3px;
+}
+main #experience_divider span,
+main #interact_divider span,
+main #discover_divider span {
+  font-weight: 500;
+  line-height: normal !important;
+}
+main #interact_divider {
+  --color: var(--dark-turquoise);
+  --color-hover: var(--vivid-turquoise);
+}
+main #discover_divider {
+  --color: var(--dark-blue);
+  --color-hover: var(--vivid-blue);
 }
 main #scroll_down,
 main #byte-side_CTA {
@@ -280,6 +328,14 @@ main #immerse_text .glow_effect {
   }
 }
 
+@media only screen and (min-width: 576px) {
+  #about,
+  #packages,
+  #activities,
+  #tech_talks {
+    padding-inline: 40px;
+  }
+}
 @media only screen and (min-width: 768px) {
   header nav .nav_center-space {
     display: flex;
@@ -313,21 +369,27 @@ main #immerse_text .glow_effect {
       transform: scale(1);
     }
   }
-  #interactive_text {
+  main #interactive_text {
     position: fixed;
     left: 7.45% !important;
     width: calc(100vw - (100vw - 100%) - 40vw - 9.45%);
     transform: translateX(0%);
   }
-  #interactive_text .line_decoration1 .circle {
+  main #interactive_text .line_decoration1 .circle {
     height: 15px;
     margin-left: 7.5px;
     width: 15px;
   }
-  #interactive_text .span_1,
-  #interactive_text .span_2,
-  #interactive_text .span_3 {
+  main #interactive_text .span_1,
+  main #interactive_text .span_2,
+  main #interactive_text .span_3 {
     padding-left: 3rem;
+  }
+  main #about .button_space,
+  main #packages .button_space,
+  main #activities .button_space,
+  main #tech_talks .button_space {
+    width: auto;
   }
 }
 @media only screen and (min-width: 992px) {
