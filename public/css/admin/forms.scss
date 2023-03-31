@@ -63,6 +63,7 @@ main {
               }
 
             input[type=datetime-local]::-webkit-calendar-picker-indicator {
+            appearance: none;
             background: url('../../media/icons/copyright.svg') no-repeat center center;
             width: 15px;
             height: 15px;
