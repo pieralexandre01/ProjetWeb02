@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         // 5 utilisateurs sont générés et sauvegardés
-        User::factory(5)->create();
+        User::factory(20)->create();
 
         DB::table('users')->insert([
             "first_name" => "Julien",
