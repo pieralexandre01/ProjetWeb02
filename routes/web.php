@@ -148,11 +148,11 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
         ->name('password-update');
 
     // bloquer - admin et public
-    Route::post('/admin/user/block/{id}', [AdminController::class, 'block'])
+    Route::get('/admin/user/block/{id}', [AdminController::class, 'block'])
         ->name('user-block');
 
     // débloquer - admin et public
-    Route::post('/admin/user/unblock/{id}', [AdminController::class, 'unblock'])
+    Route::get('/admin/user/unblock/{id}', [AdminController::class, 'unblock'])
         ->name('user-unblock');
 
 

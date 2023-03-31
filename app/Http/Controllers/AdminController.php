@@ -23,7 +23,7 @@ class AdminController extends Controller
         return view('admin.dashboard', [
             "title" => "MW | Admin | Dashboard",
             "page" => "admin-dashboard",
-            'users_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL ASC, deleted_at ASC')->get(),
+            'users_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL DESC, deleted_at DESC')->get(),
             'articles' => Article::all(),
             'activities' => Activity::all(),
             'reservations' => Reservation::all(),
@@ -75,7 +75,7 @@ class AdminController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => ['required', 'email', new UniqueEmailNotSoftDeleted],
+            'email' => ['required', 'email', new UniqueEmailNotSoftDeleted($id)],
         ], [
             'first_name.required' => 'The first name is required',
             'last_name.required' => 'The last name is required',
@@ -121,7 +121,6 @@ class AdminController extends Controller
 
         // remplacer le mdp
         $user->password = $request->password;
-        $user->password_confirm = $request->password_confirm;
 
         // Enregistrement
         $user->save();
