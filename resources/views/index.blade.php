@@ -72,8 +72,12 @@
                 <div class="d-flex flex-column align-items-end">
                     <h2 class="text-end mb-5">BEHIND THE SCENES</h2>
                     <div class="d-flex flex-column flex-md-row-reverse align-items-center justify-content-between w-100">
-                        <p class="ps-md-5 ps-xxl-0 text-end mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
-                        <div class="">
+                        <div>
+                            <p class="ps-md-5 ps-xxl-0 text-end">Welcome to the "Behind the Scenes" of Mirror World, the online festival that celebrates the future of technology!</p>
+                            <p class="ps-md-5 ps-xxl-0 text-end mb-0">Through this virtual platform, festival-goers from around the world can engage in stimulating discussions led by renowned speakers, enjoy live musical performances, and immerse themselves in virtual reality experiences that showcase the latest technological advancements.
+                            </p>
+                        </div>
+                        <div class="button_space">
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
                     </div>
@@ -81,10 +85,21 @@
             </div>
         </section>
 
-        <section id="experience_divider">
-            <img src="{{ asset('/../media/images/homepage/experience.webp') }}" alt="Experience VR image">
+        <section id="experience_divider" class="text-center text-md-start">
+            <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
-            <div class="d-flex flex-column align-items-end">
+            <div class="d-md-flex justify-content-md-between align-items-center">
+                <img src="{{ asset('/../media/images/homepage/experience.webp') }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="Experience VR image">
+                <div class="divider_text d-none d-md-block mx-auto d-flex">
+                    <div class="d-flex flex-column align-items-end">
+                        <span>EXPERIENCE</span>
+                        <span>virtual reality with</span>
+                        <span>the latest technology</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-end d-md-none">
                 <div class="d-flex flex-row flex-nowrap align-items-center w-100">
                     <div class="first_line w-100 me-2"></div>
                     <span>EXPERIENCE</span>
@@ -92,7 +107,8 @@
                 <span>virtual reality with</span>
                 <span>the latest technology</span>
             </div>
-            <div class="second_line mt-2"></div>
+
+            <div class="second_line mt-2 mt-md-0"></div>
         </section>
 
         <section id="packages" class="call_to_action">
@@ -100,8 +116,11 @@
                 <div class="d-flex flex-column align-items-start">
                     <h2 class="mb-5">PACKAGES</h2>
                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
-                        <p class="pe-md-5 pe-xxl-0 mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                         <div>
+                            <p class="pe-md-5 pe-xxl-0">Choose from five unique packages that aligns with your interests to fully immerse yourself in the Mirror World festival experience!</p>
+                            <p class="pe-md-5 pe-xxl-0 mb-0"> Our Unlimited Access package grants access to all feature. The General Access package offers all benefits minus virtual reality. Robotics Access provides exclusive access to related content, while Innovative AI Access offers specialized speaker sessions and exhibits. Finally, Immersive VR Access offers exclusive access to our virtual reality experiences.</p>
+                        </div>
+                        <div class="button_space">
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
                     </div>
@@ -109,19 +128,33 @@
             </div>
         </section>
 
+
         @foreach( $activities as $activity)
 
-            <section id="interact_divider">
-                <img src="{{ $activity->image }}" class="mb-5" alt="{{ $activity->subcategory }}">
-                <div class="d-flex flex-column align-items-end">
+            <section id="interact_divider" class="text-center text-md-start">
+                <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
+
+                <div class="d-md-flex justify-content-md-between align-items-center">
+                    <div class="d-none d-md-block mx-auto d-flex">
+                        <div class="d-flex flex-column">
+                            <span>INTERACT</span>
+                            <span>with cyber legends</span>
+                            <span class="cyber_name mt-2 ms-lg-5 ps-lg-5 pt-1">{{ strtoupper($activity->subcategory) }}</span>
+                        </div>
+                    </div>
+                    <img src="{{ $activity->image }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="{{ $activity->subcategory }}">
+                </div>
+
+                <div class="d-flex flex-column align-items-end d-md-none">
                     <div class="d-flex flex-row flex-nowrap align-items-center w-100">
                         <div class="first_line w-100 me-2"></div>
                         <span>INTERACT</span>
                     </div>
                     <span>with cyber legends</span>
-                    <span>{{ $activity->subcategory }}</span>
+                    <span class="cyber_name align-self-center pt-1">{{ strtoupper($activity->subcategory) }}</span>
                 </div>
-                <div class="second_line mt-2"></div>
+
+                <div class="second_line mt-2 mt-md-0"></div>
             </section>
 
         @endforeach
@@ -131,8 +164,11 @@
                 <div class="d-flex flex-column align-items-end">
                     <h2 class="text-end mb-5">ACTIVITIES</h2>
                     <div class="d-flex flex-column flex-md-row-reverse align-items-center justify-content-between w-100">
-                        <p class="ps-md-5 ps-xxl-0 text-end mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
                         <div>
+                            <p class="ps-md-5 ps-xxl-0 text-end">Mirror World offers a wide range of exciting activities to keep you engaged and entertained throughout the festival. From Tech Talks and a Cyber Soirée to an Autom-A-Thon and Next Gen VR, there's something for everyone.</p>
+                            <p class="ps-md-5 ps-xxl-0 text-end mb-0">Explore stunning art pieces created by machine minds at AI Artistry, take a deep dive into big data at The Big Data Bonanza, or pilot drones at Robo Revolution. From the interconnected world of IoT at Smart Systems to the latest in blockchain technology at Cyber Insights, join us for a celebration of technology!</p>
+                        </div>
+                        <div class="button_space">
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
                     </div>
@@ -140,10 +176,21 @@
             </div>
         </section>
 
-        <section id="discover_divider">
-            <img src="{{ asset('/../media/images/homepage/discover.png') }}" class="mb-5" alt="Image of human-like robot">
+        <section id="discover_divider" class="text-center text-md-start">
+            <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
-            <div class="d-flex flex-column align-items-end">
+            <div class="d-md-flex justify-content-md-between align-items-center">
+                <img src="{{ asset('/../media/images/homepage/discover.png') }}" class="divider_img robot_img" alt="Image of human-like robot">
+                <div class="divider_text d-none d-md-block mx-auto d-flex">
+                    <div class="d-flex flex-column align-items-end">
+                        <span>DISCOVER</span>
+                        <span>the most advanced</span>
+                        <span>autonomous systems</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-end d-md-none">
                 <div class="d-flex flex-row flex-nowrap align-items-center w-100">
                     <div class="first_line w-100 me-2"></div>
                     <span>DISCOVER</span>
@@ -151,15 +198,20 @@
                 <span>the most advanced</span>
                 <span>autonomous systems</span>
             </div>
-            <div class="second_line mt-2"></div>
+
+            <div class="second_line mt-2 mt-md-0"></div>
         </section>
+
 
         <section id="tech_talks" class="call_to_action">
             <div class="container px-sm-2 px-lg-5">
                 <div class="d-flex flex-column align-items-start">
                     <h2 class="mb-5">TECH NEWS</h2>
                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
-                        <p class="pe-md-5 pe-xxl-0 mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus deserunt in, dolorum inventore obcaecati ab culpa amet nemo mollitia tempore repudiandae laboriosam labore reiciendis, dolorem debitis expedita non eveniet unde?</p>
+                        <div>
+                            <p class="pe-md-5 pe-xxl-0">Mirror World's tech news covers a range of topics in the field of technology. From the transformative potential of VR in healthcare to the benefits and risks of using VR for education, our articles delve into the latest technological advancements.</p>
+                            <p class="pe-md-5 pe-xxl-0 mb-0">We explore the rise of quantum computing and the fascinating world of artificial intelligence. Additionally, our news covers how robotics is transforming various industries such as agriculture, entertainment, and healthcare. Stay up-to-date on the latest tech news with Mirror World.</p>
+                        </div>
                         <div class="button_space">
                             <a href="{{ route('about') }}" class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>

@@ -224,20 +224,25 @@ main {
     #experience_divider,
     #interact_divider,
     #discover_divider {
-
         padding-inline: 20px;
+        position: relative;
 
-        img {
+        .divider_img {
+            position: relative;
             border-radius: 10px;
-            height: 200px;
-            width: 200px;
+            height: 320px;
+            width: 320px;
+            z-index: 2;
+
         }
 
         .first_line,
         .second_line {
+            position: relative;
             background-color: var(--color);
             box-shadow: 0px 0px 5px var(--color-hover);
             height: 3px;
+            z-index: 3;
         }
 
         span {
@@ -249,11 +254,27 @@ main {
     #interact_divider {
         --color: var(--dark-turquoise);
         --color-hover: var(--vivid-turquoise);
+
+        .cyber_name {
+            font-family: "ethnocentric", sans-serif;
+            font-size: 1.9rem;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.05rem;
+        }
     }
 
     #discover_divider {
         --color: var(--dark-blue);
         --color-hover: var(--vivid-blue);
+        position: relative;
+
+        .robot_img {
+            position: relative;
+            bottom: -12px;
+            left: -19px;
+            width: 300px;
+        }
     }
 
     #scroll_down,
@@ -392,7 +413,23 @@ main {
     #packages,
     #activities,
     #tech_talks {
-        padding-inline: 40px;
+        padding-inline: 60px !important;
+    }
+
+
+    #experience_divider,
+    #interact_divider,
+    #discover_divider {
+        img {
+            height: 400px !important;
+            width: 400px !important;
+        }
+    }
+
+    #discover_divider {
+        .robot_img {
+            height: auto !important;
+        }
     }
 }
 
@@ -469,6 +506,74 @@ main {
         #tech_talks {
             .button_space {
                 width: auto;
+            }
+        }
+
+        #experience_divider,
+        #interact_divider,
+        #discover_divider {
+            padding-inline: 0px;
+
+            .divider_img {
+                position: relative;
+                border-radius: 0px;
+                height: auto;
+                width: auto;
+                z-index: 2 !important;
+            }
+
+            .first_line,
+            .second_line {
+                background-color: var(--color);
+                box-shadow: 0px 0px 5px var(--color-hover);
+                height: 3px;
+            }
+
+
+            span {
+                font-weight: 500;
+                line-height: normal !important;
+            }
+        }
+
+        #discover_divider {
+            .first_line {
+                position: relative;
+                top: 74.17px;
+                z-index: 1;
+            }
+
+            .divider_text {
+                position: relative;
+                top: 74.17px;
+                transform: translateY(-50%);
+            }
+        }
+
+        #interact_divider {
+            --color: var(--dark-turquoise);
+            --color-hover: var(--vivid-turquoise);
+
+            .cyber_name {
+                font-family: "ethnocentric", sans-serif;
+                font-size: 1.9rem;
+                font-style: italic;
+                font-weight: 400;
+                letter-spacing: 0.05rem;
+            }
+        }
+
+        #discover_divider {
+            --color: var(--dark-blue);
+            --color-hover: var(--vivid-blue);
+            position: relative;
+
+            .robot_img {
+                width: 300px;
+                position: relative;
+                bottom: 0px;
+                left: 80px;
+                z-index: 0;
             }
         }
     }

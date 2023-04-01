@@ -193,13 +193,16 @@ main #experience_divider,
 main #interact_divider,
 main #discover_divider {
   padding-inline: 20px;
+  position: relative;
 }
-main #experience_divider img,
-main #interact_divider img,
-main #discover_divider img {
+main #experience_divider .divider_img,
+main #interact_divider .divider_img,
+main #discover_divider .divider_img {
+  position: relative;
   border-radius: 10px;
-  height: 200px;
-  width: 200px;
+  height: 320px;
+  width: 320px;
+  z-index: 2;
 }
 main #experience_divider .first_line,
 main #experience_divider .second_line,
@@ -207,9 +210,11 @@ main #interact_divider .first_line,
 main #interact_divider .second_line,
 main #discover_divider .first_line,
 main #discover_divider .second_line {
+  position: relative;
   background-color: var(--color);
   box-shadow: 0px 0px 5px var(--color-hover);
   height: 3px;
+  z-index: 3;
 }
 main #experience_divider span,
 main #interact_divider span,
@@ -221,9 +226,23 @@ main #interact_divider {
   --color: var(--dark-turquoise);
   --color-hover: var(--vivid-turquoise);
 }
+main #interact_divider .cyber_name {
+  font-family: "ethnocentric", sans-serif;
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
 main #discover_divider {
   --color: var(--dark-blue);
   --color-hover: var(--vivid-blue);
+  position: relative;
+}
+main #discover_divider .robot_img {
+  position: relative;
+  bottom: -12px;
+  left: -19px;
+  width: 300px;
 }
 main #scroll_down,
 main #byte-side_CTA {
@@ -333,7 +352,16 @@ main #immerse_text .glow_effect {
   #packages,
   #activities,
   #tech_talks {
-    padding-inline: 40px;
+    padding-inline: 60px !important;
+  }
+  #experience_divider img,
+  #interact_divider img,
+  #discover_divider img {
+    height: 400px !important;
+    width: 400px !important;
+  }
+  #discover_divider .robot_img {
+    height: auto !important;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -390,6 +418,69 @@ main #immerse_text .glow_effect {
   main #activities .button_space,
   main #tech_talks .button_space {
     width: auto;
+  }
+  main #experience_divider,
+  main #interact_divider,
+  main #discover_divider {
+    padding-inline: 0px;
+  }
+  main #experience_divider .divider_img,
+  main #interact_divider .divider_img,
+  main #discover_divider .divider_img {
+    position: relative;
+    border-radius: 0px;
+    height: auto;
+    width: auto;
+    z-index: 2 !important;
+  }
+  main #experience_divider .first_line,
+  main #experience_divider .second_line,
+  main #interact_divider .first_line,
+  main #interact_divider .second_line,
+  main #discover_divider .first_line,
+  main #discover_divider .second_line {
+    background-color: var(--color);
+    box-shadow: 0px 0px 5px var(--color-hover);
+    height: 3px;
+  }
+  main #experience_divider span,
+  main #interact_divider span,
+  main #discover_divider span {
+    font-weight: 500;
+    line-height: normal !important;
+  }
+  main #discover_divider .first_line {
+    position: relative;
+    top: 74.17px;
+    z-index: 1;
+  }
+  main #discover_divider .divider_text {
+    position: relative;
+    top: 74.17px;
+    transform: translateY(-50%);
+  }
+  main #interact_divider {
+    --color: var(--dark-turquoise);
+    --color-hover: var(--vivid-turquoise);
+  }
+  main #interact_divider .cyber_name {
+    font-family: "ethnocentric", sans-serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  main #discover_divider {
+    --color: var(--dark-blue);
+    --color-hover: var(--vivid-blue);
+    position: relative;
+  }
+  main #discover_divider .robot_img {
+    width: 300px;
+    position: relative;
+    bottom: 0px;
+    left: 80px;
+    z-index: 0;
   }
 }
 @media only screen and (min-width: 992px) {
