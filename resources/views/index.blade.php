@@ -14,34 +14,44 @@
             </div>
         </section> --}}
 
-        {{-- <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
-            <div class="line_decoration1">
-                <div class="circle"></div>
+        <section id="intro_main">
+            <div id="robot_carousel" class=sss>
+                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" class="img-fluid" alt="Digital image representing robotics where reality meets innovation">
+                {{-- <img src="{{ asset('/../media/images/homepage/robot2.png') }}" class="img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
+                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" class="img-fluid" alt="Digital image representing robotics where humanity meets automation">
+                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="img-fluid" alt="Digital image representing robotics where impossibility meets opportunity"> --}}
             </div>
-            <div class="d-flex flex-column">
 
-                <span class="span_1 pt-5 px-5">Reflecting the Future</span>
-                @verbatim
-                    <span class="span_2 ps-5">Where <span class="animated_word" :data-value="original_word1"></span>{{ word1 }}</span>
-                    <span class="span_3 mb-0 pb-5 pe-5">Meets <span class="animated_word" :data-value="original_word2"></span>{{ word2 }}</span>
-                @endverbatim
+            <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
+                <div class="line_decoration1">
+                    <div class="circle"></div>
+                </div>
+                <div class="d-flex flex-column">
 
-            </div>
-            <div class="line_decoration2">
-                <a href="#scroll_down" class="arrow_down d-inline-block">
-                    <img src="{{ asset('/../media/icons/down_arrow.svg') }}" alt="Arrow directing downwards">
-                </a>
-            </div>
-            <div class="bottom_line"></div>
-        </div> --}}
+                    <span class="span_1 pt-5 px-5">Reflecting the Future</span>
+                    @verbatim
+                        <span class="span_2 ps-5">Where <span class="animated_word" :data-value="original_word1"></span>{{ word1 }}</span>
+                        <span class="span_3 mb-0 pb-5 pe-5">Meets <span class="animated_word" :data-value="original_word2"></span>{{ word2 }}</span>
+                    @endverbatim
 
-        {{-- <div class="container">
-            <div class="text-center">
-                <a href="#scroll_down">
-                    <img src="{{ asset('/../media/icons/down_arrow.svg') }}" class="arrow_down" alt="Arrow directing downwards">
-                </a>
+                </div>
+                <div class="line_decoration2">
+                    <a href="#scroll_down" class="arrow_down d-inline-block">
+                        <img src="{{ asset('/../media/icons/down_arrow.svg') }}" alt="Arrow directing downwards">
+                    </a>
+                </div>
+                <div class="bottom_line"></div>
             </div>
-        </div> --}}
+
+            {{-- <div class="container">
+                <div class="text-center">
+                    <a href="#scroll_down">
+                        <img src="{{ asset('/../media/icons/down_arrow.svg') }}" class="arrow_down" alt="Arrow directing downwards">
+                    </a>
+                </div>
+            </div> --}}
+        </section>
+
 
         <section id="scroll_down">
             <div class="container text-center">
@@ -85,13 +95,13 @@
             </div>
         </section>
 
-        <section id="experience_divider" class="text-center text-md-start">
+        <section id="experience_divider" class="text-center">
             <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
             <div class="d-md-flex justify-content-md-between align-items-center">
                 <img src="{{ asset('/../media/images/homepage/experience.webp') }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="Experience VR image">
-                <div class="divider_text d-none d-md-block mx-auto d-flex">
-                    <div class="d-flex flex-column align-items-end">
+                <div class="divider_text d-none d-md-block m-auto d-flex">
+                    <div class="content d-flex flex-column align-items-end">
                         <span>EXPERIENCE</span>
                         <span>virtual reality with</span>
                         <span>the latest technology</span>
@@ -131,18 +141,18 @@
 
         @foreach( $activities as $activity)
 
-            <section id="interact_divider" class="text-center text-md-start">
+            <section id="interact_divider" class="text-center">
                 <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
-                <div class="d-md-flex justify-content-md-between align-items-center">
-                    <div class="d-none d-md-block mx-auto d-flex">
-                        <div class="d-flex flex-column">
+                <div class="d-md-flex flex-md-row-reverse justify-content-md-between align-items-center">
+                    <img src="{{ $activity->image }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="{{ $activity->subcategory }}">
+                    <div class="divider_text d-none d-md-block mx-auto d-flex">
+                        <div class="content d-flex flex-column">
                             <span>INTERACT</span>
                             <span>with cyber legends</span>
-                            <span class="cyber_name mt-2 ms-lg-5 ps-lg-5 pt-1">{{ strtoupper($activity->subcategory) }}</span>
+                            <span class="cyber_name align-self-end mt-2 pt-1">{{ strtoupper($activity->subcategory) }}</span>
                         </div>
                     </div>
-                    <img src="{{ $activity->image }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="{{ $activity->subcategory }}">
                 </div>
 
                 <div class="d-flex flex-column align-items-end d-md-none">
@@ -176,13 +186,13 @@
             </div>
         </section>
 
-        <section id="discover_divider" class="text-center text-md-start">
+        <section id="discover_divider" class="text-center">
             <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
             <div class="d-md-flex justify-content-md-between align-items-center">
-                <img src="{{ asset('/../media/images/homepage/discover.png') }}" class="divider_img robot_img" alt="Image of human-like robot">
+                <img src="{{ asset('/../media/images/homepage/discover.png') }}" class="robot_img" alt="Image of human-like robot">
                 <div class="divider_text d-none d-md-block mx-auto d-flex">
-                    <div class="d-flex flex-column align-items-end">
+                    <div class="content d-flex flex-column align-items-end">
                         <span>DISCOVER</span>
                         <span>the most advanced</span>
                         <span>autonomous systems</span>
