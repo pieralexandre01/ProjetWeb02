@@ -38,6 +38,26 @@ header nav .nav_logo {
   }
 }
 
+main #scroll_bar {
+  background: var(--white);
+  width: 2px;
+  margin-bottom: -2px;
+  height: 75vh;
+  position: fixed;
+  left: 20px;
+  top: 50vh;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+main #scroll_bar .scroll_indicator {
+  background: var(--white);
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 0%;
+  left: -7px;
+}
 main #intro_header {
   height: 100vh;
   padding-block: 0px !important;
@@ -138,7 +158,7 @@ main #interactive_text .bottom_line {
 main #interactive_text .line_decoration1 {
   background-color: var(--grey);
   height: 2px;
-  width: 103.45%;
+  width: 0%;
   top: 0px;
   left: 0px;
   position: absolute;
@@ -154,8 +174,9 @@ main #interactive_text .line_decoration1 .circle {
   transform: translate(-50%, -50%);
 }
 main #interactive_text .line_decoration2 {
-  background-color: var(--grey);
-  height: 108%;
+  background-color: var(--white);
+  height: 0%;
+  max-height: 108%;
   width: 2px !important;
   position: absolute;
   top: 0px;
@@ -164,7 +185,18 @@ main #interactive_text .line_decoration2 {
 main #interactive_text .line_decoration2 .arrow_down {
   position: absolute;
   bottom: -25px;
-  left: -8.55px;
+  transform: translateX(-50%);
+  left: 1px;
+}
+@keyframes arrow_down {
+  0% {
+    position: absolute;
+    bottom: -25px;
+  }
+  100% {
+    position: absolute;
+    bottom: -50px;
+  }
 }
 main #interactive_text .span_1,
 main #interactive_text .span_2,
@@ -321,6 +353,10 @@ main #keywords .container .dark_blue {
   background-image: linear-gradient(to right, var(--dark-blue), var(--vivid-blue), var(--dark-blue));
   font-weight: 500;
 }
+main #scroll_down {
+  transform: scale(0.1);
+  transition: transform 0.2s ease-in;
+}
 main #scroll_down p,
 main #scroll_down span {
   line-height: normal;
@@ -338,6 +374,14 @@ main #scroll_down p.grey_effect {
 main #scroll_down p.rainbow_effect {
   font-size: clamp(2rem, 15vw, 15rem) !important;
   font-weight: 600;
+}
+@keyframes test11 {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 main #byte-side_CTA div p {
   line-height: normal !important;

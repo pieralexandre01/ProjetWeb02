@@ -1,5 +1,5 @@
 
-import { createApp, ref, onMounted } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import { createApp, ref, onMounted, onBeforeUnmount, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 import initPaypal from './cart.js'
 
 // Header - navigation -----------------------
@@ -18,9 +18,10 @@ function toggleMenu() {
 const activity = ref(0)
 const activity_list = ref(1)
 
+
 // Homepage -----------------------
 
-//Interactive_text
+// Interactive_text
 const letters = "abcdefghijklmnopqrstuvwxyz"
 
 const word1 = ref("Reality")
@@ -123,12 +124,32 @@ function animateText() {
     }, 30)
 }
 
+// Scroll_bar
+const state = reactive({
+    scrollHeight: 0
+})
+
+function updateScrollLine() {
+    const window_top = window.pageYOffset
+    const doc_height = document.documentElement.scrollHeight
+    const window_height = window.innerHeight
+    const scrolled = (window_top / (doc_height - window_height)) * 100
+
+    state.scrollHeight = scrolled
+}
+
 
 const root = {
-
     setup() {
-
         onMounted(initPaypal)
+
+        onMounted(() => {
+            window.addEventListener('scroll', updateScrollLine);
+          })
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('scroll', updateScrollLine);
+        })
 
         return {
             //Propriétés
@@ -139,11 +160,11 @@ const root = {
             word2,
             original_word1,
             original_word2,
+            state,
 
             //Méthodes
             toggleMenu,
             animateText,
-
         }
     }
 }

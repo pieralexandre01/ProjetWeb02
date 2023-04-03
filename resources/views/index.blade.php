@@ -5,6 +5,11 @@
     <x-public.header :page="$page" />
 
     <main>
+
+        <aside id="scroll_bar">
+            <div class="scroll_indicator" :style="{ top: state.scrollHeight + '%'}"></div>
+        </aside>
+
         {{-- <section id="intro_header">
             <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
             <div class="container">
@@ -17,13 +22,13 @@
         <section id="intro_main">
             <div id="robot_carousel" class=sss>
                 <img src="{{ asset('/../media/images/homepage/robot1.png') }}" class="img-fluid" alt="Digital image representing robotics where reality meets innovation">
-                {{-- <img src="{{ asset('/../media/images/homepage/robot2.png') }}" class="img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
+                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" class="img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
                 <img src="{{ asset('/../media/images/homepage/robot3.png') }}" class="img-fluid" alt="Digital image representing robotics where humanity meets automation">
-                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="img-fluid" alt="Digital image representing robotics where impossibility meets opportunity"> --}}
+                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
             </div>
 
             <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
-                <div class="line_decoration1">
+                <div class="line_decoration1" :style="{ width: 'calc(3.45% + ' + (state.scrollHeight <= 50 ? '2 * ' + state.scrollHeight + '%' : '100%') + ')' }">
                     <div class="circle"></div>
                 </div>
                 <div class="d-flex flex-column">
@@ -35,23 +40,15 @@
                     @endverbatim
 
                 </div>
-                <div class="line_decoration2">
-                    <a href="#scroll_down" class="arrow_down d-inline-block">
+                <div class="line_decoration2" :style="{ height: state.scrollHeight >= 50 ? (state.scrollHeight - 50) * 2 + '%' : '0%' }">
+                    <a href="#scroll_down" class="arrow_down d-inline-block" :style="{ opacity: state.scrollHeight >= 97 ? '1'  : '0', animation: state.scrollHeight >= 100 ? 'arrow_down 0.75s linear infinite alternate'  : 'none'  }">
                         <img src="{{ asset('/../media/icons/down_arrow.svg') }}" alt="Arrow directing downwards">
                     </a>
                 </div>
                 <div class="bottom_line"></div>
             </div>
 
-            {{-- <div class="container">
-                <div class="text-center">
-                    <a href="#scroll_down">
-                        <img src="{{ asset('/../media/icons/down_arrow.svg') }}" class="arrow_down" alt="Arrow directing downwards">
-                    </a>
-                </div>
-            </div> --}}
         </section>
-
 
         <section id="scroll_down">
             <div class="container text-center">
@@ -231,15 +228,12 @@
         </section>
 
         <section id="byte-side_CTA">
-
-                 <div class="d-flex flex-column text-center">
-                    <p class="grey_effect mb-5">JOIN THE BYTE-SIDE</p>
-
-                    <div>
-                        <a href="{{ route('account-create') }}" class="general_button text-center mt-5 mt-md-0">read more</a>
-                    </div>
+            <div class="d-flex flex-column text-center">
+                <p class="grey_effect mb-5">JOIN THE BYTE-SIDE</p>
+                <div>
+                    <a href="{{ route('account-create') }}" class="general_button text-center mt-5 mt-md-0">read more</a>
                 </div>
-
+            </div>
         </section>
 
         <section id="immerse_text">

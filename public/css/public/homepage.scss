@@ -47,6 +47,30 @@ header {
 }
 
 main {
+
+    #scroll_bar {
+        background: var(--white);
+        width: 2px;
+        margin-bottom: -2px;
+        height: 75vh;
+        position: fixed;
+        left: 20px;
+        top: 50vh;
+        transform: translateY(-50%);
+        z-index: 5;
+
+
+        .scroll_indicator {
+            background: var(--white);
+            border-radius: 50%;
+            height: 16px;
+            width: 16px;
+            position: relative;
+            top: 0%;
+            left: - calc(16px / 2) + 1;
+        }
+    }
+
     #intro_header {
         height: 100vh;
         padding-block: 0px !important;
@@ -167,7 +191,7 @@ main {
             // background-color: var(--white);
             background-color: var(--grey);
             height: 2px;
-            width: 103.45%;
+            width: 0%;
             top: 0px;
             left: 0px;
             position: absolute;
@@ -185,9 +209,9 @@ main {
         }
 
         .line_decoration2 {
-            // background-color: var(--white);
-            background-color: var(--grey);
-            height: 108%;
+            background-color: var(--white);
+            height: 0%;
+            max-height: 108%;
             width: 2px !important;
             position: absolute;
             top: 0px;
@@ -195,8 +219,21 @@ main {
 
             .arrow_down {
                 position: absolute;
-                bottom: -25px; // starting with opacity 0 to 1 and to -50px (bottom)
-                left: -8.55px;
+                bottom: -25px;
+                transform: translateX(-50%);
+                left: 1px;
+
+                @keyframes arrow_down {
+                    0% {
+                        position: absolute;
+                        bottom: -25px;
+                    }
+                    100% {
+                        position: absolute;
+                        bottom: -50px;
+                    }
+
+                }
             }
         }
 
@@ -214,8 +251,6 @@ main {
             padding-left: 3rem;
         }
     }
-
-
 
     p {
         max-width: none;
@@ -373,6 +408,9 @@ main {
     }
 
     #scroll_down {
+        transform: scale(0.1);
+        transition: transform 0.2s ease-in;
+
         p,
         span {
             line-height: normal;
@@ -392,6 +430,16 @@ main {
         p.rainbow_effect {
             font-size: clamp(2rem, 15vw, 15rem) !important;
             font-weight: 600;
+        }
+
+    }
+
+    @keyframes test11 {
+        from {
+            transform: scale(0.1);
+        }
+        to {
+            transform: scale(1);
         }
     }
 
