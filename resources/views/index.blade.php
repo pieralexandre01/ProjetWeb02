@@ -6,7 +6,7 @@
 
     <main>
 
-        <aside id="scroll_bar">
+        <aside id="scroll_bar" class="d-none d-sm-block">
             <div class="scroll_indicator" :style="{ top: state.scrollHeight + '%'}"></div>
         </aside>
 

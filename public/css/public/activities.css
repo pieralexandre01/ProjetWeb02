@@ -116,6 +116,9 @@
   border-bottom: 2px solid var(--color) !important;
   padding-block: 2.5rem !important;
 }
+#accordion .accordion-item .accordion-body h2 {
+  text-transform: uppercase;
+}
 #accordion .accordion-item .accordion-body .subcategory_bar {
   margin-bottom: 2rem;
   width: 75%;

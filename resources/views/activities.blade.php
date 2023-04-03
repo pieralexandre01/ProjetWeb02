@@ -30,7 +30,7 @@
                             <div class="accordion-body px-sm-4 px-md-5">
 
                                 @if ($activity->subcategory != null)
-                                    {{-- en lettres majuscules: --}}
+
                                     <h2>{{ $activity->subcategory }}</h2>
                                 @else
                                     <h2>{{ $activity->clean_title }}</h2>
