@@ -49,7 +49,7 @@
                         <x-msg-error field="email" />
                     </div>
 
-                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                    <input type="submit" class="align-self-center mt-3 mt-md-0" value="submit">
                 </form>
 
                 @error('email')
@@ -77,7 +77,7 @@
                             <x-msg-error field="password_confirm" />
                         </div>
                     </div>
-                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                    <input type="submit" class="align-self-center mt-3 mt-md-0" value="submit">
                 </form>
             </div>
         </div>

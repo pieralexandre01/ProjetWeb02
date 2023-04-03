@@ -57,7 +57,7 @@
                         </div>
                     </div>
 
-                    <input type="submit" class="align-self-center mt-3 mt-md-0">
+                    <input type="submit" class="align-self-center mt-3 mt-md-0" value="submit">
                 </form>
 
                 @error('email')
