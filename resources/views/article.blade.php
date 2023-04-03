@@ -63,7 +63,7 @@
 
                 <div class="article_suggestion border_box mobile_frame d-flex flex-column justify-content-between py-5">
 
-                    <h3 class="mb-4 text-end">{{ $article->title }}</h3>
+                    <h3 lang="en" class="article_suggestion_title mb-4 text-end">{{ $article->title }}</h3>
 
                     <div>
                         <div class="mt-3">

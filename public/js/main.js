@@ -29,58 +29,6 @@ const original_word1 = ref("Reality")
 const word2 = ref("Innovation")
 const original_word2 = ref("Innovation")
 
-function changeOriginalWord1() {
-    if (original_word1.value === "Reality") {
-        word1.value = "Curiosity"
-        original_word1.value = "Curiosity"
-        return
-    }
-
-    if (original_word1.value === "Curiosity") {
-        word1.value = "Humanity"
-        original_word1.value = "Humanity"
-        return
-    }
-
-    if (original_word1.value === "Humanity") {
-        word1.value = "Impossibility"
-        original_word1.value = "Impossibility"
-        return
-    }
-
-    if (original_word1.value === "Impossibility") {
-        word1.value = "Reality"
-        original_word1.value = "Reality"
-        return
-    }
-}
-
-function changeOriginalWord2() {
-    if (original_word2.value === "Innovation") {
-        word2.value = "Exploration"
-        original_word2.value = "Exploration"
-        return
-    }
-
-    if (original_word2.value === "Exploration") {
-        word2.value = "Automation"
-        original_word2.value = "Automation"
-        return
-    }
-
-    if (original_word2.value === "Automation") {
-        word2.value = "Opportunity"
-        original_word2.value = "Opportunity"
-        return
-    }
-
-    if (original_word2.value === "Opportunity") {
-        word2.value = "Innovation"
-        original_word2.value = "Innovation"
-        return
-    }
-}
-
 function generateWords(word, original_word, iteration) {
     return word
     .split("")
@@ -100,20 +48,39 @@ function generateWords(word, original_word, iteration) {
     .join("")
 }
 
-function animateText() {
+function generateAnimatedText() {
+    if(Math.floor(state.scrollHeight) == 24) {
+        animateText("Reality", "Innovation")
+    }
+    if(Math.floor(state.scrollHeight) == 25 || Math.floor(state.scrollHeight) == 49) {
+        animateText("Curiosity", "Exploration")
+    }
+    if(Math.floor(state.scrollHeight) == 50 || Math.floor(state.scrollHeight) == 74) {
+        animateText("Humanity", "Automation")
+    }
+    if(Math.floor(state.scrollHeight) == 75) {
+        animateText("Impossibility", "Opportunity")
+    }
+}
+
+let active_word = null
+
+function animateText(word, original_word) {
+    if(active_word == word){
+        return
+    }
+    active_word = word
+
     let iteration = 0
     let interval = null
-
-    changeOriginalWord1()
-    changeOriginalWord2()
 
     clearInterval(interval)
 
     interval = setInterval(() => {
 
-        word1.value = generateWords(word1.value, original_word1.value, iteration)
+        word1.value = generateWords(word, word, iteration)
 
-        word2.value = generateWords(word2.value, original_word2.value, iteration)
+        word2.value = generateWords(original_word, original_word, iteration)
 
         if (iteration >= word1.value.length && iteration >= word2.value.length) {
             clearInterval(interval);
@@ -136,6 +103,10 @@ function updateScrollLine() {
     const scrolled = (window_top / (doc_height - window_height)) * 100
 
     state.scrollHeight = scrolled
+
+    generateAnimatedText()
+
+    console.log(state.scrollHeight)
 }
 
 
@@ -164,7 +135,8 @@ const root = {
 
             //Méthodes
             toggleMenu,
-            animateText,
+            // animateText,
+            generateAnimatedText,
         }
     }
 }

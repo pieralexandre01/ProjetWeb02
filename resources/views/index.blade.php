@@ -2,7 +2,7 @@
     <x-slot name="title">{{ $title }}</x-slot>
     <x-slot name="css_file">public/homepage</x-slot>
 
-    <x-public.header :page="$page" />
+    {{-- <x-public.header :page="$page" /> --}}
 
     <main>
 
@@ -27,7 +27,7 @@
                 <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
             </div>
 
-            <div id="interactive_text" class="d-flex flex-nowrap" @@mouseenter="animateText()">
+            <div id="interactive_text" class="d-flex flex-nowrap">
                 <div class="line_decoration1" :style="{ width: 'calc(3.45% + ' + (state.scrollHeight <= 50 ? '2 * ' + state.scrollHeight + '%' : '100%') + ')' }">
                     <div class="circle"></div>
                 </div>
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="line_decoration2" :style="{ height: state.scrollHeight >= 50 ? (state.scrollHeight - 50) * 2 + '%' : '0%' }">
-                    <a href="#scroll_down" class="arrow_down d-inline-block" :style="{ opacity: state.scrollHeight >= 97 ? '1'  : '0', animation: state.scrollHeight >= 100 ? 'arrow_down 0.75s linear infinite alternate'  : 'none'  }">
+                    <a href="#scroll_down" class="arrow_down d-inline-block" :style="{ opacity: state.scrollHeight >= 97 ? '1'  : '0', animation: state.scrollHeight >= 99 ? 'arrow_down 0.75s linear infinite alternate' : 'none' }">
                         <img src="{{ asset('/../media/icons/down_arrow.svg') }}" alt="Arrow directing downwards">
                     </a>
                 </div>
@@ -95,7 +95,7 @@
         <section id="experience_divider" class="text-center">
             <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
-            <div class="d-md-flex justify-content-md-between align-items-center">
+            <div class="divider_block d-md-flex align-items-center">
                 <img src="{{ asset('/../media/images/homepage/experience.webp') }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="Experience VR image">
                 <div class="divider_text d-none d-md-block m-auto d-flex">
                     <div class="content d-flex flex-column align-items-end">
@@ -141,10 +141,10 @@
             <section id="interact_divider" class="text-center">
                 <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
-                <div class="d-md-flex flex-md-row-reverse justify-content-md-between align-items-center">
+                <div class="divider_block d-md-flex flex-md-row-reverse  align-items-center">
                     <img src="{{ $activity->image }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="{{ $activity->subcategory }}">
                     <div class="divider_text d-none d-md-block mx-auto d-flex">
-                        <div class="content d-flex flex-column">
+                        <div class="content d-flex flex-column text-start">
                             <span>INTERACT</span>
                             <span>with cyber legends</span>
                             <span class="cyber_name align-self-end mt-2 pt-1">{{ strtoupper($activity->subcategory) }}</span>
@@ -186,9 +186,9 @@
         <section id="discover_divider" class="text-center">
             <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
 
-            <div class="d-md-flex justify-content-md-between align-items-center">
+            <div class="divider_block d-md-flex align-items-center">
                 <img src="{{ asset('/../media/images/homepage/discover.png') }}" class="robot_img" alt="Image of human-like robot">
-                <div class="divider_text d-none d-md-block mx-auto d-flex">
+                <div class="divider_text d-none d-md-block m-auto d-flex">
                     <div class="content d-flex flex-column align-items-end">
                         <span>DISCOVER</span>
                         <span>the most advanced</span>

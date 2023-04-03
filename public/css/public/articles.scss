@@ -128,6 +128,16 @@
             border-radius: 0px;
             margin-bottom: 4rem;
 
+            .article_suggestion_title {
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                -ms-hyphens: auto;
+                -moz-hyphens: auto;
+                -webkit-hyphens: auto;
+                hyphens: auto;
+                width: 100%;
+            }
+
             div {
                 .hr {
                     border-bottom: 1px solid var(--grey);
