@@ -45,15 +45,18 @@ class PackageController extends Controller
         // création du panier et enregistrement dans la session
         $cart = session()->get('packages');
 
+        // initiation du tableau
         if($cart == null) {
             $cart = [];
         }
 
+        // insertion des données dans le panier
         $cart[] = [
             "package_id" => $request->package_id,
             "package_quantity" => $request->package_quantity
         ];
 
+        // envoie du panier dans la session
         session()->put('packages', $cart);
 
         // redirection à la page de login si le user n'est pas connecté

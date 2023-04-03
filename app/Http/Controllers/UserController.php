@@ -36,7 +36,7 @@ class UserController extends Controller
         // récupérer la session
         $packages = session()->get('packages') ?? [];
 
-        // récupérer les forfaits de la bdd et stocker les infos dans la session
+        // récupérer les forfaits correspondant de la bdd et stocker les infos nécessaires dans la session
         $cart = [];
         $total_price = 0;
 

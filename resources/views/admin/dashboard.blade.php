@@ -63,12 +63,12 @@
                                     @else
                                         <a href="{{ route('user-unblock', $user_admin->id) }}"
                                             class="delete">UNBLOCK</a>
-                                        <button type="button" id="message_modal" class="general_button" data-bs-toggle="modal" data-bs-target="#unblockUserModal">
+                                        {{-- <button type="button" id="message_modal" class="general_button"
+                                            data-bs-toggle="modal" data-bs-target="#unblockUserModal">
                                             UNBLOCK
                                         </button>
 
-                                        <x-modal-messages :user_id='$user_admin->id' />
-
+                                        <x-modal-messages :user_id='$user_admin->id' /> --}}
                                     @endif
                                 </div>
 
@@ -183,8 +183,8 @@
                             <div class="d-flex justify-content-between align-items-center pt-3">
 
                                 <div class="infos d-flex align-items-center">
-                                    <p class="full_name">
-                                        {{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
+                                    <p class="full_name">{{ $reservation->user->first_name }}
+                                        {{ $reservation->user->last_name }}</p>
                                     <p class="package_title">{{ $reservation->package->title }}</p>
                                     <p>{{ $reservation->quantity }}</p>
                                 </div>

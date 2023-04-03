@@ -34,7 +34,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Enregistre une activité
+     * Enregistre une nouvelle activité
      *
      * @param Request $request
      * @return void
@@ -125,7 +125,6 @@ class ActivityController extends Controller
 
         // Gestion de l'image
         if ($request->hasFile('image')) {
-
             // Téléverser la nouvelle image
             $img = $request->file('image');
             // Générer un nom de fichier unique
@@ -134,7 +133,6 @@ class ActivityController extends Controller
             $img->move(public_path('media/images/activities'), $image_name);
             // Enregistrer le chemin
             $image = 'media/images/activities/' . $image_name;
-
         } else {
             // Utiliser l'ancienne valeur de l'image
             $image = $activity->image;
