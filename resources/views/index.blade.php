@@ -2,7 +2,7 @@
     <x-slot name="title">{{ $title }}</x-slot>
     <x-slot name="css_file">public/homepage</x-slot>
 
-    <x-public.header :page="$page" />
+    {{-- <x-public.header :page="$page" /> --}}
 
     <main>
 
@@ -21,10 +21,10 @@
 
         <section id="intro_main">
             <div id="robot_carousel">
-                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" class="img-fluid" alt="Digital image representing robotics where reality meets innovation">
-                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" class="img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
-                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" class="img-fluid" alt="Digital image representing robotics where humanity meets automation">
-                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
+                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where reality meets innovation">
+                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
+                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where humanity meets automation">
+                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
             </div>
 
             <div id="interactive_text" class="d-flex flex-nowrap">
@@ -49,6 +49,9 @@
             </div>
 
         </section>
+
+
+
 
         <section id="scroll_down">
             <div class="container text-center">

@@ -128,18 +128,55 @@ main #intro_main {
   height: 100vh;
   overflow: hidden;
 }
-main #robot_carousel {
+main #intro_main #robot_carousel {
   height: 50vh;
   position: relative;
 }
-main #robot_carousel img {
+main #intro_main #robot_carousel .animate_img:nth-child(1) {
+  animation: robot_carousel 3s ease-in-out forwards;
   max-height: 40vh;
   position: absolute;
+  left: 100vw;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
 }
-main #interactive_text {
+@keyframes robot_carousel {
+  0% {
+    left: 92vw;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+  50% {
+    left: 75vw;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    left: 48vw;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+main #intro_main #robot_carousel .animate_img:nth-child(2),
+main #intro_main #robot_carousel .animate_img:nth-child(3),
+main #intro_main #robot_carousel .animate_img:nth-child(4) {
+  position: absolute;
+  left: 100vw;
+}
+main #intro_main #robot_carousel .animate_img:nth-child(2) {
+  animation: robot_carousel 3s ease-in-out forwards;
+  animation-delay: 4s;
+}
+main #intro_main #robot_carousel .animate_img:nth-child(3) {
+  animation: robot_carousel 3s ease-in-out forwards;
+  animation-delay: 6s;
+}
+main #intro_main #robot_carousel .animate_img:nth-child(4) {
+  animation: robot_carousel 3s ease-in-out forwards;
+  animation-delay: 8s;
+}
+main #intro_main #interactive_text {
   position: fixed;
   bottom: 10%;
   left: 50%;
@@ -147,7 +184,7 @@ main #interactive_text {
   width: 292.5px;
   z-index: 1033;
 }
-main #interactive_text .bottom_line {
+main #intro_main #interactive_text .bottom_line {
   background-color: var(--white);
   height: 2px;
   width: 98%;
@@ -155,7 +192,7 @@ main #interactive_text .bottom_line {
   bottom: 0px;
   left: 0px;
 }
-main #interactive_text .line_decoration1 {
+main #intro_main #interactive_text .line_decoration1 {
   background-color: var(--white);
   height: 2px;
   width: 0%;
@@ -163,7 +200,7 @@ main #interactive_text .line_decoration1 {
   left: 0px;
   position: absolute;
 }
-main #interactive_text .line_decoration1 .circle {
+main #intro_main #interactive_text .line_decoration1 .circle {
   background-color: var(--white);
   border-radius: 50%;
   height: 12px;
@@ -173,7 +210,7 @@ main #interactive_text .line_decoration1 .circle {
   left: 0%;
   transform: translate(-50%, -50%);
 }
-main #interactive_text .line_decoration2 {
+main #intro_main #interactive_text .line_decoration2 {
   background-color: var(--white);
   height: 0%;
   max-height: 108%;
@@ -182,7 +219,7 @@ main #interactive_text .line_decoration2 {
   top: 0px;
   left: 103.45%;
 }
-main #interactive_text .line_decoration2 .arrow_down {
+main #intro_main #interactive_text .line_decoration2 .arrow_down {
   position: absolute;
   bottom: -25px;
   transform: translateX(-50%);
@@ -198,15 +235,15 @@ main #interactive_text .line_decoration2 .arrow_down {
     bottom: -50px;
   }
 }
-main #interactive_text .span_1,
-main #interactive_text .span_2,
-main #interactive_text .span_3 {
+main #intro_main #interactive_text .span_1,
+main #intro_main #interactive_text .span_2,
+main #intro_main #interactive_text .span_3 {
   font-size: clamp(1rem, 2.25vw, 4rem) !important;
   margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
   white-space: nowrap;
   padding-left: clamp(3rem, 2vw, 5rem);
 }
-main #interactive_text .span_3 {
+main #intro_main #interactive_text .span_3 {
   border-left: 2px solid var(--white);
   padding-left: 3rem;
 }
@@ -456,26 +493,26 @@ main #immerse_text .glow_effect {
       transform: scale(1);
     }
   }
-  main #robot_carousel img {
+  main #intro_main #robot_carousel .animate_img {
     max-height: 50vh;
     position: absolute;
     top: 60%;
     left: 65%;
   }
-  main #interactive_text {
+  main #intro_main #interactive_text {
     position: fixed;
     left: 7.45% !important;
     width: calc(100vw - (100vw - 100%) - 40vw - 9.45%);
     transform: translateX(0%);
   }
-  main #interactive_text .line_decoration1 .circle {
+  main #intro_main #interactive_text .line_decoration1 .circle {
     height: 15px;
     margin-left: 7.5px;
     width: 15px;
   }
-  main #interactive_text .span_1,
-  main #interactive_text .span_2,
-  main #interactive_text .span_3 {
+  main #intro_main #interactive_text .span_1,
+  main #intro_main #interactive_text .span_2,
+  main #intro_main #interactive_text .span_3 {
     padding-left: 3rem;
   }
   main #about .button_space,
@@ -487,18 +524,18 @@ main #immerse_text .glow_effect {
   main #experience_divider,
   main #interact_divider,
   main #discover_divider {
-    padding-bottom: 760px !important;
-    padding-top: 360px !important;
-    padding-inline: 0px !important;
     height: 444.79px;
+    padding-bottom: 760px !important;
+    padding-inline: 0px !important;
+    padding-top: 360px !important;
   }
   main #experience_divider .divider_img,
   main #interact_divider .divider_img,
   main #discover_divider .divider_img {
-    position: absolute;
     border-radius: 0px;
     height: 444.79px !important;
     width: 444.79px !important;
+    position: absolute;
     z-index: 2 !important;
   }
   main #experience_divider .first_line,
@@ -590,13 +627,13 @@ main #immerse_text .glow_effect {
   }
 }
 @media only screen and (min-width: 992px) {
-  main #robot_carousel img {
+  main #intro_main #robot_carousel .animate_img {
     max-height: 55vh;
     position: absolute;
     top: 65%;
     left: 70%;
   }
-  main #interactive_text {
+  main #intro_main #interactive_text {
     position: fixed;
     left: 7.45% !important;
     width: calc(100vw - (100vw - 100%) - 50vw - 9.45%);
@@ -624,12 +661,12 @@ main #immerse_text .glow_effect {
   }
 }
 @media only screen and (min-width: 1200px) {
-  main #robot_carousel img {
+  main #intro_main #robot_carousel .animate_img {
     max-height: 60vh;
     position: absolute;
     top: 70%;
   }
-  main #interactive_text .span_3 {
+  main #intro_main #interactive_text .span_3 {
     padding-left: clamp(4rem, 9.5vw + 3rem, 185px + 3rem);
   }
 }/*# sourceMappingURL=homepage.css.map */
