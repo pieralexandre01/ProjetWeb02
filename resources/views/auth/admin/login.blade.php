@@ -26,7 +26,7 @@
                         <input id="password" name="password" type="password">
                         <x-msg-error field="password" />
                     </div>
-                    <input type="submit" class="align-self-center">
+                    <input type="submit" class="align-self-center" value="submit">
                 </form>
 
             </div>

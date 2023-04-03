@@ -6,7 +6,25 @@
 
     <main class="d-flex align-items-center">
 
-        <x-msg-session key="connexion-cart" class-name="success text-center" />
+        @if (session('packages') && Request::url() == route('login'))
+            <div class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        @endif
 
         <div class="container d-flex flex-nowrap justify-content-center align-items-center">
             <div class="form-container border_box py-2">
@@ -28,7 +46,7 @@
                         <input id="password" name="password" type="password">
                         <x-msg-error field="password" />
                     </div>
-                    <input type="submit" class="align-self-center">
+                    <input type="submit" class="align-self-center" value="submit">
                 </form>
 
                 <p class="mt-4 text-center">don't have an account? <a href="{{ route('account-create') }}"
