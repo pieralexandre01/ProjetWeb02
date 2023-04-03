@@ -153,105 +153,144 @@ main {
     #intro_main {
         height: 100vh;
         overflow: hidden;
-    }
 
-    #robot_carousel {
-        height: clamp(45vh, 50vh, 60vh);
-        position: relative;
+        #robot_carousel {
+            height: clamp(45vh, 50vh, 60vh);
+            position: relative;
 
-        img {
-            max-height: 40vh;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    #interactive_text {
-        position: fixed;
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 292.5px;
-        z-index: 1033;
-
-        .bottom_line {
-            background-color: var(--white);
-            height: 2px;
-            width: 98%;
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-        }
-
-        .line_decoration1 {
-            background-color: var(--white);
-            height: 2px;
-            width: 0%;
-            top: 0px;
-            left: 0px;
-            position: absolute;
-
-            .circle {
-                background-color: var(--white);
-                border-radius: 50%;
-                height: 12px;
-                margin-left: calc(12px / 2);
-                width: 12px;
+            .animate_img:nth-child(1) {
+                animation: robot_carousel 3s ease-in-out forwards;
+                max-height: 40vh;
                 position: absolute;
-                    left: 0%;
+                left: 100vw;
+                top: 50%;
                 transform: translate(-50%, -50%);
+                opacity: 0;
             }
-        }
 
-        .line_decoration2 {
-            background-color: var(--white);
-            height: 0%;
-            max-height: 108%;
-            width: 2px !important;
-            position: absolute;
-            top: 0px;
-            left: 103.45%;
+            @keyframes robot_carousel {
+                0% {
+                    left: 92vw;
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(0.4);
+                }
+                50% {
+                    left: 75vw;
+                    opacity: 1;
+                    transform: translate(-50%, -50%) scale(1);
+                }
 
-            .arrow_down {
+                100% {
+                    left: 48vw;
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(0);
+                }
+            }
+
+            .animate_img:nth-child(2),
+            .animate_img:nth-child(3),
+            .animate_img:nth-child(4) {
                 position: absolute;
-                bottom: -25px;
-                transform: translateX(-50%);
-                left: 1px;
+                left: 100vw;
+            }
 
-                @keyframes arrow_down {
-                    0% {
-                        position: absolute;
-                        bottom: -25px;
-                    }
-                    100% {
-                        position: absolute;
-                        bottom: -50px;
-                    }
+            @for $i from 2 to 5 {
+                .animate_img {
 
+                    &:nth-child(#{$i}) {
+                        animation: robot_carousel 3s ease-in-out forwards;
+                        animation-delay: $i * (1s * 2);
+                    }
                 }
             }
         }
 
-        .span_1,
-        .span_2,
-        .span_3 {
-            font-size: clamp(1rem, 2.25vw, 4rem) !important;
-            margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
-            white-space: nowrap;
-            padding-left: clamp(3rem, 2vw, 5rem);
-        }
+        #interactive_text {
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 292.5px;
+            z-index: 1033;
 
-        .span_3 {
-            border-left: 2px solid var(--white);
-            padding-left: 3rem;
+            .bottom_line {
+                background-color: var(--white);
+                height: 2px;
+                width: 98%;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+            }
+
+            .line_decoration1 {
+                background-color: var(--white);
+                height: 2px;
+                width: 0%;
+                top: 0px;
+                left: 0px;
+                position: absolute;
+
+                .circle {
+                    background-color: var(--white);
+                    border-radius: 50%;
+                    height: 12px;
+                    margin-left: calc(12px / 2);
+                    width: 12px;
+                    position: absolute;
+                    left: 0%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .line_decoration2 {
+                background-color: var(--white);
+                height: 0%;
+                max-height: 108%;
+                width: 2px !important;
+                position: absolute;
+                top: 0px;
+                left: 103.45%;
+
+                .arrow_down {
+                    position: absolute;
+                    bottom: -25px;
+                    transform: translateX(-50%);
+                    left: 1px;
+
+                    @keyframes arrow_down {
+                        0% {
+                            position: absolute;
+                            bottom: -25px;
+                        }
+                        100% {
+                            position: absolute;
+                            bottom: -50px;
+                        }
+
+                    }
+                }
+            }
+
+            .span_1,
+            .span_2,
+            .span_3 {
+                font-size: clamp(1rem, 2.25vw, 4rem) !important;
+                margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
+                white-space: nowrap;
+                padding-left: clamp(3rem, 2vw, 5rem);
+            }
+
+            .span_3 {
+                border-left: 2px solid var(--white);
+                padding-left: 3rem;
+            }
         }
     }
 
     p {
         max-width: none;
     }
+
 
     section:not(#intro_main, #intro_header) {
         padding-block: 360px !important;
@@ -536,38 +575,39 @@ main {
                     transform: scale(1);
                 }
             }
-
         }
     }
 
     main {
-        #robot_carousel {
-            img {
-                max-height: 50vh;
-                position: absolute;
-                top: 60%;
-                left: 65%;
-            }
-        }
-
-        #interactive_text {
-            position: fixed;
-            left: 7.45% !important;
-            width: calc((100vw - (100vw - 100%) - 40vw) - 9.45%);
-            transform: translateX(0%);
-            .line_decoration1 {
-
-                .circle {
-                    height: 15px;
-                    margin-left: calc(15px / 2);
-                    width: 15px;
+        #intro_main {
+            #robot_carousel {
+                .animate_img {
+                    max-height: 50vh;
+                    position: absolute;
+                    top: 60%;
+                    left: 65%;
                 }
             }
 
-            .span_1,
-            .span_2,
-            .span_3 {
-                padding-left: 3rem;
+            #interactive_text {
+                position: fixed;
+                left: 7.45% !important;
+                width: calc((100vw - (100vw - 100%) - 40vw) - 9.45%);
+                transform: translateX(0%);
+                .line_decoration1 {
+
+                    .circle {
+                        height: 15px;
+                        margin-left: calc(15px / 2);
+                        width: 15px;
+                    }
+                }
+
+                .span_1,
+                .span_2,
+                .span_3 {
+                    padding-left: 3rem;
+                }
             }
         }
 
@@ -583,17 +623,16 @@ main {
         #experience_divider,
         #interact_divider,
         #discover_divider {
+            height: 444.79px;
             padding-bottom: 760px !important;
+            padding-inline: 0px !important;
             padding-top: 360px !important;
 
-            padding-inline: 0px !important;
-            height: 444.79px;
-
             .divider_img {
-                position: absolute;
                 border-radius: 0px;
                 height: 444.79px !important;
                 width: 444.79px !important;
+                position: absolute;
                 z-index: 2 !important;
             }
 
@@ -697,19 +736,21 @@ main {
 
 @media only screen and (min-width: 992px) {
     main {
-        #robot_carousel {
-            img {
-                max-height: 55vh;
-                position: absolute;
-                top: 65%;
-                left: 70%;
+        #intro_main {
+            #robot_carousel {
+                .animate_img {
+                    max-height: 55vh;
+                    position: absolute;
+                    top: 65%;
+                    left: 70%;
+                }
             }
-        }
 
-        #interactive_text {
-            position: fixed;
-            left: 7.45% !important;
-            width: calc((100vw - (100vw - 100%) - 50vw) - 9.45%);
+            #interactive_text {
+                position: fixed;
+                left: 7.45% !important;
+                width: calc((100vw - (100vw - 100%) - 50vw) - 9.45%);
+            }
         }
 
         #interact_divider {
@@ -741,21 +782,22 @@ main {
 
 @media only screen and (min-width: 1200px) {
     main {
-        #robot_carousel {
-            img {
-                max-height: 60vh;
-                position: absolute;
-                top: 70%;
+        #intro_main {
+            #robot_carousel {
+                .animate_img {
+                    max-height: 60vh;
+                    position: absolute;
+                    top: 70%;
+                }
             }
-        }
 
-        #interactive_text {
-            .span_3 {
-                padding-left: clamp(1rem + 3rem, 9.5vw + 3rem, 185px + 3rem);
+            #interactive_text {
+                .span_3 {
+                    padding-left: clamp(1rem + 3rem, 9.5vw + 3rem, 185px + 3rem);
+                }
             }
         }
     }
-
 }
 
 
