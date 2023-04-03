@@ -40,7 +40,7 @@ class AuthController extends Controller
 
 
     /**
-     * Traite la connexion de l'utilisateur et valide le type d'utilisateur et redirige en fonction de celui-ci
+     * Traite la connexion de l'utilisateur, valide le type d'utilisateur et redirige en fonction de celui-ci
      *
      * @param Request $request Contient les données de connexion
      */
@@ -132,6 +132,7 @@ class AuthController extends Controller
             "title" => "MW | Admin | Account"
         ]);
     }
+
 
     /**
      * Traite les données d'une création de compte

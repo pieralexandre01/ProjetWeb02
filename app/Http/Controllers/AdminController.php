@@ -26,7 +26,9 @@ class AdminController extends Controller
             'users_admin' => User::withTrashed()->where('privilege_id', 1)->orderByRaw('deleted_at IS NULL DESC, deleted_at DESC')->get(),
             'articles' => Article::all(),
             'activities' => Activity::all(),
-            'reservations' => Reservation::all(),
+            'reservations' => Reservation::whereHas('user', function ($query) {
+                $query->whereNull('deleted_at');
+            })->get(),
             'users_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL DESC, deleted_at DESC')->get()
         ]);
     }
@@ -49,7 +51,7 @@ class AdminController extends Controller
 
 
     /**
-     * Affiche le formulaire de modification de compte Public
+     * Affiche le formulaire de modification de compte Admin
      *
      * Le formulaire a besoin des informations sur le user à modifier
      *
@@ -65,7 +67,7 @@ class AdminController extends Controller
 
 
     /**
-     * Traite la modification d'un user
+     * Traite la modification d'un user (public et admin)
      *
      * @param Request $request Données pour la modification
      * @param int $id Id du user à modifier
@@ -122,7 +124,7 @@ class AdminController extends Controller
         // remplacer le mdp
         $user->password = $request->password;
 
-        // Enregistrement
+        // enregistrement
         $user->save();
 
         return redirect()

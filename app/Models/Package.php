@@ -18,6 +18,12 @@ class Package extends Model
         return $this->hasMany(Reservation::class);
     }
 
+    /**
+     * Retourne une date passé en paramètre sur le format année-mois-jour
+     *
+     * @param date $db_date
+     * @return date
+     */
     public function formattedDate($db_date) {
         $date = new \DateTime($this->{$db_date});
         return $date->format('Y-m-d');
