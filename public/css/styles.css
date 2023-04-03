@@ -9,7 +9,7 @@
   --dark-pink: #8e0089;
   --vivid-pink: #f500ed;
   --color: #8e0089;
-  --color-hover:#f500ed;
+  --color-hover: #f500ed;
 }
 
 body,
@@ -139,6 +139,14 @@ textarea {
   font-size: 0.75rem;
   margin-bottom: 0px;
   line-height: normal;
+  color: red;
+}
+
+.success {
+  font-size: 0.75rem;
+  margin-bottom: 0px;
+  line-height: normal;
+  color: greenyellow;
 }
 
 .active_link,

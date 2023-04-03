@@ -10,7 +10,7 @@
     --vivid-pink: #f500ed;
 
     --color: #8e0089;
-    --color-hover:#f500ed;
+    --color-hover: #f500ed;
 }
 
 body,
@@ -39,13 +39,13 @@ html {
     }
 }
 
-body.modal-open > :not(.modal) {
+body.modal-open> :not(.modal) {
     filter: blur(2.5px);
     -webkit-filter: blur(2.5px);
 }
 
 .modal-content {
-    background-color:  var(--dark-turquoise) !important;
+    background-color: var(--dark-turquoise) !important;
 }
 
 .popup_message {
@@ -115,6 +115,7 @@ label {
     letter-spacing: 0.027rem;
     white-space: nowrap;
 }
+
 div,
 p,
 span,
@@ -128,7 +129,7 @@ input[type=text] {
 
 p,
 span,
-textarea{
+textarea {
     line-height: 1.875rem;
     max-width: 800px;
 }
@@ -141,6 +142,14 @@ textarea{
     font-size: 0.75rem;
     margin-bottom: 0px;
     line-height: normal;
+    color: red;
+}
+
+.success {
+    font-size: 0.75rem;
+    margin-bottom: 0px;
+    line-height: normal;
+    color: greenyellow;
 }
 
 // COLOR THEMES
@@ -179,7 +188,7 @@ nav {
     height: clamp(5rem, 7rem, 8rem);
 
     // LOGO
-    .logo{
+    .logo {
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
@@ -197,7 +206,7 @@ nav {
         .title {
             line-height: 55%;
             position: relative;
-                top: 10px;
+            top: 10px;
         }
 
         .title_reflection {
@@ -212,7 +221,7 @@ nav {
             font-weight: clamp(200, 400, 500);
             letter-spacing: 0.036rem;
             position: relative;
-                top: clamp(0.25em, 0.75em, 1em);
+            top: clamp(0.25em, 0.75em, 1em);
         }
     }
 
@@ -242,7 +251,7 @@ main {
                 margin-left: calc(15px / 2);
                 width: 15px;
                 position: absolute;
-                    left: 0%;
+                left: 0%;
 
                 transform: translate(-50%, -50%);
             }
@@ -263,6 +272,7 @@ main {
         padding-block: 1rem;
 
         form {
+
             input[type=text],
             input[type=password],
             input[type=submit],
@@ -280,7 +290,7 @@ main {
 // FOOTER
 footer {
     position: absolute;
-        bottom: 0px;
+    bottom: 0px;
     width: 100%;
     text-align: center;
 
@@ -373,6 +383,7 @@ footer {
     .page_title {
         max-width: 60vw;
     }
+
     .border_box {
         padding-inline: 3rem !important;
     }
