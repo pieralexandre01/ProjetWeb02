@@ -4,7 +4,7 @@
 
     <x-public.header :page="$page" />
 
-    <main class="px-5">
+    <main>
 
         <div class="page_title">
             <h1 class="text-end">PACKAGES</h1>
@@ -73,7 +73,7 @@
                 </section>
             @endforeach
 
-            <div class="text-center mt-5 pt-5 d-flex flex-column align-items-center">
+            <div class="text-center mt-5 pt-5 d-flex flex-column align-items-center details">
                 <p>*Upon purchasing a package, you will receive an email with all the necessary information to access
                     the
                     online activities.</p>
@@ -84,6 +84,8 @@
                     contact us for
                     assistance. We are here to help you fully enjoy your online festival experience.</p>
             </div>
+
+        </div>
 
     </main>
 
