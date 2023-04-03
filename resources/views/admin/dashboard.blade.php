@@ -4,6 +4,8 @@
 
     <x-admin.header />
 
+    <x-modal-messages />
+
     <main>
 
         <div class="container py-5 mt-5">

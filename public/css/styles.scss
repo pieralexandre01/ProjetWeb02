@@ -39,6 +39,27 @@ html {
     }
 }
 
+body.modal-open > :not(.modal) {
+    filter: blur(2.5px);
+    -webkit-filter: blur(2.5px);
+}
+
+.modal-content {
+    background-color:  var(--dark-turquoise) !important;
+}
+
+.popup_message {
+    background-color: var(--dark-turquoise);
+    border-radius: 10px;
+    color: var(--white);
+    padding-inline: 2em;
+
+    p {
+        font-weight: 400 !important;
+        max-width: 75%;
+    }
+}
+
 // TYPOGRAPHY
 h1 {
     font-family: "ethnocentric", sans-serif;

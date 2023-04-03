@@ -24,6 +24,14 @@
     <script src="{{ asset('js/main.js') }}" type="module"></script>
 
     {{ $scripts ?? '' }}
+
+    @if (session('connexion-cart') && Request::url() == route('login'))
+        <script>
+            let myModal = new bootstrap.Modal(document.getElementById("message_modal"));
+            myModal.show();
+        </script>
+    @endif
+
 </body>
 
 </html>

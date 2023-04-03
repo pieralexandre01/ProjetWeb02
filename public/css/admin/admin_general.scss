@@ -5,6 +5,15 @@
     --color-hover: var(--vivid-blue) !important;
 }
 
+.modal-content,
+.popup_message {
+    background-color:  var(--dark-pink) !important;
+    color: var(--white);
+    p {
+        margin-bottom: 0px !important;
+    }
+}
+
 .admin_nav {
     padding-top: 1rem;
 

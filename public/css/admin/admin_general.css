@@ -4,6 +4,16 @@
   --color-hover: var(--vivid-blue) !important;
 }
 
+.modal-content,
+.popup_message {
+  background-color: var(--dark-pink) !important;
+  color: var(--white);
+}
+.modal-content p,
+.popup_message p {
+  margin-bottom: 0px !important;
+}
+
 .admin_nav {
   padding-top: 1rem;
 }

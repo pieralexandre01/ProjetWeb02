@@ -94,7 +94,7 @@ class AdminController extends Controller
 
         return redirect()
             ->back()
-            ->with('account-edit', "The user's account has been succesfully modified");
+            ->with('account-edit', "The user's account has been successfully modified");
     }
 
 
@@ -127,7 +127,7 @@ class AdminController extends Controller
 
         return redirect()
             ->back()
-            ->with('password-edit', "The user's password has been succesfully modified");
+            ->with('password-edit', "The user's password has been successfully modified");
     }
 
 
@@ -142,7 +142,7 @@ class AdminController extends Controller
         $user->delete();
         return redirect()
             ->route('admin-dashboard')
-            ->with('user-blocked', 'The user has been succesfully blocked');
+            ->with('user-blocked', 'The user has been successfully blocked');
     }
 
 

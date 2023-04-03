@@ -69,6 +69,7 @@ function animateText(word, original_word) {
     if(active_word == word){
         return
     }
+
     active_word = word
 
     let iteration = 0
