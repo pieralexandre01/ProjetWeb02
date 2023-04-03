@@ -258,6 +258,9 @@ footer {
   width: 100%;
   text-align: center;
 }
+footer span {
+  padding-left: 0.25em;
+}
 
 @media only screen and (min-width: 1200px) {
   .title_reflection {

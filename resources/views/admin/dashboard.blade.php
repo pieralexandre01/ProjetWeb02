@@ -4,7 +4,7 @@
 
     <x-admin.header />
 
-    <x-modal-messages />
+    {{-- <x-modal-messages /> --}}
 
     <main>
 
@@ -63,6 +63,12 @@
                                     @else
                                         <a href="{{ route('user-unblock', $user_admin->id) }}"
                                             class="delete">UNBLOCK</a>
+                                        <button type="button" id="message_modal" class="general_button" data-bs-toggle="modal" data-bs-target="#unblockUserModal">
+                                            UNBLOCK
+                                        </button>
+
+                                        <x-modal-messages :user_id='$user_admin->id' />
+
                                     @endif
                                 </div>
 

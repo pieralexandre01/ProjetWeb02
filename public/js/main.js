@@ -2,6 +2,19 @@
 import { createApp, ref, onMounted, onBeforeUnmount, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 import initPaypal from './cart.js'
 
+
+// Admin - Dashboard popups -----------------------
+const user_id = ref(0)
+
+
+// function associateUserId(id) {
+//     console.log(id)
+//     user_id.value = id
+
+// }
+
+
+
 // Header - navigation -----------------------
 const is_open = ref(false)
 
@@ -133,11 +146,12 @@ const root = {
             original_word1,
             original_word2,
             state,
-
+            // user_id,
             //Méthodes
             toggleMenu,
             // animateText,
             generateAnimatedText,
+            // associateUserId,
         }
     }
 }
