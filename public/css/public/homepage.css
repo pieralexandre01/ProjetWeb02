@@ -156,7 +156,7 @@ main #interactive_text .bottom_line {
   left: 0px;
 }
 main #interactive_text .line_decoration1 {
-  background-color: var(--grey);
+  background-color: var(--white);
   height: 2px;
   width: 0%;
   top: 0px;
@@ -356,6 +356,7 @@ main #keywords .container .dark_blue {
 main #scroll_down {
   transform: scale(0.1);
   transition: transform 0.2s ease-in;
+  animation: test11 2s linear forwards;
 }
 main #scroll_down p,
 main #scroll_down span {
@@ -500,11 +501,6 @@ main #immerse_text .glow_effect {
     width: 444.79px !important;
     z-index: 2 !important;
   }
-  main #experience_divider .divider_text,
-  main #interact_divider .divider_text,
-  main #discover_divider .divider_text {
-    height: 400px !important;
-  }
   main #experience_divider .first_line,
   main #experience_divider .second_line,
   main #interact_divider .first_line,
@@ -518,7 +514,7 @@ main #immerse_text .glow_effect {
   main #experience_divider span,
   main #interact_divider span,
   main #discover_divider span {
-    font-size: clamp(1.5rem, 3vw, 3.125rem);
+    font-size: clamp(1rem, 2.55vw, 3.125rem);
     font-weight: 500;
     line-height: normal !important;
   }
@@ -530,7 +526,13 @@ main #immerse_text .glow_effect {
             clip-path: polygon(0% 9%, 100% 0%, 100% 91%, 0% 100%);
     transform: skewY(5deg);
   }
-  main #experience_divider .divider_text {
+  main #experience_divider .divider_block {
+    height: 400px;
+  }
+  main #experience_divider .divider_block .divider_text {
+    padding-bottom: 3em;
+    padding-left: 464.79px;
+    padding-right: 20px;
     transform: skewY(5deg);
   }
   main #interact_divider {
@@ -543,17 +545,23 @@ main #immerse_text .glow_effect {
             clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
     transform: skewY(-5deg);
   }
-  main #interact_divider .divider_text {
+  main #interact_divider .divider_block {
+    height: 400px;
+  }
+  main #interact_divider .divider_block .divider_text {
+    padding-bottom: 3em;
+    padding-left: 40px;
+    padding-right: 464.79px;
     transform: skewY(-5deg);
   }
   main #interact_divider .cyber_name {
     font-family: "ethnocentric", sans-serif;
-    font-size: clamp(1.9rem, 4vw, 3.5rem);
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
     font-style: italic;
     font-weight: 400;
     letter-spacing: 0.05rem;
     position: relative;
-    left: 4vw;
+    left: 0vw;
   }
   main #discover_divider {
     --color: var(--dark-blue);
@@ -577,6 +585,7 @@ main #immerse_text .glow_effect {
     z-index: 2;
   }
   main #discover_divider .divider_text {
+    padding-top: 3em;
     transform: skewY(5deg);
   }
 }
@@ -591,6 +600,27 @@ main #immerse_text .glow_effect {
     position: fixed;
     left: 7.45% !important;
     width: calc(100vw - (100vw - 100%) - 50vw - 9.45%);
+  }
+  main #interact_divider {
+    --color: var(--dark-turquoise);
+    --color-hover: var(--vivid-turquoise);
+    transform: skewY(5deg);
+  }
+  main #interact_divider .divider_img {
+    -webkit-clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
+            clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
+    transform: skewY(-5deg);
+  }
+  main #interact_divider .divider_block {
+    height: 400px;
+  }
+  main #interact_divider .divider_block .divider_text {
+    padding-left: 20px;
+    padding-right: 464.79px;
+  }
+  main #interact_divider .cyber_name {
+    position: relative;
+    left: 4vw;
   }
 }
 @media only screen and (min-width: 1200px) {

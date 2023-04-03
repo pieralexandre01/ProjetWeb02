@@ -19,6 +19,7 @@ html {
   min-height: 100vh;
   position: relative;
   width: calc(100vw - (100vw - 100%));
+  scroll-behavior: smooth;
 }
 body ul,
 html ul {
