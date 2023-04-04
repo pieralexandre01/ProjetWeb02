@@ -18,12 +18,10 @@
 }
 
 main {
-
     .container {
         padding-inline: 20px;
 
         h2.user_name {
-
             color: var(--color);
         }
 
@@ -39,7 +37,6 @@ main {
         }
 
         @media only screen and (min-width: 992px) {
-
             .package_title {
                 width: 25%;
             }

@@ -22,7 +22,7 @@ main {
         overflow-x:hidden;
 
         .border_box {
-            padding-inline: 0;
+            padding-inline: 0px;
         }
 
         .social_media_icons {
@@ -32,12 +32,12 @@ main {
         }
 
         .address {
+            background-image: url("../../media/images/contact_us_mobile.png");
+            background-position: center;
+            background-size:cover;
+            background-repeat: no-repeat;
             height: max(300px);
             width: max(300px);
-            background-image: url("../../media/images/contact_us_mobile.png");
-            background-size:cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         #google_map {
@@ -79,7 +79,6 @@ main {
         }
     }
 }
-
 
 @media only screen and (min-width: 576px) {
     main {

@@ -27,8 +27,8 @@
 .admin_nav .return_icon {
   background: none;
   background-image: url("../../media/icons/return.svg");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .admin_nav a:hover {
   color: var(--color);
@@ -49,17 +49,15 @@ main {
   padding-bottom: 60px;
 }
 main .general_button {
-  width: 100%;
-  border: 2px solid var(--color-hover) !important;
-}
-main .general_button {
   background-color: var(--bg-color);
+  border: 2px solid var(--color-hover) !important;
   border-radius: 10px;
   box-shadow: 0px 0px 5px var(--color-hover);
   color: var(--white);
   flex-shrink: 1;
   padding-block: 0.5em;
   padding-inline: 1em;
+  width: 100%;
 }
 main .general_button:hover {
   background-color: var(--color-hover);

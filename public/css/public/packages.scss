@@ -19,7 +19,6 @@
 
 
 main {
-
     .container {
         padding: 0 20px 0 20px;
 
@@ -37,19 +36,19 @@ main {
 
             .title_decoration {
                 background-color: var(--color);
+                position: relative;
                 height: 2px;
                 width: 100%;
-                position: relative;
 
                 .circle {
                     background-color: var(--color);
                     border-radius: 50%;
                     height: 15px;
                     margin-left: 7.5px;
-                    width: 15px;
                     position: absolute;
                     left: 0%;
                     transform: translate(-50%, -50%);
+                    width: 15px;
                 }
             }
 
@@ -67,9 +66,9 @@ main {
 
             form {
                 select {
-                    height: 3rem;
                     background-color: var(--bg-color);
                     color: var(--white);
+                    height: 3rem;
                     padding: 0rem 1rem;
                 }
 
@@ -84,18 +83,18 @@ main {
                     box-shadow: 0px 0px 5px var(--color-hover);
                     color: var(--white);
                     flex-shrink: 1;
+                    font-family: "termina", sans-serif;
                     padding-block: 0.5em;
                     padding-inline: 1em;
-                    font-family: "termina", sans-serif;
 
                     &.disabled {
-                        opacity: 0.7;
                         border-color: var(--white);
                         box-shadow: none;
+                        opacity: 0.7;
 
                         &:hover {
-                            opacity: 0.7;
                             background-color: var(--bg-color);
+                            opacity: 0.7;
                         }
                     }
 
@@ -108,9 +107,9 @@ main {
 
             div.package_img {
                 img {
+                    border-radius: 10px;
                     height: 15rem;
                     width: 100%;
-                    border-radius: 10px;
                     object-fit: cover;
 
                     @media only screen and (min-width: 576px) {
@@ -124,15 +123,13 @@ main {
             margin-top: 7rem !important;
 
             p.help {
-                margin-top: 0.5rem;
                 color: var(--grey);
                 font-size: 0.875rem;
                 line-height: 1.5rem;
+                margin-top: 0.5rem;
             }
         }
-
     }
-
 }
 
 div.footer {

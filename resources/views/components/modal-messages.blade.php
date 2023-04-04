@@ -1,4 +1,5 @@
-{{-- @props(['user_id']) --}}
+@props(['user_id'])
+
 @if(session('connexion-cart'))
     <div id="message_modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -22,8 +23,8 @@
     </div>
 @endif
 
-{{-- @if (session('user-blocked')) --}}
-    {{-- <div id="message_modal" class="modal fade" tabindex="-1" aria-labelledby="unblockUserModalLabel" aria-hidden="true">
+@if (session('user-blocked'))
+    <div id="message_modal" class="modal fade" tabindex="-1" aria-labelledby="unblockUserModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="popup_message modal-body d-flex flex-no-wrap align-items-center justify-content-between">
@@ -40,5 +41,5 @@
                 </div>
             </div>
         </div>
-    </div> --}}
-{{-- @endif --}}
+    </div>
+@endif

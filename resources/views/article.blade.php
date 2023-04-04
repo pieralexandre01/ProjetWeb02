@@ -17,7 +17,6 @@
                     <a href="{{ route('articles') }}">articles</a>
                 </span>
                 <span class="mx-1 mx-lg-2">></span>
-                {{-- lien vers une catégorie de la page d'articles --}}
                 <span>
                     <a href="{{ route('articles') }}#{{ $article->category->name_reference }}">{{ $article->category->name }}</a>
                 </span>
@@ -56,7 +55,7 @@
         </div>
 
         <section class="suggestions container">
-            <p class="sub_title">check out more <span>{{ $article->category->name }}</span> articles :</p>
+            <p class="sub_title">read more <span>{{ $article->category->name }}</span> articles :</p>
 
             <div class="d-flex flex-column flex-xxl-row justify-content-xxl-between">
                 @foreach ($more_articles as $article)

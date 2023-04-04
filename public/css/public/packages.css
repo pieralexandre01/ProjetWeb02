@@ -32,19 +32,19 @@ main .container section h3.featured_package {
 }
 main .container section .title_decoration {
   background-color: var(--color);
+  position: relative;
   height: 2px;
   width: 100%;
-  position: relative;
 }
 main .container section .title_decoration .circle {
   background-color: var(--color);
   border-radius: 50%;
   height: 15px;
   margin-left: 7.5px;
-  width: 15px;
   position: absolute;
   left: 0%;
   transform: translate(-50%, -50%);
+  width: 15px;
 }
 main .container section p.description {
   margin-bottom: 2rem;
@@ -55,9 +55,9 @@ main .container section div.price p {
   font-weight: 300;
 }
 main .container section form select {
-  height: 3rem;
   background-color: var(--bg-color);
   color: var(--white);
+  height: 3rem;
   padding: 0rem 1rem;
 }
 main .container section form p.festival_over {
@@ -70,27 +70,27 @@ main .container section form input[type=submit] {
   box-shadow: 0px 0px 5px var(--color-hover);
   color: var(--white);
   flex-shrink: 1;
+  font-family: "termina", sans-serif;
   padding-block: 0.5em;
   padding-inline: 1em;
-  font-family: "termina", sans-serif;
 }
 main .container section form input[type=submit].disabled {
-  opacity: 0.7;
   border-color: var(--white);
   box-shadow: none;
+  opacity: 0.7;
 }
 main .container section form input[type=submit].disabled:hover {
-  opacity: 0.7;
   background-color: var(--bg-color);
+  opacity: 0.7;
 }
 main .container section form input[type=submit]:hover {
   background-color: var(--color-hover);
   color: var(--white);
 }
 main .container section div.package_img img {
+  border-radius: 10px;
   height: 15rem;
   width: 100%;
-  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -103,10 +103,10 @@ main .container .details {
   margin-top: 7rem !important;
 }
 main .container .details p.help {
-  margin-top: 0.5rem;
   color: var(--grey);
   font-size: 0.875rem;
   line-height: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 div.footer {

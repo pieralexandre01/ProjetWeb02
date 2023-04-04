@@ -42,8 +42,8 @@
 #desktop_version #activity_list {
   border: 2px solid var(--color);
   border-radius: 10px;
-  width: auto;
   height: auto;
+  width: auto;
 }
 #desktop_version #activity_list .activity_button {
   background-color: var(--bg-color) !important;

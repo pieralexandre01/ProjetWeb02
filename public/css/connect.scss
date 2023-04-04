@@ -13,7 +13,6 @@ main {
     padding-bottom: 70px !important;
 
     .container {
-
         .form-container {
             form {
                 input[type=text],
@@ -28,8 +27,8 @@ main {
                     }
                 }
 
-                input[type=text],
-                input[type=password] {
+                input[type=password],
+                input[type=text] {
                     padding-block: 0.5em;
                     padding-inline: 1em;
                 }
@@ -79,8 +78,8 @@ footer {
 @media only screen and (min-width: 576px) {
     .form-container {
         form {
-            input[type=text],
-            input[type=password] {
+            input[type=password],
+            input[type=text] {
                 padding-inline: 1.5em;
             }
         }
