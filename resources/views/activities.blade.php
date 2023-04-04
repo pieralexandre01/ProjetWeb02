@@ -74,8 +74,9 @@
                 </div>
 
                 <div class="activity_list_pagination text-center d-flex justify-content-center align-items-center">
-                    <button class="activity_list_button" @@click="activity_list = 1">1</button>
-                    <button class="activity_list_button" @@click="activity_list = 2">2</button>
+                    <button v-show="{{ count($activities) >= 10 }}" class="activity_list_button" @@click="activity_list = 1">1</button>
+                    <button v-show="{{ count($activities) >= 10 }}" class="activity_list_button" @@click="activity_list = 2">2</button>
+                    <button v-show="{{ count($activities) >= 19 }}" class="activity_list_button" @@click="activity_list = 3">3</button>
                 </div>
 
             </section>
