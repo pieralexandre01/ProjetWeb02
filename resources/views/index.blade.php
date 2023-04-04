@@ -51,6 +51,29 @@
         </section>
 
 
+        // function generateAnimatedText() {
+            //     if(Math.floor(window.scrollY) >= 1499 && Math.floor(window.scrollY) < 1500) {
+            //         console.log("animateText called with Reality and Innovation")
+            //         animateText("Reality", "Innovation")
+            //     }
+            //     if(Math.floor(state.scrollY) == 1500 || Math.floor(state.scrollY) == 2999) {
+            //         animateText("Curiosity", "Exploration")
+            //     }
+            //     if(Math.floor(state.scrollY) == 3000 || Math.floor(state.scrollY) == 4499) {
+            //         animateText("Humanity", "Automation")
+            //     }
+            //     if(Math.floor(state.scrollY) == 4500) {
+            //         animateText("Impossibility", "Opportunity")
+            //     }
+            //     if(Math.floor(state.scrollY) >= 6000) {
+            //         robot_carousel.style.display = "none"
+            //         interactive_text.style.display = "none"
+            //         console.log(interactive_text)
+            //     } else {
+            //         robot_carousel.style.display = "block"
+            //         interactive_text.style.display = "block"
+            //     }
+            // }
 
 
         <section id="scroll_down">

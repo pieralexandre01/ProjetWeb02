@@ -23,6 +23,11 @@ const activity_list = ref(1)
 // Homepage -----------------------
 
 // Interactive_text
+window.addEventListener('scroll', e => {
+    state.scrollY = window.scrollY
+    generateAnimatedText()
+})
+
 const letters = "abcdefghijklmnopqrstuvwxyz"
 
 const word1 = ref("Reality")
@@ -48,19 +53,31 @@ function generateWords(word, original_word, iteration) {
     })
     .join("")
 }
+let robot_carousel = document.querySelector("#robot_carousel")
+let interactive_text = document.querySelector("#interactive_text")
+
+
 
 function generateAnimatedText() {
-    if(Math.floor(state.scrollHeight) == 24) {
+    if(Math.floor(state.scrollHeight) == 9) {
         animateText("Reality", "Innovation")
     }
-    if(Math.floor(state.scrollHeight) == 25 || Math.floor(state.scrollHeight) == 49) {
+    if(Math.floor(state.scrollHeight) == 10 || Math.floor(state.scrollHeight) == 19) {
         animateText("Curiosity", "Exploration")
     }
-    if(Math.floor(state.scrollHeight) == 50 || Math.floor(state.scrollHeight) == 74) {
+    if(Math.floor(state.scrollHeight) == 20 || Math.floor(state.scrollHeight) == 29) {
         animateText("Humanity", "Automation")
     }
-    if(Math.floor(state.scrollHeight) == 75) {
+    if(Math.floor(state.scrollHeight) == 30) {
         animateText("Impossibility", "Opportunity")
+    }
+    if(Math.floor(state.scrollHeight) >= 40) {
+        robot_carousel.style.display = "none"
+        interactive_text.style.display = "none"
+        console.log(interactive_text)
+    } else {
+        robot_carousel.style.display = "block"
+        interactive_text.style.display = "block"
     }
 }
 
@@ -106,9 +123,9 @@ function updateScrollLine() {
 
     state.scrollHeight = scrolled
 
-    generateAnimatedText()
+    // generateAnimatedText()
 
-    console.log(state.scrollHeight)
+    console.log(state.scrollY)
 }
 
 
@@ -117,11 +134,18 @@ const root = {
         onMounted(initPaypal)
 
         onMounted(() => {
-            window.addEventListener('scroll', updateScrollLine);
+            window.addEventListener('scroll', updateScrollLine)
           })
 
+        // onMounted(() => {
+        //     window.addEventListener('scroll', e => {
+        //         state.scrollY = window.scrollY
+        //         generateAnimatedText()
+        //     })
+        //   })
+
         onBeforeUnmount(() => {
-            window.removeEventListener('scroll', updateScrollLine);
+            window.removeEventListener('scroll', updateScrollLine)
         })
 
         return {
@@ -129,6 +153,8 @@ const root = {
             is_open,
             activity,
             activity_list,
+            // robot_carousel,
+            // interactive_text,
             word1,
             word2,
             original_word1,

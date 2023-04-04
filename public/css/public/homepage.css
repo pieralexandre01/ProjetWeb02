@@ -125,7 +125,7 @@ main #intro_header .container #festival_tagline {
   }
 }
 main #intro_main {
-  height: 100vh;
+  padding-bottom: 10000px;
   overflow: hidden;
 }
 main #intro_main #robot_carousel {
@@ -133,7 +133,7 @@ main #intro_main #robot_carousel {
   position: relative;
 }
 main #intro_main #robot_carousel .animate_img:nth-child(1) {
-  animation: robot_carousel 3s ease-in-out forwards;
+  animation: robot_carousel 3s ease-out forwards;
   max-height: 40vh;
   position: absolute;
   left: 100vw;
@@ -165,15 +165,15 @@ main #intro_main #robot_carousel .animate_img:nth-child(4) {
   left: 100vw;
 }
 main #intro_main #robot_carousel .animate_img:nth-child(2) {
-  animation: robot_carousel 3s ease-in-out forwards;
+  animation: robot_carousel 3s ease-out forwards;
   animation-delay: 4s;
 }
 main #intro_main #robot_carousel .animate_img:nth-child(3) {
-  animation: robot_carousel 3s ease-in-out forwards;
+  animation: robot_carousel 3s ease-out forwards;
   animation-delay: 6s;
 }
 main #intro_main #robot_carousel .animate_img:nth-child(4) {
-  animation: robot_carousel 3s ease-in-out forwards;
+  animation: robot_carousel 3s ease-out forwards;
   animation-delay: 8s;
 }
 main #intro_main #interactive_text {

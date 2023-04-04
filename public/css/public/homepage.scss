@@ -151,7 +151,7 @@ main {
     }
 
     #intro_main {
-        height: 100vh;
+        padding-bottom: 10000px;
         overflow: hidden;
 
         #robot_carousel {
@@ -159,7 +159,7 @@ main {
             position: relative;
 
             .animate_img:nth-child(1) {
-                animation: robot_carousel 3s ease-in-out forwards;
+                animation: robot_carousel 3s ease-out forwards;
                 max-height: 40vh;
                 position: absolute;
                 left: 100vw;
@@ -198,7 +198,7 @@ main {
                 .animate_img {
 
                     &:nth-child(#{$i}) {
-                        animation: robot_carousel 3s ease-in-out forwards;
+                        animation: robot_carousel 3s ease-out forwards;
                         animation-delay: $i * (1s * 2);
                     }
                 }
