@@ -22,6 +22,7 @@
                 <x-msg-session key="activity-create" class-name="success" />
                 <x-msg-session key="activity-edit" class-name="success" />
                 <x-msg-session key="activity-delete" class-name="success" />
+                <x-msg-session key="activity-max" class-name="error" />
 
                 <x-msg-session key="reservation-delete" class-name="success" />
             </div>
@@ -46,7 +47,7 @@
 
                         <div class="my-5"><a class="general_button" href="{{ route('admin-create') }}">add</a></div>
 
-                        @foreach ($users_admin as $user_admin)
+                        @foreach ($users_admin as $i => $user_admin)
                             <div class="d-flex justify-content-between pt-3">
 
                                 <div class="infos d-flex @if ($user_admin->deleted_at != null) user_block @endif">
@@ -61,14 +62,14 @@
                                         <a href="{{ route('admin-edit', $user_admin->id) }}" class="edit me-5">EDIT</a>
                                         <a href="{{ route('user-block', $user_admin->id) }}" class="delete">BLOCK</a>
                                     @else
-                                        <a href="{{ route('user-unblock', $user_admin->id) }}"
-                                            class="delete">UNBLOCK</a>
+                                        {{-- <a href="{{ route('user-unblock', $user_admin->id) }}"
+                                            class="delete">UNBLOCK</a> --}}
                                         {{-- <button type="button" id="message_modal" class="general_button"
-                                            data-bs-toggle="modal" data-bs-target="#unblockUserModal">
+                                            data-bs-toggle="modal" data-bs-target="{{ $i }}">
                                             UNBLOCK
                                         </button>
 
-                                        <x-modal-messages :user_id='$user_admin->id' /> --}}
+                                        <x-modal-messages :id='$user_admin->id' :iteration='$i' /> --}}
                                     @endif
                                 </div>
 
@@ -182,7 +183,8 @@
                         @foreach ($reservations as $reservation)
                             <div class="d-flex justify-content-between align-items-center pt-3">
 
-                                <div class="infos d-flex align-items-center">
+                                <div
+                                    class="infos d-flex align-items-center @if ($reservation->user->deleted_at != null) user_block @endif">
                                     <p class="full_name">{{ $reservation->user->first_name }}
                                         {{ $reservation->user->last_name }}</p>
                                     <p class="package_title">{{ $reservation->package->title }}</p>

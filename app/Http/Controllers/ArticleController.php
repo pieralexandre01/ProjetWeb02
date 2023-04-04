@@ -17,10 +17,7 @@ class ArticleController extends Controller
         return view('articles', [
             "title" => "Mirror World | Articles",
             "page" => "articles",
-            // "articles" => Article::all(),
-            'articles' => Article::whereHas('user', function ($query) {
-                $query->whereNull('deleted_at');
-            })->get(),
+            "articles" => Article::all(),
             "categories" => Category::with('articles')->get(),
         ]);
     }

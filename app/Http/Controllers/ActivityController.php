@@ -40,6 +40,16 @@ class ActivityController extends Controller
      * @return void
      */
     public function store(Request $request) {
+
+        // Valider le nb. max d'activités // 27
+        $total_activities = Activity::all()->count();
+
+        if ($total_activities <= 27) {
+            return redirect()
+                ->route('admin-dashboard')
+                ->with('activity-max', 'The maximum number of activities is 27. Delete an existing activity in order to add a new one.');
+        }
+
         // Valider les champs
         $request->validate([
             "title" => "required|max:25",
