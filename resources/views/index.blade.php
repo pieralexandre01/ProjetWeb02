@@ -21,10 +21,10 @@
 
         <section id="intro_main">
             <div id="robot_carousel">
-                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where reality meets innovation">
-                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
-                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where humanity meets automation">
-                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" class="animate_img img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
+                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" id="image1" class="animate_img img-fluid" alt="Digital image representing robotics where reality meets innovation">
+                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" id="image2" class="animate_img img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
+                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" id="image3" class="animate_img img-fluid" alt="Digital image representing robotics where humanity meets automation">
+                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" id="image4" class="animate_img img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
             </div>
 
             <div id="interactive_text" class="d-flex flex-nowrap">

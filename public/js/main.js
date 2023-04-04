@@ -22,7 +22,7 @@ const activity_list = ref(1)
 
 // Homepage -----------------------
 
-// Interactive_text
+// Interactive_text + Robot_carousel
 window.addEventListener('scroll', e => {
     state.scrollY = window.scrollY
     generateAnimatedText()
@@ -53,23 +53,32 @@ function generateWords(word, original_word, iteration) {
     })
     .join("")
 }
-let robot_carousel = document.querySelector("#robot_carousel")
-let interactive_text = document.querySelector("#interactive_text")
 
+const robot_carousel = document.querySelector("#robot_carousel")
+const interactive_text = document.querySelector("#interactive_text")
 
+const image1 = document.querySelector("#image1")
+const image2 = document.querySelector("#image2")
+const image3 = document.querySelector("#image3")
+const image4 = document.querySelector("#image4")
 
 function generateAnimatedText() {
     if(Math.floor(state.scrollHeight) == 9) {
         animateText("Reality", "Innovation")
+        animateCarousel(image1)
+        console.log(image1)
     }
     if(Math.floor(state.scrollHeight) == 10 || Math.floor(state.scrollHeight) == 19) {
         animateText("Curiosity", "Exploration")
+        animateCarousel(image2)
     }
     if(Math.floor(state.scrollHeight) == 20 || Math.floor(state.scrollHeight) == 29) {
         animateText("Humanity", "Automation")
+        animateCarousel(image3)
     }
     if(Math.floor(state.scrollHeight) == 30) {
         animateText("Impossibility", "Opportunity")
+        animateCarousel(image4)
     }
     if(Math.floor(state.scrollHeight) >= 40) {
         robot_carousel.style.display = "none"
@@ -108,6 +117,10 @@ function animateText(word, original_word) {
         iteration += 1 / 3
 
     }, 30)
+}
+
+function animateCarousel(image) {
+    image.style.animation = "robot_carousel 3s ease-out forwards"
 }
 
 // Scroll_bar
