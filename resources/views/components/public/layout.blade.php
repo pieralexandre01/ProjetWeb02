@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="{{ asset('css/' . $css_file . '.css') }}">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B3RDE73S4Q"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B3RDE73S4Q');
+</script>
+
 <body>
     <div id="app" v-cloak>
         {{ $slot }}
