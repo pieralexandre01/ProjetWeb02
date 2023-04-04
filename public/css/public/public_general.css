@@ -1,8 +1,8 @@
 @import "../styles.css";
 nav {
+  height: 70px;
   padding-inline: 1rem;
   padding-top: 1rem;
-  height: 70px;
 }
 nav #left-side_menu,
 nav #right-side_menu,
@@ -18,8 +18,8 @@ nav .nav_logo .logo {
 nav .nav_logo .logo .title,
 nav .nav_logo .logo .title_reflection {
   font-size: clamp(1.25rem, 3vw, 3rem);
-  letter-spacing: 0.25rem;
   direction: rtl;
+  letter-spacing: 0.25rem;
   text-indent: -0.15rem;
 }
 nav .nav_logo .logo .title {
@@ -28,8 +28,8 @@ nav .nav_logo .logo .title {
   top: 10px;
 }
 nav .nav_logo .logo .title_reflection {
-  transform: scale(1, -1);
   line-height: 75%;
+  transform: scale(1, -1);
 }
 nav .nav_logo .logo .festival {
   font-size: clamp(1rem, 1.6vw, 1.5rem);
@@ -99,8 +99,8 @@ nav .menu_container {
   cursor: pointer;
   padding-top: 16px;
   position: absolute;
-  right: 16px;
   top: 16px;
+  right: 16px;
   width: 40px;
 }
 nav .menu_container #menu_burger {
@@ -122,8 +122,8 @@ nav .menu_container .bar_2 {
   transition: all 0.3s;
 }
 nav .menu_container .open_menu .bar_1 {
-  margin-bottom: -4px;
   left: 0%;
+  margin-bottom: -4px;
   top: 50%;
   transform: rotate(45deg);
 }
@@ -139,8 +139,8 @@ main {
   padding-top: 70px;
 }
 main .general_button {
-  width: 100%;
   border: 2px solid var(--color-hover) !important;
+  width: 100%;
 }
 main button,
 main .general_button {
@@ -224,8 +224,8 @@ footer #footer_nav {
   nav .menu_container {
     position: absolute;
     top: -101px;
-    width: 0px;
     height: 0px;
+    width: 0px;
   }
   nav .dropdown_right {
     margin-top: 10px !important;

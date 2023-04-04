@@ -30,14 +30,14 @@ header {
 
         @keyframes test_mobile {
             0% {
-                top: 50vh;
                 left: 50%;
+                top: 50vh;
                 transform: translate(-50%) scale(1.2);
             }
 
             100% {
-                top: 35px;
                 left: 20px;
+                top: 35px;
                 transform: translate(0%, -50%) scale(1);
             }
         }
@@ -48,9 +48,9 @@ main {
 
     #scroll_bar {
         background: var(--white);
+        height: 75vh;
         width: 2px;
         margin-bottom: -2px;
-        height: 75vh;
         position: fixed;
         left: 20px;
         top: 50vh;
@@ -64,8 +64,8 @@ main {
             height: 16px;
             width: 16px;
             position: relative;
-            top: 0%;
             left: - calc(16px / 2) + 1;
+            top: 0%;
         }
     }
 
@@ -74,12 +74,12 @@ main {
         padding-block: 0px !important;
 
         .header_image {
+            pointer-events: none;
             position: fixed;
             object-fit: cover;
             opacity: 0.5;
-            width: var(--viewport-width);
             height: 100% !important;
-            pointer-events: none;
+            width: var(--viewport-width);
 
             // *************************************************
             animation: test3 5s 3s ease-in forwards;
@@ -105,11 +105,11 @@ main {
                 font-weight: 400;
                 letter-spacing: 0.05rem;
                 max-width: calc(100vw - 4vw);
+                overflow-wrap: normal !important;
                 position: fixed;
-                    left: var(--50vw);
+                left: var(--50vw);
                 transform: translate(-50%, -50%);
                 width: max(40vw, 1100px) !important;
-                overflow-wrap: normal !important;
             }
 
             #festival_date {
@@ -151,7 +151,8 @@ main {
     }
 
     #intro_main {
-        padding-bottom: 10000px;
+        height: 10813.7px !important;
+        padding-bottom: 10360px;
         overflow: hidden;
 
         #robot_carousel {
@@ -161,11 +162,11 @@ main {
             .animate_img:nth-child(1) {
                 // animation: robot_carousel 3s ease-out forwards;
                 max-height: 40vh;
+                opacity: 0;
                 position: fixed;
                 left: 95vw;
                 top: 50%;
                 transform: translate(-50%, -50%);
-                opacity: 0;
             }
 
             @keyframes robot_carousel {
@@ -190,8 +191,9 @@ main {
             .animate_img:nth-child(2),
             .animate_img:nth-child(3),
             .animate_img:nth-child(4) {
-                position: absolute;
+                position: fixed;
                 left: 100vw;
+                top: 25%;
             }
 
             // @for $i from 2 to 5 {
@@ -226,16 +228,16 @@ main {
                 background-color: var(--white);
                 height: 2px;
                 width: 0%;
-                top: 0px;
-                left: 0px;
                 position: absolute;
+                left: 0px;
+                top: 0px;
 
                 .circle {
                     background-color: var(--white);
                     border-radius: 50%;
                     height: 12px;
-                    margin-left: calc(12px / 2);
                     width: 12px;
+                    margin-left: calc(12px / 2);
                     position: absolute;
                     left: 0%;
                     transform: translate(-50%, -50%);
@@ -248,14 +250,14 @@ main {
                 max-height: 108%;
                 width: 2px !important;
                 position: absolute;
-                top: 0px;
                 left: 103.45%;
+                top: 0px;
 
                 .arrow_down {
                     position: absolute;
                     bottom: -25px;
-                    transform: translateX(-50%);
                     left: 1px;
+                    transform: translateX(-50%);
 
                     @keyframes arrow_down {
                         0% {
@@ -275,9 +277,9 @@ main {
             .span_2,
             .span_3 {
                 font-size: clamp(1rem, 2.25vw, 4rem) !important;
+                padding-left: clamp(3rem, 2vw, 5rem);
                 margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
                 white-space: nowrap;
-                padding-left: clamp(3rem, 2vw, 5rem);
             }
 
             .span_3 {
@@ -319,8 +321,8 @@ main {
         position: relative;
 
         .divider_img {
-            position: relative;
             border-radius: 10px;
+            position: relative;
             height: 320px;
             width: 320px;
             z-index: 2;
@@ -328,10 +330,10 @@ main {
 
         .first_line,
         .second_line {
-            position: relative;
             background-color: var(--color);
             box-shadow: 0px 0px 5px var(--color-hover);
             height: 3px;
+            position: relative;
             z-index: 3;
         }
 
@@ -373,6 +375,9 @@ main {
 
         .grey_effect,
         .rainbow_effect {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             animation: gradient_effect 3s linear infinite;
             background-size: 200%;
             -webkit-background-clip: text;
@@ -410,6 +415,9 @@ main {
             .dark_pink,
             .dark_blue,
             .white {
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
                 animation: gradient_effect 3s linear infinite;
                 background-size: 200%;
                 -webkit-background-clip: text;
@@ -443,9 +451,10 @@ main {
     }
 
     #scroll_down {
+        animation: test11 2s linear forwards;
         transform: scale(0.1);
         transition: transform 0.2s ease-in;
-        animation: test11 2s linear forwards;
+
         p,
         span {
             line-height: normal;
@@ -503,7 +512,7 @@ main {
                 }
 
                 to {
-                  text-shadow: 0 0 5px var(--white), 0 0 30px var(--color-hover), 0 0 40px var(--color-hover)
+                    text-shadow: 0 0 5px var(--white), 0 0 30px var(--color-hover), 0 0 40px var(--color-hover)
                 }
             }
         }
@@ -539,10 +548,10 @@ main {
     header {
         nav {
             .nav_center-space {
+                animation: center_space 5s 3s ease-in forwards;
                 display: flex;
                 justify-content: center;
                 width: 2.75vw;
-                animation: center_space 5s 3s ease-in forwards;
             }
 
             @keyframes center_space {
@@ -558,14 +567,13 @@ main {
             .nav_logo {
                 animation: test1 4s 2s ease-in forwards;
                 position: relative;
+                left: 0px;
                 top: 50vh;
-                left: 0;
                 transform: scale(2);
             }
 
             @keyframes test1 {
                 0% {
-                    position: relative;
                     top: 50vh;
                     transform: scale(2);
                 }
@@ -584,8 +592,8 @@ main {
                 .animate_img {
                     max-height: 50vh;
                     position: fixed;
-                    top: 60%;
                     left: 65%;
+                    top: 60%;
                 }
             }
 
@@ -594,12 +602,12 @@ main {
                 left: 7.45% !important;
                 width: calc((100vw - (100vw - 100%) - 40vw) - 9.45%);
                 transform: translateX(0%);
-                .line_decoration1 {
 
+                .line_decoration1 {
                     .circle {
                         height: 15px;
-                        margin-left: calc(15px / 2);
                         width: 15px;
+                        margin-left: calc(15px / 2);
                     }
                 }
 
@@ -718,10 +726,10 @@ main {
 
             .robot_img {
                 clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 98%);
+                height: auto !important;
                 position: relative;
                 bottom: -28px;
                 left: 80px;
-                height: auto !important;
                 transform: skewY(5deg);
                 z-index: 2;
             }
@@ -741,8 +749,8 @@ main {
                 .animate_img {
                     max-height: 55vh;
                     position: fixed;
-                    top: 65%;
                     left: 70%;
+                    top: 65%;
                 }
             }
 

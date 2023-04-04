@@ -27,22 +27,22 @@ header nav .nav_logo {
 }
 @keyframes test_mobile {
   0% {
-    top: 50vh;
     left: 50%;
+    top: 50vh;
     transform: translate(-50%) scale(1.2);
   }
   100% {
-    top: 35px;
     left: 20px;
+    top: 35px;
     transform: translate(0%, -50%) scale(1);
   }
 }
 
 main #scroll_bar {
   background: var(--white);
+  height: 75vh;
   width: 2px;
   margin-bottom: -2px;
-  height: 75vh;
   position: fixed;
   left: 20px;
   top: 50vh;
@@ -55,21 +55,21 @@ main #scroll_bar .scroll_indicator {
   height: 16px;
   width: 16px;
   position: relative;
-  top: 0%;
   left: -7px;
+  top: 0%;
 }
 main #intro_header {
   height: 100vh;
   padding-block: 0px !important;
 }
 main #intro_header .header_image {
+  pointer-events: none;
   position: fixed;
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0.5;
-  width: var(--viewport-width);
   height: 100% !important;
-  pointer-events: none;
+  width: var(--viewport-width);
   animation: test3 5s 3s ease-in forwards;
 }
 @keyframes test3 {
@@ -90,11 +90,11 @@ main #intro_header .container #festival_tagline {
   font-weight: 400;
   letter-spacing: 0.05rem;
   max-width: 96vw;
+  overflow-wrap: normal !important;
   position: fixed;
   left: var(--50vw);
   transform: translate(-50%, -50%);
   width: max(40vw, 1100px) !important;
-  overflow-wrap: normal !important;
 }
 main #intro_header .container #festival_date {
   top: 32vh;
@@ -125,7 +125,8 @@ main #intro_header .container #festival_tagline {
   }
 }
 main #intro_main {
-  padding-bottom: 10000px;
+  height: 10813.7px !important;
+  padding-bottom: 10360px;
   overflow: hidden;
 }
 main #intro_main #robot_carousel {
@@ -134,11 +135,11 @@ main #intro_main #robot_carousel {
 }
 main #intro_main #robot_carousel .animate_img:nth-child(1) {
   max-height: 40vh;
+  opacity: 0;
   position: fixed;
   left: 95vw;
   top: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
 }
 @keyframes robot_carousel {
   0% {
@@ -160,8 +161,9 @@ main #intro_main #robot_carousel .animate_img:nth-child(1) {
 main #intro_main #robot_carousel .animate_img:nth-child(2),
 main #intro_main #robot_carousel .animate_img:nth-child(3),
 main #intro_main #robot_carousel .animate_img:nth-child(4) {
-  position: absolute;
+  position: fixed;
   left: 100vw;
+  top: 25%;
 }
 main #intro_main #interactive_text {
   position: fixed;
@@ -183,16 +185,16 @@ main #intro_main #interactive_text .line_decoration1 {
   background-color: var(--white);
   height: 2px;
   width: 0%;
-  top: 0px;
-  left: 0px;
   position: absolute;
+  left: 0px;
+  top: 0px;
 }
 main #intro_main #interactive_text .line_decoration1 .circle {
   background-color: var(--white);
   border-radius: 50%;
   height: 12px;
-  margin-left: 6px;
   width: 12px;
+  margin-left: 6px;
   position: absolute;
   left: 0%;
   transform: translate(-50%, -50%);
@@ -203,14 +205,14 @@ main #intro_main #interactive_text .line_decoration2 {
   max-height: 108%;
   width: 2px !important;
   position: absolute;
-  top: 0px;
   left: 103.45%;
+  top: 0px;
 }
 main #intro_main #interactive_text .line_decoration2 .arrow_down {
   position: absolute;
   bottom: -25px;
-  transform: translateX(-50%);
   left: 1px;
+  transform: translateX(-50%);
 }
 @keyframes arrow_down {
   0% {
@@ -226,9 +228,9 @@ main #intro_main #interactive_text .span_1,
 main #intro_main #interactive_text .span_2,
 main #intro_main #interactive_text .span_3 {
   font-size: clamp(1rem, 2.25vw, 4rem) !important;
+  padding-left: clamp(3rem, 2vw, 5rem);
   margin-bottom: clamp(0.75rem, 5vh, 2.25rem);
   white-space: nowrap;
-  padding-left: clamp(3rem, 2vw, 5rem);
 }
 main #intro_main #interactive_text .span_3 {
   border-left: 2px solid var(--white);
@@ -267,8 +269,8 @@ main #discover_divider {
 main #experience_divider .divider_img,
 main #interact_divider .divider_img,
 main #discover_divider .divider_img {
-  position: relative;
   border-radius: 10px;
+  position: relative;
   height: 320px;
   width: 320px;
   z-index: 2;
@@ -279,10 +281,10 @@ main #interact_divider .first_line,
 main #interact_divider .second_line,
 main #discover_divider .first_line,
 main #discover_divider .second_line {
-  position: relative;
   background-color: var(--color);
   box-shadow: 0px 0px 5px var(--color-hover);
   height: 3px;
+  position: relative;
   z-index: 3;
 }
 main #experience_divider span,
@@ -321,6 +323,9 @@ main #scroll_down .grey_effect,
 main #scroll_down .rainbow_effect,
 main #byte-side_CTA .grey_effect,
 main #byte-side_CTA .rainbow_effect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   animation: gradient_effect 3s linear infinite;
   background-size: 200%;
   -webkit-background-clip: text;
@@ -352,6 +357,9 @@ main #keywords .container span {
 main #keywords .container .dark_pink,
 main #keywords .container .dark_blue,
 main #keywords .container .white {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   animation: gradient_effect 3s linear infinite;
   background-size: 200%;
   -webkit-background-clip: text;
@@ -378,9 +386,9 @@ main #keywords .container .dark_blue {
   font-weight: 500;
 }
 main #scroll_down {
+  animation: test11 2s linear forwards;
   transform: scale(0.1);
   transition: transform 0.2s ease-in;
-  animation: test11 2s linear forwards;
 }
 main #scroll_down p,
 main #scroll_down span {
@@ -449,10 +457,10 @@ main #immerse_text .glow_effect {
 }
 @media only screen and (min-width: 768px) {
   header nav .nav_center-space {
+    animation: center_space 5s 3s ease-in forwards;
     display: flex;
     justify-content: center;
     width: 2.75vw;
-    animation: center_space 5s 3s ease-in forwards;
   }
   @keyframes center_space {
     0% {
@@ -465,13 +473,12 @@ main #immerse_text .glow_effect {
   header nav .nav_logo {
     animation: test1 4s 2s ease-in forwards;
     position: relative;
+    left: 0px;
     top: 50vh;
-    left: 0;
     transform: scale(2);
   }
   @keyframes test1 {
     0% {
-      position: relative;
       top: 50vh;
       transform: scale(2);
     }
@@ -483,8 +490,8 @@ main #immerse_text .glow_effect {
   main #intro_main #robot_carousel .animate_img {
     max-height: 50vh;
     position: fixed;
-    top: 60%;
     left: 65%;
+    top: 60%;
   }
   main #intro_main #interactive_text {
     position: fixed;
@@ -494,8 +501,8 @@ main #immerse_text .glow_effect {
   }
   main #intro_main #interactive_text .line_decoration1 .circle {
     height: 15px;
-    margin-left: 7.5px;
     width: 15px;
+    margin-left: 7.5px;
   }
   main #intro_main #interactive_text .span_1,
   main #intro_main #interactive_text .span_2,
@@ -601,10 +608,10 @@ main #immerse_text .glow_effect {
   main #discover_divider .robot_img {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 98%);
             clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 98%);
+    height: auto !important;
     position: relative;
     bottom: -28px;
     left: 80px;
-    height: auto !important;
     transform: skewY(5deg);
     z-index: 2;
   }
@@ -617,8 +624,8 @@ main #immerse_text .glow_effect {
   main #intro_main #robot_carousel .animate_img {
     max-height: 55vh;
     position: fixed;
-    top: 65%;
     left: 70%;
+    top: 65%;
   }
   main #intro_main #interactive_text {
     position: fixed;

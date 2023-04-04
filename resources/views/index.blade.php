@@ -20,15 +20,15 @@
         </section> --}}
 
         <section id="intro_main">
-            <div id="robot_carousel">
-                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" id="image1" class="animate_img img-fluid" alt="Digital image representing robotics where reality meets innovation">
-                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" id="image2" class="animate_img img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
-                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" id="image3" class="animate_img img-fluid" alt="Digital image representing robotics where humanity meets automation">
-                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" id="image4" class="animate_img img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
+            <div id="robot_carousel" ref="robot_carousel">
+                <img src="{{ asset('/../media/images/homepage/robot1.png') }}" id="image1" ref="image1" class="animate_img img-fluid" alt="Digital image representing robotics where reality meets innovation">
+                <img src="{{ asset('/../media/images/homepage/robot2.png') }}" id="image2" ref="image2" class="animate_img img-fluid" alt="Digital image representing robotics where curiosity meets exploration">
+                <img src="{{ asset('/../media/images/homepage/robot3.png') }}" id="image3" ref="image3" class="animate_img img-fluid" alt="Digital image representing robotics where humanity meets automation">
+                <img src="{{ asset('/../media/images/homepage/robot4.png') }}" id="image4" ref="image4" class="animate_img img-fluid" alt="Digital image representing robotics where impossibility meets opportunity">
             </div>
 
-            <div id="interactive_text" class="d-flex flex-nowrap">
-                <div class="line_decoration1" :style="{ width: 'calc(3.45% + ' + (state.scrollHeight <= 50 ? '2 * ' + state.scrollHeight + '%' : '100%') + ')' }">
+            <div id="interactive_text" ref="interactive_text" class="d-flex flex-nowrap">
+                <div class="line_decoration1" :style="{ width: 'calc(3.45% + ' + (state.scrollHeight <= 20 ? '5 * ' + state.scrollHeight + '%' : '100%') + ')' }">
                     <div class="circle"></div>
                 </div>
                 <div class="d-flex flex-column">
@@ -40,8 +40,8 @@
                     @endverbatim
 
                 </div>
-                <div class="line_decoration2" :style="{ height: state.scrollHeight >= 50 ? (state.scrollHeight - 50) * 2 + '%' : '0%' }">
-                    <a href="#scroll_down" class="arrow_down d-inline-block" :style="{ opacity: state.scrollHeight >= 97 ? '1'  : '0', animation: state.scrollHeight >= 99 ? 'arrow_down 0.75s linear infinite alternate' : 'none' }">
+                <div class="line_decoration2" :style="{ height: state.scrollHeight >= 20 ? Math.min((state.scrollHeight - 20) * 5, 100) + '%' : '0%' }">
+                    <a href="#scroll_down" class="arrow_down d-inline-block" :style="{ opacity: state.scrollHeight >= 37 ? '1'  : '0', animation: state.scrollHeight >= 40 ? 'arrow_down 0.75s linear infinite alternate' : 'none' }">
                         <img src="{{ asset('/../media/icons/down_arrow.svg') }}" alt="Arrow directing downwards">
                     </a>
                 </div>
@@ -51,7 +51,7 @@
         </section>
 
         <section id="scroll_down">
-            <div class="container text-center">
+            <div class="scroll_down_text container text-center">
                 <p>SCROLL TO GET A <span>GLIMPSE</span></p>
                 <div class="d-flex align-items-center justify-content-center">
                     <p>OF THE</p>

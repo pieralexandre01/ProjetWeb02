@@ -9,6 +9,7 @@
 .popup_message {
     background-color:  var(--dark-pink) !important;
     color: var(--white);
+
     p {
         margin-bottom: 0px !important;
     }
@@ -31,8 +32,8 @@
     .return_icon {
         background: none;
         background-image: url("../../media/icons/return.svg");
-        background-repeat: no-repeat;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
     a:hover {
@@ -58,18 +59,15 @@ main {
     padding-bottom: 60px;
 
     .general_button {
-        width: 100%;
-        border: 2px solid var(--color-hover) !important;
-    }
-    .general_button {
-
         background-color: var(--bg-color);
+        border: 2px solid var(--color-hover) !important;
         border-radius: 10px;
         box-shadow: 0px 0px 5px var(--color-hover);
         color: var(--white);
         flex-shrink: 1;
         padding-block: 0.5em;
         padding-inline: 1em;
+        width: 100%;
 
         &:hover {
             background-color: var(--color-hover);

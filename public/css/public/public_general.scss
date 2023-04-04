@@ -3,9 +3,9 @@
 
 // HEADER ----------
 nav {
+    height: 70px;
     padding-inline: 1rem;
     padding-top: 1rem;
-    height: 70px;
 
     #left-side_menu,
     #right-side_menu,
@@ -16,6 +16,7 @@ nav {
     .nav_center-space {
         width: 100%;
     }
+
     .nav_logo {
         .logo {
             padding-inline: 0;
@@ -23,34 +24,34 @@ nav {
             .title,
             .title_reflection {
                 font-size: clamp(1.25rem, 3vw, 3rem);
-                letter-spacing: clamp(0.15rem, 0.25rem, 0.375rem);
                 direction: rtl;
+                letter-spacing: clamp(0.15rem, 0.25rem, 0.375rem);
                 text-indent: clamp(-0.15rem, -0.25rem, -0.375rem);
             }
 
             .title {
                 line-height: 55%;
                 position: relative;
-                    top: 10px;
+                top: 10px;
             }
 
             .title_reflection {
-                transform: scale(1, -1);
                 line-height: 75%;
+                transform: scale(1, -1);
             }
 
             .festival {
                 font-size: clamp(1rem, 1.6vw, 1.5rem);
                 font-weight: 100;
                 position: relative;
-                    top: clamp(0.25em, 0.75em, 1em);
+                top: clamp(0.25em, 0.75em, 1em);
             }
         }
     }
 
     .user_btn {
         position: relative;
-            top: 10px;
+        top: 10px;
 
         .user_name {
             -webkit-user-select: none;
@@ -123,8 +124,8 @@ nav {
         cursor: pointer;
         padding-top: 16px;
         position: absolute;
-        right: 16px;
         top: 16px;
+        right: 16px;
         width: 40px;
 
         #menu_burger {
@@ -150,8 +151,8 @@ nav {
         }
 
         .open_menu .bar_1 {
-            margin-bottom: -4px;
             left: 0%;
+            margin-bottom: -4px;
             top: 50%;
             transform: rotate(45deg);
         }
@@ -172,14 +173,13 @@ main {
     padding-top: 70px;
 
     .general_button {
-        width: 100%;
         border: 2px solid var(--color-hover) !important;
+        width: 100%;
     }
 
     button,
     .general_button {
         background-color: var(--bg-color);
-        // border-color: var(--color-hover);
         border-radius: 10px;
         box-shadow: 0px 0px 5px var(--color-hover);
         color: var(--white);
@@ -276,14 +276,14 @@ footer {
     nav {
         .user_btn {
             position: relative;
-                top: 8px;
+            top: 8px;
         }
 
         .menu_container {
             position: absolute;
             top: -101px;
-            width: 0px;
             height: 0px;
+            width: 0px;
         }
 
         .dropdown_right {
@@ -309,7 +309,7 @@ footer {
 @media only screen and (max-width: 767px) {
     .nav_logo {
         position: absolute;
-            top: 35px;
+        top: 35px;
         transform: translateY(-50%);
     }
 }
