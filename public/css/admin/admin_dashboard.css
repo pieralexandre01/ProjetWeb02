@@ -74,6 +74,14 @@ a.delete:hover {
      object-fit: cover;
 }
 
-.admin_modal {
-  z-index: 1051;
+a {
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: var(--dark-blue) !important;
+}
+.modal-content .modal_button:hover {
+  background-color: var(--white);
+  color: var(--bg-color) !important;
 }/*# sourceMappingURL=admin_dashboard.css.map */

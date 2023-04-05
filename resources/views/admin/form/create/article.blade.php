@@ -21,11 +21,11 @@
 
                 <h3 class="text-center mt-sm-3">ADD AN ARTICLE</h3>
 
-                <form action="{{ route('article-store') }}" method="post" enctype="multipart/form-data"
+                <form action="{{ route('article-store') }}" method="post"
                     class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
                     @csrf
 
-                    <input name="user_id" type="hidden">
+                    <input name="user_id" type="hidden" value="{{ Auth::id() }}">
 
                     <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
                         <div class="d-flex flex-column w-100">
@@ -37,7 +37,7 @@
                             <label for="category" class="mb-1">CATEGORY</label>
                             <select name="category" class="category">
                                 @foreach ($categories as $category)
-                                    <option>
+                                    <option value="{{ $category->id }}">
                                         {{ $category->name }}
                                     </option>
                                 @endforeach
@@ -46,9 +46,9 @@
                     </div>
 
                     <div class="d-flex flex-column mb-md-3 mb-lg-4 w-100">
-                        <label for="description" class="mb-1">DESCRIPTION</label>
+                        <label for="text" class="mb-1">DESCRIPTION</label>
                         <textarea name="text" cols="30" rows="10"></textarea>
-                        <x-msg-error field="description" />
+                        <x-msg-error field="text" />
                     </div>
 
                     <input type="submit" class="align-self-center mt-3 mt-md-0">

@@ -29,12 +29,6 @@ class AdminController extends Controller
             'reservations' => Reservation::leftJoin('users', 'reservations.user_id', '=', 'users.id')
             ->orderByRaw("users.deleted_at IS NULL DESC")
             ->get(),
-            // 'reservations' => Reservation::with(['user' => function ($query) {
-            //     $query->withTrashed();
-            // }])
-            // ->orderByRaw('user_id IS NULL') // Tri les réservations par utilisateur null en premier
-            // ->orderByRaw('user_id IS NOT NULL, deleted_at IS NULL') // Tri les réservations par utilisateur actif, puis par date de suppression
-            // ->get(),
             'users_public' => User::withTrashed()->where('privilege_id', 2)->orderByRaw('deleted_at IS NULL DESC, deleted_at DESC')->get()
         ]);
     }
