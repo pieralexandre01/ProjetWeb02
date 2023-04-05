@@ -20,7 +20,7 @@
 }
 
 .skip_animation {
-  animation-duration: 1ms;
+  animation-duration: 1ms !important;
   animation-fill-mode: forwards !important;
 }
 
@@ -150,6 +150,13 @@ main #intro_header .skip_button {
 }
 main #intro_header .skip_button:hover {
   color: var(--grey) !important;
+}
+main #intro_header .skip_button.skip_animation {
+  display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  cursor: default !important;
 }
 main #intro_main {
   height: 18000px !important;
@@ -722,4 +729,4 @@ main #immerse_text .glow_effect {
   main #intro_main #interactive_text .span_3 {
     padding-left: clamp(4rem, 9.5vw + 3rem, 185px + 3rem);
   }
-}/*# sourceMappingURL=homepage.css.map */
+}/*# sourceMappingURL=index.css.map */

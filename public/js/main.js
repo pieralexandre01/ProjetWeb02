@@ -2,10 +2,10 @@
 import { createApp, ref, onMounted, onBeforeUnmount, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 import initPaypal from './cart.js'
 
+//----------------------------------------------------------------------------------------
 
-// Header - navigation -----------------------
+// HEADER - NAVIGATION
 const is_open = ref(false)
-
 
 // Toggle pour le bouton menu burger
 function toggleMenu() {
@@ -17,17 +17,44 @@ function toggleMenu() {
     }
 }
 
+//----------------------------------------------------------------------------------------
 
-// Activity page -----------------------
+// PAGE D'ACTIVITÉS (ACTIVITIES)
 
 // Refs pour faire un @click et un v-show dans la page d'activitées
 const activity = ref(0)
 const activity_list = ref(1)
 
+//----------------------------------------------------------------------------------------
 
-// Homepage -----------------------
+// ACCUEIL (INDEX)
 
-// Interactive_text + Robot_carousel
+// Page d'ouverture:
+
+// Variables des éléments contenant des animations de la page d'ouverture
+const intro_header = ref(null)
+const header_image = ref(null)
+const festival_date = ref(null)
+const festival_tagline = ref(null)
+const nav_logo = ref(null)
+const nav_center_space = ref(null)
+const skip_button = ref(null)
+
+// Fonction qui ajoute une classe pour "skipper" l'animation de départ
+function skip_animation() {
+    intro_header.value.classList.add("skip_animation")
+    header_image.value.classList.add("skip_animation")
+    festival_date.value.classList.add("skip_animation")
+    festival_tagline.value.classList.add("skip_animation")
+    nav_logo.value.classList.add("skip_animation")
+    nav_center_space.value.classList.add("skip_animation")
+    skip_button.value.classList.add("skip_animation")
+}
+
+
+// Animations avec le SCROLL
+
+// Scroll :
 
 // Accéder à l'état du scroll et activer la fonction generateAnimation lorsque la page se load
 window.addEventListener('scroll', e => {
@@ -36,26 +63,23 @@ window.addEventListener('scroll', e => {
     animateInteractiveText()
 })
 
-// Scroll_bar
-
 // La fonction reactive permet que la valeur du scrollHeight soit réactive et donc dynamise le code qui utilise cette propriété
 const state = reactive({
     scrollHeight: 0,
     opacity: 1,
 })
 
+// Variables pour encapsuler des informations du scroll
 let scroll_position = 0
 let scroll_direction = 0
 
-// Fonction qui encapsule la position en % du scrollHeight de "window"
+// Fonction qui encapsule la position en % du scrollHeight de "window" et la direction du scroll
 function updateScrollLine(e) {
     const window_top = window.pageYOffset
     const doc_height = document.documentElement.scrollHeight
     const window_height = window.innerHeight
     const scroll_state = (window_top / (doc_height - window_height)) * 100
     const opacity = 1 - (window_top / window.innerHeight)
-    // const scale = 1 - (window_top / window.innerHeight)
-
 
     state.scrollHeight = scroll_state
     state.opacity = opacity
@@ -65,7 +89,10 @@ function updateScrollLine(e) {
     scroll_position = scroll_state
 }
 
-// Variables pour l'animation de texte
+
+// Animations :
+
+// Variables pour l'animation de texte (interactive_text)
 const interactive_text = ref(null)
 const letters = "abcdefghijklmnopqrstuvwxyz"
 const word1 = ref("Reality")
@@ -84,7 +111,6 @@ const image4 = ref(null)
 // Variables pour les animations de "call-to-action" de scroll_down + byte_side
 const scroll_down_cta = ref(null)
 const byte_side_cta = ref(null)
-
 
 // Génère des mots avec des lettres aléatoires provenant de la variable "letters"
 function shuffleLetters(word, original_word, iteration) {
@@ -135,7 +161,7 @@ function generateWords(word, original_word) {
 
         // Cancel l'action fait dans le setInterval si l'itération est plus grande que la valeur des mots
         if (iteration >= word1.value.length && iteration >= word2.value.length) {
-            clearInterval(interval);
+            clearInterval(interval)
         }
 
         // Fait l'itération 3 fois pour chaque 0.03 seconde
@@ -147,9 +173,9 @@ function generateWords(word, original_word) {
 // Fonction qui associe la ligne de code d'animation à l'image selon la direction du scroll
 function animateCarousel(image) {
     if(scroll_direction > 0) {
-        image.style.animation = "robot_carousel 3s steps(10000, end) forwards"
+        image.style.animation = "robot_carousel 3.25s cubic-bezier(0.42, 0, 0.58, 1) forwards"
     } else {
-        image.style.animation = "robot_carousel 3s ease-out reverse forwards"
+        image.style.animation = "robot_carousel 3.25s cubic-bezier(0.42, 0, 0.58, 1) reverse forwards"
     }
 
     setTimeout( e => {
@@ -157,6 +183,7 @@ function animateCarousel(image) {
     }, 3050)
 }
 
+// Fonction qui anime l'opacité de "interactive_text"
 function animateInteractiveText() {
     const opacity = 1
     const scroll_state = Math.floor(state.scrollHeight)
@@ -173,18 +200,21 @@ function animateInteractiveText() {
     }
 }
 
+// Fonction qui anime le #scroll_down selon la direction du scroll
 function animateScrollDownCallToAction() {
     if(scroll_direction > 0) {
-        scroll_down_cta.value.style.animation = "scroll_down_cta 3s steps(10000, end) forwards"
+        scroll_down_cta.value.style.animation = "scroll_down_cta 3s cubic-bezier(0.19, 1, 0.22, 1) forwards"
     } else {
-        scroll_down_cta.value.style.animation = "scroll_down_cta 3s ease-out reverse forwards"
+        scroll_down_cta.value.style.animation = "scroll_down_cta 3s cubic-bezier(0.19, 1, 0.22, 1) reverse forwards"
     }
 
+    // Écrase l'animation avec un buffer
     setTimeout( e => {
         scroll_down_cta.value.style.animation = ""
     }, 3050)
 }
 
+// Fonction qui part l'animnation de #byte_side_cta
 function animateByteSideCallToAction() {
     if(scroll_direction > 0) {
         byte_side_cta.value.style.animation = "byte_side_cta 3s steps(10000, end) forwards"
@@ -198,7 +228,7 @@ function generateAnimation() {
     console.log(scroll_state)
     console.log(state.scrollHeight)
 
-    // Vérification de la position du scroll height (%) pour activer les fonctions
+    // Vérification de la position du scroll height (%) pour activer les fonctions au bon moment
     if(scroll_direction > 0) {
         if(scroll_state == 1) {
             generateWords("Reality", "Innovation")
@@ -220,7 +250,7 @@ function generateAnimation() {
             animateCarousel(image4.value)
         }
 
-        if(scroll_state == 48) {
+        if(scroll_state == 47) {
             animateScrollDownCallToAction()
         }
 
@@ -249,7 +279,7 @@ function generateAnimation() {
             animateCarousel(image4.value)
         }
 
-        if(scroll_state == 55) {
+        if(scroll_state == 51) {
             animateScrollDownCallToAction()
         }
     }
@@ -264,12 +294,15 @@ function generateAnimation() {
         interactive_text.value.style.setProperty('display', 'flex', 'important')
     }
 
-    if(scroll_state < 48 && scroll_state > 55) {
+    if(scroll_state < 47 && scroll_state > 51) {
         scroll_down_cta.value.style.setProperty('display', 'none', 'important')
+
     } else {
         scroll_down_cta.value.style.setProperty('display', 'block', 'important')
     }
 }
+
+//----------------------------------------------------------------------------------------
 
 const root = {
     setup() {
@@ -280,8 +313,8 @@ const root = {
             window.addEventListener('scroll', updateScrollLine)
           })
 
-        // Désactive l'événement de scroll et la fonction ne sera plus exécutée
-        onBeforeUnmount(() => {
+          onBeforeUnmount(() => {
+            // Désactive l'événement de scroll et la fonction ne sera plus exécutée
             window.removeEventListener('scroll', updateScrollLine)
         })
 
@@ -290,6 +323,13 @@ const root = {
             is_open,
             activity,
             activity_list,
+            skip_animation,
+            intro_header,
+            header_image,
+            festival_date,
+            festival_tagline,
+            nav_logo,
+            nav_center_space,
             robot_carousel,
             interactive_text,
             scroll_down_cta,

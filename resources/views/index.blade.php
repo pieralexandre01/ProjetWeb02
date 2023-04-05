@@ -5,14 +5,14 @@
     <x-public.header :page="$page" />
 
     <main>
-        {{-- <section id="intro_header">
-            <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
+        <section id="intro_header" ref="intro_header">
+            <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" ref="header_image" alt="Digital showroom">
             <div class="container">
-                <p id="festival_date" class="text-center">8-9-10 september 2023</p>
-
-                <p id="festival_tagline" class="text-center">Immerse yourself in a world of limitless possibilities and visionary technologies shaping tomorrow</p>
+                <p id="festival_date" ref="festival_date" class="text-center">8-9-10 september 2023</p>
+                <p id="festival_tagline" ref="festival_tagline" class="text-center">Immerse yourself in a world of limitless possibilities and visionary technologies shaping tomorrow</p>
+                <button class="skip_button text-end" ref="skip_button" @@click="skip_animation()">skip intro</button>
             </div>
-        </section> --}}
+        </section>
 
         <section id="intro_main">
             <div id="robot_carousel" ref="robot_carousel">

@@ -22,8 +22,8 @@
             <li class="d-none d-xxl-block"><a href="{{ route('packages') }}" class="@if($page == 'packages') active_link @endif" aria-current="{{ $page }}">packages</a></li>
         </ul>
 
-        <div class="nav_center-space">
-            <div class="nav_logo">
+        <div class="nav_center-space" ref="nav_center_space">
+            <div class="nav_logo" ref="nav_logo">
                 <a href="{{ route('homepage') }}" class="logo d-flex flex-column text-center flex-nowrap flex-shrink-1">
                     <div class="title d-flex flex-column">
                         MIRROR WORLD

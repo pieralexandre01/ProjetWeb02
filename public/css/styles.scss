@@ -39,11 +39,6 @@ html {
     }
 }
 
-body.modal-open :not(.modal) {
-    // filter: blur(2.5px);
-    // -webkit-filter: blur(2.5px);
-}
-
 .modal-content {
     background-color: var(--dark-turquoise) !important;
 }
@@ -189,6 +184,7 @@ nav {
 
     // LOGO
     .logo {
+        position: relative;
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
@@ -224,7 +220,6 @@ nav {
             top: clamp(0.25em, 0.75em, 1em);
         }
     }
-
 }
 
 
