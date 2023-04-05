@@ -1,6 +1,7 @@
 @props(["page"])
 
 <header>
+    <div id="scroll_indicator" class="d-none d-sm-block" :style="{ width: state.scrollHeight + '%'}"></div>
     <nav class="fixed-top d-flex flex-row justify-content-center">
 
         <ul id="left-side_menu" class="d-none d-md-flex flex-nowrap flex-shrink-0 justify-content-start justify-content-xxl-between align-items-center p-0 me-1">
