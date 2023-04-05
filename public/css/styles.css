@@ -42,11 +42,6 @@ html ::selection {
   color: var(--bg-color);
 }
 
-body.modal-open > :not(.modal) {
-  filter: blur(2.5px);
-  -webkit-filter: blur(2.5px);
-}
-
 .modal-content {
   background-color: var(--dark-turquoise) !important;
 }

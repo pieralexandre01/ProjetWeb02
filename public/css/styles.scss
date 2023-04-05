@@ -39,9 +39,9 @@ html {
     }
 }
 
-body.modal-open> :not(.modal) {
-    filter: blur(2.5px);
-    -webkit-filter: blur(2.5px);
+body.modal-open :not(.modal) {
+    // filter: blur(2.5px);
+    // -webkit-filter: blur(2.5px);
 }
 
 .modal-content {

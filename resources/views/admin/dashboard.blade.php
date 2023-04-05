@@ -64,12 +64,12 @@
                                     @else
                                         {{-- <a href="{{ route('user-unblock', $user_admin->id) }}"
                                             class="delete">UNBLOCK</a> --}}
-                                        {{-- <button type="button" id="message_modal" class="general_button"
-                                            data-bs-toggle="modal" data-bs-target="{{ $i }}">
+                                        <button type="button" id="message_modal" class="general_button"
+                                            data-bs-toggle="modal" data-bs-target="#unblock_admin_{{ $i }}">
                                             UNBLOCK
                                         </button>
 
-                                        <x-modal-messages :id='$user_admin->id' :iteration='$i' /> --}}
+                                        <x-admin.modals.modal-admin-unblock :id='$user_admin->id' :iteration='$i' />
                                     @endif
                                 </div>
 

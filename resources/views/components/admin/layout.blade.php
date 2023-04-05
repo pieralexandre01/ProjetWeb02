@@ -23,12 +23,12 @@
     </script>
     <script src="{{ asset('js/main.js') }}" type="module"></script>
 
-    @if (session('user-blocked'))
+    {{-- @if (session('user-blocked'))
     <script>
         let myModal = new bootstrap.Modal(document.getElementById("message_modal"));
         myModal.show();
         </script>
-    @endif
+    @endif --}}
 
 </body>
 </html>

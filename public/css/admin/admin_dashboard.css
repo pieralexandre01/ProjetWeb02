@@ -72,4 +72,8 @@ a.delete:hover {
   margin-right: 20px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.admin_modal {
+  z-index: 1051;
 }/*# sourceMappingURL=admin_dashboard.css.map */
