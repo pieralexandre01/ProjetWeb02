@@ -1,20 +1,25 @@
 @props(['id', 'iteration'])
 
-<div id="unblock_user_{{ $iteration }}" class="modal fade admin_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div id="unblock_user_{{ $iteration }}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            {{-- <div class="popup_message modal-body d-flex flex-no-wrap align-items-center justify-content-between"> --}}
-            <div class="modal-body d-flex flex-no-wrap align-items-center justify-content-between">
+            <div class="modal-body p-4">
 
-                <div>
+                <div class="mb-4">
                     <p class="p-0 text-start">You are about to unblock this user.</p>
                     <p class="p-0 text-start">Click "Confirm" to proceed.</p>
                 </div>
 
-                <a href="{{ route('user-unblock', $id) }}" role="button" class="general_button">CONFIRM</a>
+                <div class="d-flex justify-content-end">
+                    <span class="me-2">
+                        <a href="{{ route('user-unblock', $id) }}" class="general_button modal_button">CONFIRM</a>
+                    </span>
 
-                <button type="button" class="general_button" data-bs-dismiss="modal" aria-label="Close">CANCEL</button>
+                    <span>
+                        <a class="general_button modal_button" data-bs-dismiss="modal" aria-label="Close">CANCEL</a>
+                    </span>
+                </div>
 
             </div>
         </div>

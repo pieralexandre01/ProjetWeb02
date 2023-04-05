@@ -4,8 +4,6 @@
 
     <x-admin.header />
 
-    {{-- <x-modal-messages /> --}}
-
     <main>
 
         <div class="container py-5 mt-5">
@@ -60,14 +58,14 @@
 
                                     @if ($user_admin->deleted_at == null)
                                         <a href="{{ route('admin-edit', $user_admin->id) }}" class="edit me-5">EDIT</a>
-                                        <a href="{{ route('user-block', $user_admin->id) }}" class="delete">BLOCK</a>
+
+                                        <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                            data-bs-target="#block_admin_{{ $i }}">BLOCK</a>
+
+                                        <x-admin.modals.modal-admin-block :id='$user_admin->id' :iteration='$i' />
                                     @else
-                                        {{-- <a href="{{ route('user-unblock', $user_admin->id) }}"
-                                            class="delete">UNBLOCK</a> --}}
-                                        <button type="button" id="message_modal" class="general_button"
-                                            data-bs-toggle="modal" data-bs-target="#unblock_admin_{{ $i }}">
-                                            UNBLOCK
-                                        </button>
+                                        <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                            data-bs-target="#unblock_admin_{{ $i }}">UNBLOCK</a>
 
                                         <x-admin.modals.modal-admin-unblock :id='$user_admin->id' :iteration='$i' />
                                     @endif
@@ -111,7 +109,11 @@
 
                                 <div class="buttons d-flex">
                                     <a href="{{ route('article-edit', $article->id) }}" class="edit me-5">EDIT</a>
-                                    <a href="{{ route('article-delete', $article->id) }}" class="delete">DELETE</a>
+
+                                    <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                        data-bs-target="#delete_article_{{ $i }}">DELETE</a>
+
+                                    <x-admin.modals.modal-article-delete :id='$article->id' :iteration='$i' />
                                 </div>
 
                             </div>
@@ -153,7 +155,11 @@
 
                                 <div class="buttons d-flex">
                                     <a href="{{ route('activity-edit', $activity->id) }}" class="edit me-5">EDIT</a>
-                                    <a href="{{ route('activity-delete', $activity->id) }}" class="delete">DELETE</a>
+
+                                    <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                        data-bs-target="#delete_activity_{{ $i }}">DELETE</a>
+
+                                    <x-admin.modals.modal-activity-delete :id='$activity->id' :iteration='$i' />
                                 </div>
 
                             </div>
@@ -180,7 +186,7 @@
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
 
-                        @foreach ($reservations as $reservation)
+                        @forelse ($reservations as $reservation)
                             <div class="d-flex justify-content-between align-items-center pt-3">
 
                                 <div
@@ -192,13 +198,19 @@
                                 </div>
 
                                 <div class="buttons d-flex">
-                                    <a href="{{ route('reservation-delete', $reservation->id) }}"
-                                        class="delete">DELETE</a>
+
+                                    <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                        data-bs-target="#delete_reservation_{{ $i }}">DELETE</a>
+
+                                    <x-admin.modals.modal-reservation-delete :id='$reservation->id' :iteration='$i' />
                                 </div>
 
                             </div>
                             <hr>
-                        @endforeach
+                        @empty
+                            <p>No reservations.</p>
+                        @endforelse
+
                     </div>
                 </div>
             </section>
@@ -235,11 +247,16 @@
                                     @if ($user_public->deleted_at == null)
                                         <a href="{{ route('user-edit', $user_public->id) }}"
                                             class="edit me-5">EDIT</a>
-                                        <a href="{{ route('user-block', $user_public->id) }}"
-                                            class="delete">BLOCK</a>
+
+                                        <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                            data-bs-target="#block_user_{{ $i }}">BLOCK</a>
+
+                                        <x-admin.modals.modal-user-block :id='$user_public->id' :iteration='$i' />
                                     @else
-                                        <a href="{{ route('user-unblock', $user_public->id) }}"
-                                            class="delete">UNBLOCK</a>
+                                        <a id="message_modal" class="delete" data-bs-toggle="modal"
+                                            data-bs-target="#unblock_user_{{ $i }}">UNBLOCK</a>
+
+                                        <x-admin.modals.modal-user-unblock :id='$user_public->id' :iteration='$i' />
                                     @endif
                                 </div>
 

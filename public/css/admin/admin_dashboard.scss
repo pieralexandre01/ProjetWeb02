@@ -90,6 +90,17 @@ a.delete {
 }
 
 // Pop-up
-.admin_modal {
-    z-index: 1051;
+a {
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: var(--dark-blue) !important;
+
+    .modal_button {
+        &:hover {
+            background-color: var(--white);
+            color: var(--bg-color) !important;
+        }
+    }
 }
