@@ -2,14 +2,9 @@
     <x-slot name="title">{{ $title }}</x-slot>
     <x-slot name="css_file">public/homepage</x-slot>
 
-    {{-- <x-public.header :page="$page" /> --}}
+    <x-public.header :page="$page" />
 
     <main>
-
-        <aside id="scroll_bar" class="d-none d-sm-block">
-            <div class="scroll_indicator" :style="{ top: state.scrollHeight + '%'}"></div>
-        </aside>
-
         {{-- <section id="intro_header">
             <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" alt="Digital showroom">
             <div class="container">
@@ -227,8 +222,8 @@
             </div>
         </section>
 
-        <section id="byte-side_CTA">
-            <div class="d-flex flex-column text-center">
+        <section id="byte_side">
+            <div class="byte_side_div d-flex flex-column text-center" ref="byte_side_cta">
                 <p class="grey_effect mb-5">JOIN THE BYTE-SIDE</p>
                 <div>
                     <a href="{{ route('account-create') }}" class="general_button text-center mt-5 mt-md-0">read more</a>

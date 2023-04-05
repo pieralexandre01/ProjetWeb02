@@ -34,7 +34,6 @@ window.addEventListener('scroll', e => {
     state.scrollY = window.scrollY
     generateAnimation()
     animateInteractiveText()
-    animateCallToAction()
 })
 
 // Scroll_bar
@@ -43,7 +42,6 @@ window.addEventListener('scroll', e => {
 const state = reactive({
     scrollHeight: 0,
     opacity: 1,
-    scale: 1
 })
 
 let scroll_position = 0
@@ -56,12 +54,11 @@ function updateScrollLine(e) {
     const window_height = window.innerHeight
     const scroll_state = (window_top / (doc_height - window_height)) * 100
     const opacity = 1 - (window_top / window.innerHeight)
-    const scale = 1 - (window_top / window.innerHeight)
+    // const scale = 1 - (window_top / window.innerHeight)
 
 
     state.scrollHeight = scroll_state
     state.opacity = opacity
-    state.scale = scale
 
     // Vérifie la direction du scroll et écrase la valeur de "position" pour la valeur de "scroll_state"
     scroll_direction = scroll_state - scroll_position
@@ -84,8 +81,9 @@ const image2 = ref(null)
 const image3 = ref(null)
 const image4 = ref(null)
 
-// Variable pour l'animation du "call-to-action" de scroll_down
+// Variables pour les animations de "call-to-action" de scroll_down + byte_side
 const scroll_down_cta = ref(null)
+const byte_side_cta = ref(null)
 
 
 // Génère des mots avec des lettres aléatoires provenant de la variable "letters"
@@ -175,42 +173,30 @@ function animateInteractiveText() {
     }
 }
 
-function animateCallToAction() {
-    const scale = 0.1
-    const scroll_state = Math.floor(state.scrollHeight)
-
-    if (scroll_state >= 45 && scroll_state <= 50) {
-        const scale_difference = 0.1 + ((scroll_state - 45))
-        scroll_down_cta.value.style.transform = "scale(" + (scale_difference * scale) + ")"
-
-console.log(scroll_down_cta.value)
-
-    } else if (scroll_state < 45) {
-        scroll_down_cta.value.style.transform = "scale(" + scale + ")"
-
-    } else if (scroll_state > 50) {
-        scroll_down_cta.value.style.transform = "scale(" + 1 + ")"
+function animateScrollDownCallToAction() {
+    if(scroll_direction > 0) {
+        scroll_down_cta.value.style.animation = "scroll_down_cta 3s steps(10000, end) forwards"
+    } else {
+        scroll_down_cta.value.style.animation = "scroll_down_cta 3s ease-out reverse forwards"
     }
+
+    setTimeout( e => {
+        scroll_down_cta.value.style.animation = ""
+    }, 3050)
 }
 
-// if (scroll_state >= 45 && scroll_state <= 50) {
-//     const scale_difference = 1 + ((scroll_state - 45) / 5)
-//     scroll_down_cta.value.style.scale = scale_difference * scale
-
-// console.log(scroll_down_cta.value.style)
-
-// } else if (scroll_state < 45) {
-//     scroll_down_cta.value.style.scale = scale
-
-// } else if (scroll_state > 50) {
-//     scroll_down_cta.value.style.scale = 1
-// }
-
-
+function animateByteSideCallToAction() {
+    if(scroll_direction > 0) {
+        byte_side_cta.value.style.animation = "byte_side_cta 3s steps(10000, end) forwards"
+    }
+}
 
 // Fonction qui génère les animations du texte et des images en effet carrousel
 function generateAnimation() {
     const scroll_state = Math.floor(state.scrollHeight)
+
+    console.log(scroll_state)
+    console.log(state.scrollHeight)
 
     // Vérification de la position du scroll height (%) pour activer les fonctions
     if(scroll_direction > 0) {
@@ -234,6 +220,14 @@ function generateAnimation() {
             animateCarousel(image4.value)
         }
 
+        if(scroll_state == 48) {
+            animateScrollDownCallToAction()
+        }
+
+        if(scroll_state == 90) {
+            animateByteSideCallToAction()
+        }
+
     } else {
         if(scroll_state == 9) {
             generateWords("Reality", "Innovation")
@@ -254,6 +248,10 @@ function generateAnimation() {
             generateWords("Impossibility", "Opportunity")
             animateCarousel(image4.value)
         }
+
+        if(scroll_state == 55) {
+            animateScrollDownCallToAction()
+        }
     }
 
     // Selon le scrollHeight, les divs seront en display:none ou display: block/flex
@@ -264,6 +262,12 @@ function generateAnimation() {
     } else {
         robot_carousel.value.style.setProperty('display', 'flex', 'important')
         interactive_text.value.style.setProperty('display', 'flex', 'important')
+    }
+
+    if(scroll_state < 48 && scroll_state > 55) {
+        scroll_down_cta.value.style.setProperty('display', 'none', 'important')
+    } else {
+        scroll_down_cta.value.style.setProperty('display', 'block', 'important')
     }
 }
 
@@ -289,6 +293,7 @@ const root = {
             robot_carousel,
             interactive_text,
             scroll_down_cta,
+            byte_side_cta,
             image1,
             image2,
             image3,

@@ -19,6 +19,13 @@
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
+header #scroll_indicator {
+  background: var(--grey);
+  height: 2px;
+  max-width: 100vw;
+  position: fixed;
+  z-index: 1031;
+}
 header nav .nav_logo {
   animation: test_mobile 4s 2s ease-in forwards;
   left: 50%;
@@ -38,26 +45,6 @@ header nav .nav_logo {
   }
 }
 
-main #scroll_bar {
-  background: var(--white);
-  height: 75vh;
-  width: 2px;
-  margin-bottom: -2px;
-  position: fixed;
-  left: 20px;
-  top: 50vh;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-main #scroll_bar .scroll_indicator {
-  background: var(--white);
-  border-radius: 50%;
-  height: 16px;
-  width: 16px;
-  position: relative;
-  left: -7px;
-  top: 0%;
-}
 main #intro_header {
   height: 100vh;
   padding-block: 0px !important;
@@ -125,8 +112,8 @@ main #intro_header .container #festival_tagline {
   }
 }
 main #intro_main {
-  height: 13750px !important;
-  padding-bottom: 13250px;
+  height: 16500px !important;
+  padding-bottom: 16000px;
   overflow: hidden;
 }
 main #intro_main #robot_carousel {
@@ -237,22 +224,23 @@ main p {
 main section:not(#intro_main, #intro_header) {
   padding-block: 360px !important;
 }
-main #about,
-main #packages,
-main #activities,
-main #tech_talks {
+main section#about,
+main section#packages,
+main section#activities,
+main section#tech_talks {
   padding-inline: 20px;
+  padding-top: 720px !important;
 }
-main #about p,
-main #packages p,
-main #activities p,
-main #tech_talks p {
+main section#about p,
+main section#packages p,
+main section#activities p,
+main section#tech_talks p {
   max-width: 800px !important;
 }
-main #about .button_space,
-main #packages .button_space,
-main #activities .button_space,
-main #tech_talks .button_space {
+main section#about .button_space,
+main section#packages .button_space,
+main section#activities .button_space,
+main section#tech_talks .button_space {
   width: 100%;
 }
 main #experience_divider,
@@ -310,39 +298,6 @@ main #discover_divider .robot_img {
   left: -19px;
   width: 285px;
 }
-main #scroll_down,
-main #byte-side_CTA {
-  padding-inline: 20px;
-}
-main #scroll_down .grey_effect,
-main #scroll_down .rainbow_effect,
-main #byte-side_CTA .grey_effect,
-main #byte-side_CTA .rainbow_effect {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-       user-select: none;
-  animation: gradient_effect 3s linear infinite;
-  background-size: 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
-}
-@keyframes gradient_effect {
-  from {
-    background-position: 0% center;
-  }
-  to {
-    background-position: -200% center;
-  }
-}
-main #scroll_down .grey_effect,
-main #byte-side_CTA .grey_effect {
-  background-image: linear-gradient(to left, var(--white), var(--grey), var(--white));
-}
-main #scroll_down .rainbow_effect,
-main #byte-side_CTA .rainbow_effect {
-  background-image: linear-gradient(to right, var(--color-hover), var(--vivid-blue), var(--color-hover));
-}
 main #keywords .container span {
   font-size: clamp(1rem, 2vw, 4rem);
   font-weight: 400;
@@ -380,36 +335,112 @@ main #keywords .container .dark_blue {
   background-image: linear-gradient(to right, var(--dark-blue), var(--vivid-blue), var(--dark-blue));
   font-weight: 500;
 }
-main #scroll_down {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
-  margin: auto;
-  transition: transform 0.2s ease-in;
+main section#scroll_down,
+main section#byte_side {
+  padding-inline: 20px;
 }
-main #scroll_down p,
-main #scroll_down span {
-  line-height: normal;
+main section#scroll_down p,
+main section#byte_side p {
   font-size: clamp(1rem, 4vw, 5rem) !important;
+  line-height: normal;
+}
+main section#scroll_down .grey_effect,
+main section#scroll_down .rainbow_effect,
+main section#byte_side .grey_effect,
+main section#byte_side .rainbow_effect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  animation: gradient_effect 3s linear infinite;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
-main #scroll_down p span,
-main #scroll_down span span {
+@keyframes gradient_effect {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+main section#scroll_down .grey_effect,
+main section#byte_side .grey_effect {
+  background-image: linear-gradient(to left, var(--white), var(--grey), var(--white));
+}
+main section#scroll_down .rainbow_effect,
+main section#byte_side .rainbow_effect {
+  background-image: linear-gradient(to right, var(--color-hover), var(--vivid-blue), var(--color-hover));
+}
+main section#scroll_down {
+  position: fixed;
+}
+main section#scroll_down p,
+main section#scroll_down span {
+  font-size: clamp(1rem, 4vw, 5rem) !important;
+  line-height: normal;
+  white-space: nowrap;
+}
+main section#scroll_down p span,
+main section#scroll_down span span {
   font-weight: 400;
 }
-main #scroll_down p.grey_effect {
+main section#scroll_down p.grey_effect {
   font-size: clamp(1.4rem, 6vw, 8rem) !important;
   font-weight: 500;
 }
-main #scroll_down p.rainbow_effect {
+main section#scroll_down p.rainbow_effect {
   font-size: clamp(2rem, 15vw, 15rem) !important;
   font-weight: 600;
 }
-main #byte-side_CTA div p {
+@keyframes scroll_down_cta {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0%) scale(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0);
+  }
+}
+main section#scroll_down,
+main #byte_side .byte_side_div {
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  margin: auto;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.75s ease-in-out, opacity 0.5s ease-out, scale 0.5s ease-out;
+}
+main #byte_side {
+  height: 996px !important;
+}
+main #byte_side .byte_side_div {
+  position: relative;
+}
+main #byte_side .byte_side_div p.grey_effect {
   line-height: normal !important;
   font-size: clamp(1rem, 6vw, 8rem) !important;
   font-weight: 500;
+}
+@keyframes byte_side_cta {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 main #immerse_text .glow_effect {
   animation: glow 5s ease infinite alternate;
@@ -429,10 +460,10 @@ main #immerse_text .glow_effect {
 }
 
 @media only screen and (min-width: 576px) {
-  #about,
-  #packages,
-  #activities,
-  #tech_talks {
+  section#about,
+  section#packages,
+  section#activities,
+  section#tech_talks {
     padding-inline: 60px !important;
   }
   #experience_divider img,
@@ -496,11 +527,11 @@ main #immerse_text .glow_effect {
   main #intro_main #interactive_text .span_3 {
     padding-left: 3rem;
   }
-  main #about .button_space,
-  main #packages .button_space,
-  main #activities .button_space,
-  main #tech_talks .button_space {
-    width: auto;
+  main section#about .button_space,
+  main section#packages .button_space,
+  main section#activities .button_space,
+  main section#tech_talks .button_space {
+    width: auto !important;
   }
   main #experience_divider,
   main #interact_divider,
