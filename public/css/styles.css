@@ -178,6 +178,7 @@ nav {
   height: 7rem;
 }
 nav .logo {
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;

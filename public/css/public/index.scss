@@ -19,6 +19,11 @@
     background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
+.skip_animation {
+    animation-duration: 1ms !important;
+    animation-fill-mode: forwards !important;
+}
+
 header {
     #scroll_indicator {
         background: var(--grey);
@@ -29,17 +34,25 @@ header {
     }
 
     nav {
+        z-index: 1035 !important;
+
         .nav_logo {
-            animation: test_mobile 4s 2s ease-in forwards;
+            animation: logo_mobile 4s 2s ease-in forwards;
             left: 50%;
-            top: 50vh;
+            top: 40vh;
             transform: translate(-50%) scale(1.2);
+
+            &.skip_animation {
+                left: 20px !important;
+                top: 35px !important;
+                transform: translate(0%, -50%) scale(1) !important;
+            }
         }
 
-        @keyframes test_mobile {
+        @keyframes logo_mobile {
             0% {
                 left: 50%;
-                top: 50vh;
+                top: 40vh;
                 transform: translate(-50%) scale(1.2);
             }
 
@@ -54,10 +67,29 @@ header {
 
 main {
     #intro_header {
+        background-color: var(--bg-color);
         height: 100vh;
+        width: var(--viewport-width);
         padding-block: 0px !important;
+        position: fixed;
+        animation: bg_color 2s 6s ease-out forwards;
+        z-index: 1034;
+
+        &.skip_animation {
+            opacity: 0;
+        }
+
+        @keyframes bg_color {
+            0%{
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
 
         .header_image {
+            animation: img_opacity 3s 4s ease-in forwards;
             pointer-events: none;
             position: fixed;
             object-fit: cover;
@@ -65,10 +97,11 @@ main {
             height: 100% !important;
             width: var(--viewport-width);
 
-            // *************************************************
-            animation: test3 5s 3s ease-in forwards;
+            &.skip_animation {
+                opacity: 0;
+            }
 
-            @keyframes test3 {
+            @keyframes img_opacity {
                 0% {
                     opacity: 0.5;
                 }
@@ -76,7 +109,6 @@ main {
                     opacity: 0;
                 }
             }
-            //*************************************************
         }
 
         .container {
@@ -84,59 +116,72 @@ main {
 
             #festival_date,
             #festival_tagline {
+                animation: tagline_opacity 3s 3s ease-in forwards;
                 font-family: "termina", sans-serif;
                 font-size: clamp(1rem, 2vw, 2rem);
                 font-weight: 400;
                 letter-spacing: 0.05rem;
                 max-width: calc(100vw - 4vw);
                 overflow-wrap: normal !important;
+                pointer-events: none;
                 position: fixed;
                 left: var(--50vw);
                 transform: translate(-50%, -50%);
                 width: max(40vw, 1100px) !important;
+
+                &.skip_animation {
+                    opacity: 0;
+                }
             }
 
             #festival_date {
-                top: 32vh;
-
-                // *************************************************
-                animation: test4 4s 3s ease-in forwards;
-
-                @keyframes test4 {
-                    0% {
-                        opacity: 1;
-                        transform: translate(-50%, -50%) scale(1);
-                    }
-                    100% {
-                        opacity: 0;
-                        transform: translate(-50%, -50%) scale(0);
-                    }
-                }
-                // *************************************************
+                top: 65vh;
             }
 
             #festival_tagline {
                 padding-inline: 20px;
                 top: 85vh;
-                z-index: 1032;
-                // *************************************************
-                animation: test5 5s 3s ease-in forwards;
+            }
 
-                @keyframes test5 {
-                    0% {
-                        opacity: 1;
-                    }
-                    100% {
-                        opacity: 0;
-                    }
+            @keyframes tagline_opacity {
+                0% {
+                    opacity: 1;
                 }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .skip_button {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            position: absolute;
+            bottom: 11vh;
+            right: 5vw;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 0.2em;
+            z-index: 1035;
+
+            &:hover {
+                color: var(--grey) !important;
+            }
+
+            &.skip_animation {
+                display: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: default !important;
             }
         }
     }
 
     #intro_main {
-        height: 16500px !important;
-        padding-bottom: 16000px;
+        height: 18000px !important;
+        padding-bottom: 17500px;
         overflow: hidden;
 
         #robot_carousel {
@@ -454,11 +499,11 @@ main {
         }
         40% {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -45%) scale(1);
         }
         60% {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -45%) scale(1);
         }
         100% {
             opacity: 0;
@@ -475,7 +520,6 @@ main {
         transform: translate(-50%, -50%) scale(0);
         transition: transform 0.75s ease-in-out, opacity 0.5s ease-out, scale 0.5s ease-out;
     }
-
 
     #byte_side {
         height: 996px !important;
@@ -501,7 +545,6 @@ main {
             }
         }
     }
-
 
     #immerse_text {
         .glow_effect {
@@ -558,6 +601,10 @@ main {
                 display: flex;
                 justify-content: center;
                 width: 2.75vw;
+
+                &.skip_animation {
+                    width: 100% !important;
+                }
             }
 
             @keyframes center_space {
@@ -571,16 +618,21 @@ main {
             }
 
             .nav_logo {
-                animation: test1 4s 2s ease-in forwards;
+                animation: logo_md 4s 2s ease-in forwards;
                 position: relative;
                 left: 0px;
-                top: 50vh;
+                top: 40vh;
                 transform: scale(2);
+
+                &.skip_animation {
+                    top: 0 !important;
+                    transform: scale(1) !important;
+                }
             }
 
-            @keyframes test1 {
+            @keyframes logo_md {
                 0% {
-                    top: 50vh;
+                    top: 40vh;
                     transform: scale(2);
                 }
 
@@ -593,6 +645,14 @@ main {
     }
 
     main {
+
+        #intro_header {
+            .skip_button {
+                position: absolute;
+                bottom: 20vh;
+                right: 5vw;
+            }
+        }
         #intro_main {
             #robot_carousel {
                 .animate_img {
@@ -646,8 +706,6 @@ main {
                 position: absolute;
                 z-index: 2 !important;
             }
-
-
 
             .first_line,
             .second_line {
