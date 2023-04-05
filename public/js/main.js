@@ -33,7 +33,36 @@ const activity_list = ref(1)
 window.addEventListener('scroll', e => {
     state.scrollY = window.scrollY
     generateAnimation()
+    animateInteractiveText()
 })
+
+// Scroll_bar
+
+// La fonction reactive permet que la valeur du scrollHeight soit réactive et donc dynamise le code qui utilise cette propriété
+const state = reactive({
+    scrollHeight: 0,
+    opacity: 1
+})
+
+let scroll_position = 0
+let scroll_direction = 0
+
+// Fonction qui encapsule la position en % du scrollHeight de "window"
+function updateScrollLine(e) {
+    const window_top = window.pageYOffset
+    const doc_height = document.documentElement.scrollHeight
+    const window_height = window.innerHeight
+    const scrolled = (window_top / (doc_height - window_height)) * 100
+    const opacity = 1 - (window_top / window.innerHeight)
+
+    state.opacity = opacity
+    state.scrollHeight = scrolled
+
+
+    // Vérifie la direction du scroll et écrase la valeur du scroll_position pour le doc_height
+    scroll_direction = doc_height - scroll_position
+    scroll_position = doc_height
+}
 
 // Variables pour l'animation de texte
 const letters = "abcdefghijklmnopqrstuvwxyz"
@@ -51,6 +80,7 @@ const image1 = ref(null)
 const image2 = ref(null)
 const image3 = ref(null)
 const image4 = ref(null)
+
 
 // Génère des mots avec des lettres aléatoires provenant de la variable "letters"
 function generateWords(word, original_word, iteration) {
@@ -80,7 +110,7 @@ function generateWords(word, original_word, iteration) {
 let active_word = null
 
 // Fonction qui anime le texte
-function animateText(word, original_word) {
+function shuffleLetters(word, original_word) {
     // Si le mot actif est déjà affiché, l'animation ne sera pas réactivé
     if(active_word == word){
         return
@@ -121,70 +151,72 @@ function animateCarousel(image) {
     }
 }
 
+// Fonction qui associe la ligne de code d'animation à Interactive_text selon la direction du scroll
+// function animateInteractiveText() {
+//     if(scroll_direction > 0) {
+//         interactive_text.value.style.animation = "interactive_text 1s ease-out forwards"
+//     } else {
+//         interactive_text.value.style.animation = "interactive_text 1s reverse forwards"
+//     }
+// }
+
+function animateInteractiveText() {
+    const opacity = 1 - (window.pageYOffset / window.innerHeight);
+    const scrolled = Math.floor(state.scrollHeight);
+
+    if (scrolled >= 40 && scrolled <= 50) {
+        const opacityDiff = 1 - ((scrolled - 40) / 10);
+        interactive_text.value.style.opacity = opacityDiff * opacity;
+    }
+    else if (scrolled < 40) {
+        interactive_text.value.style.opacity = opacity;
+    }
+    else if (scrolled > 50) {
+        interactive_text.value.style.opacity = 0;
+    }
+}
+
 // Fonction qui génère les animations du texte et des images en effet carrousel
 function generateAnimation() {
     // Vérification de la position du scroll height (%) pour activer les fonctions
     if(Math.floor(state.scrollHeight) == 1 || Math.floor(state.scrollHeight) == 9) {
-        animateText("Reality", "Innovation")
+        shuffleLetters("Reality", "Innovation")
         animateCarousel(image1.value)
-        console.log(999);
+
+        // console.log(999);
     }
 
     if(Math.floor(state.scrollHeight) == 10 || Math.floor(state.scrollHeight) == 19) {
-        animateText("Curiosity", "Exploration")
+        shuffleLetters("Curiosity", "Exploration")
         animateCarousel(image2.value)
     }
 
     if(Math.floor(state.scrollHeight) == 20 || Math.floor(state.scrollHeight) == 29) {
-        animateText("Humanity", "Automation")
+        shuffleLetters("Humanity", "Automation")
         animateCarousel(image3.value)
     }
 
     if(Math.floor(state.scrollHeight) == 30) {
-        animateText("Impossibility", "Opportunity")
+        shuffleLetters("Impossibility", "Opportunity")
         animateCarousel(image4.value)
     }
 
-    // Selon le scrollHeight, les divs seront en display:none ou display: block
-    if(Math.floor(state.scrollHeight) >= 45) {
+    if(Math.floor(state.scrollHeight) == 40) {
+        console.log("test")
+        animateInteractiveText()
+        // interactive_text.style.opacity = opacity.toFixed(2)
+    }
 
-        // INCLUDE ANIMATION THAT GOES THAT GOES TO OPACITY 0 AND DISPLAY NONE
-        // PLUS A REVERSE ANIMATION
-
+    // Selon le scrollHeight, les divs seront en display:none ou display: block/flex
+    if(Math.floor(state.scrollHeight) >= 50) {
         robot_carousel.value.style.setProperty('display', 'none', 'important')
         interactive_text.value.style.setProperty('display', 'none', 'important')
-        console.log(interactive_text.value.style.display)
 
     } else {
-        robot_carousel.value.style.display = "flex"
-        interactive_text.value.style.display = "flex"
+        robot_carousel.value.style.setProperty('display', 'block', 'important')
+        interactive_text.value.style.setProperty('display', 'flex', 'important')
     }
 }
-
-// Scroll_bar
-
-// La fonction reactive permet que la valeur du scrollHeight soit réactive et donc dynamise le code qui utilise cette propriété
-const state = reactive({
-    scrollHeight: 0
-})
-
-let scroll_position = 0
-let scroll_direction = 0
-
-// Fonction qui encapsule la position en % du scrollHeight de "window"
-function updateScrollLine(e) {
-    const window_top = window.pageYOffset
-    const doc_height = document.documentElement.scrollHeight
-    const window_height = window.innerHeight
-    const scrolled = (window_top / (doc_height - window_height)) * 100
-
-    state.scrollHeight = scrolled
-
-    // Vérifie la direction du scroll et écrase la valeur du scroll_position pour le doc_height
-    scroll_direction = doc_height - scroll_position
-    scroll_position = doc_height
-}
-
 
 const root = {
     setup() {

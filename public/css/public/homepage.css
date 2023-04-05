@@ -125,8 +125,8 @@ main #intro_header .container #festival_tagline {
   }
 }
 main #intro_main {
-  height: 10813.7px !important;
-  padding-bottom: 10360px;
+  height: 12500px !important;
+  padding-bottom: 12000px;
   overflow: hidden;
 }
 main #intro_main #robot_carousel {
@@ -169,6 +169,8 @@ main #intro_main #interactive_text {
   position: fixed;
   bottom: 10%;
   left: 50%;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
   transform: translateX(-50%);
   width: 292.5px;
   z-index: 1033;
@@ -235,6 +237,14 @@ main #intro_main #interactive_text .span_3 {
 main #intro_main #interactive_text .span_3 {
   border-left: 2px solid var(--white);
   padding-left: 3rem;
+}
+@keyframes interactive_text {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 main p {
   max-width: none;

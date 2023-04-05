@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 @props(['id', 'iteration'])
 
 @if (session('connexion-cart'))
-=======
-@props(['user_id'])
-
-@if(session('connexion-cart'))
->>>>>>> JacDev
     <div id="message_modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -29,14 +23,6 @@
     </div>
 @endif
 
-<<<<<<< HEAD
-=======
-@if (session('user-blocked'))
-    <div id="message_modal" class="modal fade" tabindex="-1" aria-labelledby="unblockUserModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="popup_message modal-body d-flex flex-no-wrap align-items-center justify-content-between">
->>>>>>> JacDev
 
 {{-- <div id="{{ $iteration }}" class="modal fade" tabindex="-1" aria-labelledby="unblockUserModalLabel"
     aria-hidden="true">
@@ -57,8 +43,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 </div> --}}
-=======
-@endif
->>>>>>> JacDev
