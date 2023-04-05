@@ -50,7 +50,7 @@
 
         </section>
 
-        <section id="scroll_down">
+        <section id="scroll_down" ref="scroll_down_cta">
             <div class="scroll_down_text container text-center">
                 <p>SCROLL TO GET A <span>GLIMPSE</span></p>
                 <div class="d-flex align-items-center justify-content-center">
