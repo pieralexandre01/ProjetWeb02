@@ -47,7 +47,7 @@ header {
         height: 2px;
         max-width: 100vw;
         position: fixed;
-        z-index: 1031;
+        z-index: 1036;
     }
 
     nav {
@@ -93,7 +93,7 @@ main {
 
         &.skip_animation {
             opacity: 0;
-            z-index: -1;
+            z-index: -2;
         }
 
         @keyframes bg_color {
@@ -290,6 +290,7 @@ main {
                     bottom: -25px;
                     left: 1px;
                     transform: translateX(-50%);
+                    z-index: 2;
 
                     @keyframes arrow_down {
                         0% {

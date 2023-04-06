@@ -42,7 +42,7 @@ header #scroll_indicator {
   height: 2px;
   max-width: 100vw;
   position: fixed;
-  z-index: 1031;
+  z-index: 1036;
 }
 header nav {
   z-index: 1035 !important;
@@ -82,7 +82,7 @@ main #intro_header {
 }
 main #intro_header.skip_animation {
   opacity: 0;
-  z-index: -1;
+  z-index: -2;
 }
 @keyframes bg_color {
   0% {
@@ -258,6 +258,7 @@ main #intro_main #interactive_text .line_decoration2 .arrow_down {
   bottom: -25px;
   left: 1px;
   transform: translateX(-50%);
+  z-index: 2;
 }
 @keyframes arrow_down {
   0% {

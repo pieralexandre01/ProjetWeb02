@@ -20,7 +20,7 @@ nav .nav_logo .logo .title_reflection {
   font-size: clamp(1.25rem, 3vw, 3rem);
   direction: rtl;
   letter-spacing: 0.25rem;
-  text-indent: -0.15rem;
+  text-indent: -0.25rem;
 }
 nav .nav_logo .logo .title {
   line-height: 55%;

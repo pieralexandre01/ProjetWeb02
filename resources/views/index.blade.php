@@ -179,7 +179,7 @@
                         </div>
 
                         <div class="button_space">
-                            <a href="{{ route('about') }}"
+                            <a href="{{ route('packages') }}"
                                 class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
 
@@ -246,7 +246,7 @@
                         </div>
 
                         <div class="button_space">
-                            <a href="{{ route('about') }}"
+                            <a href="{{ route('activities') }}"
                                 class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                         </div>
 
                         <div class="button_space">
-                            <a href="{{ route('about') }}"
+                            <a href="{{ route('articles') }}"
                                 class="general_button d-block d-md-inline-block text-center mt-5 mt-md-0">read more</a>
                         </div>
                     </div>
