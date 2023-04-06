@@ -31,6 +31,7 @@
                             <input id="first_name" name="first_name" type="text">
                             <x-msg-error field="first_name" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="last_name" class="mb-1">LAST NAME</label>
                             <input id="last_name" name="last_name" type="text">
@@ -50,6 +51,7 @@
                             <input id="password" name="password" type="password">
                             <x-msg-error field="password" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="password_confirm" class="mb-1">CONFIRM PASSWORD</label>
                             <input id="password_confirm" name="password_confirm" type="password">

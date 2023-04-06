@@ -17,6 +17,7 @@ main {
 
     .form-container {
         form {
+
             input[type=datetime-local],
             input[type=password],
             input[type=text],
@@ -128,8 +129,8 @@ main {
 }
 
 footer {
-     height: 45px !important;
-     position: static;
+    height: 45px !important;
+    position: static;
 
     #copyright {
         padding-bottom: 15px;
@@ -138,8 +139,9 @@ footer {
 
 // MEDIA QUERIES ----------
 @media only screen and (min-width: 1400px) {
+
     input[type=password],
-        input[type=text] {
+    input[type=text] {
         width: max(18.75rem, 100%);
     }
 }
@@ -153,6 +155,7 @@ footer {
 @media only screen and (min-width: 576px) {
     .form-container {
         form {
+
             input[type=password],
             input[type=text] {
                 padding-inline: 1.5em;

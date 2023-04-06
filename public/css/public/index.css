@@ -19,6 +19,18 @@
   background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
+.instagram_icon:hover {
+  background-image: url("../../media/icons/instagram_hover_pink.svg") !important;
+}
+
+.facebook_icon:hover {
+  background-image: url("../../media/icons/facebook_hover_pink.svg") !important;
+}
+
+.discord_icon:hover {
+  background-image: url("../../media/icons/discord_hover_pink.svg") !important;
+}
+
 .skip_animation {
   animation-name: none;
   animation-duration: 1ms !important;
@@ -240,6 +252,8 @@ main #intro_main #interactive_text .line_decoration2 {
   top: 0px;
 }
 main #intro_main #interactive_text .line_decoration2 .arrow_down {
+  height: auto;
+  width: auto;
   position: absolute;
   bottom: -25px;
   left: 1px;

@@ -3,18 +3,29 @@
     <div class="wrapper w-100">
         <div class="marquee">
             <span class="p-0">
-                <span class="dark_pink"> discover</span> . connect . <span class="dark_blue">engage</span> . innovate . <span class="dark_pink">experience</span> . learn . <span class="dark_blue">revolutionize</span> . design . <span class="dark_pink">inspire</span> . evolve . <span class="dark_blue">imagine</span> . explore . <span class="dark_pink">transform</span> . visualize . <span class="dark_blue">create</span> . invent .
+                <span class="dark_pink"> discover</span> . connect . <span class="dark_blue">engage</span> . innovate .
+                <span class="dark_pink">experience</span> . learn . <span class="dark_blue">revolutionize</span> . design
+                . <span class="dark_pink">inspire</span> . evolve . <span class="dark_blue">imagine</span> . explore .
+                <span class="dark_pink">transform</span> . visualize . <span class="dark_blue">create</span> . invent .
             </span>
+
             <span class="p-0">
-                <span class="dark_pink"> discover</span> . connect . <span class="dark_blue">engage</span> . innovate . <span class="dark_pink">experience</span> . learn . <span class="dark_blue">revolutionize</span> . design . <span class="dark_pink">inspire</span> . evolve . <span class="dark_blue">imagine</span> . explore . <span class="dark_pink">transform</span> . visualize . <span class="dark_blue">create</span> . invent .
+                <span class="dark_pink"> discover</span> . connect . <span class="dark_blue">engage</span> . innovate .
+                <span class="dark_pink">experience</span> . learn . <span class="dark_blue">revolutionize</span> .
+                design . <span class="dark_pink">inspire</span> . evolve . <span class="dark_blue">imagine</span> .
+                explore . <span class="dark_pink">transform</span> . visualize . <span class="dark_blue">create</span> .
+                invent .
             </span>
         </div>
     </div>
 
-    <div class="social_media_icons">
-        <a href="https://www.instagram.com" class="icon"><img src="{{ asset('media/icons/instagram.svg') }}" alt="Instagram icon"></a>
-        <a href="https://www.facebook.com" class="icon mx-5"><img src="{{ asset('media/icons/facebook.svg') }}" alt="Facebook icon"></a>
-        <a href="https://discord.com" class="icon"><img src="{{ asset('media/icons/discord.svg') }}" alt="Discord icon"></a>
+    <div class="social_media_icons d-flex flex-nowrap justify-content-center">
+        <a href="https://www.instagram.com" class="instagram_icon"><img src="{{ asset('media/icons/instagram.svg') }}"
+                alt="Instagram icon"></a>
+        <a href="https://www.facebook.com" class="facebook_icon ms-5 me-4"><img
+                src="{{ asset('media/icons/facebook.svg') }}" alt="Facebook icon"></a>
+        <a href="https://discord.com" class="discord_icon"><img src="{{ asset('media/icons/discord.svg') }}"
+                alt="Discord icon"></a>
     </div>
 
     <section id="footer_nav" class="container">

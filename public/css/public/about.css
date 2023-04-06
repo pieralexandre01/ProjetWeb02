@@ -17,6 +17,18 @@
   background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
 }
 
+.instagram_icon:hover {
+  background-image: url("../../media/icons/instagram_hover_blue.svg") !important;
+}
+
+.facebook_icon:hover {
+  background-image: url("../../media/icons/facebook_hover_blue.svg") !important;
+}
+
+.discord_icon:hover {
+  background-image: url("../../media/icons/discord_hover_blue.svg") !important;
+}
+
 main img {
   margin-bottom: 1.875rem;
 }/*# sourceMappingURL=about.css.map */

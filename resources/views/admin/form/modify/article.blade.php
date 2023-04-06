@@ -33,6 +33,7 @@
                             <input name="title" type="text" value="{{ $article->title }}">
                             <x-msg-error field="title" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="category" class="mb-1">CATEGORY</label>
                             <select name="category" class="category">

@@ -31,6 +31,7 @@
                             <input name="title" type="text">
                             <x-msg-error field="title" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="subcategory" class="mb-1">SUBCATEGORY</label>
                             <input name="subcategory" type="text">

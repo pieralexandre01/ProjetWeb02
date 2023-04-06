@@ -23,6 +23,7 @@
                             <input id="first_name" name="first_name" type="text">
                             <x-msg-error field="first_name" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="last_name" class="mb-1">LAST NAME</label>
                             <input id="last_name" name="last_name" type="text">
@@ -42,6 +43,7 @@
                             <input id="password" name="password" type="password">
                             <x-msg-error field="password" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="password_confirm" class="mb-1">CONFIRM PASSWORD</label>
                             <input id="password_confirm" name="password_confirm" type="password">
@@ -58,8 +60,11 @@
                     </span>
                 @enderror
 
-                <p class="mt-3 text-center"><span class="d-none d-md-inline-block">already</span> have an account? <a
-                        href="{{ route('login') }}" class="text_link">login!</a></p>
+                <p class="mt-3 text-center">
+                    <span class="d-none d-md-inline-block">already&nbsp;</span>
+                    have an account?
+                    <a href="{{ route('login') }}" class="text_link">login!</a>
+                </p>
             </div>
 
             <img src="{{ asset('/../media/images/account_create.png') }}" class="d-none d-xxl-block ps-xxl-5 ms-xxl-5"

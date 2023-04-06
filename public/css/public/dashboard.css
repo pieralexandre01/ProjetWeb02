@@ -17,6 +17,18 @@
   background-image: url("../../media/icons/user_icon_turquoise_connected_hover.svg") !important;
 }
 
+.instagram_icon:hover {
+  background-image: url("../../media/icons/instagram_hover_turquoise.svg") !important;
+}
+
+.facebook_icon:hover {
+  background-image: url("../../media/icons/facebook_hover_turquoise.svg") !important;
+}
+
+.discord_icon:hover {
+  background-image: url("../../media/icons/discord_hover_turquoise.svg") !important;
+}
+
 main .container {
   padding-inline: 20px;
 }

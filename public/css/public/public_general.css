@@ -57,6 +57,8 @@ nav .user_icon {
   background: none;
   background-image: url("../../media/icons/user_icon.svg");
   border: none;
+  height: auto;
+  width: auto;
   padding: 0;
 }
 nav .user_icon img {
@@ -195,11 +197,37 @@ footer .marquee span .dark_blue {
 footer .social_media_icons {
   margin-block: 15vh;
 }
-footer .social_media_icons img {
-  max-height: 35px;
+footer .social_media_icons .instagram_icon img,
+footer .social_media_icons .facebook_icon img,
+footer .social_media_icons .discord_icon img {
+  height: 48px;
+  width: 48px;
 }
 footer #footer_nav {
   padding-bottom: 9vh;
+}
+
+.social_media_icons .instagram_icon,
+.social_media_icons .facebook_icon,
+.social_media_icons .discord_icon {
+  background: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+}
+.social_media_icons .instagram_icon img,
+.social_media_icons .facebook_icon img,
+.social_media_icons .discord_icon img {
+  opacity: 0;
+}
+.social_media_icons .instagram_icon {
+  background-image: url("../../media/icons/instagram.svg");
+}
+.social_media_icons .facebook_icon {
+  background-image: url("../../media/icons/facebook.svg");
+}
+.social_media_icons .discord_icon {
+  background-image: url("../../media/icons/discord.svg");
 }
 
 @media only screen and (min-width: 2200px) {

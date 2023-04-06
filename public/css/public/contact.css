@@ -17,14 +17,28 @@
   background-image: url("../../media/icons/user_icon_blue_connected_hover.svg") !important;
 }
 
+.instagram_icon:hover {
+  background-image: url("../../media/icons/instagram_hover_blue.svg") !important;
+}
+
+.facebook_icon:hover {
+  background-image: url("../../media/icons/facebook_hover_blue.svg") !important;
+}
+
+.discord_icon:hover {
+  background-image: url("../../media/icons/discord_hover_blue.svg") !important;
+}
+
 main .container {
   overflow-x: hidden;
 }
 main .container .border_box {
   padding-inline: 0px;
 }
+main .container .social_media_icons a,
 main .container .social_media_icons img {
   max-height: 30px;
+  min-width: 30px;
 }
 main .container .address {
   background-image: url("../../media/images/contact_us_mobile.png");

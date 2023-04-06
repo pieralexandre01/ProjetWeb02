@@ -16,11 +16,16 @@
                 <span>
                     <a href="{{ route('articles') }}">articles</a>
                 </span>
+
                 <span class="mx-1 mx-lg-2">></span>
+
                 <span>
-                    <a href="{{ route('articles') }}#{{ $article->category->name_reference }}">{{ $article->category->name }}</a>
+                    <a
+                        href="{{ route('articles') }}#{{ $article->category->name_reference }}">{{ $article->category->name }}</a>
                 </span>
+
                 <span class="mx-1 mx-lg-2">></span>
+
                 <span class="current_article">
                     {{ Str::words($article->title, 2) }}
                 </span>
@@ -28,8 +33,8 @@
         </div>
 
         <div class="content container px-4">
-
             <div class="d-flex flex-column">
+
                 <div class="d-flex flex-column">
                     <div class="d-flex flex-column">
                         <h3 class="text-end ms-5 ps-5">{{ $article->title }}</h3>
@@ -37,11 +42,12 @@
                         <div class="d-flex mt-3 mb-2 text-start">
                             <span class="hr d-flex flex-column flex-sm-row">
                                 <span>by {{ $article->author }}</span>
+
                                 <span class="date ms-sm-5">{{ $article->date_creation }}</span>
                             </span>
                         </div>
-
                     </div>
+
                     <div>
                         <span class="pill_box">
                             <span class="category_tag">{{ $article->category->name }}</span>
@@ -51,7 +57,6 @@
 
                 <p class="mb-0 mt-5">{!! $article->formatted_text !!}</p>
             </div>
-
         </div>
 
         <section class="suggestions container">
@@ -59,29 +64,28 @@
 
             <div class="d-flex flex-column flex-xxl-row justify-content-xxl-between">
                 @foreach ($more_articles as $article)
+                    <div
+                        class="article_suggestion border_box mobile_frame d-flex flex-column justify-content-between py-5">
 
-                <div class="article_suggestion border_box mobile_frame d-flex flex-column justify-content-between py-5">
+                        <h3 lang="en" class="article_suggestion_title mb-4 text-end">{{ $article->title }}</h3>
 
-                    <h3 lang="en" class="article_suggestion_title mb-4 text-end">{{ $article->title }}</h3>
+                        <div>
+                            <div class="mt-3">
+                                <p class="my-0">
+                                    <span class="hr">by {{ $article->author }}</span>
+                                </p>
+                            </div>
 
-                    <div>
-                        <div class="mt-3">
-                            <p class="my-0">
-                                <span class="hr">by {{ $article->author }}</span>
-                            </p>
+                            <p class="date">{{ $article->date_creation }}</p>
+
+                            <p class="mb-0">{{ Str::limit($article->summary, 120) }}</p>
+
+                            <div class=" mt-5">
+                                <a href="{{ route('article', $article->id) }}" class="general_button">read more</a>
+                            </div>
                         </div>
 
-                        <p class="date">{{ $article->date_creation }}</p>
-
-                        <p class="mb-0">{{ Str::limit($article->summary, 120) }}</p>
-
-                        <div class=" mt-5">
-                            <a href="{{ route('article', $article->id) }}" class="general_button">read more</a>
-                        </div>
                     </div>
-
-                 </div>
-
                 @endforeach
             </div>
         </section>
@@ -91,4 +95,3 @@
     <x-public.footer />
 
 </x-public.layout>
-

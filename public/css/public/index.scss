@@ -1,10 +1,12 @@
 :root {
     --color: var(--dark-pink);
     --color-hover: var(--vivid-pink);
+    // Calculer le VW sans l'espacement réserver pour le scrollbar du navigateur
     --viewport-width: calc(100vw - (100vw - 100%));
     --50vw: calc((100vw - (100vw - 100%)) / 2);
 }
 
+// Comme sur toutes les pages, les images représentants la thématique de couleur appropriée
 .user_icon:hover,
 .user_icon:focus {
     background-image: url("../../media/icons/user_icon_pink.svg");
@@ -19,11 +21,25 @@
     background-image: url("../../media/icons/user_icon_pink_connected_hover.svg") !important;
 }
 
+.instagram_icon:hover {
+    background-image: url("../../media/icons/instagram_hover_pink.svg") !important;
+}
+
+.facebook_icon:hover {
+    background-image: url("../../media/icons/facebook_hover_pink.svg") !important;
+}
+
+.discord_icon:hover {
+    background-image: url("../../media/icons/discord_hover_pink.svg") !important;
+}
+
 .skip_animation {
     animation-name: none;
     animation-duration: 1ms !important;
     animation-fill-mode: forwards !important;
 }
+
+// Les z-index qui ont une valeur de plus de 1030 sont pour écraser les z-index imposés par Bootstrap
 
 header {
     #scroll_indicator {
@@ -56,7 +72,6 @@ header {
                 top: 40vh;
                 transform: translate(-50%) scale(1.2);
             }
-
             100% {
                 left: 20px;
                 top: 35px;
@@ -82,7 +97,7 @@ main {
         }
 
         @keyframes bg_color {
-            0%{
+            0% {
                 opacity: 1;
             }
             100% {
@@ -204,17 +219,19 @@ main {
                     left: 100vw;
                     opacity: 0;
                     transform: translate(-50%, -50%) rotateZ(0deg) scale(0.4) rotateZ(0deg);
-                 }
-                 50% {
+                }
+
+                50% {
                     left: 50vw;
                     opacity: 1;
                     transform: translate(-50%, -50%) rotateZ(180deg) scale(1) rotateZ(-180deg);
-                 }
-                 100% {
+                }
+
+                100% {
                     left: 0vw;
                     opacity: 0;
                     transform: translate(-50%, -50%) rotateZ(360deg) scale(0.4) rotateZ(-360deg);
-                 }
+                }
             }
         }
 
@@ -267,6 +284,8 @@ main {
                 top: 0px;
 
                 .arrow_down {
+                    height: auto;
+                    width: auto;
                     position: absolute;
                     bottom: -25px;
                     left: 1px;
@@ -277,11 +296,11 @@ main {
                             position: absolute;
                             bottom: -25px;
                         }
+
                         100% {
                             position: absolute;
                             bottom: -50px;
                         }
-
                     }
                 }
             }
@@ -355,6 +374,7 @@ main {
         }
     }
 
+    // Permet l'option de faire une animation avec 3 divs si voulu
     #interact_divider>div:first-child {
         display: block !important;
     }
@@ -406,6 +426,7 @@ main {
                 line-height: normal;
             }
 
+            // Pour donner un effet dégradé animé au texte
             .dark_pink,
             .dark_blue,
             .white {
@@ -422,13 +443,14 @@ main {
                     from {
                         background-position: 0% center;
                     }
+
                     to {
                         background-position: -200% center;
                     }
                 }
             }
 
-            .dark_pink{
+            .dark_pink {
                 background-image: linear-gradient(to right, var(--dark-pink), var(--vivid-pink), var(--dark-pink));
                 font-weight: 500;
             }
@@ -453,6 +475,7 @@ main {
             line-height: normal;
         }
 
+        // Pour donner un effet dégradé animé au texte
         .grey_effect,
         .rainbow_effect {
             -webkit-user-select: none;
@@ -468,6 +491,7 @@ main {
                 from {
                     background-position: 0% center;
                 }
+
                 to {
                     background-position: -200% center;
                 }
@@ -493,7 +517,7 @@ main {
             white-space: nowrap;
 
             span {
-                font-weight : 400;
+                font-weight: 400;
             }
         }
 
@@ -513,14 +537,17 @@ main {
             opacity: 0;
             transform: translate(-50%, -0%) scale(0);
         }
+
         40% {
             opacity: 1;
             transform: translate(-50%, -45%) scale(1);
         }
+
         60% {
             opacity: 1;
             transform: translate(-50%, -45%) scale(1);
         }
+
         100% {
             opacity: 0;
             transform: translate(-50%, -100%) scale(0);
@@ -555,6 +582,7 @@ main {
                 opacity: 0;
                 transform: translate(-50%, -0%) scale(0);
             }
+
             100% {
                 opacity: 1;
                 transform: translate(-50%, -50%) scale(1);
@@ -586,13 +614,13 @@ main {
 
 
 @media only screen and (min-width: 576px) {
+
     section#about,
     section#packages,
     section#activities,
     section#tech_talks {
         padding-inline: 60px !important;
     }
-
 
     #experience_divider,
     #interact_divider,
@@ -662,7 +690,6 @@ main {
     }
 
     main {
-
         #intro_header {
             .skip_button {
                 position: absolute;
@@ -670,6 +697,7 @@ main {
                 right: 5vw;
             }
         }
+
         #intro_main {
             #robot_carousel {
                 .animate_img {
@@ -744,6 +772,7 @@ main {
             transform: skewY(-5deg);
 
             .divider_img {
+                // Pour couper l'image au bon endroit pour bien entrer dans le parent qui a un transform skewY() de 5 degré
                 clip-path: polygon(0% 9%, 100% 0%, 100% 91%, 0% 100%);
                 transform: skewY(5deg);
             }
@@ -753,6 +782,7 @@ main {
 
                 .divider_text {
                     padding-bottom: 3em;
+                    //La hauteur désirée
                     padding-left: 464.79px;
                     padding-right: 20px;
                     transform: skewY(5deg);
@@ -828,6 +858,7 @@ main {
             #interactive_text {
                 position: fixed;
                 left: 7.45% !important;
+                // Calcul pour respecter une distance désirée
                 width: calc((100vw - (100vw - 100%) - 50vw) - 9.45%);
             }
         }
@@ -863,6 +894,7 @@ main {
     main {
         #intro_main {
             #interactive_text {
+                // Calcul pour garder un espace minimum adaptatif à 3rem
                 .span_3 {
                     padding-left: clamp(1rem + 3rem, 9.5vw + 3rem, 185px + 3rem);
                 }

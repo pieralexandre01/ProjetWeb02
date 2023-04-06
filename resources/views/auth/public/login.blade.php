@@ -4,7 +4,7 @@
 
     <x-public.header :page="$page" />
 
-    <x-modal-messages />
+    <x-public.modal-message />
 
     <main class="d-flex align-items-center">
 
@@ -18,21 +18,26 @@
 
                 <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start mt-4">
                     @csrf
+
                     <div class="d-flex flex-column mb-5 w-100">
                         <label for="email" class="mb-1">E-MAIL</label>
                         <input id="email" name="email" type="text">
                         <x-msg-error field="email" />
                     </div>
+
                     <div class="d-flex flex-column mb-5 w-100">
                         <label for="password" class="mb-1">PASSWORD</label>
                         <input id="password" name="password" type="password">
                         <x-msg-error field="password" />
                     </div>
+
                     <input type="submit" class="align-self-center" value="submit">
                 </form>
 
-                <p class="mt-4 text-center">don't have an account? <a href="{{ route('account-create') }}"
-                        class="text_link">create one!</a></p>
+                <p class="mt-4 text-center">
+                    don't have an account?&nbsp;
+                    <a href="{{ route('account-create') }}" class="text_link">create one!</a>
+                </p>
             </div>
 
             <img src="{{ asset('/../media/images/login.png') }}" class="d-none d-lg-block ps-lg-5 ms-lg-5"

@@ -6,3 +6,4 @@
 
 {{-- Exemple d'utilisation : --}}
 {{-- <x-msg-error field="email" /> --}}
+

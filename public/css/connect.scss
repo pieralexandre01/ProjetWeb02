@@ -15,6 +15,7 @@ main {
     .container {
         .form-container {
             form {
+
                 input[type=text],
                 input[type=password],
                 input[type=submit] {
@@ -58,11 +59,12 @@ main {
 }
 
 footer {
-     height: 45px !important;
+    height: 45px !important;
 }
 
 // MEDIA QUERIES ----------
 @media only screen and (min-width: 1400px) {
+
     input[type=text],
     input[type=password] {
         width: max(18.75rem, 100%);
@@ -78,6 +80,7 @@ footer {
 @media only screen and (min-width: 576px) {
     .form-container {
         form {
+
             input[type=password],
             input[type=text] {
                 padding-inline: 1.5em;

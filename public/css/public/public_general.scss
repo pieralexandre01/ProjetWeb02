@@ -74,6 +74,8 @@ nav {
         background: none;
         background-image: url("../../media/icons/user_icon.svg");
         border: none;
+        height: auto;
+        width: auto;
         padding: 0;
 
         img {
@@ -211,7 +213,6 @@ footer {
         overflow: hidden;
     }
 
-
     // Animation horizontale des mots en haut du footer
     .marquee {
         animation: marquee 20s linear infinite;
@@ -223,6 +224,7 @@ footer {
             0% {
                 transform: translateX(calc(-100% + 100vw));
             }
+
             100% {
                 transform: translateX(-17.5%);
             }
@@ -247,13 +249,46 @@ footer {
     .social_media_icons {
         margin-block: 15vh;
 
-        img {
-            max-height: 35px;
+        .instagram_icon,
+        .facebook_icon,
+        .discord_icon {
+            img {
+                height: 48px;
+                width: 48px;
+            }
         }
     }
 
     #footer_nav {
         padding-bottom: 9vh;
+    }
+}
+
+.social_media_icons {
+
+    .instagram_icon,
+    .facebook_icon,
+    .discord_icon {
+        background: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+
+        img {
+            opacity: 0;
+        }
+    }
+
+    .instagram_icon {
+        background-image: url("../../media/icons/instagram.svg");
+    }
+
+    .facebook_icon {
+        background-image: url("../../media/icons/facebook.svg");
+    }
+
+    .discord_icon {
+        background-image: url("../../media/icons/discord.svg");
     }
 }
 
@@ -273,7 +308,7 @@ footer {
     nav {
         padding-inline: 5vw;
 
-        .nav_logo{
+        .nav_logo {
             padding-inline: 2vw;
         }
     }

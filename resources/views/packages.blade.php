@@ -32,7 +32,6 @@
                         </div>
 
                         <div class="col-12 col-lg-8 @if ($package->id % 2 == 1) pe-lg-5 @else ps-lg-5 @endif">
-
                             <h2 class="ps-4">{{ $package->title }}</h2>
 
                             <div class="title_decoration mb-5">
@@ -45,9 +44,12 @@
                                 <div class="price">
                                     <p>*$ {{ $package->price }}</p>
                                 </div>
+
                                 <form action="{{ route('package-addtocart', $package->id) }}" method="post">
                                     @csrf
+
                                     <input type="hidden" name="package_id" value="{{ $package->id }}">
+
                                     <div class="d-flex align-items-center">
 
                                         @if (now() < $package->end_date)
@@ -57,19 +59,23 @@
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                             </select>
+
                                             <span class="ms-3"><input type="submit" value="reserve"></span>
                                         @else
                                             <p class="m-0 festival_over">the festival is over</p>
+
                                             <span class="ms-3"><input class="disabled" type="submit" disabled
                                                     value="reserve"></span>
                                         @endif
 
                                     </div>
                                 </form>
+
                             </div>
                         </div>
 
                     </div>
+
                 </section>
             @endforeach
 

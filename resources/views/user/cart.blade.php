@@ -17,10 +17,9 @@
 
             <x-msg-session key="package-cart-delete" class-name="success text-start" />
 
-
             @if (!empty($cart))
-
                 <hr class="pb-3">
+
                 @foreach ($cart as $counter => $package)
                     <div class="d-flex justify-content-between py-3">
 
@@ -51,14 +50,13 @@
                 <a class="general_button me-2 d-inline-block w-auto mb-4" href="{{ route('packages') }}">check out our
                     packages</a>
                 <a class="general_button" href="{{ route('activities') }}">check out our activities</a>
+
             @endif
 
         </div>
     </main>
 
-
     <x-public.footer />
-
 
     <x-slot name="scripts">
         <script>

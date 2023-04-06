@@ -21,7 +21,8 @@
 
                 <h3 class="text-center mt-sm-3">EDIT AN ACTIVITY</h3>
 
-                <form action="{{ route('activity-update', $activity->id) }}" method="post" enctype="multipart/form-data"
+                <form action="{{ route('activity-update', $activity->id) }}" method="post"
+                    enctype="multipart/form-data"
                     class="d-flex flex-column align-items-start gap-2 gap-md-0 w-100 mt-3 mt-sm-4">
                     @csrf
 
@@ -31,6 +32,7 @@
                             <input name="title" type="text" value="{{ $activity->title }}">
                             <x-msg-error field="title" />
                         </div>
+
                         <div class="d-flex flex-column w-100">
                             <label for="subcategory" class="mb-1">SUBCATEGORY</label>
                             <input name="subcategory" type="text" value="{{ $activity->subcategory }}">
@@ -41,7 +43,8 @@
                     <div class="d-flex flex-column flex-md-row align-items-start gap-2 gap-md-5 mb-md-3 mb-lg-4 w-100">
                         <div class="d-flex flex-column w-100">
                             <label for="date" class="mb-1">DATE</label>
-                            <input type="datetime-local" name="date" class="custom-file-datetime" value="{{ $activity->date }}">
+                            <input type="datetime-local" name="date" class="custom-file-datetime"
+                                value="{{ $activity->date }}">
                             <x-msg-error field="date" />
                         </div>
 

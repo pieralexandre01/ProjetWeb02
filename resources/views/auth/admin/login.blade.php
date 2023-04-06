@@ -16,16 +16,19 @@
 
                 <form action="{{ route('login') }}" method="post" class="d-flex flex-column align-items-start mt-5">
                     @csrf
+
                     <div class="d-flex flex-column mb-5 w-100">
                         <label for="email" class="mb-1">E-MAIL</label>
                         <input id="email" name="email" type="text">
                         <x-msg-error field="email" />
                     </div>
+
                     <div class="d-flex flex-column mb-5 w-100">
                         <label for="password" class="mb-1">PASSWORD</label>
                         <input id="password" name="password" type="password">
                         <x-msg-error field="password" />
                     </div>
+
                     <input type="submit" class="align-self-center" value="submit">
                 </form>
 

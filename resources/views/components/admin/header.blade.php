@@ -5,7 +5,7 @@
             <li class="li_space me-3">
                 <a href="{{ route('homepage') }}" class="d-flex flex-nowrap align-items-center" aria-current="page">
                     <div class="return_icon">
-                        <img src="{{ asset('media/icons/return.svg') }}"  alt="Return-arrow icon">
+                        <img src="{{ asset('media/icons/return.svg') }}" alt="Return-arrow icon">
                     </div>
                     <div class="admin_link ps-3">public homepage</div>
                 </a>
