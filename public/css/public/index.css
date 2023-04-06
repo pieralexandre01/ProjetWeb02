@@ -20,6 +20,7 @@
 }
 
 .skip_animation {
+  animation-name: none;
   animation-duration: 1ms !important;
   animation-fill-mode: forwards !important;
 }
@@ -69,6 +70,7 @@ main #intro_header {
 }
 main #intro_header.skip_animation {
   opacity: 0;
+  z-index: -1;
 }
 @keyframes bg_color {
   0% {
@@ -159,8 +161,8 @@ main #intro_header .skip_button.skip_animation {
   cursor: default !important;
 }
 main #intro_main {
-  height: 18000px !important;
-  padding-bottom: 17500px;
+  height: 17500px !important;
+  padding-bottom: 17000px;
   overflow: hidden;
 }
 main #intro_main #robot_carousel {
@@ -276,7 +278,7 @@ main section#packages,
 main section#activities,
 main section#tech_talks {
   padding-inline: 20px;
-  padding-top: 720px !important;
+  padding-top: 360px !important;
 }
 main section#about p,
 main section#packages p,
@@ -322,6 +324,19 @@ main #interact_divider span,
 main #discover_divider span {
   font-weight: 500;
   line-height: normal !important;
+}
+main #interact_divider > div:first-child {
+  display: block !important;
+}
+main #interact_divider > div:nth-child(2) {
+  display: none !important;
+  position: static;
+  top: -100%;
+}
+main #interact_divider > div:last-child {
+  display: none !important;
+  position: static;
+  top: -200%;
 }
 main #interact_divider {
   --color: var(--dark-turquoise);
@@ -585,6 +600,12 @@ main #immerse_text .glow_effect {
   main #intro_main #interactive_text .span_2,
   main #intro_main #interactive_text .span_3 {
     padding-left: 3rem;
+  }
+  main section#about,
+  main section#packages,
+  main section#activities,
+  main section#tech_talks {
+    padding-top: 720px !important;
   }
   main section#about .button_space,
   main section#packages .button_space,

@@ -20,6 +20,7 @@
 }
 
 .skip_animation {
+    animation-name: none;
     animation-duration: 1ms !important;
     animation-fill-mode: forwards !important;
 }
@@ -77,6 +78,7 @@ main {
 
         &.skip_animation {
             opacity: 0;
+            z-index: -1;
         }
 
         @keyframes bg_color {
@@ -180,14 +182,13 @@ main {
     }
 
     #intro_main {
-        height: 18000px !important;
-        padding-bottom: 17500px;
+        height: 17500px !important;
+        padding-bottom: 17000px;
         overflow: hidden;
 
         #robot_carousel {
             height: clamp(40vh, 50vh, 60vh);
             position: relative;
-
 
             .animate_img {
                 max-height: 40vh;
@@ -199,7 +200,6 @@ main {
             }
 
             @keyframes robot_carousel {
-
                 0% {
                     left: 100vw;
                     opacity: 0;
@@ -315,7 +315,7 @@ main {
     section#activities,
     section#tech_talks {
         padding-inline: 20px;
-        padding-top: 720px !important;
+        padding-top: 360px !important;
 
         p {
             max-width: 800px !important;
@@ -353,6 +353,22 @@ main {
             font-weight: 500;
             line-height: normal !important;
         }
+    }
+
+    #interact_divider>div:first-child {
+        display: block !important;
+    }
+
+    #interact_divider>div:nth-child(2) {
+        display: none !important;
+        position: static;
+        top: -100%;
+    }
+
+    #interact_divider>div:last-child {
+        display: none !important;
+        position: static;
+        top: -200%;
     }
 
     #interact_divider {
@@ -568,6 +584,7 @@ main {
     }
 }
 
+
 @media only screen and (min-width: 576px) {
     section#about,
     section#packages,
@@ -686,6 +703,8 @@ main {
         section#packages,
         section#activities,
         section#tech_talks {
+            padding-top: 720px !important;
+
             .button_space {
                 width: auto !important;
             }
@@ -851,7 +870,3 @@ main {
         }
     }
 }
-
-
-
-

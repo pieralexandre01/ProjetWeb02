@@ -20,6 +20,7 @@ html {
     min-height: 100vh;
     position: relative;
     scroll-behavior: smooth;
+    // Centrer le contenu en ne pas prenant compte de la largeur du scrollbar du browser
     width: calc(100vw - (100vw - 100%));
 
     ul {
@@ -28,6 +29,7 @@ html {
         margin: 0;
     }
 
+    // Stylization de l'outil de sélection
     ::-moz-selection {
         background: var(--white);
         color: var(--bg-color);
@@ -39,6 +41,7 @@ html {
     }
 }
 
+// Pop-ups
 .modal-content {
     background-color: var(--dark-turquoise) !important;
 }
@@ -55,7 +58,7 @@ html {
     }
 }
 
-// TYPOGRAPHY
+// Typographie
 h1 {
     font-family: "ethnocentric", sans-serif;
     font-size: 2rem;
@@ -133,6 +136,7 @@ textarea {
     margin-bottom: 1.875rem;
 }
 
+// Classes pour les messages erreur + succès
 .error {
     color: red;
     font-size: 0.75rem;
@@ -147,7 +151,7 @@ textarea {
     margin-bottom: 0px;
 }
 
-// COLOR THEMES
+// Thèmes de couleur
 .active_link,
 .link:hover,
 .dropdown-item:hover,
@@ -175,14 +179,15 @@ li.user_name:hover {
     background-color: var(--color) !important;
 }
 
-// HEADER - NAVIGATION MENU
+// Header - navigation
+// Fonction clamp() est utilisé pour le côté responsive
 nav {
     background: linear-gradient(var(--bg-color) 80%, transparent);
     padding-inline: clamp(20px, 2vw, 8.75rem) !important;
     padding-top: 1.625rem;
     height: clamp(5rem, 7rem, 8rem);
 
-    // LOGO
+    // Logo
     .logo {
         position: relative;
         -webkit-user-select: none;
@@ -208,6 +213,7 @@ nav {
         .title_reflection {
             opacity: 0.1;
             line-height: 75%;
+            // Donne l'effet mirroir vertical
             transform: scale(1, -1);
         }
 
@@ -243,6 +249,7 @@ main {
                 background-color: var(--white);
                 border-radius: 50%;
                 height: 15px;
+                // Positioner le centre du cerlce au début de .title_decoration
                 margin-left: calc(15px / 2);
                 position: absolute;
                 left: 0%;
@@ -329,6 +336,7 @@ footer {
         font-family: "ocr-b-std", monospace;
         font-size: 2.75rem;
 
+        // Étendre les propriétés de la balise h2 à la classe .h3 associé à la balise h3
         &.h3 {
             @extend h3;
         }

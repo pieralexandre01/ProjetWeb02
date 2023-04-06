@@ -1,6 +1,6 @@
 <x-public.layout>
     <x-slot name="title">{{ $title }}</x-slot>
-    <x-slot name="css_file">public/homepage</x-slot>
+    <x-slot name="css_file">public/index</x-slot>
 
     <x-public.header :page="$page" />
 
@@ -131,35 +131,34 @@
         </section>
 
 
-        @foreach( $activities as $activity)
 
-            <section id="interact_divider" class="text-center">
-                <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
-
-                <div class="divider_block d-md-flex flex-md-row-reverse  align-items-center">
-                    <img src="{{ $activity->image }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="{{ $activity->subcategory }}">
-                    <div class="divider_text d-none d-md-block mx-auto d-flex">
-                        <div class="content d-flex flex-column text-start">
-                            <span>INTERACT</span>
-                            <span>with cyber legends</span>
-                            <span class="cyber_name align-self-end mt-2 pt-1">{{ strtoupper($activity->subcategory) }}</span>
+        <section id="interact_divider" class="text-center">
+            @foreach( $activities as $activity)
+                <div>
+                    <div class="first_line d-none d-md-block mt-2 mt-md-0"></div>
+                        <div class="divider_block d-md-flex flex-md-row-reverse align-items-center">
+                            <img src="{{ $activity->image }}" class="divider_img mb-4 pb-2 mb-md-0 pb-md-0" alt="{{ $activity->subcategory }}">
+                            <div class="divider_text d-none d-md-block mx-auto d-flex">
+                                <div class="content d-flex flex-column text-start">
+                                    <span>INTERACT</span>
+                                    <span>with cyber legends</span>
+                                    <span class="cyber_name align-self-end mt-2 pt-1">{{ strtoupper($activity->subcategory) }}</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="d-flex flex-column align-items-end d-md-none">
+                            <div class="d-flex flex-row flex-nowrap align-items-center w-100">
+                                <div class="first_line w-100 me-2"></div>
+                                <span>INTERACT</span>
+                            </div>
+                            <span>with cyber legends</span>
+                            <span class="cyber_name align-self-center pt-1">{{ strtoupper($activity->subcategory) }}</span>
+                        </div>
+                    <div class="second_line mt-2 mt-md-0"></div>
                 </div>
+            @endforeach
+        </section>
 
-                <div class="d-flex flex-column align-items-end d-md-none">
-                    <div class="d-flex flex-row flex-nowrap align-items-center w-100">
-                        <div class="first_line w-100 me-2"></div>
-                        <span>INTERACT</span>
-                    </div>
-                    <span>with cyber legends</span>
-                    <span class="cyber_name align-self-center pt-1">{{ strtoupper($activity->subcategory) }}</span>
-                </div>
-
-                <div class="second_line mt-2 mt-md-0"></div>
-            </section>
-
-        @endforeach
 
         <section id="activities" class="call_to_action">
             <div class="container px-sm-2 px-lg-5">
