@@ -63,7 +63,7 @@ class ActivityController extends Controller
             "subcategory.max" => "The subcategory must be 25 characters or less",
             "description.required" => "The description is required",
             "image.required" => "The image is required",
-            "image.mimes" => "The file must have one of the following extensions: .png, .jpg, .jpeg ou .webp",
+            "image.mimes" => "The file must have one of the following extensions: .png, .jpg, .jpeg or .webp",
             "date.required" => "The date and time are required",
             "date.date" => "The date format must be respected",
 
