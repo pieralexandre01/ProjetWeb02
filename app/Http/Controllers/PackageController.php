@@ -37,7 +37,7 @@ class PackageController extends Controller
             'package_id.required' => "The package ID is required",
             'package_id.numeric' => "The package ID must be submitted",
             'package_quantity.required' => "The quantity is required",
-            'package_quantity.integer' => "The package's quantity must be an integer",
+            'package_quantity.integer' => "The package's quantity must be a number",
             'package_quantity.min' => "The package's quantity must be minimum 1",
             'package_quantity.max' => "The package's quantity must be maximum 4",
         ]);
