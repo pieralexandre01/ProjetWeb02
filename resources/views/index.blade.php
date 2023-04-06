@@ -4,7 +4,7 @@
 
     <x-public.header :page="$page" />
 
-    <main>
+    <main id="main_homepage">
         <section id="intro_header" ref="intro_header">
             <img src="{{ asset('/media/images/homepage_header.webp') }}" class="header_image" ref="header_image"
                 alt="Digital showroom">

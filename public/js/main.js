@@ -56,13 +56,6 @@ function skip_animation() {
 
 // Scroll :
 
-// Accéder à l'état du scroll et activer la fonction generateAnimation lorsque la page se load
-window.addEventListener('scroll', e => {
-    state.scrollY = window.scrollY
-    generateAnimation()
-    animateInteractiveText()
-})
-
 // La fonction reactive permet que la valeur du scrollHeight soit réactive et donc dynamise le code qui utilise cette propriété
 const state = reactive({
     scrollHeight: 0,
@@ -306,9 +299,26 @@ const root = {
         onMounted(() => {
             initPaypal()
 
-            // Active l'événement de scroll et exécute la fonction lors de l'action du scroll
-            window.addEventListener('scroll', updateScrollLine)
-          })
+            // Condition qui fait en sorte que les fonctions s'activent juste si #main_homepage != null
+            if( document.querySelector("#main_homepage") != null) {
+
+                // Accéder à l'état du scroll et activer la fonction generateAnimation lorsque la page se load
+                window.addEventListener('scroll', e => {
+                    state.scrollY = window.scrollY
+                    generateAnimation()
+                    animateInteractiveText()
+                })
+
+                // Vérifie l'état du scroll avant l'événement
+                updateScrollLine()
+
+                // Lancer l'animation
+                generateAnimation()
+
+                // Active l'événement de scroll et exécute la fonction lors de l'action du scroll
+                window.addEventListener('scroll', updateScrollLine)
+            }
+        })
 
           onBeforeUnmount(() => {
             // Désactive l'événement de scroll et la fonction ne sera plus exécutée
@@ -327,6 +337,7 @@ const root = {
             festival_tagline,
             nav_logo,
             nav_center_space,
+            skip_button,
             robot_carousel,
             interactive_text,
             scroll_down_cta,
