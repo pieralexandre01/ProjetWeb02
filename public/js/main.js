@@ -225,9 +225,6 @@ function animateByteSideCallToAction() {
 function generateAnimation() {
     const scroll_state = Math.floor(state.scrollHeight)
 
-    console.log(scroll_state)
-    console.log(state.scrollHeight)
-
     // Vérification de la position du scroll height (%) pour activer les fonctions au bon moment
     if(scroll_direction > 0) {
         if(scroll_state == 1) {
