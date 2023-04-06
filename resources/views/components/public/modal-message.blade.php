@@ -11,7 +11,7 @@
                             <p class="p-0 m-0 text-start">Thank you!</p>
                         </div>
 
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close"></button>
 
                     </div>
                 </div>
